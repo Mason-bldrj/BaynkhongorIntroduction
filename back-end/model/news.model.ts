@@ -9,14 +9,15 @@ const newsSchema = new Schema({
     },
     date: Date,
     description: String,
-    video: {
-      name: { type: String, required: true },
-      date: Date,
-    },
-    resources: {
-      name: String,
-      img: String,
-    },
+  },
+  video: {
+    name: { type: String, required: true },
+    date: Date,
+    url: String,
+  },
+  resources: {
+    name: String,
+    img: String,
   },
 });
 

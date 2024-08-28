@@ -25,32 +25,12 @@ const aboutUsSchema = new Schema({
     },
     phoneNumber2: Number,
   },
-
   offerNumber: Number,
-  offers: [
-    {
-      name: { type: String, required: true },
-      count: {
-        type: Number,
-        required: true,
-      },
-    },
-  ],
   mainImg: String,
   about: String,
   aboutOffice: String,
   porpose: String,
   objective: String,
-  employees: {
-    name: { type: String, required: true },
-    position: { type: String, required: true },
-    phoneNumber: Number,
-    links: {
-      fbLink: String,
-      IG_Link: String,
-      twitterLink: String,
-    },
-  },
 });
 
 const AboutUsModel =

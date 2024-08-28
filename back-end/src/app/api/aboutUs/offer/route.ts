@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import AboutUsModel from "../../../../model/aboutUs.model";
-import LegalityModel from "../../../../model/legality.model";
+import OfferModel from "../../../../../model/offers.model";
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    const res = await LegalityModel.find();
+    const res = await OfferModel.find();
 
     return NextResponse.json(res);
   } catch (err: any) {
@@ -21,14 +20,15 @@ export async function GET(req: NextRequest, res: NextResponse) {
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
     // Parse the JSON data from the request body
-    const { name, title, link, legalityType } = await req.json();
+    const { name, img, date, travelType, description } = await req.json();
 
     // Create a new record in the AboutUsModel
-    const createdRecord = await LegalityModel.create({
+    const createdRecord = await OfferModel.create({
       name,
-      title,
-      link,
-      legalityType,
+      img,
+      date,
+      travelType,
+      description,
     });
 
     // Return the created record in the response

@@ -5,4 +5,6 @@ export const COLLECTIONS = {
   INSTITUTION: "institution",
   TRAVEL: "travel",
   EVENT: "event",
+  LEGALITY: "legality",
+  KEEPSAKE: "keepsake",
 };

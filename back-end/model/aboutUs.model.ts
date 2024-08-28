@@ -27,13 +27,15 @@ const aboutUsSchema = new Schema({
   },
 
   offerNumber: Number,
-  offers: {
-    name: { type: String, required: true },
-    count: {
-      type: Number,
-      required: true,
+  offers: [
+    {
+      name: { type: String, required: true },
+      count: {
+        type: Number,
+        required: true,
+      },
     },
-  },
+  ],
   mainImg: String,
   about: String,
   aboutOffice: String,

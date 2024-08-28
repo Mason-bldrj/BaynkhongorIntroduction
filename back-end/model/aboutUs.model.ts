@@ -18,7 +18,7 @@ const aboutUsSchema = new Schema({
     type: String,
     required: true,
   },
-  phoneNumber: {
+  phoneNumbers: {
     phoneNumber1: {
       type: Number,
       required: true,

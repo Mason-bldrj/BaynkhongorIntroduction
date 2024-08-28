@@ -37,20 +37,46 @@ export const BayanKhongorInfo = [
   { icon: "/hun6.png", number: "87,993", title: "ХҮН АМЫН ТОО" },
 ];
 export const bplace = [
-  { icon: "/shargaljuut.png", title: "Шаргалжуут", count: 1, percent: 0 },
-  { icon: "/ihbogduul.png", title: "Их Богд уул", count: 1, percent: 0 },
+  {
+    icon: "/shargaljuut.png",
+    title: "Шаргалжуут",
+    count: 1,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
+  {
+    icon: "/ihbogduul.png",
+    title: "Их Богд уул",
+    count: 1,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
   {
     icon: "/agui.png",
     title: "Цагаан агуй, Бичигт хад",
     count: 1,
     percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
     icon: "/ehiingol.png",
     title: "Эхийн гол, Сэгс цагаан богд",
     count: 1,
     percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
-  { icon: "/hohnuur.png", title: "Хөх нуур", count: 0 , percent:0 },
-  { icon: "/boonnuur.png", title: "Бөөн цагаан нуур", count: 1, percent: 0 },
+  {
+    icon: "/hohnuur.png",
+    title: "Хөх нуур",
+    count: 0,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
+  {
+    icon: "/boonnuur.png",
+    title: "Бөөн цагаан нуур",
+    count: 1,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
 ];

@@ -3,8 +3,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import Image from "next/image";
 import { useState } from "react";
-import { mainMenu } from "../data";
-import { PictureArr } from "../data";
+import { mainMenu } from "@/app/data";
+import { PictureArr } from "@/app/data";
 export const MainMenu = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {

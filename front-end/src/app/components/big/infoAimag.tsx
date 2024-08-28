@@ -1,5 +1,5 @@
 "use client";
-import { BayanKhongorInfo } from "../data";
+import { BayanKhongorInfo } from "@/app/data";
 import Image from "next/image";
 export const InfoAimag = () => {
   return (

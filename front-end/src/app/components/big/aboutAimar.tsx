@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { OrangeBourd } from "../detail/orengeBourd";
 export const AboutAimag = () => {
   return (
     <div className="w-[100%] h-[755px] flex justify-center mt-20">
       <div className="flex flex-col w-full justify-center  items-center gap-5">
         {" "}
-        <div className="text-white bg-[#ff7119] px-4  text-xl text-center p-1 rounded-sm ml-[500px]">
-          БАЯНХОНГОР АЙМГИЙН ТУХАЙ
+        <div className="ml-[500px]">
+          <OrangeBourd data={"БАЯНХОНГОР АЙМГИЙН ТУХАЙ"} width={265} />
         </div>
         <div className="w-[98.9vw] h-[635px] relative">
           <Image

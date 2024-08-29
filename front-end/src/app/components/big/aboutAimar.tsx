@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import { OrangeBourd } from "../detail/orengeBourd";
 export const AboutAimag = () => {
@@ -17,7 +18,7 @@ export const AboutAimag = () => {
             alt="Carousel image"
           />
           <div className="w-full h-full absolute top-0 left-0 bg-black opacity-70 flex items-center">
-            <p className="text-white w-[564px] h-[275px] ml-[130px]">
+            <div className="text-white w-[564px] h-[275px] ml-[130px]">
               БНМАУ-ын Бага Хурлын Тэргүүлэгчдийн 115 дугаар тоот тогтоолоор,
               АДХ-ын гүйцэтгэх захиргааны 91 дүгээр тоот тогтоолоор анх 3
               хоринтой нэгж захиргааг байгуулсанаар Баянхонгор хот бие даасан
@@ -29,7 +30,7 @@ export const AboutAimag = () => {
               төвийн 9 , хөдөөгийн 1 багт 9815 өрх  33147 хүн амтай болон
               өргөжиж, өдрөөс өдөрт бүтээн байгуулалт хийгдэн иргэдээ хөгжүүлэх
               үйл ажиллагаа тогтмол явуулсаар байгаа цэцэглэн хөгжиж буй хот юм.
-            </p>
+            </div>
           </div>
         </div>
       </div>

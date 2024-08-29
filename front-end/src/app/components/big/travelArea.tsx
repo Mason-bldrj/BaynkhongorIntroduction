@@ -1,3 +1,4 @@
+'use client'
 import { OrangeBourd } from "../detail/orengeBourd";
 import { TravelCard } from "../detail/travelCard";
 import { ArrowButtons } from "../detail/arrowButtons";

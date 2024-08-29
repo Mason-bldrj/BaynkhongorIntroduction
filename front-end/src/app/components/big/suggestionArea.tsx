@@ -1,3 +1,4 @@
+'use client'
 import { bplace } from "../../data";
 import Image from "next/image";
 import { useState } from "react";
@@ -24,12 +25,12 @@ export const SuggestionArea = () => {
           <OrangeBourd data={"Санал"} />
         </div>
 
-        <p>Та Хонгор нутагт хаашаа аялахыг хүсэж байгаагаа сонгоно уу?</p>
+        <div>Та Хонгор нутагт хаашаа аялахыг хүсэж байгаагаа сонгоно уу?</div>
       </div>
       <div className="flex justify-between mt-5 rounded-sm">
         {bplace.map((el, i): JSX.Element => {
           return (
-            <div className="w-[173px] h-[200px] relative">
+            <div key={i} className="w-[173px] h-[200px] relative">
               <Image
                 className="object-cover w-full h-full"
                 src={el.icon}
@@ -48,9 +49,9 @@ export const SuggestionArea = () => {
                   className="bg-[#ff7119] h-[8px] rounded-md w-full "
                   style={{ width: `${el.percent}%` }}
                 ></div>
-                <p className="w-[5px] flex items-center  mr-7 text-[10px]">
+                <div className="w-[5px] flex items-center  mr-7 text-[10px]">
                   {el.percent + "%"}
-                </p>
+                </div>
               </div>
             </div>
           );

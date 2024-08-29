@@ -1,6 +1,6 @@
+'use client'
 import { OrangeBourd } from "../detail/orengeBourd";
 import { EventCard } from "../detail/evenCard";
-
 export const EventArea = () => {
   return (
     <div className="w-full mt-10">

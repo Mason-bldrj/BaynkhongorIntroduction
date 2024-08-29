@@ -1,3 +1,4 @@
+'use client'
 import { Header } from "./header";
 import { InfoAimag } from "./infoAimag";
 import { MainMenu } from "./mainMenu";

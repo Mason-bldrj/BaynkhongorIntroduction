@@ -4,6 +4,13 @@ export interface InfoItem {
   phone?: string;
   report?: string;
 }
+// export interface BPlaceItem {
+//   icon?: string;
+//   title?: string;
+//   count?: number;
+//   percent?: number;
+//   idk?: string;
+// }
 export const mainMenu: string[] = [
   "Нүүр",
   "Бидний тухай ",
@@ -36,7 +43,7 @@ export const BayanKhongorInfo = [
   { icon: "/bag5.png", number: "105", title: "БАГИЙН ТОО" },
   { icon: "/hun6.png", number: "87,993", title: "ХҮН АМЫН ТОО" },
 ];
-export const bplace = [
+export const bplace= [
   {
     icon: "/shargaljuut.png",
     title: "Шаргалжуут",

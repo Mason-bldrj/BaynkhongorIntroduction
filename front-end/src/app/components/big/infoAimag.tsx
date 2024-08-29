@@ -6,19 +6,19 @@ export const InfoAimag = () => {
     <div className="w-full flex justify-center mt-20 ">
       <div className=" border-b-[#FF6C10] border   border-l-white  border-r-white  border-t-white w-[1143px] max-h-[150px]  flex  justify-center items-center">
         <div className="w-[80%] border-b-[#FF6C10] border   border-l-white  border-r-white  border-t-white max-h-[150px]  flex  justify-center items-center">
-          {BayanKhongorInfo.map((el): JSX.Element => {
+          {BayanKhongorInfo.map((el ,i): JSX.Element => {
             return (
-              <div className="h-[200px] w-1/6 flex flex-col justify-center items-center  text-center gap-2">
+              <div key={i} className="h-[200px] w-1/6 flex flex-col justify-center items-center  text-center gap-2">
                 <Image
                   src={el.icon}
                   width={57}
                   height={58}
                   alt="Carousel image"
                 />
-                <h1 className=" text-[#FF6C10]">{el.number}</h1>{" "}
+                <div className=" text-[#FF6C10]">{el.number}</div>{" "}
                 <div className="flex items-start h-full">
                   {" "}
-                  <h1>{el.title}</h1>
+                  <div>{el.title}</div>
                 </div>
               </div>
             );

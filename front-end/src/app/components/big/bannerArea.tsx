@@ -1,7 +1,6 @@
-
+'use client'
 import Image from "next/image";
 import { FaRegUser } from "react-icons/fa";
-
 import { IoCalendarOutline } from "react-icons/io5";
 export const BannerArea = () => {
   return (
@@ -22,7 +21,7 @@ export const BannerArea = () => {
         />
       </div>
       <div className="w-[360px] h-[147px] border flex flex-col gap-3 bg-[#FF7119] rounded-md">
-        <h1 className="text-white ml-3 mt-2">Манай сайтад зочилсон зочид </h1>
+        <div className="text-white ml-3 mt-2">Манай сайтад зочилсон зочид </div>
         <div className="flex items-center text-white ml-4 text-sm gap-2">
           <IoCalendarOutline />
           <select name="days" id="days " className="bg-[#FF7119]">
@@ -35,11 +34,11 @@ export const BannerArea = () => {
         <div className="w-full flex flex-col items-center">
           <div className="w-[278px] h-[40px] flex justify-between bg-white rounded-sm items-center">
             <FaRegUser className="ml-4" />
-            <p className="mr-4">999</p>
+            <div className="mr-4">999</div>
           </div>
-          <p className="w-[278px] text-sm mt-1 text-white text-end">
+          <div className="w-[278px] text-sm mt-1 text-white text-end">
             Нийт:99999
-          </p>
+          </div>
         </div>
       </div>
     </div>

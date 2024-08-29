@@ -22,7 +22,6 @@ export const EventCard = () => {
       setIsSliding(false);
     }, 500);
   };
-
   const handlePrev = () => {
     setIsSliding(true);
 

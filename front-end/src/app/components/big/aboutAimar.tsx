@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { OrangeBourd } from "../detail/orengeBourd";
 export const AboutAimag = () => {
@@ -9,7 +9,7 @@ export const AboutAimag = () => {
         <div className="ml-[500px]">
           <OrangeBourd data={"БАЯНХОНГОР АЙМГИЙН ТУХАЙ"} width={265} />
         </div>
-        <div className="w-[98.9vw] h-[635px] relative">
+        <div className="w-[1441px] h-[635px] relative">
           <Image
             className="object-cover w-full h-full absolute top-0 left-0"
             src="/baynkhongor.png"

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-export const TravelCard = ({ bplace, startIndex }: any) => {
+export const SwitchImg = ({ bplace, startIndex }: any) => {
   return (
     <div className="w-full flex ">
       <div className="flex w-[1155px] overflow-hidden flexx transition-transform duration-300 justify-start">

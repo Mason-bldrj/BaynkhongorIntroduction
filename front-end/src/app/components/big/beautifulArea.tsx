@@ -5,7 +5,7 @@ import { BeautifulAreaCard } from "../detail/beautifulAreaCard";
 
 export const BeautifulArea = () => {
   return (
-    <div className="w-full flex flex-col items-center mt-10">
+    <div className="w-full flex flex-col items-center mt-20">
       <div className="">
         <div className="mb-10 ml-[200px]">
           {" "}

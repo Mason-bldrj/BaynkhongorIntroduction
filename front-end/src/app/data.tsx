@@ -43,7 +43,7 @@ export const BayanKhongorInfo = [
   { icon: "/bag5.png", number: "105", title: "БАГИЙН ТОО" },
   { icon: "/hun6.png", number: "87,993", title: "ХҮН АМЫН ТОО" },
 ];
-export const bplace= [
+export const bplace = [
   {
     icon: "/shargaljuut.png",
     title: "Шаргалжуут",
@@ -86,4 +86,10 @@ export const bplace= [
     percent: 0,
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
+];
+export const videoArr = [
+  "https://www.youtube.com/watch?v=vg2wVT1cv9E&t=122s",
+  "https://www.youtube.com/watch?v=_wZqhVDAqtA",
+  "https://www.youtube.com/watch?v=Y_Lf_cLz1cE",
+  "https://www.youtube.com/watch?v=an3S7tr5Qxw",
 ];

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "../detail/arrowButtons";
-export const BeautifulAreaCard = () => {
+export const BrandCard = () => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
   const handleNext = () => {
@@ -35,8 +35,8 @@ export const BeautifulAreaCard = () => {
                   height={350}
                   alt="Carousel image"
                 />
-                <div className="bg-[#ff7119] text-white w-[313px] h-[33px] rounded-t-2xl flex justify-center items-center absolute bottom-0 left-[25px]">
-                  {el.title}
+                <div className=" flex justify-center items-center opacity-0 hover:bg-black hover:opacity-50 absolute w-full h-full top-0 left-0">
+                  <div className="text-2xl mt-[120px] text-white w-[200px] text-center">"{el.title}"</div>
                 </div>
               </div>
             );

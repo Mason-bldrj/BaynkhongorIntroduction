@@ -19,7 +19,7 @@ export const EventArea = () => {
     }
   };
   return (
-    <div className="w-full mt-10">
+    <div className="w-full mt-12">
       <div className="flex w-full justify-between">
         <div className="ml-20">
           {" "}

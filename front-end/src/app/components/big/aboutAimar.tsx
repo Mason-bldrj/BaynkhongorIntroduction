@@ -3,7 +3,7 @@ import Image from "next/image";
 import { OrangeBourd } from "../detail/orengeBourd";
 export const AboutAimag = () => {
   return (
-    <div className="w-[100%] h-[755px] flex justify-center mt-20">
+    <div className="w-[100%] h-[755px] flex justify-center mt-10">
       <div className="flex flex-col w-full justify-center  items-center gap-5">
         {" "}
         <div className="ml-[500px]">

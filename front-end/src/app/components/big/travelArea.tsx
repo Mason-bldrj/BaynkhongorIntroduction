@@ -6,7 +6,7 @@ import { useState } from "react";
 import { bplace } from "@/app/data";
 export const TravelArea = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 4;
+  const visibleCount = 3;
   const handleNext = () => {
     if (startIndex + visibleCount < bplace.length) {
       setStartIndex(startIndex + 1);
@@ -19,7 +19,7 @@ export const TravelArea = () => {
     }
   };
   return (
-    <div className="w-full">
+    <div className="w-full mt-10">
       <div className="flex w-full justify-between">
         <OrangeBourd data={"АЯЛАЛ "} />
         <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />

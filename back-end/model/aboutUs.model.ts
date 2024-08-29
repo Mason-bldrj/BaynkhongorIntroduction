@@ -25,7 +25,6 @@ const aboutUsSchema = new Schema({
     },
     phoneNumber2: Number,
   },
-  offerNumber: Number,
   mainImg: String,
   about: String,
   aboutOffice: String,

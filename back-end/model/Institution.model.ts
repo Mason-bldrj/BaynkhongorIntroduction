@@ -4,6 +4,7 @@ import { COLLECTIONS } from "../constant";
 
 const institutionSchema = new Schema({
   institutionType: {
+    type: String,
     enum: [
       "SERVICE",
       "VACATION",
@@ -17,7 +18,7 @@ const institutionSchema = new Schema({
     required: true,
   },
   name: { type: String, required: true },
-  description: { type: String, required: true },
+  description: { type: String },
   img: String,
   phoneNumbers: {
     phoneNumber1: { type: Number, required: true },
@@ -25,7 +26,7 @@ const institutionSchema = new Schema({
   },
   time: [
     {
-      enum: ["SUMMER", "WINTER"],
+      timeType: { enum: ["SUMMER", "WINTER"], type: String, required: true },
       day: String,
       opentime: String,
       closedTime: String,
@@ -34,14 +35,18 @@ const institutionSchema = new Schema({
   price: [
     {
       amount: {
-        enum: [
-          "ADULT",
-          "CHILD",
-          "STUDENT",
-          "TOURIST",
-          "TAKE_PHOTO",
-          "RECORDING",
-        ],
+        amountType: {
+          type: String,
+          enum: [
+            "ADULT",
+            "CHILD",
+            "STUDENT",
+            "TOURIST",
+            "TAKE_PHOTO",
+            "RECORDING",
+          ],
+          required: true,
+        },
         amount: Number,
       },
     },

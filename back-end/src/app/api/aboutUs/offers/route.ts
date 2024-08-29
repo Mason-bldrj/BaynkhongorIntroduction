@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import OfferModel from "../../../../../model/offers.model";
+import OffersModel from "../../../../../model/offers.model";
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    const res = await OfferModel.find();
+    const res = await OffersModel.find();
 
     return NextResponse.json(res);
   } catch (err: any) {
@@ -13,14 +13,11 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const { name, img, date, travelType, description } = await req.json();
+    const { offerCount, offer } = await req.json();
 
-    const createdRecord = await OfferModel.create({
-      name,
-      img,
-      date,
-      travelType,
-      description,
+    const createdRecord = await OffersModel.create({
+      offerCount,
+      offer,
     });
 
     return NextResponse.json(createdRecord);

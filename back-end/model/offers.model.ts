@@ -1,15 +1,16 @@
 import { Schema, model, models } from "mongoose";
 import { COLLECTIONS } from "../constant";
 
-const offerSchema = new Schema({
-  name: { type: String, required: true },
-  img: String,
-  date: Date,
-  travelType: {
-    enum: ["LocalTravel", "INTERNAL_TRAVEL", "FOREIGN_TRAVEL"],
-  },
-  description: String,
+const offersSchema = new Schema({
+  offerCount: Number,
+  offer: [
+    {
+      name: { type: String, required: true },
+      img: String,
+      count: Number,
+    },
+  ],
 });
 
-const OfferModel = models.offer || model(COLLECTIONS.OFFER, offerSchema);
-export default OfferModel;
+const OffersModel = models.offer || model(COLLECTIONS.OFFERS, offersSchema);
+export default OffersModel;

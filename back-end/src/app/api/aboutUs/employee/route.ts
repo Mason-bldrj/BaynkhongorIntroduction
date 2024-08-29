@@ -20,13 +20,40 @@ export async function POST(req: NextRequest, res: NextResponse) {
       position,
       phoneNumber,
       links: {
-        fbLink: links.fbLink,
-        IG_Link: links.IG_Link,
-        twitterLink: links.twitterLink,
+        fbLink: links.fbLink ?? "",
+        IG_Link: links.IG_Link ?? "",
+        twitterLink: links.twitterLink ?? "",
       },
     });
 
     return NextResponse.json(createdRecord);
+  } catch (error: any) {
+    console.error("Error creating AboutUs record:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+export async function PUT(req: NextRequest, res: NextResponse) {
+  const data = await req.json();
+
+  console.log(data);
+
+  try {
+    const { _id, name, position, phoneNumber, links } = data;
+    const res = await EmployeeModel.findByIdAndUpdate(
+      _id,
+      {
+        name,
+        position,
+        phoneNumber,
+        links: {
+          fbLink: links.fbLink ?? "",
+          IG_Link: links.IG_Link ?? "",
+          twitterLink: links.twitterLink ?? "",
+        },
+      },
+      { new: true }
+    );
+    return NextResponse.json(res);
   } catch (error: any) {
     console.error("Error creating AboutUs record:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });

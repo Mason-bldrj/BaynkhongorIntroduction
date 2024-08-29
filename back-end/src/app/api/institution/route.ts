@@ -41,3 +41,31 @@ export async function POST(req: NextRequest, res: NextResponse) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
+export async function PUT(req: NextRequest, res: NextResponse) {
+  const data = await req.json();
+  const {
+    _id,
+    institutionType,
+    name,
+    description,
+    img,
+    phoneNumbers,
+    time,
+    price,
+  } = data;
+  try {
+    const res = await InstitutionModel.findByIdAndUpdate(_id, {
+      institutionType,
+      name,
+      description,
+      img,
+      phoneNumbers,
+      time,
+      price,
+    });
+  } catch (error: any) {
+    console.error("Error creating AboutUs record:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}

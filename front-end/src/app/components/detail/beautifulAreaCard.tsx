@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { bplace } from "@/app/data";
 import { useState } from "react";
-import { ArrowButtons } from "../detail/arrowButtons";
+import { ArrowButtons } from "./arrowButtons";
 export const BeautifulAreaCard = () => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;

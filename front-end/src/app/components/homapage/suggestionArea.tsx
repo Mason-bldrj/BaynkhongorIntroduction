@@ -1,22 +1,32 @@
-'use client'
+"use client";
 import { bplace } from "../../data";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 import React from "react";
 import { OrangeBourd } from "../detail/orengeBourd";
 interface ProgressBarProps {
   progress: number;
 }
-
 export const SuggestionArea = () => {
-  const [calcPercent, setCalcPercent] = useState(0);
+  const [clientPercent, setClientPercent] = useState(0);
+  const [dataHolder, setDataHolder] = useState(bplace);
   const progressCalculator = (index: number, Event: any) => {
-    let sumOfCount = bplace.reduce((total, place) => total + place.count, 0); //niit count 100%
-    bplace[index].count += 1;
-    const progress = (bplace[index].count / sumOfCount) * 100;
-    setCalcPercent(progress);
-    bplace[index].percent = calcPercent;
+    dataHolder[index].count++;
+    let clickCount = dataHolder.reduce(
+      (total, place) => total + place.count,
+      0
+    );
+    dataHolder.map((el, i) => {
+      el.percent = Math.floor(
+        (el.percent = Math.floor((el.count * 100) / clickCount))
+      );
+    });
+    setClientPercent(bplace[index].percent);
   };
+  useEffect(() => {
+    dataHolder;
+    clientPercent
+  }, [progressCalculator]);
   return (
     <div className="w-full mt-10">
       <div className="ml-10 flex flex-col gap-5 ">
@@ -28,7 +38,7 @@ export const SuggestionArea = () => {
         <div>Та Хонгор нутагт хаашаа аялахыг хүсэж байгаагаа сонгоно уу?</div>
       </div>
       <div className="flex justify-between mt-5 rounded-sm">
-        {bplace.map((el, i): JSX.Element => {
+        {dataHolder.map((el, i): JSX.Element => {
           return (
             <div key={i} className="w-[173px] h-[200px] relative">
               <Image

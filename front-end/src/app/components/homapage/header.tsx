@@ -2,9 +2,13 @@
 import { InfoArr, InfoItem } from "@/app/data";
 import Image from "next/image";
 
-export const Header = () => {
+export const Header = ({ switchHeader }: any) => {
   return (
-    <div className="w-full h-[200px] flex justify-between flex-col items-center bg-[url('/header.png')] bg-[#FF6C10]">
+    <div
+      className={`w-full h-[200px] justify-between flex-col items-center bg-[url('/header.png')] bg-[#FF6C10]
+ ${switchHeader ? "flex" : "hidden"}
+    `}
+    >
       <div className="flex justify-around items-center w-[80%] border-b p-7">
         {InfoArr.map((el: InfoItem, index: number): JSX.Element => {
           return (

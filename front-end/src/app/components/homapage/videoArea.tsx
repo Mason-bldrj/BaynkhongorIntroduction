@@ -19,7 +19,7 @@ export const VideoArea = () => {
     }
   };
   return (
-    <div className="w-full h-[1000px] border flex items-center flex-col">
+    <div className="w-full h-[1000px] flex items-center flex-col">
       <div className="flex w-full justify-between mt-[40px]">
         <OrangeBourd data={"ВИДЕО МЭДЭЭ"} />
       </div>

@@ -17,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <DefaultArea />
-        {children}
+        <div className="w-[100vw] flex flex-col items-center">
+          <DefaultArea />
+          {children}
+        </div>
       </body>
     </html>
   );

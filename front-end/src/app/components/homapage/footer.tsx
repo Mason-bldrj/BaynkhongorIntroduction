@@ -4,7 +4,7 @@ import { FiPhone } from "react-icons/fi";
 import { LuSend } from "react-icons/lu";
 export const Footer = () => {
   return (
-    <div className="w-[1448px] h-[553px]  items-center justify-end flex flex-col bg-[url('/footer.png')]  bg-cover">
+    <div className="w-full h-[550px]  items-center justify-end flex flex-col bg-[url('/footer.png')]  bg-cover">
       <div className="w-[1147px] h-[420px] flex flex-col justify-around">
         <div className=" text-white w-[549px] h-[44px] ">
           БАЯНХОНГОР АЙМГИЙН АЯЛАЛ ЖУУЛЧЛАЛЫН ПОРТАЛ САЙТ GO NOMADIC, EXPERIENCE

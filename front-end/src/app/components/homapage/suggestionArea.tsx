@@ -4,10 +4,12 @@ import Image from "next/image";
 import { useState, useEffect, use } from "react";
 import React from "react";
 import { OrangeBourd } from "../detail/orengeBourd";
+import { useRouter } from "next/navigation";
 interface ProgressBarProps {
   progress: number;
 }
 export const SuggestionArea = () => {
+  const router = useRouter();
   const [clientPercent, setClientPercent] = useState(0);
   const [dataHolder, setDataHolder] = useState(bplace);
   const progressCalculator = (index: number, Event: any) => {
@@ -25,10 +27,13 @@ export const SuggestionArea = () => {
   };
   useEffect(() => {
     dataHolder;
-    clientPercent
+    clientPercent;
   }, [progressCalculator]);
+  const handleNavigate = (id: number) => {
+    router.push(`/${id}`);
+    };
   return (
-    <div className="w-full mt-10">
+    <div className="w-[1147px] mt-10">
       <div className="ml-10 flex flex-col gap-5 ">
         <div className="w-[173px]">
           {" "}
@@ -40,7 +45,7 @@ export const SuggestionArea = () => {
       <div className="flex justify-between mt-5 rounded-sm">
         {dataHolder.map((el, i): JSX.Element => {
           return (
-            <div key={i} className="w-[173px] h-[200px] relative">
+            <div onClick={()=>{handleNavigate(el.id)}} key={i} className="w-[173px] h-[200px] relative">
               <Image
                 className="object-cover w-full h-full"
                 src={el.icon}

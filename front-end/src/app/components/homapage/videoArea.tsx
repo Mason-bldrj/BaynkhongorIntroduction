@@ -20,18 +20,16 @@ export const VideoArea = () => {
   };
   return (
     <div className="w-full h-[1000px] flex items-center flex-col">
-      <div className="flex w-full justify-between mt-[40px]">
+      <div className="flex w-[1147px] ml-[150px] mt-20 ">
         <OrangeBourd data={"ВИДЕО МЭДЭЭ"} />
       </div>
-      <div className="w-[1441px] h-[183px] bg-[#ff7119] absolute mt-[130px] "></div>
-      <div className="w-full">
-        <div className="flex items-center w-full h-[fit] justify-between mt-[130px]">
-          <div className="w-[1130px] h-[420px]">
-            {" "}
-            <VideoCard videoArr={videoArr} startIndex={startIndex} />
-          </div>
-          <div className="ml-[70px]">
-            {" "}
+      <div className="w-full h-[183px] bg-[#ff7119] mt-10 flex justify-center items-start">
+        <div className="w-[1320px] flex justify-start">
+          <div className="flex items-center w-full h-[fit] gap-[55px]  mt-[130px]">
+            <div className="w-[1130px] h-[420px]">
+              {" "}
+              <VideoCard videoArr={videoArr} startIndex={startIndex} />
+            </div>{" "}
             <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
           </div>
         </div>

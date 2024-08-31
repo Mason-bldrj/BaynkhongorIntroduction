@@ -18,16 +18,16 @@ export const BrandCard = () => {
   };
   return (
     <div className="w-full h-full flex items-center justify-start gap-[20px]">
-      <div className="flex w-[1155px] overflow-hidden flexx transition-transform duration-300 justify-start">
+      <div className="flex w-[1029px] overflow-hidden flexx transition-transform duration-300 justify-start">
         <div
           className="flexx transition-transform duration-300 justify-start gap-[20px]"
           style={{
-            transform: `translateX(-${startIndex * 385}px)`,
+            transform: `translateX(-${startIndex * 343}px)`,
           }}
         >
           {bplace.map((el: any, i: number): JSX.Element => {
             return (
-              <div key={i} className="min-w-[365px] min-h-[350px] relative">
+              <div key={i} className="min-w-[323px] min-h-[377px] relative">
                 <Image
                   className="object-cover w-full h-full rounded-sm"
                   src={el.icon}
@@ -43,7 +43,7 @@ export const BrandCard = () => {
           })}
         </div>
       </div>
-      <div className="ml-[30px]">
+      <div className="">
         <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
       </div>
     </div>

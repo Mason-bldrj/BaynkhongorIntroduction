@@ -45,7 +45,7 @@ export const BayanKhongorInfo = [
 ];
 export const bplace = [
   {
-    id: "1",
+    id: 1,
     icon: "/shargaljuut.png",
     title: "Шаргалжуут",
     count: 0,
@@ -53,7 +53,7 @@ export const bplace = [
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
-    id: "2",
+    id: 2,
     icon: "/ihbogduul.png",
     title: "Их Богд уул",
     count: 0,
@@ -61,7 +61,7 @@ export const bplace = [
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
-    id: "3",
+    id: 3,
     icon: "/agui.png",
     title: "Цагаан агуй, Бичигт хад",
     count: 0,
@@ -69,7 +69,7 @@ export const bplace = [
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
-    id: "4",
+    id: 4,
     icon: "/ehiingol.png",
     title: "Эхийн гол, Сэгс цагаан богд",
     count: 0,
@@ -77,7 +77,7 @@ export const bplace = [
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
-    id: "5",
+    id: 5,
     icon: "/hohnuur.png",
     title: "Хөх нуур",
     count: 0,
@@ -85,7 +85,7 @@ export const bplace = [
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
-    id: "6",
+    id: 6,
     icon: "/boonnuur.png",
     title: "Бөөн цагаан нуур",
     count: 0,

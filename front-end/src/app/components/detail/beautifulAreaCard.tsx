@@ -18,7 +18,7 @@ export const BeautifulAreaCard = () => {
   };
   return (
     <div className="w-full h-full flex items-center justify-start gap-[20px]">
-      <div className="flex w-[1155px] overflow-hidden flexx transition-transform duration-300 justify-start">
+      <div className="flex w-full overflow-hidden flexx transition-transform duration-300 justify-start">
         <div
           className="flexx transition-transform duration-300 justify-start gap-[20px]"
           style={{

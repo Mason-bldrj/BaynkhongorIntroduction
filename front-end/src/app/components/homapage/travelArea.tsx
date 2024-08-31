@@ -19,9 +19,13 @@ export const TravelArea = () => {
     }
   };
   return (
-    <div className="w-full mt-10">
+    <div className="w-[1147px] mt-10">
       <div className="flex w-full justify-between">
-        <OrangeBourd data={"АЯЛАЛ "} />
+        <div className="ml-[80px]">
+          {" "}
+          <OrangeBourd data={"АЯЛАЛ "} />
+        </div>
+
         <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
       </div>
       <div className="mt-10">

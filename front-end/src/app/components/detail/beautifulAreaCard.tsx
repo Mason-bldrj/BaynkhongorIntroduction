@@ -22,7 +22,7 @@ export const BeautifulAreaCard = () => {
         <div
           className="flexx transition-transform duration-300 justify-start gap-[20px]"
           style={{
-            transform: `translateX(-${startIndex * 385}px)`,
+            transform: `translateX(-${startIndex * 365}px)`,
           }}
         >
           {bplace.map((el: any, i: number): JSX.Element => {

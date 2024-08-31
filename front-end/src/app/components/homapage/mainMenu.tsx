@@ -1,26 +1,27 @@
 "use client";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { mainMenu } from "@/app/data";
 import { PictureArr } from "@/app/data";
 import { useRouter } from "next/navigation";
+
 export const MainMenu = () => {
   const router = useRouter();
   const [buttonColor, setButtonColor] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? PictureArr.length - 1 : prevIndex - 1
-    );
+
+  // Auto-slide interval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % PictureArr.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleSlider = (index: number) => {
+    setCurrentIndex(index);
   };
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === PictureArr.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-  const HandleRouter = (index: number) => {
+  const handleRouter = (index: number) => {
     setButtonColor(index);
     switch (index) {
       case 0:
@@ -47,7 +48,7 @@ export const MainMenu = () => {
       case 7:
         router.push("./gift");
         break;
-      case 7:
+      case 8: // Corrected index for 'projectt'
         router.push("./projectt");
         break;
       case 9:
@@ -57,6 +58,7 @@ export const MainMenu = () => {
         break;
     }
   };
+
   return (
     <div className="w-full flex justify-center">
       <div className="max-w-[1143px] max-h-[500px] flex">
@@ -66,7 +68,7 @@ export const MainMenu = () => {
               key={index}
               className="h-[50px]"
               onClick={() => {
-                HandleRouter(index);
+                handleRouter(index);
               }}
             >
               <button
@@ -85,18 +87,17 @@ export const MainMenu = () => {
             height={500}
             alt="Carousel image"
           />
-          <button
-            onClick={goToPrevious}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 hover:bg-[#FF6C10] text-white px-3 py-1"
-          >
-            <IoIosArrowBack className="" />
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 hover:bg-[#FF6C10] text-white px-3 py-1"
-          >
-            <IoIosArrowForward />
-          </button>
+          <div className="absolute bottom-2 left-[45%] flex gap-2">
+            {PictureArr.map((_, i) => (
+              <div
+                key={i}
+                onClick={() => handleSlider(i)}
+                className={`w-2 h-2 rounded-full cursor-pointer ${
+                  currentIndex === i ? "bg-orange-500" : "bg-white"
+                }`}
+              ></div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

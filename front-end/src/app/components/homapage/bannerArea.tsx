@@ -4,7 +4,7 @@ import { FaRegUser } from "react-icons/fa";
 import { IoCalendarOutline } from "react-icons/io5";
 export const BannerArea = () => {
   return (
-    <div className="w-[1147px] flex justify-between">
+    <div className="w-[1147px] flex justify-between mt-10">
       <div className=" w-[641px] h-[147px] relative">
         <Image
           className=" absolute top-[40px] left-[-25px] cursor-pointer"

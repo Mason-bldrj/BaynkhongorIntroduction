@@ -12,9 +12,9 @@ export const BeautifulArea = () => {
           <OrangeBourd data={"ҮЗЭСГЭЛЭНТ ГАЗРУУД"} />
         </div>
 
-        <div className="bg-[url('/bigmountain.png')] w-full h-[583px] flex  justify-center bg-cover relative">
+        <div className="bg-[url('/bigmountain.png')] w-full h-[583px] flex  justify-start bg-cover relative">
           <div className="w-full h-full bg-black opacity-50 absolute top-0 left-0"></div>
-          <div className="w-[1147px] h-full ">
+          <div className="w-[1260px] h-full ">
             <BeautifulAreaCard />
           </div>
         </div>

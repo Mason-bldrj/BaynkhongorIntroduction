@@ -17,12 +17,12 @@ export const BeautifulAreaCard = () => {
     }
   };
   return (
-    <div className="w-full h-full flex items-center justify-start gap-[20px]">
-      <div className="flex w-full overflow-hidden flexx transition-transform duration-300 justify-start">
+    <div className="w-full h-full flex items-center justify-between">
+      <div className="w-[1135px] overflow-hidden flexx transition-transform duration-300">
         <div
           className="flexx transition-transform duration-300 justify-start gap-[20px]"
           style={{
-            transform: `translateX(-${startIndex * 365}px)`,
+            transform: `translateX(-${startIndex * 385}px)`,
           }}
         >
           {bplace.map((el: any, i: number): JSX.Element => {
@@ -35,7 +35,7 @@ export const BeautifulAreaCard = () => {
                   height={350}
                   alt="Carousel image"
                 />
-                <div className="bg-[#ff7119] text-white w-[313px] h-[33px] rounded-t-2xl flex justify-center items-center absolute bottom-0 left-[25px]">
+                <div className="bg-[#ff7119] text-white w-[250px] h-[33px] rounded-t-2xl flex justify-center items-center absolute bottom-0 left-[60px]">
                   {el.title}
                 </div>
               </div>
@@ -43,7 +43,7 @@ export const BeautifulAreaCard = () => {
           })}
         </div>
       </div>
-      <div className="ml-[30px]">
+      <div className="ml-[30px] z-10">
         <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
       </div>
     </div>

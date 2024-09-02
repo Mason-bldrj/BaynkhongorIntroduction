@@ -46,9 +46,9 @@ export async function PUT(req: NextRequest, res: NextResponse) {
         position,
         phoneNumber,
         links: {
-          fbLink: links.fbLink ?? "",
-          IG_Link: links.IG_Link ?? "",
-          twitterLink: links.twitterLink ?? "",
+          fbLink: links.fbLink,
+          IG_Link: links.IG_Link,
+          twitterLink: links.twitterLink,
         },
       },
       { new: true }

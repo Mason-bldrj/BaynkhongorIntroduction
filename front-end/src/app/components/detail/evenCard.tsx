@@ -1,10 +1,25 @@
 "use client";
 import Image from "next/image";
-import { bplace } from "@/app/data";
 import { useState, useEffect } from "react";
-import { ArrowButtons2 } from "../detail/arrowButtons";
-
 export const EventCard = ({ bplace, startIndex }: any) => {
+  const [backData, setBackData] = useState([]);
+  useEffect(() => {
+    fetch("https://baynkhongor-backend.vercel.app/api/event")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setBackData(data);
+      })
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+      });
+  }, []);
+console.log(backData);
+
   return (
     <div className="w-full h-[470px] flex ">
       <div className="flex w-[1155px] h-[470px] overflow-hidden flexxx transition-transform duration-300 justify-start">

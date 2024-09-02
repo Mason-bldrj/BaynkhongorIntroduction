@@ -31,7 +31,7 @@ export const SuggestionArea = () => {
   }, [progressCalculator]);
   const handleNavigate = (id: number) => {
     router.push(`/${id}`);
-    };
+  };
   return (
     <div className="w-[1147px] mt-10">
       <div className="ml-10 flex flex-col gap-5 ">
@@ -45,9 +45,12 @@ export const SuggestionArea = () => {
       <div className="flex justify-between mt-5 rounded-sm">
         {dataHolder.map((el, i): JSX.Element => {
           return (
-            <div onClick={()=>{handleNavigate(el.id)}} key={i} className="w-[173px] h-[200px] relative">
+            <div key={i} className="w-[173px] h-[200px] relative">
               <Image
-                className="object-cover w-full h-full"
+                onClick={() => {
+                  handleNavigate(el.id);
+                }}
+                className="object-cover w-full h-full cursor-pointer"
                 src={el.icon}
                 width={173}
                 height={197}
@@ -55,7 +58,7 @@ export const SuggestionArea = () => {
               />
               <button
                 onClick={(Event) => progressCalculator(i, Event)}
-                className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white h-[40px] w-[125px] flex justify-center items-center text-center absolute top-[140px] text-sm right-0 opacity-70 rounded-l-sm"
+                className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white h-[40px] w-[125px] flex justify-center items-center text-center absolute top-[140px] text-sm right-0 opacity-70 rounded-l-sm z-10"
               >
                 {el.title}
               </button>

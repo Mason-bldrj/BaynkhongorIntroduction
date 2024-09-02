@@ -1,15 +1,20 @@
 "use client";
 import { InfoArr, InfoItem } from "@/app/data";
 import Image from "next/image";
-
+import SideBar from "../detail/sidebar";
 export const Header = ({ switchHeader }: any) => {
   return (
     <div
-      className={`w-full h-[200px] justify-between flex-col items-center bg-cover bg-[url('/header.png')] bg-[#FF6C10]
+      className={`w-full h-[50px] sm:h-[200px] justify-between flex-col items-center bg-cover bg-[url('/header.png')] bg-[#FF6C10]
  ${switchHeader ? "flex" : "hidden"}
     `}
     >
-      <div className="flex justify-around items-center w-[1147px] border-b p-7">
+      <div className="w-full flex justify-end sm:hidden ">
+        {" "}
+        <SideBar />
+      </div>
+
+      <div className="sm:flex justify-around items-center w-[1147px] border-b p-7 hidden">
         {InfoArr.map((el: InfoItem, index: number): JSX.Element => {
           return (
             <div
@@ -30,7 +35,7 @@ export const Header = ({ switchHeader }: any) => {
           );
         })}
       </div>
-      <div className="text-white text-2xl w-[500px] text-center mb-6">
+      <div className="text-white text-2xl w-[500px] text-center mb-6 sm:flex hidden">
         Баянхонгор аймаг аялал жуулчлал зочлох үйлчилгээний байгууллага
       </div>
     </div>

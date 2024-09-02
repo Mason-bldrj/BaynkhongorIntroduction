@@ -60,7 +60,7 @@ export const MainMenu = () => {
   };
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full sm:flex justify-center hidden">
       <div className="max-w-[1143px] max-h-[500px] flex">
         <div className="w-[173px] h-[500px]">
           {mainMenu.map((el: any, index: number) => (

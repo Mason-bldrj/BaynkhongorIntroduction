@@ -4,7 +4,7 @@ import { FaRegUser } from "react-icons/fa";
 import { IoCalendarOutline } from "react-icons/io5";
 export const BannerArea = () => {
   return (
-    <div className="w-[1147px] flex justify-between mt-10">
+    <div className="w-[1057px] flex justify-between mt-10">
       <div className=" w-[641px] h-[147px] relative">
         <Image
           className=" absolute top-[40px] left-[-25px] cursor-pointer"
@@ -20,7 +20,7 @@ export const BannerArea = () => {
           alt="Carousel image"
         />
       </div>
-      <div className="w-[360px] h-[147px] border flex flex-col gap-3 bg-[#FF7119] rounded-md">
+      <div className="w-[367px] h-[147px] border flex flex-col gap-3 bg-[#FF7119] rounded-md">
         <div className="text-white ml-3 mt-2">Манай сайтад зочилсон зочид </div>
         <div className="flex items-center text-white ml-4 text-sm gap-2">
           <IoCalendarOutline />

@@ -2,14 +2,19 @@
 import { InfoArr, InfoItem } from "@/app/data";
 import Image from "next/image";
 import { useState } from "react";
+import SideBar from "../detail/sidebar";
 export const Header2 = ({ switchHeader }: any) => {
   return (
     <div
-      className={`w-full h-[60px] justify-between flex-col items-center  bg-[#FF6C10]
+      className={`w-full h-[60px] justify-between flex-col items-center bg-[#FF6C10]
           ${switchHeader ? "hidden" : "flex"}
     `}
     >
-      <div className="flex justify-around items-center w-[80%]  h-full">
+      <div className="w-full flex justify-end sm:hidden ">
+        {" "}
+        <SideBar />
+      </div>
+      <div className="hidden justify-around items-center w-[80%]  h-full sm:flex">
         {InfoArr.map((el: InfoItem, index: number): JSX.Element => {
           return (
             <div

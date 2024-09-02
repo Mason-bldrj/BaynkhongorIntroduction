@@ -4,6 +4,13 @@ export interface InfoItem {
   phone?: string;
   report?: string;
 }
+// export interface BPlaceItem {
+//   icon?: string;
+//   title?: string;
+//   count?: number;
+//   percent?: number;
+//   idk?: string;
+// }
 export const mainMenu: string[] = [
   "Нүүр",
   "Бидний тухай ",
@@ -37,10 +44,58 @@ export const BayanKhongorInfo = [
   { icon: "/hun6.png", number: "87,993", title: "ХҮН АМЫН ТОО" },
 ];
 export const bplace = [
-  { icon: "/shargaljuut.png", title: "Шаргалжуут", count: "1%" },
-  { icon: "/ihbogduul.png", title: "Их Богд уул", count: "1%" },
-  { icon: "/agui.png", title: "Цагаан агуй, Бичигт хад", count: "1%" },
-  { icon: "/ehiingol.png", title: "Эхийн гол, Сэгс цагаан богд", count: "1%" },
-  { icon: "/hohnuur.png", title: "Хөх нуур", count: "1%" },
-  { icon: "/boonnuur.png", title: "Бөөн цагаан нуур", count: "1%" },
+  {
+    id: 1,
+    icon: "/shargaljuut.png",
+    title: "Шаргалжуут",
+    count: 0,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
+  {
+    id: 2,
+    icon: "/ihbogduul.png",
+    title: "Их Богд уул",
+    count: 0,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
+  {
+    id: 3,
+    icon: "/agui.png",
+    title: "Цагаан агуй, Бичигт хад",
+    count: 0,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
+  {
+    id: 4,
+    icon: "/ehiingol.png",
+    title: "Эхийн гол, Сэгс цагаан богд",
+    count: 0,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
+  {
+    id: 5,
+    icon: "/hohnuur.png",
+    title: "Хөх нуур",
+    count: 0,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
+  {
+    id: 6,
+    icon: "/boonnuur.png",
+    title: "Бөөн цагаан нуур",
+    count: 0,
+    percent: 0,
+    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
+  },
+];
+export const videoArr = [
+  "https://www.youtube.com/watch?v=vg2wVT1cv9E&t=122s",
+  "https://www.youtube.com/watch?v=_wZqhVDAqtA",
+  "https://www.youtube.com/watch?v=Y_Lf_cLz1cE",
+  "https://www.youtube.com/watch?v=an3S7tr5Qxw",
 ];

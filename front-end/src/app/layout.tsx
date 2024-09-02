@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { DefaultArea } from "./components/defaultArea";
+import { DefaultArea } from "./components/homapage/defaultArea";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <DefaultArea />
-        {children}
+        <div className="w-[100vw] flex flex-col items-center">
+          <DefaultArea />
+          {children}
+        </div>
       </body>
     </html>
   );

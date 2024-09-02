@@ -6,6 +6,8 @@ const travelSchema = new Schema({
   img: String,
   date: Date,
   travelType: {
+    type: String,
+    required: true,
     enum: ["LocalTravel", "INTERNAL_TRAVEL", "FOREIGN_TRAVEL"],
   },
   description: String,

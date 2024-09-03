@@ -12,14 +12,17 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const data = await req.json();
-  const { adminName, adminEmail, adminPassword } = data;
+  const { adminEmail, adminPassword } = data;
   try {
-    const res = await AdminModel.create({
-      adminName,
+    const res = await AdminModel.find({
       adminEmail,
       adminPassword,
     });
-    return NextResponse.json(res);
+    if (res.length == 1) {
+      return NextResponse.json(res);
+    } else {
+      return NextResponse.json("Хэрэглэгч олдоогүй");
+    }
   } catch (error: any) {
     return NextResponse.json({ error: error.messege }, { status: 500 });
   }

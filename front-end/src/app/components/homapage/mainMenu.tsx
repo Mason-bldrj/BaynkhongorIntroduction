@@ -60,9 +60,9 @@ export const MainMenu = () => {
   };
 
   return (
-    <div className="w-full sm:flex justify-center hidden">
-      <div className="max-w-[1143px] max-h-[500px] flex">
-        <div className="w-[173px] h-[500px]">
+    <div className="w-full flex justify-center ">
+      <div className="sm:w-full xl:max-w-[1143px] max-h-[200px] sm:max-h-[500px] flex">
+        <div className="w-[20%] h-[500px] sm:flex sm:flex-col hidden ">
           {mainMenu.map((el: any, index: number) => (
             <div
               key={index}
@@ -72,22 +72,22 @@ export const MainMenu = () => {
               }}
             >
               <button
-                className={`h-full border-b-[0.5px] border-l-[0.5px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
+                className={` h-full border-b-[0.5px] border-l-[0.5px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
               >
                 {el}
               </button>
             </div>
           ))}
         </div>
-        <div className="relative flex-grow overflow-hidden w-[970px]">
+        <div className="relative flex-grow overflow-hidden  w-[970px]">
           <Image
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full "
             src={PictureArr[currentIndex]}
-            width={970}
-            height={500}
+            width={9704}
+            height={5004}
             alt="Carousel image"
           />
-          <div className="absolute bottom-2 left-[45%] flex gap-2">
+          <div className="absolute bottom-2 left-[45%] gap-2 sm:flex hidden">
             {PictureArr.map((_, i) => (
               <div
                 key={i}

@@ -19,16 +19,18 @@ export const TravelArea = () => {
     }
   };
   return (
-    <div className="w-[1147px] mt-10">
+    <div className="w-full sm:w-[1147px] mt-10">
       <div className="flex w-full justify-between">
-        <div className="ml-[80px]">
+        <div className="sm:ml-[80px] w-full">
           {" "}
           <OrangeBourd data={"АЯЛАЛ "} />
         </div>
-
-        <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
+        <div className="sm:block hidden">
+          {" "}
+          <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
+        </div>
       </div>
-      <div className="mt-10">
+      <div className="mt-10 w-full">
         <TravelCard bplace={bplace} startIndex={startIndex} />
       </div>
     </div>

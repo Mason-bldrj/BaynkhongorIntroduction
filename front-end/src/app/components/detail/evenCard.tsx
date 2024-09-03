@@ -18,13 +18,30 @@ export const EventCard = ({ bplace, startIndex }: any) => {
         console.error("There was a problem with the fetch operation:", error);
       });
   }, []);
-console.log(backData);
-
   return (
-    <div className="w-full h-[470px] flex ">
-      <div className="flex w-[1155px] h-[470px] overflow-hidden flexxx transition-transform duration-300 justify-start">
+    <div className="w-full sm:h-full h-[300px] flex ">
+      <div className="flex w-full sm:w-[1155px] h-[470px] overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">
+        <div className="sm:hidden flex gap-5 overflow-auto">
+          {bplace.map((el: any) => {
+            return (
+              <div className=" relative ">
+                <Image
+                  className="min-w-[250px] max-h-[150px]  rounded-t-md"
+                  src={el.icon}
+                  width={200}
+                  height={100}
+                  alt="Carousel image"
+                />
+                <div className="w-full h-[100px] bg-slate-100 *:text-[12px] *:ml-2 rounded-b-md *:mt-1">
+                  <div>{el.title}</div>
+                  <div>{el.idk}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <div
-          className="flexxx transition-transform duration-300 justify-start gap-[50px]"
+          className="sm:flex flex-col ease-linear transition-transform duration-300 justify-start gap-[50px] hidden"
           style={{
             transform: `translateY(-${startIndex * 490}px)`,
           }}

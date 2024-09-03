@@ -19,16 +19,19 @@ export const EventArea = () => {
     }
   };
   return (
-    <div className="w-[1147px] mt-12">
+    <div className="w-full sm:w-[1147px] mt-12">
       <div className="flex w-full justify-between">
-        <div className="ml-20 mb-10">
+        <div className="sm:ml-20 sm:mb-10 mb-5 w-full">
           {" "}
           <OrangeBourd data={"ЭВЕНТ , АРГА ХЭМЖЭЭ"} />
         </div>
       </div>
-      <div className="flex justify-between h-full items-center">
+      <div className="flex justify-between h-full items-center w-full">
         <EventCard bplace={bplace} startIndex={startIndex} />
-        <ArrowButtons2 handleNext={handleNext} handlePrev={handlePrev} />
+        <div className="sm:block hidden">
+          {" "}
+          <ArrowButtons2 handleNext={handleNext} handlePrev={handlePrev} />
+        </div>
       </div>
     </div>
   );

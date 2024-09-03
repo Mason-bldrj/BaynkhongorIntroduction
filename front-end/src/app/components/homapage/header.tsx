@@ -5,16 +5,16 @@ import SideBar from "../detail/sidebar";
 export const Header = ({ switchHeader }: any) => {
   return (
     <div
-      className={`w-full h-[50px] sm:h-[200px] justify-between flex-col items-center bg-cover bg-[url('/header.png')] bg-[#FF6C10]
+      className={` w-full  h-[50px] sm:h-[200px] justify-between flex-col items-center bg-cover bg-[url('/header.png')] bg-[#FF6C10]
  ${switchHeader ? "flex" : "hidden"}
     `}
     >
-      <div className="w-full flex justify-end sm:hidden ">
+      <div className="w-full flex justify-end sm:hidden">
         {" "}
         <SideBar />
       </div>
 
-      <div className="sm:flex justify-around items-center w-[1147px] border-b p-7 hidden">
+      <div className="sm:flex justify-around xl:text-xl md:text-[16px] sm:text-[12px] items-center sm:w-[600px] md:w-[800px]  xl:w-[1147px] border-b p-7 hidden">
         {InfoArr.map((el: InfoItem, index: number): JSX.Element => {
           return (
             <div
@@ -35,7 +35,7 @@ export const Header = ({ switchHeader }: any) => {
           );
         })}
       </div>
-      <div className="text-white text-2xl w-[500px] text-center mb-6 sm:flex hidden">
+      <div className="text-white sm:text-md md:text-2xl  w-[500px] text-center mb-6 sm:flex hidden">
         Баянхонгор аймаг аялал жуулчлал зочлох үйлчилгээний байгууллага
       </div>
     </div>

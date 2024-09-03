@@ -33,18 +33,18 @@ export const SuggestionArea = () => {
     router.push(`/${id}`);
   };
   return (
-    <div className="w-full flex flex-col items-center sm:block sm:w-[1147px] mt-3 sm:mt-10">
-      <div className="sm:ml-10 flex flex-col gap-5 w-full">
+    <div className="w-full flex flex-col overflow-x-scroll sm:overflow-auto items-center sm:block sm:w-[80%]  xl:w-[1147px] mt-3 sm:mt-10">
+      <div className="xl:ml-10 flex flex-col gap-5 w-full">
         <div className="w-[173px]">
           {" "}
           <OrangeBourd data={"Санал"} />
         </div>
         <div>Та Хонгор нутагт хаашаа аялахыг хүсэж байгаагаа сонгоно уу?</div>
       </div>
-      <div className="flex justify-between mt-5 rounded-sm w-full sm:gap-0 gap-[20px] overflow-y-scroll min-h-[220px]">
+      <div className="flex justify-between mt-5 rounded-sm w-full sm:gap-0 gap-[20px] min-h-[220px]">
         {dataHolder.map((el, i): JSX.Element => {
           return (
-            <div key={i} className="min-w-[173px] h-full relative">
+            <div key={i} className="min-w-[173px] sm:min-w-[15%]  xl:min-w-[173px] h-full relative ">
               <Image
                 onClick={() => {
                   handleNavigate(el.id);
@@ -57,7 +57,7 @@ export const SuggestionArea = () => {
               />
               <button
                 onClick={(Event) => progressCalculator(i, Event)}
-                className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white h-[40px] w-[125px] flex justify-center items-center text-center absolute top-[140px] text-sm right-0 opacity-70 rounded-l-sm z-10"
+                className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white sm:h-[27px] w-[125px] h-[40px] sm:w-[80%] xl:h-[40px] xl:w-[125px] flex justify-center items-center text-center absolute bottom-10 sm:text-[6px] md:text-[7px] lg:text-[10px]  xl:text-sm right-0 opacity-70 rounded-l-sm z-10"
               >
                 {el.title}
               </button>

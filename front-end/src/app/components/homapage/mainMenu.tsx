@@ -61,27 +61,27 @@ export const MainMenu = () => {
 
   return (
     <div className="w-full flex justify-center ">
-      <div className="sm:w-full xl:max-w-[1143px] max-h-[200px] sm:max-h-[500px] flex">
-        <div className="w-[20%] h-[500px] sm:flex sm:flex-col hidden ">
+      <div className="sm:w-[90%] lg:max-w-[1143px] max-h-[300px] md:max-h-[400px]  lg:max-h-[500px] flex">
+        <div className="w-[20%] md:h-[400px] sm:h-[300px] lg:h-[500px] sm:flex sm:flex-col hidden ">
           {mainMenu.map((el: any, index: number) => (
             <div
               key={index}
-              className="h-[50px]"
+              className="md:h-[50px] sm:h-[30px]"
               onClick={() => {
                 handleRouter(index);
               }}
             >
               <button
-                className={` h-full border-b-[0.5px] border-l-[0.5px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
+                className={`xl:text-xl lg:text-[17px] md:text-[14px] sm:text-[10px] h-full border-b-[0.5px] border-l-[0.5px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
               >
                 {el}
               </button>
             </div>
           ))}
         </div>
-        <div className="relative flex-grow overflow-hidden  w-[970px]">
+        <div className="relative flex-grow overflow-hidden sm:w-[80%] lg:w-[970px] ">
           <Image
-            className="object-cover w-full h-full "
+            className="object-cover w-full h-full"
             src={PictureArr[currentIndex]}
             width={9704}
             height={5004}

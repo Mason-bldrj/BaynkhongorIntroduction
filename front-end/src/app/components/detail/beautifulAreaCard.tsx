@@ -22,7 +22,7 @@ export const BeautifulAreaCard = () => {
 
   return (
     <div className="w-full h-[200px]  sm:h-[370px] flex items-center justify-between">
-      <div className="w-full h-full sm:w-[1135px] sm:overflow-hidden flex ease-linear transition-transform duration-300">
+      <div className="w-full sm:w-[99%] h-full xl:w-[1135px] sm:overflow-hidden flex ease-linear transition-transform duration-300">
         <div className="sm:hidden flex overflow-scroll h-full  w-full gap-5">
           {bplace.map((el: any, i: number): JSX.Element => {
             return (

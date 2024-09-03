@@ -19,8 +19,8 @@ export const TravelArea = () => {
     }
   };
   return (
-    <div className="w-full sm:w-[1147px] mt-10">
-      <div className="flex w-full justify-between">
+    <div className="w-full sm:w-[90%] xl:w-[1147px] mt-10">
+      <div className="flex w-full sm:w-[90%] xl:w-full justify-between">
         <div className="sm:ml-[80px] w-full">
           {" "}
           <OrangeBourd data={"АЯЛАЛ "} />

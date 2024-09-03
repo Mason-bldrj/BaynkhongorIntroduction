@@ -18,7 +18,7 @@ export const BrandCard = () => {
   };
   return (
     <div className="w-full h-full flex items-center justify-start gap-[20px] sm:mt-0 mt-3">
-      <div className="flex w-full sm:w-[1029px] h-full overflow-scroll sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
+      <div className="flex w-full xl:w-[1029px] h-full overflow-scroll sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
         <div className="sm:hidden flex gap-3 h-full">
           {bplace.map((el: any, i: number): JSX.Element => {
             return (

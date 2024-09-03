@@ -1,6 +1,23 @@
+"use client";
+import { fetchFunc } from "@/app/backdata";
 import { Title } from "./components/title";
 import Image from "next/image";
+import urls from "@/lib/urls";
+import { useEffect, useState } from "react";
+const api_Url = process.env.NEXT_PUBLIC_API_URL;
+console.log(api_Url);
 export default function AboutUs() {
+  const [data, setdata] = useState();
+  const fetchedData = async () => {
+    const res = fetchFunc(urls.ABOUTUS);
+    const data = await (await res).json();
+    setdata(data[0]);
+  };
+
+  console.log(data);
+  useEffect(() => {
+    fetchedData();
+  }, []);
   return (
     <div className=" w-[1137px] flex flex-col items-center mt-10">
       <div className="w-[987px] flex flex-col items-start justify-between h-[200px]">

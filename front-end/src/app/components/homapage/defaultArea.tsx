@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 export const DefaultArea = () => {
   const [switchState, setSwitchState] = useState(true);
   const pathname = usePathname();
-  console.log(window.innerWidth);
 
   useEffect(() => {
     pathname;

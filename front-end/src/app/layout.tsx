@@ -18,7 +18,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="w-[100vw] flex flex-col items-center">
-          <DefaultArea />
+          <div className={`w-full flex items-center flex-col`}>
+            {" "}
+            <DefaultArea />
+          </div>
+
           {children}
         </div>
       </body>

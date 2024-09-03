@@ -1,5 +1,6 @@
 const API_URL = process.env.API_URL;
 const urls = {
+  ADMIN_VERIFY: "/admin/verifyAdmin",
   ABOUTUS: "/aboutus",
   ADMIN: "/admin",
   EVENT: "/event",

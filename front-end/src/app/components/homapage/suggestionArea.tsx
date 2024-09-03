@@ -33,19 +33,18 @@ export const SuggestionArea = () => {
     router.push(`/${id}`);
   };
   return (
-    <div className="w-[1147px] mt-10">
-      <div className="ml-10 flex flex-col gap-5 ">
+    <div className="w-full flex flex-col items-center sm:block sm:w-[1147px] mt-3 sm:mt-10">
+      <div className="sm:ml-10 flex flex-col gap-5 w-full">
         <div className="w-[173px]">
           {" "}
           <OrangeBourd data={"Санал"} />
         </div>
-
         <div>Та Хонгор нутагт хаашаа аялахыг хүсэж байгаагаа сонгоно уу?</div>
       </div>
-      <div className="flex justify-between mt-5 rounded-sm">
+      <div className="flex justify-between mt-5 rounded-sm w-full sm:gap-0 gap-[20px] overflow-y-scroll min-h-[220px]">
         {dataHolder.map((el, i): JSX.Element => {
           return (
-            <div key={i} className="w-[173px] h-[200px] relative">
+            <div key={i} className="min-w-[173px] h-full relative">
               <Image
                 onClick={() => {
                   handleNavigate(el.id);
@@ -53,7 +52,7 @@ export const SuggestionArea = () => {
                 className="object-cover w-full h-full cursor-pointer"
                 src={el.icon}
                 width={173}
-                height={197}
+                height={200}
                 alt="Carousel image"
               />
               <button

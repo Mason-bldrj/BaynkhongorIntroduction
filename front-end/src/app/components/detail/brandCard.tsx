@@ -17,17 +17,40 @@ export const BrandCard = () => {
     }
   };
   return (
-    <div className="w-full h-full flex items-center justify-start gap-[20px]">
-      <div className="flex w-[1029px] overflow-hidden flexx transition-transform duration-300 justify-start">
+    <div className="w-full h-full flex items-center justify-start gap-[20px] sm:mt-0 mt-3">
+      <div className="flex w-full sm:w-[1029px] h-full overflow-scroll sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
+        <div className="sm:hidden flex gap-3 h-full">
+          {bplace.map((el: any, i: number): JSX.Element => {
+            return (
+              <div
+                key={i}
+                className="w-[120px] h-full  relative rounded-sm"
+              >
+                <Image
+                  className="object-cover reounded-sm h-full w-full"
+                  src={el.icon}
+                  width={23453450}
+                  height={2500}
+                  alt="Carousel image"
+                />
+                <div className=" flex justify-center items-center opacity-0 hover:bg-black hover:opacity-50 absolute w-full h-full top-0 left-0">
+                  <div className="sm:text-2xl text-[10px] mt-[120px] text-white sm:w-[200px] w-full h-full text-center">
+                    "{el.title}"
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <div
-          className="flexx transition-transform duration-300 justify-start gap-[20px]"
+          className="sm:flex hidden w-full  h-full ease-linear transition-transform duration-300 justify-start gap-5 sm:gap-[20px]"
           style={{
             transform: `translateX(-${startIndex * 343}px)`,
           }}
         >
           {bplace.map((el: any, i: number): JSX.Element => {
             return (
-              <div key={i} className="min-w-[323px] min-h-[377px] relative">
+              <div key={i} className="min-w-[323px] min-h-[377px]  relative">
                 <Image
                   className="object-cover w-full h-full rounded-sm"
                   src={el.icon}
@@ -36,14 +59,16 @@ export const BrandCard = () => {
                   alt="Carousel image"
                 />
                 <div className=" flex justify-center items-center opacity-0 hover:bg-black hover:opacity-50 absolute w-full h-full top-0 left-0">
-                  <div className="text-2xl mt-[120px] text-white w-[200px] text-center">"{el.title}"</div>
+                  <div className="sm:text-2xl text-[10px] mt-[120px] text-white sm:w-[200px] w-full h-full text-center">
+                    "{el.title}"
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-      <div className="">
+      <div className="sm:block hidden">
         <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
       </div>
     </div>

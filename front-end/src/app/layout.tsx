@@ -16,13 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <body className={`${inter.className} w-full h-full m-0 p-0 `}>
+        <div className="w-full flex flex-col items-center">
+          <DefaultArea />
       <body className={inter.className}>
         <div className="w-[100vw] flex flex-col items-center">
           <div className={`w-full flex items-center flex-col`}>
             {" "}
             <DefaultArea />
           </div>
-
           {children}
         </div>
       </body>

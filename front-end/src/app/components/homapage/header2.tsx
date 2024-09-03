@@ -14,7 +14,7 @@ export const Header2 = ({ switchHeader }: any) => {
         {" "}
         <SideBar />
       </div>
-      <div className="hidden justify-around items-center w-[80%]  h-full sm:flex">
+      <div className="sm:flex justify-around xl:text-xl md:text-[16px] sm:text-[12px] items-center sm:w-[600px] md:w-[800px]  xl:w-[1147px] border-b p-7 hidden">
         {InfoArr.map((el: InfoItem, index: number): JSX.Element => {
           return (
             <div

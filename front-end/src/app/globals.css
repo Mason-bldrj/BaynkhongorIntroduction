@@ -7,16 +7,3 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-body {
-  margin: 0px, auto;
-  padding: 0px;
-}
-.flexx {
-  display: flex;
-  transition: transform 0.3s ease;
-}
-.flexxx {
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-}

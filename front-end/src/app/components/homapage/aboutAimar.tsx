@@ -3,13 +3,13 @@ import Image from "next/image";
 import { OrangeBourd } from "../detail/orengeBourd";
 export const AboutAimag = () => {
   return (
-    <div className="w-full h-[755px] flex justify-center mt-10">
+    <div className="w-full h-[300px] sm:h-[755px]  flex justify-center mt-5 sm:mt-10">
       <div className="flex flex-col w-full justify-center  items-center gap-5">
         {" "}
-        <div className="ml-[500px]">
-          <OrangeBourd data={"БАЯНХОНГОР АЙМГИЙН ТУХАЙ"} width={265} />
+        <div className=" w-full">
+          <OrangeBourd data={"БАЯНХОНГОР АЙМГИЙН ТУХАЙ"} />
         </div>
-        <div className="w-full h-[635px] relative">
+        <div className="w-full h-[635px] relative sm:mt-5">
           <Image
             className="object-cover w-full h-full absolute top-0 left-0"
             src="/baynkhongor.png"
@@ -17,9 +17,9 @@ export const AboutAimag = () => {
             height={635}
             alt="Carousel image"
           />
-          <div className="w-full h-full absolute top-0 left-0 bg-black opacity-70 flex justify-center items-center">
-            <div className="w-[1147px] flex justify-start">
-              <div className="text-white w-[564px] h-[275px] ">
+          <div className="w-full h-full absolute top-0 left-0 bg-black opacity-70 flex justify-center items-center ">
+            <div className="sm:w-[1147px] flex justify-start items-center h-full">
+              <div className="text-white w-full sm:px-0 px-3 sm:text-xl text-[10px] sm:w-[564px] h-[150px] sm:h-[275px] sm:mb-[100px]">
                 БНМАУ-ын Бага Хурлын Тэргүүлэгчдийн 115 дугаар тоот тогтоолоор,
                 АДХ-ын гүйцэтгэх захиргааны 91 дүгээр тоот тогтоолоор анх 3
                 хоринтой нэгж захиргааг байгуулсанаар Баянхонгор хот бие даасан

@@ -13,7 +13,7 @@ import urls from "@/lib/urls";
 import { useState } from "react";
 export default function Home() {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center justify-between ">
       <BannerArea />
       <SuggestionArea />
       <AboutAimag />

@@ -65,7 +65,7 @@ export default function SideBar() {
   const list = () => (
     <Box
       sx={{
-        width: "80vw",
+        width: "100%",
         backgroundColor: "#ff7119",
         color: "white",
         height: "100vh",
@@ -88,7 +88,7 @@ export default function SideBar() {
               sx={{
                 ml: "10px",
                 "&:hover": {
-                  color: "red",
+                 border:"1px solid white",
                 },
               }}
             >
@@ -98,17 +98,7 @@ export default function SideBar() {
         ))}
       </List>
       <Divider />
-      {/* Adding an additional area to simulate the 20vw opacity effect */}
-      <Box
-        sx={{
-          width: "20vw",
-          height: "100vh",
-          backgroundColor: "rgba(0, 0, 0, 0.5)", // 50% opacity black
-          position: "absolute",
-          right: "-20vw",
-          top: 0,
-        }}
-      />
+        
     </Box>
   );
 

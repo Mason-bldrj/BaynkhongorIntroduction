@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 export const DefaultArea = () => {
   const [switchState, setSwitchState] = useState(true);
   const pathname = usePathname();
-
   useEffect(() => {
     pathname;
     if (pathname === "/") {
@@ -23,7 +22,7 @@ export const DefaultArea = () => {
       {" "}
       <Header switchHeader={switchState} />
       <Header2 switchHeader={switchState} />
-      <div className="w-[1441px] ">
+      <div className="w-full xl:w-[1441px] ">
         <MainMenu />
         <InfoAimag />
       </div>

@@ -6,7 +6,7 @@ import SideBar from "../detail/sidebar";
 export const Header2 = ({ switchHeader }: any) => {
   return (
     <div
-      className={`w-full h-[60px] justify-between flex-col items-center bg-[#FF6C10]
+      className={`w-full h-[60px] justify-between  flex-col items-center bg-[#FF6C10]
           ${switchHeader ? "hidden" : "flex"}
     `}
     >
@@ -14,7 +14,7 @@ export const Header2 = ({ switchHeader }: any) => {
         {" "}
         <SideBar />
       </div>
-      <div className="sm:flex justify-around xl:text-xl md:text-[16px] sm:text-[12px] items-center sm:w-[600px] md:w-[800px]  xl:w-[1147px] border-b p-7 hidden">
+      <div className="sm:flex justify-around xl:text-xl md:text-[16px] sm:text-[12px] items-center sm:w-[600px] md:w-[800px]  xl:w-[1147px] p-7 hidden">
         {InfoArr.map((el: InfoItem, index: number): JSX.Element => {
           return (
             <div

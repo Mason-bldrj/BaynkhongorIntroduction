@@ -13,8 +13,6 @@ export default function AboutUs() {
     const data = await (await res).json();
     setdata(data[0]);
   };
-
-  console.log(data);
   useEffect(() => {
     fetchedData();
   }, []);

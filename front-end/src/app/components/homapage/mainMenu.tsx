@@ -25,34 +25,34 @@ export const MainMenu = () => {
     setButtonColor(index);
     switch (index) {
       case 0:
-        router.push("./");
+        router.push("/");
         break;
       case 1:
-        router.push("./aboutus");
+        router.push("/user/aboutus");
         break;
       case 2:
-        router.push("./news");
+        router.push("/user/news");
         break;
       case 3:
-        router.push("./organiztion");
+        router.push("/user/organiztion");
         break;
       case 4:
-        router.push("./travel");
+        router.push("/user/travel");
         break;
       case 5:
-        router.push("./eventt");
+        router.push("/user/eventt");
         break;
       case 6:
-        router.push("./law");
+        router.push("/user/law");
         break;
       case 7:
-        router.push("./gift");
+        router.push("/user/gift");
         break;
       case 8: // Corrected index for 'projectt'
-        router.push("./projectt");
+        router.push("/user/project");
         break;
       case 9:
-        router.push("./foreignrelations");
+        router.push("/user/foreignrelations");
         break;
       default:
         break;

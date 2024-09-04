@@ -17,14 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-[100vw] flex flex-col items-center">
-          <div className={`w-full flex items-center flex-col`}>
-            {" "}
-            <DefaultArea />
-          </div>
-
-          {children}
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   );

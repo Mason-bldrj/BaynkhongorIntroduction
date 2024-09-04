@@ -5,7 +5,6 @@ import Image from "next/image";
 import urls from "@/lib/urls";
 import { useEffect, useState } from "react";
 const api_Url = process.env.NEXT_PUBLIC_API_URL;
-console.log(api_Url);
 export default function AboutUs() {
   const [data, setdata] = useState();
   const fetchedData = async () => {

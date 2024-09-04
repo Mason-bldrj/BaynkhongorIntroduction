@@ -49,89 +49,95 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[550px]  items-center justify-end sm:flex flex-col bg-[url('/footer.png')]  bg-cover hidden">
-        <div className="w-[1147px] h-[420px] flex flex-col justify-around">
-          <div className=" text-white w-[549px] h-[44px] ">
+
+      <div className="w-full lg:h-[550px] h-[300px] items-center justify-end sm:flex flex-col bg-[url('/footer.png')]  bg-cover hidden">
+        <div className="sm:w-[630px] md:w-[760px] lg:w-[1000px] xl:w-[1147px] h-[200px] lg:h-[420px] flex flex-col justify-around">
+          <div className=" text-white w-[300px] lg:w-[549px] h-[44px] text-[12px] lg:text-[15px] ">
             БАЯНХОНГОР АЙМГИЙН АЯЛАЛ ЖУУЛЧЛАЛЫН ПОРТАЛ САЙТ GO NOMADIC,
             EXPERIENCE MONGOLIA
           </div>
           <div className="w-full h-[250px] flex flex-col justify-between">
-            <div className="w-full h-[290px] flex justify-between ">
-              <div className=" w-[380px] flex flex-col items-start justify-around">
-                <div className="flex items-center gap-[10px]">
+            <div className="w-full h-[130px] lg:h-[290px] flex justify-between ">
+              <div className="sm:w-[200px] lg:w-[380px] flex flex-col items-start justify-around ">
+                <div className="flex items-center gap-3 lg:gap-[10px]">
                   {" "}
-                  <div className="text-[30px] font-bold text-white">
+                  <div className="lg:text-[30px] text-[20px] font-bold text-white">
                     {" "}
                     <IoLocationOutline />
                   </div>
-                  <div className="text-white">
+                  <div className="text-white lg:text-[15px] text-[10px]">
                     Баянхонгор аймаг ,Баянхонгор сум Номгон нэгдүгээр баг
                   </div>
                 </div>
-                <div className="flex items-center gap-[10px]">
+                <div className="flex items-center gap-3 lg:gap-[10px]">
                   {" "}
-                  <div className="text-[30px] font-bold text-white">
+                  <div className="lg:text-[30px] text-[15px] font-bold text-white">
                     {" "}
                     <GoMail />
                   </div>
-                  <div className="text-white">
+                  <div className="text-white lg:text-[15px] text-[10px]">
                     Bayankhongor.tourism@gmail.com
                   </div>
                 </div>
-                <div className="flex items-center gap-[10px]">
+                <div className="flex items-center gap-3 lg:gap-[10px]">
                   {" "}
-                  <div className="text-[30px] font-bold text-white">
+                  <div className="lg:text-[30px] text-[15px] font-bold text-white">
                     {" "}
                     <FiPhone />
                   </div>
-                  <div className="text-white">70444436, 86224024</div>
+                  <div className="text-white lg:text-[15px] text-[10px]">
+                    70444436, 86224024
+                  </div>
                 </div>
               </div>
-              <div className=" w-[380px] flex flex-col items-start gap-[20px] mt-[20px]">
-                <div className="text-white">Баянхонгорт яаж очих вэ? </div>
+
+              <div className=" lg:w-[380px] w-[130px] flex flex-col items-center text-center lg:items-start gap-[20px] mt-[20px]">
+                <div className="text-white lg:text-[15px] text-[12px]">
+                  Баянхонгорт яаж очих вэ?{" "}
+                </div>
                 <div className="w-full flex flex-col items-end gap-2">
                   {" "}
                   <input
-                    className=" pb-[93px] w-full px-2 py-2 rounded-md"
+                    className=" lg:pb-[93px] w-full lg:px-2 px-4 md:py-1 lg:py-2 rounded-md"
                     placeholder="Мэйл бичих..."
                     type="text"
                   />
-                  <button className="flex hover:text-[#ff7117] items-center gap-2 text-white">
+                  <button className="flex hover:text-[#ff7117] items-center lg:text-[16px] text-[12px] gap-2 text-white">
                     <LuSend />
-                    <div>Илгээх</div>
+                    <div className="lg:text-[16px] text-[12px]">Илгээх</div>
                   </button>
                 </div>
               </div>
 
-              <div className=" w-[380px] flex flex-col items-end justify-around ">
-                <div className="text-white w-[300px]">
+              <div className=" lg:w-[380px] md:w-130px flex flex-col items-end justify-around ">
+                <div className="text-white lg:w-[300px] w-full text-[13px] lg:text-[17px]">
                   ХЭРЭГЦЭЭТЭЙ ЦАХИМ ХАЯГУУД{" "}
                 </div>
                 <a
                   href="https://met.gov.mn/"
                   target="blank"
-                  className="text-white text-sm text-opacity-50 text-start w-[300px]"
+                  className="text-white text-[10px] lg:text-sm text-opacity-50 text-start w-full lg:w-[300px]"
                 >
                   Байгаль Орчин, Аялал жуулчлалын яам
                 </a>{" "}
                 <a
                   href="http://travelmongolia.org/index.php/mn/"
                   target="black"
-                  className="text-white text-sm  text-opacity-50 w-[300px]"
+                  className="text-white text-[10px] lg:text-sm  text-opacity-50 w-full lg:w-[300px]"
                 >
                   Монголын Аялал Жуулчлалын Холбоо
                 </a>
                 <a
                   href="http://www.touristinfocenter.mn/home.aspx"
                   target="blank"
-                  className="text-white text-sm  text-opacity-50 w-[300px]"
+                  className="text-white text-[10px] lg:text-sm  text-opacity-50 w-full lg:w-[300px]"
                 >
                   Жуулчны мэдээлэлийн төв
                 </a>
                 <a
                   href="https://bayanhongor.gov.mn/"
                   target="blank"
-                  className="text-white text-sm  text-opacity-50 w-[300px]"
+                  className="text-white text-[10px] lg:text-sm  text-opacity-50 w-full lg:w-[300px]"
                 >
                   Хонгор нутаг
                 </a>

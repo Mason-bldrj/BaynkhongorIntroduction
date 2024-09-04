@@ -48,15 +48,15 @@ export const EventCard = ({ bplace, startIndex }: any) => {
         >
           {bplace.map((el: any, i: number) => {
             return (
-              <div key={i} className="w-[1000px] h-[440px] relative">
+              <div key={i} className="sm:w-full xl:w-[1000px] h-[440px] relative">
                 <Image
-                  className=" w-[1000px] max-h-[440px] shadow-[30px_30px] rounded-md shadow-gray-300"
+                  className="sm:w-full xl:w-[1000px] max-h-[440px] sm:shadow-[10px_10px] xl:shadow-[30px_30px] rounded-md shadow-gray-300"
                   src={el.icon}
                   width={1000}
                   height={440}
                   alt="Carousel image"
                 />
-                <div className="w-[910px] h-[112px] flex flex-col justify-around *:px-5 rounded-md  items-center bg-black opacity-75 text-white absolute left-[50px] bottom-[20px] overflow-hidden">
+                <div className="sm:w-full xl:w-[910px] h-[112px] flex flex-col justify-around *:px-5 rounded-md  items-center bg-black opacity-75 text-white absolute xl:left-[50px] bottom-[20px] overflow-hidden">
                   <div>{el.title}</div>
                   <div>{el.idk}</div>
                 </div>

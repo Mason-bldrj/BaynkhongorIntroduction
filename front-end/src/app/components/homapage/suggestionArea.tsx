@@ -33,7 +33,7 @@ export const SuggestionArea = () => {
     router.push(`/${id}`);
   };
   return (
-    <div className="w-full flex flex-col overflow-x-scroll sm:overflow-auto items-center sm:block sm:w-[80%]  xl:w-[1147px] mt-3 sm:mt-10">
+    <div className="w-full flex flex-col overflow-x-scroll sm:overflow-visible items-center sm:block sm:w-[80%]  xl:w-[1147px] mt-3 sm:mt-10">
       <div className="xl:ml-10 flex flex-col gap-5 w-full">
         <div className="w-[173px]">
           {" "}

@@ -12,6 +12,8 @@ export async function GET(req: NextRequest, res: NextResponse) {
 }
 
 export async function POST(req: NextRequest, res: NextResponse) {
+  console.log(req);
+
   try {
     const { name, position, phoneNumber, links } = await req.json();
 

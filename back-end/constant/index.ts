@@ -9,4 +9,7 @@ export const COLLECTIONS = {
   KEEPSAKE: "keepsake",
   EMPLOYEE: "employee",
   OFFERS: "offers",
+  REPORT: "report",
+  VIDEO: "video",
+  RESOURCES: "resources",
 };

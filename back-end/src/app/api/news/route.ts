@@ -1,39 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import NewsModel from "../../../../model/news.model";
+import VideoModel from "../../../../model/video.model";
+import ReportModel from "../../../../model/report.model";
+import resourcesModel from "../../../../model/resources.model";
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    const res = await NewsModel.find();
-
-    return NextResponse.json(res);
+    const videoData = await VideoModel.find();
+    const reportData = await ReportModel.find();
+    const resourcesData = await resourcesModel.find();
+    const data = {
+      videoData,
+      reportData,
+      resourcesData,
+    };
+    return NextResponse.json(data);
   } catch (err: any) {
     return NextResponse.json({ error: err.messege }, { status: 500 });
-  }
-}
-
-export async function POST(req: NextRequest, res: NextResponse) {
-  try {
-    const { report, video, resources } = await req.json();
-    const createdRecord = await NewsModel.create({
-      report: {
-        name: report.name,
-        date: report.date,
-        description: report.description,
-      },
-      video: {
-        name: video.name,
-        date: video.date,
-        url: video.url,
-      },
-      resources: {
-        name: resources.name,
-        img: resources.img,
-      },
-    });
-
-    return NextResponse.json(createdRecord);
-  } catch (error: any) {
-    console.error("Error creating AboutUs record:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

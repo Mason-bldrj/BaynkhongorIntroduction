@@ -18,7 +18,7 @@ export const InfoAimag = () => {
                 alt="Carousel image"
               />
               <div className=" text-[#FF6C10] sm:text-[17px] text-[8px] ">{el.number}</div>{" "}
-              <div className="flex sm:items-start  h-full sm:text-[8px] md:text-[9px]  lg:text-[17px] text-[5px]">
+              <div className="flex sm:items-start  h-full sm:text-[8px] md:text-[9px]  lg:text-[15px] text-[5px]">
                 {" "}
                 <div>{el.title}</div>
               </div>

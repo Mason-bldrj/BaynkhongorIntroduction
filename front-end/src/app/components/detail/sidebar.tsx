@@ -28,7 +28,7 @@ export default function SideBar() {
   const handleRouter = (index: number) => {
     switch (index) {
       case 0:
-        router.push("./");
+        router.push("/");
         break;
       case 1:
         router.push("/user/aboutus");

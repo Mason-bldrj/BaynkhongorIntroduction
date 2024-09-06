@@ -29,7 +29,8 @@
     "src/app/user/(auth)/login/login.jsx",
     "src/app/admin/page.jsx",
     "src/app/user/admin/login/page.jsx",
-    "src/app/components/modals/AdminModal.jsx"
+    "src/app/components/modals/AdminModal.jsx",
+    "src/app/components/newspage"
   ],
   "exclude": ["node_modules"]
 }

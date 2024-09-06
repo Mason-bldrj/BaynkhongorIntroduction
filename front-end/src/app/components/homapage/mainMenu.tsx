@@ -34,7 +34,7 @@ export const MainMenu = () => {
         router.push("/user/news");
         break;
       case 3:
-        router.push("/user/organiztion");
+        router.push("/user/organization");
         break;
       case 4:
         router.push("/user/travel");
@@ -72,7 +72,7 @@ export const MainMenu = () => {
               }}
             >
               <button
-                className={`xl:text-xl lg:text-[17px] md:text-[14px] sm:text-[10px] h-full border-b-[0.5px] border-l-[0.5px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
+                className={` lg:text-[16px] md:text-[14px] sm:text-[10px] h-full border-b-[0.5px] border-l-[0.5px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
               >
                 {el}
               </button>

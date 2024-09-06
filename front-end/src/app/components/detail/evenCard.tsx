@@ -22,9 +22,9 @@ export const EventCard = ({ bplace, startIndex }: any) => {
     <div className="w-full sm:h-full h-[300px] flex ">
       <div className="flex w-full sm:w-[1155px] h-[470px] overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">
         <div className="sm:hidden flex gap-5 overflow-auto">
-          {bplace.map((el: any) => {
+          {bplace.map((el: any , i:number) => {
             return (
-              <div className=" relative ">
+              <div key={i} className=" relative ">
                 <Image
                   className="min-w-[250px] max-h-[150px]  rounded-t-md"
                   src={el.icon}

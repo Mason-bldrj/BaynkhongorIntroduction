@@ -13,7 +13,7 @@ export const VideoCard = ({ videoArr, startIndex }: any) => {
         >
           {videoArr.map((el: any, i: number) => {
             // Extract the video ID from the YouTube URL
-            const videoId = el.match(
+            const videoId = el.url.match(
               /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
             )?.[1];
 

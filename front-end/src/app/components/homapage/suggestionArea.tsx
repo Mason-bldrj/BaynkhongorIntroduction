@@ -1,5 +1,5 @@
 "use client";
-import { bplace } from "../../data";
+import { bplace2 } from "../../data";
 import Image from "next/image";
 import { useState, useEffect, use } from "react";
 import React from "react";
@@ -11,7 +11,7 @@ interface ProgressBarProps {
 export const SuggestionArea = () => {
   const router = useRouter();
   const [clientPercent, setClientPercent] = useState(0);
-  const [dataHolder, setDataHolder] = useState(bplace);
+  const [dataHolder, setDataHolder] = useState(bplace2);
   const progressCalculator = (index: number, Event: any) => {
     dataHolder[index].count++;
     let clickCount = dataHolder.reduce(
@@ -23,17 +23,17 @@ export const SuggestionArea = () => {
         (el.percent = Math.floor((el.count * 100) / clickCount))
       );
     });
-    setClientPercent(bplace[index].percent);
+    setClientPercent(bplace2[index].percent);
   };
   useEffect(() => {
     dataHolder;
     clientPercent;
   }, [progressCalculator]);
   const handleNavigate = (id: number) => {
-    router.push(`/${id}`);
+    router.push(`/user/${id}`);
   };
   return (
-    <div className="w-full flex flex-col overflow-x-scroll sm:overflow-visible items-center sm:block sm:w-[80%]  xl:w-[1147px] mt-3 sm:mt-10">
+    <div className="w-full lg:w-[1000px] flex flex-col  items-center sm:block sm:w-[80%]  xl:w-[1147px] mt-3 sm:mt-10">
       <div className="xl:ml-10 flex flex-col gap-5 w-full">
         <div className="w-[173px]">
           {" "}
@@ -41,10 +41,10 @@ export const SuggestionArea = () => {
         </div>
         <div>Та Хонгор нутагт хаашаа аялахыг хүсэж байгаагаа сонгоно уу?</div>
       </div>
-      <div className="flex justify-between mt-5 rounded-sm w-full sm:gap-0 gap-[20px] min-h-[220px]">
+      <div className="flex justify-between mt-5 rounded-sm w-full sm:gap-2 md:gap-5 gap-[20px]  overflow-x-scroll sm:overflow-visible">
         {dataHolder.map((el, i): JSX.Element => {
           return (
-            <div key={i} className="min-w-[173px] sm:min-w-[15%]  xl:min-w-[173px] h-full relative ">
+            <div key={i} className="min-w-[173px] sm:min-w-[13%] md:min-w-[16%] lg:min-w-[15%]  xl:min-w-[173px] h-full relative ">
               <Image
                 onClick={() => {
                   handleNavigate(el.id);

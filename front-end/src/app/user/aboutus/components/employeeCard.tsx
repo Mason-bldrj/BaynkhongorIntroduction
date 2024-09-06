@@ -1,0 +1,79 @@
+import { useState, useEffect, useMemo } from "react";
+import { bplace } from "@/app/data";
+import Image from "next/image";
+
+export const EmployeeCard = () => {
+  const itemsPerPageXL = 4;
+  const itemsPerPageLG = 3;
+  const itemsPerPageMD = 2;
+  const itemsPerPageSM = 1;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(itemsPerPageXL);
+
+  const totalItems = bplace.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  // Update itemsPerPage on screen resize
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      const width = window.innerWidth;
+      if (width >= 1280) setItemsPerPage(itemsPerPageXL);
+      else if (width >= 1024) setItemsPerPage(itemsPerPageLG);
+      else if (width >= 640) setItemsPerPage(itemsPerPageMD);
+      else setItemsPerPage(itemsPerPageSM);
+    };
+
+    updateItemsPerPage(); // Initial call
+    window.addEventListener("resize", updateItemsPerPage);
+
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div className="w-full flex flex-col items-center">
+      {/* Carousel Content */}
+      <div className="w-full flex gap-4 justify-center">
+        {bplace
+          .slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage)
+          .map((el, i) => (
+            <div
+              key={i}
+              className="flex flex-col w-full sm:w-[calc(100%-10px)] md:w-[calc(50%-10px)] lg:w-[calc(33.33%-10px)] xl:w-[calc(25%-10px)] items-center"
+            >
+              <div className="w-[259px] flex flex-col gap-2">
+                <Image
+                  className="h-[249px] object-cover rounded-md"
+                  src={el.icon}
+                  width={259}
+                  height={249}
+                  alt="Employee image"
+                  layout="responsive"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                />
+                <div className="w-full text-center text-[#ff7119]">{el.title}</div>
+                <div className="w-full text-center text-[14px]">{el.idk}</div>
+              </div>
+            </div>
+          ))}
+      </div>
+
+      {/* Dot Indicators */}
+      <div className="flex gap-2 mt-4">
+        {[...Array(totalPages)].map((_, index) => (
+          <div
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`w-[10px] h-[10px] rounded-full cursor-pointer transition-colors duration-300 ${
+              currentIndex === index ? "bg-[#ff7119]" : "bg-[#D9D9D9]"
+            }`}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+};

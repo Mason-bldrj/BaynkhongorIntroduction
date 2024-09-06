@@ -10,7 +10,7 @@ const institutionSchema = new Schema({
       "VACATION",
       "TOUR",
       "MUSEUM",
-      "CHURCH0",
+      "CHURCH",
       "UNION",
       "CLUB",
       "THEATER",
@@ -34,21 +34,19 @@ const institutionSchema = new Schema({
   ],
   price: [
     {
-      amount: {
-        amountType: {
-          type: String,
-          enum: [
-            "ADULT",
-            "CHILD",
-            "STUDENT",
-            "TOURIST",
-            "TAKE_PHOTO",
-            "RECORDING",
-          ],
-          required: true,
-        },
-        amount: Number,
+      amountType: {
+        type: String,
+        enum: [
+          "ADULT",
+          "CHILD",
+          "STUDENT",
+          "TOURIST",
+          "TAKE_PHOTO",
+          "RECORDING",
+        ],
+        required: true,
       },
+      amount: Number,
     },
   ],
 });

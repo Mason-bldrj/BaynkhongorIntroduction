@@ -6,7 +6,7 @@ const AdminSideBar = (props: any) => {
     { text: "Мэдээ", icon: <div></div> },
     { text: "Байгуулга", icon: <div></div> },
     { text: "Аялал", icon: <div></div> },
-    { text: "Event ", icon: <div></div> },
+    { text: "Event", icon: <div></div> },
     { text: "Бэлэг дурсгал", icon: <div></div> },
     { text: "Төслүүд", icon: <div></div> },
     { text: "Хууль , Эрх зүй", icon: <div></div> },

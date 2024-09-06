@@ -1,6 +1,7 @@
 import AboutUs from "./AboutUs";
 import EmployeeFrom from "./EmployeeFrom";
 import EventForm from "./EventForm";
+import InstitutionForm from "./InstitutionForm";
 import KeepSakeForm from "./Keepsake.Form";
 import LegalityForm from "./Legality.Form";
 import NewsFrom from "./NewsFrom";
@@ -71,6 +72,14 @@ const AdminMain = (props: any) => {
       >
         <h1 className="text-[28px]"> Аялалын талаар мэдээлэл оруулах</h1>
         <TravelForm />
+      </div>
+      <div
+        className={`${
+          menus === "Байгуулга" ? "flex" : "hidden"
+        } flex-col gap-[40px]`}
+      >
+        <h1 className="text-[28px]"> Аялалын талаар мэдээлэл оруулах</h1>
+        <InstitutionForm />
       </div>
     </div>
   );

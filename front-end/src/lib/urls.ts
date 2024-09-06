@@ -12,6 +12,9 @@ const urls = {
   EMPLOYEE: "/aboutus/employee",
   OFFERS: "/aboutus/offers",
   MAIN_URL: API_URL,
+  REPORT: "/news/report",
+  RESOURCES: "/news/resources",
+  VIDEO: "/news/video",
 };
 
 export default urls;

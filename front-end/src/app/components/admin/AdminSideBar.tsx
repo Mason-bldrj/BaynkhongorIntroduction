@@ -9,14 +9,16 @@ const AdminSideBar = (props: any) => {
     { text: "Event ", icon: <div></div> },
     { text: "Бэлэг дурсгал", icon: <div></div> },
     { text: "Төслүүд", icon: <div></div> },
-    { text: "Гадаад харилцаа", icon: <div></div> },
+    { text: "Хууль , Эрх зүй", icon: <div></div> },
+    { text: "Ажилчид", icon: <div></div> },
   ];
   return (
     <>
-      <div className="flex flex-col items-start bg-[#f5f5f5] w-[20%] py-[20px] px-[20px] gap-[12px] h-[100vh] ">
+      <div className="flex flex-col items-start bg-[#f5f5f5] w-[20%]  pt-[50px] px-[20px] gap-[20px] h-[100vh] ">
         {sideBarItems.map((item) => {
           return (
             <button
+              className="text-[16px]"
               onClick={() => {
                 setMenu(item.text);
               }}

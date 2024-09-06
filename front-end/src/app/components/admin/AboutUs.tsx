@@ -1,6 +1,7 @@
 import { postFunc } from "@/app/backdata";
 import urls from "@/lib/urls";
 import { useState } from "react";
+import DefaultInformationSec from "./defaultInformationForm";
 
 const AboutUs = () => {
   const [aboutUsData, setAboutUsData] = useState({
@@ -31,11 +32,11 @@ const AboutUs = () => {
         email: aboutUsData.email,
         about: aboutUsData.about,
         aboutOffice: aboutUsData.aboutOffice,
-        porpose: aboutUsData.porpose,
+        porpose: "0",
         objective: aboutUsData.objective,
         phoneNumbers: {
-          phoneNumbers1: phoneNumbers.phoneNumber1,
-          phoneNumbers2: phoneNumbers.phoneNumber2,
+          phoneNumber1: phoneNumbers.phoneNumber1,
+          phoneNumber2: phoneNumbers.phoneNumber2,
         },
         numericalIndicators: {
           natureMonument: defaultInformation.natureMonument,
@@ -66,7 +67,7 @@ const AboutUs = () => {
                 ...aboutUsData,
                 name: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -83,27 +84,60 @@ const AboutUs = () => {
                 ...aboutUsData,
                 email: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
       <div>
-        <div>Утас</div>
+        <div>Зураг</div>
         <input
-          type="tel"
-          placeholder="Утас"
+          type="image"
+          placeholder="Зураг"
           className="px-[6px] py-[8px] rounded-[8px]"
-          min={0}
-          max={8}
-          name="phoneNumber"
+          name="mainImg"
           onChange={(event) => {
-            const number = Number(event.target.value);
             setTimeout(() => {
               setAboutUsData({
                 ...aboutUsData,
-                phoneNumber: number,
+                mainImg: event.target.value,
               });
-            }, 2000);
+            }, 1000);
+          }}
+        />
+      </div>
+      <div>
+        <div>Утас 1</div>
+        <input
+          type="tel"
+          placeholder="Утасний дугаар"
+          className="px-[6px] py-[8px] rounded-[8px]"
+          name="phoneNumber1"
+          onChange={(event) => {
+            setTimeout(() => {
+              const number = Number(event.target.value);
+              setPhoneNumbers({
+                ...phoneNumbers,
+                phoneNumber1: number,
+              });
+            }, 1000);
+          }}
+        />
+      </div>
+      <div>
+        <div>Утас 2</div>
+        <input
+          type="tel"
+          placeholder="Утасний дугаар"
+          className="px-[6px] py-[8px] rounded-[8px]"
+          name="phoneNumber2"
+          onChange={(event) => {
+            setTimeout(() => {
+              const number = Number(event.target.value);
+              setPhoneNumbers({
+                ...phoneNumbers,
+                phoneNumber2: number,
+              });
+            }, 1000);
           }}
         />
       </div>
@@ -115,11 +149,11 @@ const AboutUs = () => {
           className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
           onChange={(event) => {
             setTimeout(() => {
-              setTravelData({
+              setAboutUsData({
                 ...aboutUsData,
                 about: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -131,11 +165,11 @@ const AboutUs = () => {
           className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
           onChange={(event) => {
             setTimeout(() => {
-              setTravelData({
+              setAboutUsData({
                 ...aboutUsData,
                 objective: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -147,35 +181,24 @@ const AboutUs = () => {
           className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
           onChange={(event) => {
             setTimeout(() => {
-              setTravelData({
+              setAboutUsData({
                 ...aboutUsData,
                 aboutOffice: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
-      <div>
-        <div>Twitter profile</div>
-        <input
-          type="text"
-          placeholder="Link"
-          name="twitterLink"
-          className="px-[6px] py-[8px] rounded-[8px] shadow-sm"
-          onChange={(event) => {
-            setTimeout(() => {
-              setLinks({
-                ...links,
-                twitterLink: event.target.value,
-              });
-            }, 2000);
-          }}
-        />
+      <div className="flex border-t-[2px] border-solid mt-[10px]">
+        <DefaultInformationSec
+          setDefaultInformation={setDefaultInformation}
+          defaultInformation={defaultInformation}
+        ></DefaultInformationSec>
       </div>
       <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {
-            console.log(aboutUsData, links);
+            console.log(aboutUsData);
             createEmployee();
           }}
         >

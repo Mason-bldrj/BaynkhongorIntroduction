@@ -37,7 +37,7 @@ export default function SideBar() {
         router.push("/user/news");
         break;
       case 3:
-        router.push("/user/organiztion");
+        router.push("/user/organization");
         break;
       case 4:
         router.push("/user/travel");
@@ -88,7 +88,7 @@ export default function SideBar() {
               sx={{
                 ml: "10px",
                 "&:hover": {
-                 border:"1px solid white",
+                  border: "1px solid white",
                 },
               }}
             >
@@ -98,14 +98,13 @@ export default function SideBar() {
         ))}
       </List>
       <Divider />
-        
     </Box>
   );
 
   return (
     <div>
       <Button onClick={toggleDrawer(true)}>
-        <ReorderRoundedIcon sx={{color:"white"}}/>
+        <ReorderRoundedIcon sx={{ color: "white" }} />
       </Button>
 
       <Drawer

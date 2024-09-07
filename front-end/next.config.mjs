@@ -5,10 +5,12 @@ const nextConfig = {
   },
   images: {
     domains: [
-      "res.cloudinary.com",
-      "i.kickstarter.com",
-      "www.chromethemer.com",
-      "example.com",
+   "*"
+    ],
+    remotePatterns: [
+      {
+        hostname: '*',
+      },
     ],
   },
 };

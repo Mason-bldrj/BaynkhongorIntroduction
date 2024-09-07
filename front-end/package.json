@@ -25,6 +25,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.13",
     "swiper": "^11.1.10",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "vercel": "^37.2.1"
   },
   "devDependencies": {

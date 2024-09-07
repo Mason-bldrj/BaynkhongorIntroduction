@@ -11,6 +11,25 @@ export interface InfoItem {
 //   percent?: number;
 //   idk?: string;
 // }
+export const museum = [
+  {
+    title: "Түүх угсаатны зүй, Байгалийн  музей",
+    aboutMuseum:
+      "Тус музей анх 1980 онд 240 орчим үзмэртэйгээр байгуулагдсан. Тухайн үедээ ЕБС, цэцэрлэгүүдийн сургалтын төв байдлаар үйл ажиллагаагаа явуулж байсан. 1993 оноос музейн зориулалтад шилжсэн. Одоо байгалийн музей нь 1100 гаруй үзмэртэй, 8 танхимтай үйл ажиллагаагаа явуулж байна. 2008 онд 578 үзмэр засварлаж шинээр нэмсэн. Музейн хосгүй үнэт үзмэрийн нэг Баянговь сумын Бүгийн цавын хоолойгоос олдсон махчин динозаврийн төрөл Тербозавр чулуужсан яст мэлхий юм. Одоогоос 130 сая жилийн өмнө амьдарч байсан.",
+    info1:
+      "Тус музей хоёр салбартай бөгөөд аймгийн төв дэх музейгээс гадна Галуут сумын Чин сүжигт Номун ханы сүм музей гэсэн салбартай.",
+    info2:
+      "Түүх, угсаатны зүйн болон Байгалийн түүхийн музейд хосгүй ховор үзвэрүүд олон бий. Тухайлбал, тарбозаврын бүтэн хэлхээ яс, хүрэл морь, бадамлянхуа цэцэг, Ламын гэгээний хийдэд залагдаж байсан Цагаан, Ногоон дарь эх бурхад зэрэг ард иргэдийн бэлэглэсэн, худалдсан түүхэн ач холбогдолтай хосгүй үнэт 10 мянга орчим үзмэртэй билээ.",
+    info3:
+      "Музей тус бүр найман танхимтай. Түүх угсаатны зүйн музей Нэн эртний танхим, Генералуудын, Угсаатны зүйн, Сав суулгын, Шашин, зан үйлийн, Алдартны танхим, Дүрслэх урлаг, уран сийлбэрийн, Уламжлалт зан үйлийн танхимтай. Харин Байгалийн музей Динозаврын танхим, Шавжны, Ургамлын, Чулуулгын, Мазаалайн, Хангайн амьтны, Говийн амьтны шувуудын танхимтай.",
+    img1: "gandan.png",
+    img2: "gandan.png",
+    img3: "gandan.png",
+    img4: "gandan.png",
+    img5: "gandan.png",
+    img6: "gandan.png",
+  },
+];
 export const aboutUsData = [
   {
     img: "/bureldhuun.png",
@@ -48,6 +67,11 @@ export const organiztionCategory: string[] = [
   "Театр",
 ];
 
+export const travelCategory: string[] = [
+  "Орон нутгийн аялал ",
+  "Дотоод аялал ",
+  "Гадаад  аялал ",
+];
 export const InfoArr: InfoItem[] = [
   { icon: "/mail.png", m: "Bayankhongor.tourism@gmail.com" },
   { icon: "/phone.png", m: "70444436, 86224024" },
@@ -74,8 +98,8 @@ export const bplace = [
     title: "Шаргалжуут",
     count: 0,
     percent: 0,
-    category:"hotel",
-    phoneNumber:"70007000",
+    category: "hotel",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -84,8 +108,8 @@ export const bplace = [
     title: "Их Богд уул",
     count: 0,
     percent: 0,
-    category:"hotel",
-    phoneNumber:"70007000",
+    category: "hotel",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -94,8 +118,8 @@ export const bplace = [
     title: "Цагаан агуй, Бичигт хад",
     count: 0,
     percent: 0,
-    category:"restaurant",
-    phoneNumber:"70007000",
+    category: "restaurant",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -104,8 +128,8 @@ export const bplace = [
     title: "Эхийн гол, Сэгс цагаан богд",
     count: 0,
     percent: 0,
-    category:"restaurant",
-    phoneNumber:"70007000 , 70007000 ",
+    category: "restaurant",
+    phoneNumber: "70007000 , 70007000 ",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -114,8 +138,8 @@ export const bplace = [
     title: "Хөх нуур",
     count: 0,
     percent: 0,
-    category:"restaurant",
-    phoneNumber:"70007000",
+    category: "restaurant",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -124,8 +148,8 @@ export const bplace = [
     title: "Бөөн цагаан нуур",
     count: 0,
     percent: 0,
-    category:"restaurant",
-    phoneNumber:"70007000",
+    category: "restaurant",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -134,8 +158,8 @@ export const bplace = [
     title: "Бөөн цагаан нуур",
     count: 0,
     percent: 0,
-    category:"relax",
-    phoneNumber:"70007000",
+    category: "relax",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -144,8 +168,8 @@ export const bplace = [
     title: "Бөөн цагаан нуур",
     count: 0,
     percent: 0,
-    category:"relax",
-    phoneNumber:"70007000",
+    category: "relax",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -154,8 +178,8 @@ export const bplace = [
     title: "Бөөн цагаан нуур",
     count: 0,
     percent: 0,
-    category:"relax",
-    phoneNumber:"70007000",
+    category: "relax",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -164,11 +188,10 @@ export const bplace = [
     title: "Бөөн цагаан нуур",
     count: 0,
     percent: 0,
-    category:"relax",
-    phoneNumber:"70007000",
+    category: "relax",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
-  
 ];
 export const bplace2 = [
   {
@@ -177,8 +200,8 @@ export const bplace2 = [
     title: "Шаргалжуут",
     count: 0,
     percent: 0,
-    category:"hotel",
-    phoneNumber:"70007000",
+    category: "hotel",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -187,8 +210,8 @@ export const bplace2 = [
     title: "Их Богд уул",
     count: 0,
     percent: 0,
-    category:"hotel",
-    phoneNumber:"70007000",
+    category: "hotel",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -197,8 +220,8 @@ export const bplace2 = [
     title: "Цагаан агуй, Бичигт хад",
     count: 0,
     percent: 0,
-    category:"restaurant",
-    phoneNumber:"70007000",
+    category: "restaurant",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -207,8 +230,8 @@ export const bplace2 = [
     title: "Эхийн гол, Сэгс цагаан богд",
     count: 0,
     percent: 0,
-    category:"restaurant",
-    phoneNumber:"70007000 , 70007000 ",
+    category: "restaurant",
+    phoneNumber: "70007000 , 70007000 ",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -217,8 +240,8 @@ export const bplace2 = [
     title: "Хөх нуур",
     count: 0,
     percent: 0,
-    category:"restaurant",
-    phoneNumber:"70007000",
+    category: "restaurant",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
   },
   {
@@ -227,10 +250,10 @@ export const bplace2 = [
     title: "Бөөн цагаан нуур",
     count: 0,
     percent: 0,
-    category:"restaurant",
-    phoneNumber:"70007000",
+    category: "restaurant",
+    phoneNumber: "70007000",
     idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },  
+  },
 ];
 export const videoArr = [
   {
@@ -254,5 +277,3 @@ export const videoArr = [
     title: "Монгол Туургатны Харвуул Их Наадам",
   },
 ];
-
-

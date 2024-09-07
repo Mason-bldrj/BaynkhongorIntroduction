@@ -6,7 +6,7 @@ import { ArrowButtons } from "@/app/components/detail/arrowButtons";
 import { useState } from "react";
 export const OrganizationRestaurantCard = ({ restaurant }: any) => {
   const [startIndex2, setStartIndex2] = useState(0);
-   const handleNext2 = () => {
+  const handleNext2 = () => {
     if (startIndex2 + 1 < restaurant.length) {
       setStartIndex2(startIndex2 + 1);
     }
@@ -18,14 +18,14 @@ export const OrganizationRestaurantCard = ({ restaurant }: any) => {
   };
   return (
     <div className="w-full flex flex-col gap-[20px]">
-      <div className="flex w-full sm:w-[90%] xl:w-full justify-between">
+      <div className="flex w-full  xl:w-full justify-between">
         <div className=" w-full text-[#ff7119]">РЕСТОРАН</div>
         <div className="sm:block hidden">
           {" "}
           <ArrowButtons handleNext={handleNext2} handlePrev={handlePrev2} />
         </div>
       </div>
-      <div className="flex w-full overflow-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start border-b border-b-[#ff7119] pb-[60px]">
+      <div className="flex w-full overflow-scroll sm:overflow-hidden ease-linear transition-transform duration-300 justify-start border-b border-b-[#ff7119] pb-[60px]">
         <div
           className="flex ease-linear transition-transform duration-300 justify-start gap-[20px]"
           style={{
@@ -35,7 +35,7 @@ export const OrganizationRestaurantCard = ({ restaurant }: any) => {
           {restaurant.map((el: any, i: number) => {
             return (
               <div key={i}>
-                <div className="border w-[270px] h-[318px] rounded-md flex flex-col items-center">
+                <div className="border w-[250px] xl:w-[270px] h-[318px] rounded-md flex flex-col items-center">
                   <div className="w-full h-[50%] relative">
                     <Image
                       className="w-full h-full rounded-t-md"
@@ -56,6 +56,7 @@ export const OrganizationRestaurantCard = ({ restaurant }: any) => {
                   <div className="w-[90%] h-[50%] flex flex-col  justify-around">
                     <div className="text-[#ff7119] text-[16px] text-center">
                       {el.title}
+                      
                     </div>
                     <div className="text-black opacity-60 text-[13px] w-full text-start">
                       {el.idk}

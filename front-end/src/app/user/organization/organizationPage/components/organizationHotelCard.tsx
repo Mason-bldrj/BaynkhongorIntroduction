@@ -3,10 +3,9 @@ import Image from "next/image";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 export const OrganizationHotelCard = ({ hotel, startIndex }: any) => {
-
   return (
-    <div className="w-full flex flex-col gap-[20px]">
-      <div className="flex w-full overflow-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start border-b border-b-[#ff7119] pb-[60px]">
+    <div className="w-full flex flex-col gap-[20px] overflow-scroll sm:overflow-hidden">
+      <div className="flex w-full xl:w-[1155px]  ease-linear transition-transform duration-300 justify-start border-b border-b-[#ff7119] pb-[60px]">
         <div
           className="flex ease-linear transition-transform duration-300 justify-start gap-[20px]"
           style={{
@@ -52,7 +51,6 @@ export const OrganizationHotelCard = ({ hotel, startIndex }: any) => {
           })}
         </div>
       </div>
-    
     </div>
   );
 };

@@ -11,7 +11,7 @@ export const InfoAimag = () => {
               key={i}
               className="  sm:h-[200px] w-[57px] sm:w-1/6 flex flex-col sjustify-center items-center  text-center gap-1 sm:gap-2"
             >
-              <Image className="sm:min-w-[57px] sm:min-h-[58px] sm:max-w-[57px] sm:max-h-[58px] max-w-[30px] max-h-[31px] "
+              <Image className=" sm:min-w-[57px] sm:min-h-[58px] sm:max-w-[57px] sm:max-h-[58px] max-w-[30px] max-h-[31px] "
                 src={el.icon}
                 width={57}
                 height={58}

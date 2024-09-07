@@ -8,40 +8,50 @@ import { OrganizationArea6 } from "./organizationPage/components/organizationAre
 import { OrganizationArea7 } from "./organizationPage/components/organizationArea7";
 import { BannerArea } from "@/app/components/homapage/bannerArea";
 import { organiztionCategory } from "@/app/data";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { fetchFunc } from "@/app/backdata";
+import urls from "@/lib/urls";
 export default function Organization() {
   const [categoryIndex, setCategoryIndex] = useState(0);
+  const [data, setdata] = useState();
+  const fetchedData = async () => {
+    const res = fetchFunc(urls.institution);
+    const data = await (await res).json();
+    setdata(data)
+  };
   const handleComponents = (i: number) => {
     setCategoryIndex(i);
   };
+  useEffect(() => {
+    fetchedData();
+  }, []);
   const components = [
     <OrganizationArea1 key="area1" />,
     <OrganizationArea2 key="area2" />,
     <OrganizationArea3 key="area3" />,
-    <OrganizationArea4 key="area4" />,
+    <OrganizationArea4 data={data} key="area4" />,
     <OrganizationArea5 key="area5" />,
     <OrganizationArea6 key="area6" />,
-    <OrganizationArea7 key="area7" />
+    <OrganizationArea7 key="area7" />,
   ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-between gap-10">
+    <div className="w-full sm:w-[90%] xl:w-[1148px]  flex flex-col items-center justify-between gap-5 md:gap-10 sm:mt-0 mt-5">
       <BannerArea />
-      <div className="flex w-full sm:w-[90%] xl:w-[1147px] justify-between">
-        {organiztionCategory.map((el, i) => (
-          <button
-            onClick={() => handleComponents(i)}
-            className="px-5 rounded-md py-1 hover:bg-[#ff7119] text-[8px] md:text-[10px] lg:text-[17px]"
-            key={i}
-          >
-            {el}
-          </button>
-        ))}
+      <div className="w-full overflow-scroll scrollbar-hide">
+        <div className="flex w-[1147px] justify-around border-b border-b-[#ff7119] pb-5 items-center">
+          {organiztionCategory.map((el, i) => (
+            <button
+              onClick={() => handleComponents(i)}
+              className="flex w-fit px-2 border hover:text-white justify-center rounded-md py-1 hover:bg-[#ff7119]"
+              key={i}
+            >
+              {el}
+            </button>
+          ))}
+        </div>
       </div>
-
-      {/* Conditionally render the component based on the index */}
-      <div>{components[categoryIndex]}</div>
+      <div className="xl:w-full w-full sm:w-[90%] flex justify-center ">{components[categoryIndex]}</div>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 import { fetchFunc } from "@/app/backdata";
-
 import { BannerArea } from "@/app/components/homapage/bannerArea";
 import { SuggestionArea } from "@/app/components/homapage/suggestionArea";
 import { NewsVideoArea } from "@/app/components/newspage/newsVideoArea";

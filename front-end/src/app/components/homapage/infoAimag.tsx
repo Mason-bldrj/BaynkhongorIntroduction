@@ -1,26 +1,29 @@
 "use client";
 import { BayanKhongorInfo } from "@/app/data";
 import Image from "next/image";
+
 export const InfoAimag = () => {
   return (
-    <div className=" w-full flex justify-center items-center mt-5 sm:mt-10 md:mt-20 ">
-      <div className="w-full  sm:w-[80%] lg:w-[1000px] sm:h-[200px] border-b-[#FF6C10] sm:pb-0 pb-3 border-b flex justify-around sm:justify-between items-center gap-2 sm:gap-7 overflow-hidden">
+    <div className="w-full flex justify-center items-center mt-5 sm:mt-10 ">
+      <div className="w-full sm:w-[80%] lg:w-[1000px] flex justify-center sm:justify-between gap-2 sm:gap-6 md:gap-8 flex-wrap sm:flex-nowrap">
         {BayanKhongorInfo.map((el, i): JSX.Element => {
           return (
             <div
               key={i}
-              className="  sm:h-[200px] w-[57px] sm:w-1/6 flex flex-col sjustify-center items-center  text-center gap-1 sm:gap-2"
+              className="flex flex-col items-center text-center gap-1 sm:gap-2 w-[27%] sm:w-full "
             >
-              <Image className=" sm:min-w-[57px] sm:min-h-[58px] sm:max-w-[57px] sm:max-h-[58px] max-w-[30px] max-h-[31px] "
+              <Image
+                className="sm:w-[58px] sm:h-[57px] object-cover w-[50%]"
                 src={el.icon}
                 width={57}
                 height={58}
-                alt="Carousel image"
+                alt="Info icon"
               />
-              <div className=" text-[#FF6C10] sm:text-[17px] text-[8px] ">{el.number}</div>{" "}
-              <div className="flex sm:items-start  h-full sm:text-[8px] md:text-[9px]  lg:text-[15px] text-[5px]">
-                {" "}
-                <div>{el.title}</div>
+              <div className="text-[#FF6C10] text-[12px] sm:text-[17px]">
+                {el.number}
+              </div>
+              <div className="lg:text-[12px] sm:text-[10px] text-[8px]">
+                {el.title}
               </div>
             </div>
           );

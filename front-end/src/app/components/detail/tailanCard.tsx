@@ -3,7 +3,7 @@ import Image from "next/image";
 export const TailanCard = ({ bplace, startIndex }: any) => {
   return (
     <div className="w-full flex ">
-      <div className="flex w-full overflow-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
+      <div className="flex w-full overflow-x-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
         <div
           className="flex ease-linear transition-transform duration-300 justify-start gap-[20px]"
           style={{

@@ -21,12 +21,12 @@ export const NewsVideoArea = () => {
   };
   return (
     <div className="w-full flex flex-col items-center gap-5">
-      <div className="flex sm:w-[90%] xl:w-[1147px] xl:ml-[150px] w-full  ">
+      <div className="flex sm:w-[90%] xl:w-[1147px] sm:ml-0 ml-2 xl:ml-[150px] w-full  ">
         <OrangeBourd data={"ВИДЕО МЭДЭЭ"} />
       </div>
       <NewsVideoCard videoArr={videoArr} />
       <div className="flex w-full sm:w-[90%] xl:w-[1147px] justify-between mt-3  sm:mt-7">
-        <div className="w-full">
+        <div className="w-full sm:ml-0 ml-2">
           {" "}
           <OrangeBourd data={"АЖ-ЫН НӨӨЦ  ГАЗАР"} />
         </div>

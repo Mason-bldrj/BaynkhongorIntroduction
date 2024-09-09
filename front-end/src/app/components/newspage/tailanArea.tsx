@@ -20,9 +20,9 @@ export const TailanArea = () => {
     }
   };
   return (
-    <div className="w-full sm:w-[90%] xl:w-[1147px] mt-10">
+    <div className="w-full sm:w-[90%] xl:w-[1147px] sm:mt-10">
       <div className="flex w-full  xl:w-full justify-between">
-        <div className="xl:ml-[80px] w-full">
+        <div className="xl:ml-[80px] w-full sm:ml-0 ml-2">
           {" "}
           <OrangeBourd data={"ТАЙЛАН"} />
         </div>
@@ -31,7 +31,7 @@ export const TailanArea = () => {
           <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
         </div>
       </div>
-      <div className="mt-10 w-full">
+      <div className="mt-4 sm:mt-10 w-full">
         <TailanCard bplace={bplace} startIndex={startIndex} />
       </div>
     </div>

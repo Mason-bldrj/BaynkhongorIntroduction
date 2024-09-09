@@ -21,7 +21,7 @@ export const EventArea = () => {
   return (
     <div className="w-full sm:w-[90%] xl:w-[1147px] mt-12">
       <div className="flex w-full justify-between">
-        <div className="sm:ml-20 sm:mb-10 mb-5 w-full">
+        <div className="sm:ml-20 sm:mb-10 ml-2 mb-5 w-full">
           {" "}
           <OrangeBourd data={"ЭВЕНТ , АРГА ХЭМЖЭЭ"} />
         </div>

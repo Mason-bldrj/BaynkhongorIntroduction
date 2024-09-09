@@ -21,6 +21,7 @@ export const MainMenu = () => {
   const handleSlider = (index: number) => {
     setCurrentIndex(index);
   };
+
   const handleRouter = (index: number) => {
     setButtonColor(index);
     switch (index) {
@@ -48,7 +49,7 @@ export const MainMenu = () => {
       case 7:
         router.push("/user/gift");
         break;
-      case 8: // Corrected index for 'projectt'
+      case 8:
         router.push("/user/project");
         break;
       case 9:
@@ -60,9 +61,10 @@ export const MainMenu = () => {
   };
 
   return (
-    <div className="w-full flex justify-center ">
-      <div className="sm:w-[90%] lg:max-w-[1143px] max-h-[300px] md:max-h-[400px]  lg:max-h-[500px] flex">
-        <div className="w-[20%] md:h-[400px] sm:h-[300px] lg:h-[500px] sm:flex sm:flex-col hidden ">
+    <div className="w-full flex flex-col items-center">
+      <div className="w-full sm:w-[90%] lg:max-w-[1143px] max-h-[300px] md:max-h-[400px] lg:max-h-[500px] flex flex-col sm:flex-row">
+        {/* Сайд менү */}
+        <div className="w-full sm:w-[20%] md:h-[400px] sm:h-[300px] lg:h-[500px] sm:flex sm:flex-col hidden">
           {mainMenu.map((el: any, index: number) => (
             <div
               key={index}
@@ -72,14 +74,16 @@ export const MainMenu = () => {
               }}
             >
               <button
-                className={` lg:text-[16px] md:text-[14px] sm:text-[10px] h-full border-b-[0.5px] border-l-[0.5px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
+                className={`lg:text-[16px] md:text-[14px] sm:text-[10px] h-full border-b-[0.5px] border-l-[0.5px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
               >
                 {el}
               </button>
             </div>
           ))}
         </div>
-        <div className="relative flex-grow overflow-hidden sm:w-[80%] lg:w-[970px] ">
+
+        {/* Слайдер */}
+        <div className="relative flex-grow overflow-hidden w-full sm:w-[80%] lg:w-[970px]">
           <Image
             className="object-cover w-full h-full"
             src={PictureArr[currentIndex]}
@@ -87,7 +91,7 @@ export const MainMenu = () => {
             height={5004}
             alt="Carousel image"
           />
-          <div className="absolute bottom-2 left-[45%] gap-2 sm:flex hidden">
+          <div className="absolute bottom-2 left-[45%] gap-2 flex">
             {PictureArr.map((_, i) => (
               <div
                 key={i}
@@ -100,6 +104,7 @@ export const MainMenu = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

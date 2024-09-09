@@ -66,6 +66,13 @@ export const organiztionCategory: string[] = [
   "Клуб",
   "Театр",
 ];
+export const LawCategoty = [
+  "Хууль",
+  "Дүрэм, Журам",
+  "Тогтоол",
+  "Захирамж",
+  "Зөвшөөрөл",
+];
 
 export const travelCategory: string[] = [
   "Орон нутгийн аялал ",

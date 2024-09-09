@@ -24,7 +24,7 @@ export const OrganizationRelaxCard = ({ relax }: any) => {
           <ArrowButtons handleNext={handleNext2} handlePrev={handlePrev2} />
         </div>
       </div>
-      <div className="flex w-full overflow-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start border-b border-b-[#ff7119] pb-[60px]">
+      <div className="flex w-full overflow-x-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start border-b border-b-[#ff7119] pb-[60px]">
         <div
           className="flex ease-linear transition-transform duration-300 justify-start gap-[20px]"
           style={{

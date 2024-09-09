@@ -30,9 +30,9 @@ export default function Travel() {
   ];
 
   return (
-    <div className="w-full sm:w-[90%] xl:w-[1148px]  flex flex-col items-center justify-between gap-5 sm:mt-0 mt-5 md:gap-10 ">
+    <div className="w-full sm:w-[80%] lg:w-[90%] xl:w-[1148px] scrollbar-track-white  flex flex-col items-center justify-between gap-5 sm:mt-0 mt-5 md:gap-10 ">
       <BannerArea />
-      <div className="w-full overflow-scroll scrollbar-hide">
+      <div className="w-full overflow-x-scroll scrollbar-hide">
         <div className="flex w-[700px]  gap-10 sm:justify-around border-b border-b-[#ff7119] pb-5 items-center ">
           {travelCategory.map((el, i) => (
             <button

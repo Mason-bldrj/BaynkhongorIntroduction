@@ -3,8 +3,12 @@ import Image from "next/image";
 import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "./arrowButtons";
-
+import { useRouter } from "next/navigation";
 export const BeautifulAreaCard = () => {
+  const router = useRouter(); 
+  const handleNavigate = (id: string) => {
+    router.push(`/user/REPORT${id}`);
+  };
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3; // You can adjust this based on the screen size for better responsiveness
 
@@ -29,10 +33,11 @@ export const BeautifulAreaCard = () => {
               <div
                 key={i}
                 className="min-w-[200px] h-full rounded-sm  relative  "
+               
               >
                 <Image
                   className="object-cover min-w-full h-full  rounded-sm"
-                  src={el.icon}
+                  src="https://i.pinimg.com/originals/07/8c/71/078c71955fe352c544e395fbafddf82c.jpg"
                   width={365}
                   height={300}
                   alt="Carousel image"
@@ -54,11 +59,12 @@ export const BeautifulAreaCard = () => {
             return (
               <div
                 key={i}
-                className="w-[365px] h-[365px] rounded-sm  relative  "
+                className="sm:w-[365px] sm:h-[365px] rounded-sm  relative  "
+                onClick={()=>handleNavigate(el._id)}
               >
                 <Image
                   className="object-cover w-full h-full rounded-sm"
-                  src={el.icon}
+                  src="https://i.pinimg.com/originals/07/8c/71/078c71955fe352c544e395fbafddf82c.jpg"
                   width={365}
                   height={350}
                   alt="Carousel image"

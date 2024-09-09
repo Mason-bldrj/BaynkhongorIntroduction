@@ -15,6 +15,7 @@ export default function Gift() {
           {" "}
           <OrangeBourd data={"БРЭНД БҮТЭЭГДЭХҮҮН"} />
         </div>
+        <div></div>
       <BrandCard />
     </div>
   );

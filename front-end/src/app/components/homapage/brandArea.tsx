@@ -10,12 +10,13 @@ export const BrandArea = () => {
         <div className="sm:mb-10 sm:ml-[80px]">
           {" "}
           <OrangeBourd data={"БРЭНД БҮТЭЭГДЭХҮҮН"} />
+          
         </div>
-        <div className="w-full">
-          <div className="w-full sm:h-full h-[120px]">
+    
+
             <BrandCard />
-          </div>
-        </div>
+ 
+
       </div>
     </div>
   );

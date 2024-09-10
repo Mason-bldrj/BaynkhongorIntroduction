@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-export const TailanCard = ({ bplace, startIndex }: any) => {
+export const TailanCard = ({ data, startIndex }: any) => {
   return (
     <div className="w-full flex ">
       <div className="flex w-full overflow-x-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
@@ -10,7 +10,7 @@ export const TailanCard = ({ bplace, startIndex }: any) => {
             transform: `translateX(-${startIndex * 290}px)`,
           }}
         >
-          {bplace.map((el: any, i: number) => {
+          {data?.map((el: any, i: number) => {
             return (
               <div
                 key={i}
@@ -18,7 +18,7 @@ export const TailanCard = ({ bplace, startIndex }: any) => {
               >
                 <div className="w-[238px] h-[60px] flex gap-2 overflow-hidden items-center">
                   <div className="bg-[#ff7119] w-[5px] h-[90%]"></div>
-                  {el.idk}
+                  {el.description}
                 </div>
               </div>
             );

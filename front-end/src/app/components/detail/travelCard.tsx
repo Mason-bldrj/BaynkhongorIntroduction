@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
 export const TravelCard = ({ bplace, data, startIndex }: any) => {
   const router = useRouter();
   const today: any = new Date();
@@ -10,15 +9,11 @@ export const TravelCard = ({ bplace, data, startIndex }: any) => {
   const diffInMs = today - startOfyear;
   const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
   const weeksPassed = Math.floor(diffInDays / 7);
-  
   const handleNavigate = (id: string) => {
     router.push(`/user/TRAVEL${id}`);
+
   };
-
-  // Get window width for responsiveness
   const [width, setWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0);
-
-  // Update width on window resize
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -54,7 +49,7 @@ export const TravelCard = ({ bplace, data, startIndex }: any) => {
                   </div>
                   <Image
                     className="sm:w-[325px] sm:h-[296px] w-full h-[171px] object-cover border"
-                    src="https://i.pinimg.com/originals/07/8c/71/078c71955fe352c544e395fbafddf82c.jpg"
+                    src={el.img}
                     width={325}
                     height={296}
                     alt="Carousel image"

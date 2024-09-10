@@ -2,12 +2,11 @@
 import { OrangeBourd } from "@/app/components/detail/orengeBourd";
 import { ArrowButtons } from "@/app/components/detail/arrowButtons";
 import { useState } from "react";
-import { bplace } from "@/app/data";
 import { OrganizationRelaxCard } from "./organizationRelaxCard";
-export const OrganizationArea2 = () => {
+export const OrganizationArea2 = ({ data }: any) => {
   const [startIndex, setStartIndex] = useState(0);
-  const relax = bplace.filter((el: any) => {
-    return el.category === "relax";
+  const relax = data?.filter((el: any) => {
+    return el.institutionType === "VACATION";
   });
   const visibleCount = 1;
   const handleNext = () => {
@@ -23,7 +22,7 @@ export const OrganizationArea2 = () => {
   return (
     <div className="w-full sm:w-[90%] xl:w-[1147px] flex flex-col gap-10">
       <div className="w-full">
-        <OrganizationRelaxCard  relax={relax} startIndex={startIndex} />
+        <OrganizationRelaxCard data={relax} startIndex={startIndex} />
       </div>
     </div>
   );

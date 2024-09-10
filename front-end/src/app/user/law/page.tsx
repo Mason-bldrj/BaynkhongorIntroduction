@@ -23,16 +23,13 @@ export default function Organization() {
   useEffect(() => {
     fetchedData();
   }, []);
-  console.log(data);
-  
   const components = [
     <LawArea key="area1" />,
     <RuleArea key="area2" />,
     <Togtool data ={data} key="area3" />,
-    <Zahiramj key="area4" />,
-    <Zovshoorol key="area5" />,
+    <Zahiramj data ={data} key="area4" />,
+    <Zovshoorol data ={data} key="area5" />,
   ];
-
   return (
     <div className="w-full sm:w-[90%] xl:w-[1148px]  flex flex-col items-center justify-between gap-5 md:gap-10 sm:mt-0 mt-5">
       <BannerArea />

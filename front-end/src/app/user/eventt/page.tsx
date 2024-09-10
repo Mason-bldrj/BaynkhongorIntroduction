@@ -6,8 +6,9 @@ import { EventCard } from "@/app/components/detail/evenCard";
 import { OrangeBourd } from "@/app/components/detail/orengeBourd";
 import { bplace } from "@/app/data";
 import { ArrowButtons2 } from "@/app/components/detail/arrowButtons";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 export default function Event() {
+  const [data, setdata] = useState();
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 1;
   const handleNext = () => {
@@ -21,9 +22,14 @@ export default function Event() {
       setStartIndex(startIndex - 1);
     }
   };
-  const data = fetchFunc(urls.EVENT);
-  console.log(data);
-
+  const fetchedData = async () => {
+    const res = fetchFunc(urls.EVENT);
+    const data = await (await res).json();
+    setdata(data);
+  };
+  useEffect(() => {
+    fetchedData();
+  }, []);
   return (
     <div className="w-full sm:w-[90%] xl:w-[1148px]  flex flex-col items-center justify-between gap-5 sm:mt-0 mt-5 md:gap-10 ">
       <BannerArea />
@@ -32,7 +38,7 @@ export default function Event() {
         <OrangeBourd data={"ЭВЕНТ , АРГА ХЭМЖЭЭ"} />
       </div>
       <div className="flex sm:gap-2 xl:gap-0 xl:justify-between h-full items-center w-full">
-        <EventCard bplace={bplace} startIndex={startIndex} />
+        <EventCard data={data} startIndex={startIndex} />
         <div className="sm:block hidden">
           {" "}
           <ArrowButtons2 handleNext={handleNext} handlePrev={handlePrev} />

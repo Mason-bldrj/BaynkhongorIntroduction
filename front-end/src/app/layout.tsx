@@ -16,6 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/gandan.png" sizes="any" />
       <body className={inter.className}>
         <div>{children}</div>
       </body>

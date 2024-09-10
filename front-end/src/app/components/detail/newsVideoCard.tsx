@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-
 export const NewsVideoCard = ({ videoArr, startIndex }: any) => {
   const videoId = videoArr[0].url.match(
     /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/

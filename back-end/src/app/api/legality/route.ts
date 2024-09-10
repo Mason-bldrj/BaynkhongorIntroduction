@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import AboutUsModel from "../../../../model/aboutUs.model";
 import LegalityModel from "../../../../model/legality.model";
 
 export async function GET(req: NextRequest, res: NextResponse) {
@@ -22,6 +21,41 @@ export async function POST(req: NextRequest, res: NextResponse) {
       legalityType,
     });
     return NextResponse.json(createdRecord);
+  } catch (error: any) {
+    console.error("Error creating AboutUs record:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+export async function PUT(req: NextRequest, res: NextResponse) {
+  const data = await req.json();
+
+  console.log(data);
+
+  try {
+    const { _id, name, title, legalityType, link } = data;
+    const res = await LegalityModel.findByIdAndUpdate(
+      _id,
+      {
+        name,
+        title,
+        legalityType,
+        link,
+      },
+      { new: true }
+    );
+    return NextResponse.json(res);
+  } catch (error: any) {
+    console.error("Error creating AboutUs record:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+export async function DELETE(req: NextRequest, res: NextResponse) {
+  const data = await req.json();
+
+  try {
+    const { _id } = data;
+    const res = await LegalityModel.findByIdAndDelete(_id);
+    return NextResponse.json(res);
   } catch (error: any) {
     console.error("Error creating AboutUs record:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });

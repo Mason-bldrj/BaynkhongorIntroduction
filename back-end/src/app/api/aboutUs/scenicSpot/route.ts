@@ -1,19 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
-import ReportModel from "../../../../../model/report.model";
-import VideoModel from "../../../../../model/video.model";
+import ScenicSpotModel from "../../../../../model/scenicSpot.model";
 
 export async function POST(req: NextRequest, res: NextResponse) {
+  console.log(req);
+
   try {
-    const { name, date, url } = await req.json();
-    const res = await VideoModel.create({
+    const { name, img, description } = await req.json();
+
+    const createdRecord = await ScenicSpotModel.create({
       name,
-      date,
-      url,
+      img,
+      description,
     });
-    return NextResponse.json(res);
-  } catch (err: any) {
-    console.error("Error creating AboutUs record:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+
+    return NextResponse.json(createdRecord);
+  } catch (error: any) {
+    console.error("Error creating AboutUs record:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
 export async function PUT(req: NextRequest, res: NextResponse) {
@@ -22,13 +25,13 @@ export async function PUT(req: NextRequest, res: NextResponse) {
   console.log(data);
 
   try {
-    const { _id, name, date, url } = data;
-    const res = await VideoModel.findByIdAndUpdate(
+    const { _id, name, img, description } = data;
+    const res = await ScenicSpotModel.findByIdAndUpdate(
       _id,
       {
         name,
-        date,
-        url,
+        img,
+        description,
       },
       { new: true }
     );
@@ -43,7 +46,7 @@ export async function DELETE(req: NextRequest, res: NextResponse) {
 
   try {
     const { _id } = data;
-    const res = await VideoModel.findByIdAndDelete(_id);
+    const res = await ScenicSpotModel.findByIdAndDelete(_id);
     return NextResponse.json(res);
   } catch (error: any) {
     console.error("Error creating AboutUs record:", error);

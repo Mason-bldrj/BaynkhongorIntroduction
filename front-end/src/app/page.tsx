@@ -10,12 +10,12 @@ import { VideoArea } from "./components/homapage/videoArea";
 import { Footer } from "./components/homapage/footer";
 import { fetchFunc } from "./backdata";
 import { DefaultArea } from "./components/homapage/defaultArea";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import urls from "@/lib/urls";
 export default function Home() {
   const [data, setdata] = useState();
   const fetchedData = async () => {
-    const res = fetchFunc(urls.TRAVEL);
+    const res = fetchFunc(urls.ABOUTUS);
     const data = await (await res).json();
     setdata(data);
   };

@@ -15,12 +15,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
   console.log(req);
 
   try {
-    const { name, position, phoneNumber, links } = await req.json();
+    const { name, position, img, phoneNumber, links } = await req.json();
 
     const createdRecord = await EmployeeModel.create({
       name,
       position,
       phoneNumber,
+      img,
       links: {
         fbLink: links.fbLink ?? "",
         IG_Link: links.IG_Link ?? "",
@@ -40,12 +41,13 @@ export async function PUT(req: NextRequest, res: NextResponse) {
   console.log(data);
 
   try {
-    const { _id, name, position, phoneNumber, links } = data;
+    const { _id, name, img, position, phoneNumber, links } = data;
     const res = await EmployeeModel.findByIdAndUpdate(
       _id,
       {
         name,
         position,
+        img,
         phoneNumber,
         links: {
           fbLink: links.fbLink,
@@ -55,6 +57,18 @@ export async function PUT(req: NextRequest, res: NextResponse) {
       },
       { new: true }
     );
+    return NextResponse.json(res);
+  } catch (error: any) {
+    console.error("Error creating AboutUs record:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+export async function DELETE(req: NextRequest, res: NextResponse) {
+  const data = await req.json();
+
+  try {
+    const { _id } = data;
+    const res = await EmployeeModel.findByIdAndDelete(_id);
     return NextResponse.json(res);
   } catch (error: any) {
     console.error("Error creating AboutUs record:", error);

@@ -26,3 +26,37 @@ export async function POST(req: NextRequest, res: NextResponse) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+export async function PUT(req: NextRequest, res: NextResponse) {
+  const data = await req.json();
+
+  console.log(data);
+
+  try {
+    const { _id, name, description, img } = data;
+    const res = await eventModel.findByIdAndUpdate(
+      _id,
+      {
+        name,
+        description,
+        img,
+      },
+      { new: true }
+    );
+    return NextResponse.json(res);
+  } catch (error: any) {
+    console.error("Error creating AboutUs record:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+export async function DELETE(req: NextRequest, res: NextResponse) {
+  const data = await req.json();
+
+  try {
+    const { _id } = data;
+    const res = await eventModel.findByIdAndDelete(_id);
+    return NextResponse.json(res);
+  } catch (error: any) {
+    console.error("Error creating AboutUs record:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}

@@ -5,6 +5,7 @@ const employeeSchema = new Schema({
   name: { type: String, required: true },
   position: { type: String, required: true },
   phoneNumber: Number,
+  img: String,
   links: {
     fbLink: String,
     IG_Link: String,

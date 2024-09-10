@@ -4,7 +4,7 @@ import { COLLECTIONS } from "../constant";
 const travelSchema = new Schema({
   name: { type: String, required: true },
   img: String,
-  date: Date,
+  date: String,
   travelType: {
     type: String,
     required: true,

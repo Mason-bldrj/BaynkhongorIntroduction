@@ -1,6 +1,9 @@
 import { postFunc } from "@/app/backdata";
+import { imageDb } from "@/firebase";
 import urls from "@/lib/urls";
+import { ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
+import { v4 } from "uuid";
 
 const InstitutionForm = () => {
   const [institutionData, setInstitutionData] = useState({
@@ -19,6 +22,7 @@ const InstitutionForm = () => {
     amountType: "",
     amount: 0,
   });
+  const [image, setImage] = useState<any>();
   const times: any[] = [];
   const prices: any[] = [];
   const addTimeorPrice = (command: string) => {
@@ -29,6 +33,17 @@ const InstitutionForm = () => {
     } else {
       return;
     }
+  };
+  const handleclick = async (image: any) => {
+    const a = v4();
+
+    const imgRef = ref(imageDb, `${a}`);
+    const res = await uploadBytes(imgRef, image);
+
+    setInstitutionData({
+      ...institutionData,
+      img: `https://firebasestorage.googleapis.com/v0/b/app-demo-554df.appspot.com/o/${a}?alt=media&token=4554e441-c30b-4a16-b81f-5b50727d691e`,
+    });
   };
 
   const createEmployee = async () => {
@@ -64,7 +79,7 @@ const InstitutionForm = () => {
                     ...institutionData,
                     name: event.target.value,
                   });
-                }, 2000);
+                }, 1000);
               }}
             />
           </div>
@@ -79,7 +94,7 @@ const InstitutionForm = () => {
                     ...institutionData,
                     institutionType: event.target.value,
                   });
-                }, 2000);
+                }, 1000);
               }}
             >
               <option value="SERVICE">Үйлчилгээ</option>
@@ -95,22 +110,24 @@ const InstitutionForm = () => {
         </div>
         <div>
           <div>Зураг</div>
-          <input
-            type="image"
-            placeholder=""
-            name="img"
-            className="px-[6px] py-[8px] rounded-[8px]"
-            onChange={(event) => {
-              console.log(event.target.value);
-
-              setTimeout(() => {
-                setInstitutionData({
-                  ...institutionData,
-                  img: event.target.value,
-                });
-              }, 2000);
-            }}
-          />
+          <div>
+            <input
+              type="file"
+              placeholder=""
+              name="img"
+              className="px-[6px] py-[8px] rounded-[8px]"
+              onChange={(event: any) => {
+                setImage(event.target.files[0]);
+              }}
+            />
+            <button
+              onClick={() => {
+                handleclick(image);
+              }}
+            >
+              Upload
+            </button>
+          </div>
         </div>
         <div className="w-full h-[100px]">
           <div>Тайлбар</div>
@@ -124,7 +141,7 @@ const InstitutionForm = () => {
                   ...institutionData,
                   description: event.target.value,
                 });
-              }, 2000);
+              }, 1000);
             }}
           />
         </div>
@@ -146,7 +163,7 @@ const InstitutionForm = () => {
                     ...timeData,
                     opentime: event.target.value,
                   });
-                }, 2000);
+                }, 1000);
               }}
             />
           </div>
@@ -163,7 +180,7 @@ const InstitutionForm = () => {
                     ...timeData,
                     closedTime: event.target.value,
                   });
-                }, 2000);
+                }, 1000);
               }}
             />
           </div>
@@ -178,7 +195,7 @@ const InstitutionForm = () => {
                     ...timeData,
                     timeType: event.target.value,
                   });
-                }, 2000);
+                }, 1000);
               }}
             >
               <option value="SUMMER">Зун</option>
@@ -210,7 +227,7 @@ const InstitutionForm = () => {
                     ...priceData,
                     amountType: event.target.value,
                   });
-                }, 2000);
+                }, 1000);
               }}
             >
               <option value="ADULT">Насанд хүрсэн хүн</option>
@@ -236,7 +253,7 @@ const InstitutionForm = () => {
                       ...priceData,
                       amount: number,
                     });
-                  }, 2000);
+                  }, 1000);
                 }}
               />
             </div>

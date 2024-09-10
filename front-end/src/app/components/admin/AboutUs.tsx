@@ -2,8 +2,18 @@ import { postFunc } from "@/app/backdata";
 import urls from "@/lib/urls";
 import { useState } from "react";
 import DefaultInformationSec from "./defaultInformationForm";
+import { v4 } from "uuid";
+import {
+  ref,
+  uploadBytes,
+  UploadTaskSnapshot,
+  getStorage,
+} from "firebase/storage";
+import { imageDb } from "@/firebase";
 
 const AboutUs = () => {
+  const [imageUrl, setImageUrl] = useState("");
+  const [image, setImage] = useState<string>();
   const [aboutUsData, setAboutUsData] = useState({
     name: "",
     email: "",
@@ -25,6 +35,24 @@ const AboutUs = () => {
     phoneNumber1: 0,
     phoneNumber2: 0,
   });
+
+  const storage = getStorage();
+  const uploadImage = () => {
+    const storageref = ref(storage);
+  };
+  const handleclick = async (image: any) => {
+    const a = v4();
+
+    const imgRef = ref(imageDb, `${a}`);
+    const res = await uploadBytes(imgRef, image);
+    console.log(res);
+    console.log(a);
+
+    setAboutUsData({
+      ...aboutUsData,
+      mainImg: `https://firebasestorage.googleapis.com/v0/b/app-demo-554df.appspot.com/o/${a}?alt=media&token=4554e441-c30b-4a16-b81f-5b50727d691e`,
+    });
+  };
   const createEmployee = async () => {
     try {
       const res = await postFunc(urls.ABOUTUS, {
@@ -33,6 +61,7 @@ const AboutUs = () => {
         about: aboutUsData.about,
         aboutOffice: aboutUsData.aboutOffice,
         porpose: "0",
+        mainImg: aboutUsData.mainImg,
         objective: aboutUsData.objective,
         phoneNumbers: {
           phoneNumber1: phoneNumbers.phoneNumber1,
@@ -90,20 +119,28 @@ const AboutUs = () => {
       </div>
       <div>
         <div>Зураг</div>
-        <input
-          type="image"
-          placeholder="Зураг"
-          className="px-[6px] py-[8px] rounded-[8px]"
-          name="mainImg"
-          onChange={(event) => {
-            setTimeout(() => {
-              setAboutUsData({
-                ...aboutUsData,
-                mainImg: event.target.value,
-              });
-            }, 1000);
-          }}
-        />
+        <div className="flex items-center ">
+          <input
+            type="file"
+            placeholder="Зураг"
+            className="px-[6px] py-[8px] rounded-[8px]"
+            name="mainImg"
+            onChange={(event) => {
+              setTimeout(() => {
+                const file: any = event.target.files;
+
+                setImage(file[0]);
+              }, 1000);
+            }}
+          />
+          <button
+            onClick={() => {
+              handleclick(image);
+            }}
+          >
+            upload
+          </button>
+        </div>
       </div>
       <div>
         <div>Утас 1</div>

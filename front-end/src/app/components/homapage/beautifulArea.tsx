@@ -18,7 +18,7 @@ export const BeautifulArea = () => {
   return (
     <div className="w-full flex flex-col items-center sm:mt-20">
       <div className="w-full flex flex-col items-center">
-        <div className="w-full mb-3 ml-2 sm:mb-10 xl:ml-[150px]  xl:w-[1147px]">
+        <div className="w-full mb-3 sm:mb-10 xl:ml-[150px]  xl:w-[1147px]">
           {" "}
           <OrangeBourd data={"ҮЗЭСГЭЛЭНТ ГАЗРУУД"} />
         </div>

@@ -3,23 +3,19 @@ import Image from "next/image";
 import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "../detail/arrowButtons";
-
 export const BrandCard = () => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
-
   const handleNext = () => {
     if (startIndex + visibleCount < bplace.length) {
       setStartIndex(startIndex + 1);
     }
   };
-
   const handlePrev = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);
     }
   };
-
   return (
     <div className="w-full h-full flex items-center justify-start gap-[20px] sm:mt-0 mt-3">
       {/* Mobile View */}

@@ -13,7 +13,7 @@ export default function Organization() {
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [data, setdata] = useState();
   const fetchedData = async () => {
-    const res = fetchFunc(urls.institution);
+    const res = fetchFunc(urls.LEGALITY);
     const data = await (await res).json();
     setdata(data)
   };
@@ -26,11 +26,10 @@ export default function Organization() {
   const components = [
     <LawArea key="area1" />,
     <RuleArea key="area2" />,
-    <Togtool key="area3" />,
-    <Zahiramj key="area4" />,
-    <Zovshoorol key="area5" />,
+    <Togtool data ={data} key="area3" />,
+    <Zahiramj data ={data} key="area4" />,
+    <Zovshoorol data ={data} key="area5" />,
   ];
-
   return (
     <div className="w-full sm:w-[90%] xl:w-[1148px]  flex flex-col items-center justify-between gap-5 md:gap-10 sm:mt-0 mt-5">
       <BannerArea />

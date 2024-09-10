@@ -42,7 +42,6 @@ export const TravelArea = () => {
       </div>
       <div className="mt-4 sm:mt-10 w-full">
         <TravelCard
-          
           bplace={bplace}
           data={data}
           startIndex={startIndex}

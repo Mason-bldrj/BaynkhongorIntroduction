@@ -1,12 +1,15 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { FaRegUser } from "react-icons/fa";
 import { IoCalendarOutline } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 export const BannerArea = () => {
+  const router = useRouter();
   return (
     <div className="lg:w-[1057px] md:w-full sm:flex lg:justify-between sm:justify-center mt-10 hidden lg:px-0 md:px-2 flex-wrap">
       <div className=" w-[641px] h-[147px]  relative">
         <Image
+          onClick={() => router.push("https://www.facebook.com/Bkhtourism/")}
           className=" absolute top-[40px] left-[-25px] cursor-pointer"
           src="/fb.png"
           width={57}
@@ -14,7 +17,7 @@ export const BannerArea = () => {
           alt="Carousel image"
         />
         <Image
-        className="w-[641px]"
+          className="w-[641px]"
           src="/naadambanner.png"
           width={641}
           height={147}

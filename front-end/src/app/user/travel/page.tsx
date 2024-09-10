@@ -13,7 +13,7 @@ export default function Travel() {
   const fetchedData = async () => {
     const res = fetchFunc(urls.TRAVEL);
     const data = await (await res).json();
-    setdata(data[0]);
+    setdata(data);
   };
   const handleComponents = (i: number) => {
     setCategoryIndex(i);
@@ -24,9 +24,9 @@ export default function Travel() {
   console.log(data);
 
   const components = [
-    <TravelPageArea1 key="area1" />,
-    <TravelPageArea2 key="area2" />,
-    <TravelPageArea3 key="area3" />,
+    <TravelPageArea1 data={data} key="area1" />,
+    <TravelPageArea2 data={data} key="area2" />,
+    <TravelPageArea3 data={data}  key="area3" />,
   ];
 
   return (

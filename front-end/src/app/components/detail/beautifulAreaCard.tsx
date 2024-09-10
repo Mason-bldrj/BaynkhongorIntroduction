@@ -4,7 +4,7 @@ import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "./arrowButtons";
 import { useRouter } from "next/navigation";
-export const BeautifulAreaCard = () => {
+export const BeautifulAreaCard = ({data}:any) => {
   const router = useRouter(); 
   const handleNavigate = (id: string) => {
     router.push(`/user/REPORT${id}`);
@@ -28,7 +28,7 @@ export const BeautifulAreaCard = () => {
     <div className="w-full h-[200px]  sm:h-[370px] flex items-center justify-between">
       <div className="w-full sm:w-[99%] h-full xl:w-[1135px] sm:overflow-hidden flex ease-linear transition-transform duration-300">
         <div className="sm:hidden flex overflow-scroll h-full  w-full gap-5">
-          {bplace.map((el: any, i: number): JSX.Element => {
+          {data?.map((el: any, i: number): JSX.Element => {
             return (
               <div
                 key={i}
@@ -37,13 +37,13 @@ export const BeautifulAreaCard = () => {
               >
                 <Image
                   className="object-cover min-w-full h-full  rounded-sm"
-                  src="https://i.pinimg.com/originals/07/8c/71/078c71955fe352c544e395fbafddf82c.jpg"
+                  src={el.img}
                   width={365}
                   height={300}
                   alt="Carousel image"
                 />
                 <div className="bg-[#ff7119] text-white px-3 py-1 rounded-t-sm flex justify-center items-center absolute bottom-0 left-1/2 transform -translate-x-1/2 text-[6px]">
-                  {el.title}
+                  {el.name}
                 </div>
               </div>
             );
@@ -55,7 +55,7 @@ export const BeautifulAreaCard = () => {
             transform: `translateX(-${startIndex * 385}px)`, // Using percentage for responsiveness
           }}
         >
-          {bplace.map((el: any, i: number): JSX.Element => {
+          {data?.map((el: any, i: number): JSX.Element => {
             return (
               <div
                 key={i}
@@ -64,13 +64,13 @@ export const BeautifulAreaCard = () => {
               >
                 <Image
                   className="object-cover w-full h-full rounded-sm"
-                  src="https://i.pinimg.com/originals/07/8c/71/078c71955fe352c544e395fbafddf82c.jpg"
+                  src={el.img}
                   width={365}
                   height={350}
                   alt="Carousel image"
                 />
                 <div className="bg-[#ff7119] text-white w-[250px] h-[33px] rounded-t-sm flex justify-center items-center absolute bottom-0 left-1/2 transform -translate-x-1/2">
-                  {el.title}
+                  {el.name}
                 </div>
               </div>
             );

@@ -60,7 +60,7 @@ const Login = () => {
         toast.success("Амжилттай.", {
           transition: Flip,
         });
-        router.push("/admin");
+        router.push("/admin/dashboard");
       }
     }
   };

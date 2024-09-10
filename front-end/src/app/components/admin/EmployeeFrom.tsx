@@ -45,7 +45,7 @@ const EmployeeFrom = () => {
                 ...employeeData,
                 name: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -62,7 +62,7 @@ const EmployeeFrom = () => {
                 ...employeeData,
                 position: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -82,7 +82,7 @@ const EmployeeFrom = () => {
                 ...employeeData,
                 phoneNumber: number,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -99,7 +99,7 @@ const EmployeeFrom = () => {
                 ...links,
                 fbLink: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -116,7 +116,7 @@ const EmployeeFrom = () => {
                 ...links,
                 IG_Link: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -133,7 +133,7 @@ const EmployeeFrom = () => {
                 ...links,
                 twitterLink: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>

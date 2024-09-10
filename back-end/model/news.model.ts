@@ -12,7 +12,7 @@ const newsSchema = new Schema({
   },
   video: {
     name: { type: String, required: true },
-    date: Date,
+    date: String,
     url: String,
   },
   resources: {

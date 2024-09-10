@@ -6,7 +6,7 @@ const reportSchema = new Schema({
     type: String,
     required: true,
   },
-  date: Date,
+  date: String,
   description: String,
 });
 const ReportModel = models.report || model(COLLECTIONS.REPORT, reportSchema);

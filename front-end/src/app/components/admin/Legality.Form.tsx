@@ -38,7 +38,7 @@ const LegalityForm = () => {
                 ...legalityData,
                 name: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -55,7 +55,7 @@ const LegalityForm = () => {
                 ...legalityData,
                 title: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>
@@ -70,7 +70,7 @@ const LegalityForm = () => {
                 ...legalityData,
                 legalityType: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         >
           <option value="LAW">Хууль</option>
@@ -95,7 +95,7 @@ const LegalityForm = () => {
                 ...legalityData,
                 link: event.target.value,
               });
-            }, 2000);
+            }, 1000);
           }}
         />
       </div>

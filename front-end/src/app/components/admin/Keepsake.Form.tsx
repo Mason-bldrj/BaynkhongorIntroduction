@@ -27,7 +27,7 @@ const KeepSakeForm = () => {
 
   const createKeepSake = async () => {
     try {
-      const res = await postFunc(urls.TRAVEL, {
+      const res = await postFunc(urls.KEEPSAKE, {
         name: keepSakeData.name,
         img: keepSakeData.img,
         title: keepSakeData.title,

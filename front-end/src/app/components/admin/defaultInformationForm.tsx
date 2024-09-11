@@ -3,7 +3,7 @@ const DefaultInformationSec = (props: any) => {
 
   return (
     <div className="flex flex-wrap gap-[24px]">
-      <h1>Сумын тухай суурь мэдээлэлүүд</h1>
+      <h1>Аймаг тухай суурь мэдээлэлүүд</h1>
       <div className="flex flex-wrap gap-[24px]">
         <div>
           <div className="text-[14px]">Байгалийн дурсгалт газар тоо </div>

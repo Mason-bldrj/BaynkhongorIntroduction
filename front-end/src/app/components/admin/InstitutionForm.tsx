@@ -12,9 +12,13 @@ const InstitutionForm = () => {
     description: "",
     img: "",
   });
+  const [phoneNumbers, setPhoneNumbers] = useState({
+    phoneNumber1: 0,
+    phoneNumber2: 0,
+  });
   const [timeData, setTimeData] = useState({
     timeType: "",
-    day: "",
+
     opentime: "",
     closedTime: "",
   });
@@ -48,10 +52,11 @@ const InstitutionForm = () => {
 
   const createEmployee = async () => {
     try {
-      const res = await postFunc(urls.TRAVEL, {
+      const res = await postFunc(urls.institution, {
         name: institutionData.name,
         institutionType: institutionData.institutionType,
         description: institutionData.description,
+        phoneNumbers: phoneNumbers,
         img: institutionData.img,
         time: times,
         price: prices,
@@ -106,6 +111,44 @@ const InstitutionForm = () => {
               <option value="CLUB">Клуб</option>
               <option value="THEATER">Театр</option>
             </select>
+          </div>
+        </div>
+        <div className="flex gap-[10px]">
+          <div>
+            <div>Утас 1</div>
+            <input
+              type="tel"
+              placeholder="Утасний дугаар"
+              className="px-[6px] py-[8px] rounded-[8px]"
+              name="phoneNumber1"
+              onChange={(event) => {
+                setTimeout(() => {
+                  const number = Number(event.target.value);
+                  setPhoneNumbers({
+                    ...phoneNumbers,
+                    phoneNumber1: number,
+                  });
+                }, 1000);
+              }}
+            />
+          </div>
+          <div>
+            <div>Утас 2</div>
+            <input
+              type="tel"
+              placeholder="Утасний дугаар"
+              className="px-[6px] py-[8px] rounded-[8px]"
+              name="phoneNumber2"
+              onChange={(event) => {
+                setTimeout(() => {
+                  const number = Number(event.target.value);
+                  setPhoneNumbers({
+                    ...phoneNumbers,
+                    phoneNumber2: number,
+                  });
+                }, 1000);
+              }}
+            />
           </div>
         </div>
         <div>
@@ -206,6 +249,8 @@ const InstitutionForm = () => {
         <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
           <button
             onClick={() => {
+              console.log(timeData);
+
               addTimeorPrice("time");
             }}
           >

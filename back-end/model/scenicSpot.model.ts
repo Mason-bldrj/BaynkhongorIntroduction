@@ -8,5 +8,5 @@ const scenicSpotSchema = new Schema({
 });
 
 const ScenicSpotModel =
-  models.travel || model(COLLECTIONS.TRAVEL, scenicSpotSchema);
+  models.scenicspot || model(COLLECTIONS.SCENIC, scenicSpotSchema);
 export default ScenicSpotModel;

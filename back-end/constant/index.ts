@@ -12,4 +12,5 @@ export const COLLECTIONS = {
   REPORT: "report",
   VIDEO: "video",
   RESOURCES: "resources",
+  SCENIC: "snenicspot",
 };

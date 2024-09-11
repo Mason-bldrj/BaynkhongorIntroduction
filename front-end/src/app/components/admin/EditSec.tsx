@@ -7,13 +7,7 @@ const EditSec = (props: any) => {
             Нэр
           </th>
           <th className="border-solid border-[1px] p-[4px] border-[#dddddd]">
-            Бараа
-          </th>
-          <th className="border-solid border-[1px] p-[4px] border-[#dddddd]">
-            Түгээлт төлбөр
-          </th>
-          <th className="border-solid border-[1px] p-[4px] border-[#dddddd]">
-            Нийт тооцоо
+            Гарчиг
           </th>
           <th className="border-solid border-[1px] p-[4px] border-[#dddddd]">
             Гэрээт харилцачаас авах хүргэлтийн төлбөр
@@ -71,21 +65,10 @@ const EditSec = (props: any) => {
                 {new Intl.NumberFormat().format(item?.amount ?? 0)}₮
               </td>
               <td className=" text-right py-1 border-solid border-[1px] p-[4px] border-[#dddddd]">
-                {item?.payment_status}
+                <button>Мэдээлэл өөрчлөх</button>
               </td>
               <td className=" text-right py-1 border-solid border-[1px] p-[4px] border-[#dddddd]">
-                {new Intl.NumberFormat().format(item?.paid ?? 0)}₮
-              </td>
-              <td className="p-1 ">
-                <Button
-                  size="small"
-                  icon={<CloudSyncOutlined className=" text-[#fff]" />}
-                  loading={loadingSyncMonth == item.month}
-                  onClick={() =>
-                    sync(item?.calc_month, item?.merchant_id, item?.calc_year)
-                  }
-                  className={item ? "bg-primary-100 ml-2" : " bg-red-500 ml-2"}
-                />
+                <button>Устгах</button>
               </td>
             </tr>
           ))}
@@ -131,3 +114,4 @@ const EditSec = (props: any) => {
     </div>
   );
 };
+export default EditSec;

@@ -1,6 +1,7 @@
 "use client";
 import AdminMain from "@/app/components/admin/AdminMains";
 import AdminSideBar from "@/app/components/admin/AdminSideBar";
+import EditSec from "@/app/components/admin/EditSec";
 import { useState } from "react";
 
 const AdminDashboard = () => {
@@ -19,6 +20,9 @@ const AdminDashboard = () => {
         } `}
       >
         <AdminMain menus={menus}></AdminMain>
+      </div>
+      <div>
+        <EditSec></EditSec>
       </div>
     </div>
   );

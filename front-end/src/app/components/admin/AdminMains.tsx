@@ -78,7 +78,7 @@ const AdminMain = (props: any) => {
           menus === "Байгуулга" ? "flex" : "hidden"
         } flex-col gap-[40px]`}
       >
-        <h1 className="text-[28px]"> Аялалын талаар мэдээлэл оруулах</h1>
+        <h1 className="text-[28px]">Байгуулгийн талаар мэдээлэл оруулах</h1>
         <InstitutionForm />
       </div>
     </div>

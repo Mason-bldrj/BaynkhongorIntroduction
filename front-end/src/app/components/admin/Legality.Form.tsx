@@ -12,7 +12,7 @@ const LegalityForm = () => {
 
   const createLegality = async () => {
     try {
-      const res = await postFunc(urls.TRAVEL, {
+      const res = await postFunc(urls.LEGALITY, {
         name: legalityData.name,
         title: legalityData.title,
         link: legalityData.title,

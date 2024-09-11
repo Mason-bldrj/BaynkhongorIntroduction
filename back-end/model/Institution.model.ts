@@ -27,7 +27,6 @@ const institutionSchema = new Schema({
   time: [
     {
       timeType: { enum: ["SUMMER", "WINTER"], type: String, required: true },
-      day: String,
       opentime: String,
       closedTime: String,
     },

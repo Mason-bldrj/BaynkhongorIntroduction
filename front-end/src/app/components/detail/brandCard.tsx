@@ -55,7 +55,7 @@ export const BrandCard = ({data}:any) => {
         >
           {data?.map((el: any, i: number): JSX.Element => {
             return (
-              <div key={i} className="min-w-[323px] min-h-[377px] relative" onClick={() => handleNavigate(el._id)}>
+              <div key={i} className="w-[323px] h-[377px] relative" onClick={() => handleNavigate(el._id)}>
                 <Image
                   className="object-cover w-full h-full rounded-sm"
                   src={el.img}

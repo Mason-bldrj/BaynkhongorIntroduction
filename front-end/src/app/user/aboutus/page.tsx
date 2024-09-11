@@ -44,8 +44,8 @@ export default function AboutUs() {
               alt="Carousel image"
             />
           </div>
-          <div className="md:h-full md:w-[48%] w-[98%] flex flex-col justify-between">
-            <div className=" w-full py-2 flex flex-col h-[42%] items-center justify-center shadow-lg rounded-b-md md:mt-0 mt-5">
+          <div className="md:h-full md:w-[48%] w-[98%] flex flex-col justify-center">
+            <div className=" w-full py-2 flex flex-col h-fit items-center justify-center shadow-lg rounded-b-md md:mt-0 mt-5">
               <div className="w-[90%] text-[#ff7119] lg:text-[15px] xl:text-[16px] md:text-[14px] sm:text-[16px] text-[11px]">
                 Зорилго:
               </div>

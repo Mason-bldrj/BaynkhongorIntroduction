@@ -1,6 +1,13 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 export const TailanCard = ({ data, startIndex }: any) => {
+  const router = useRouter();
+  console.log(data);
+  
+  const handleNavigate = (id: string) => {
+    router.push(`/user/NEWS${id}`);
+  };
   return (
     <div className="w-full flex ">
       <div className="flex w-full overflow-x-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
@@ -13,6 +20,7 @@ export const TailanCard = ({ data, startIndex }: any) => {
           {data?.map((el: any, i: number) => {
             return (
               <div
+              onClick={() => handleNavigate(el._id)}
                 key={i}
                 className="w-[270px] px-4  h-[86px] rounded-sm  cursor-pointer bg-[#F7F8FC] flex justify-center items-center hover:bg-gray-200 hover:scale-[110%]"
               >

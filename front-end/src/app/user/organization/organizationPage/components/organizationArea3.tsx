@@ -5,9 +5,9 @@ import { useState } from "react";
 import { OrganizationRelaxCard } from "./organizationRelaxCard";
 export const OrganizationArea3 = ({ data }: any) => {
   const [startIndex, setStartIndex] = useState(0);
-  const tour = data?.filter((el: any) => {
-    return el.institutionType === "TOUR";
-  });
+  const tour =Array.isArray(data)
+  ? data.filter((el: any) => el.institutionType === "TOUR")
+  : [];
   const visibleCount = 1;
   const handleNext = () => {
     if (startIndex + visibleCount < tour.length) {

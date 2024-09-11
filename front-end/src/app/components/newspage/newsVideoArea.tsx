@@ -6,7 +6,7 @@ import { ArrowButtons } from "../detail/arrowButtons";
 import { useState } from "react";
 import { bplace } from "@/app/data";
 import { NewsCard } from "../detail/newsCard";
-export const NewsVideoArea = ({data2 , data}:any) => {
+export const NewsVideoArea = ({data2 ,data1, data}:any) => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
   const handleNext = () => {
@@ -24,7 +24,7 @@ export const NewsVideoArea = ({data2 , data}:any) => {
       <div className="flex sm:w-[90%] xl:w-[1147px] sm:ml-0 ml-2 xl:ml-[150px] w-full  ">
         <OrangeBourd data={"ВИДЕО МЭДЭЭ"} />
       </div>
-      <NewsVideoCard videoArr={videoArr} data={data} />
+      <NewsVideoCard videoArr={videoArr} data1={data1} data={data} />
       <div className="flex w-full sm:w-[90%] xl:w-[1147px] justify-between mt-3  sm:mt-7">
         <div className="w-full sm:ml-0 ml-2">
           {" "}

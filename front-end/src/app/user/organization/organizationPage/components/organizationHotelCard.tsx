@@ -40,10 +40,10 @@ export const OrganizationHotelCard = ({ hotel, startIndex }: any) => {
                     </div>
                   </div>
                   <div className="w-[90%] h-[50%] flex flex-col  justify-around">
-                    <div className="text-[#ff7119] text-[16px] text-center">
+                    <div className="text-[#ff7119] text-[16px] text-center w-[80%] overflow-hidden">
                       {el.name}
                     </div>
-                    <div className="text-black opacity-60 text-[13px] w-full text-start">
+                    <div className="text-black opacity-60 text-[13px] w-full text-start overflow-hidden">
                       {el.description}
                     </div>
                     <button className="flex text-center justify-start gap-2 text-[#ff7119] items-center ">

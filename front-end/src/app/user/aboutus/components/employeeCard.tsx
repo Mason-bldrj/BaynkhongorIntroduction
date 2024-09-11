@@ -44,7 +44,7 @@ export const EmployeeCard = ({data2}:any) => {
               key={i}
               className="flex flex-col w-full sm:w-[calc(100%-10px)] md:w-[calc(50%-10px)] lg:w-[calc(33.33%-10px)] xl:w-[calc(25%-10px)] items-center"
             >
-              <div className="w-[259px] flex flex-col gap-2">
+              <div className="w-[259px] flex flex-col gap-2 items-center">
                 <Image
                   className="h-[249px] object-cover rounded-md border"
                   src={el.img}
@@ -55,7 +55,7 @@ export const EmployeeCard = ({data2}:any) => {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                 />
                 <div className="w-full text-center text-[#ff7119]">{el.name}</div>
-                <div className="w-full text-center text-[14px]">{el.position}</div>
+                <div className="w-[90%] overflow-hidden text-center text-[12px] h-fit flex flex-wrap">{el.position}</div>
               </div>
             </div>
           ))}

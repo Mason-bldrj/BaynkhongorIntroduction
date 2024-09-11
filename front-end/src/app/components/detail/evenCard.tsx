@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-export const EventCard = ({data, startIndex }: any) => {
+export const  EventCard = ({data, startIndex }: any) => {
   const router = useRouter();
   const [backData, setBackData] = useState([]);
   useEffect(() => {

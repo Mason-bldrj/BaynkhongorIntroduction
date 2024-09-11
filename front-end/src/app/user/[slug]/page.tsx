@@ -60,12 +60,14 @@ export default function Page({ params }: { params: { slug: any } }) {
   useEffect(() => {
     fetchedData();
   }, [pathname]);
+  console.log(data);
+  
   return (
     <div className="w-full mt-5 flex flex-col items-center">
-      <div className="w-[1147px] ">
+      <div className="w-[1147px] border">
         {data? (
           <div className="w-full flex flex-col gap-5">
-            <div className=" text-[#ff7119] text-[24px]">
+            <div className=" text-[#ff7119] text-[24px] w-full text-center">
               {data.name}
             </div>
             <div className="w-full flex justify-between">

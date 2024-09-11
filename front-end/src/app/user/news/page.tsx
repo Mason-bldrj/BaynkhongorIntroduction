@@ -20,15 +20,14 @@ export default function News() {
   useEffect(() => {
     fetchedData();
   }, []);
-  console.log(data1);
-  
+  console.log(data2);
   
   return (
     <div className="w-full flex flex-col items-center justify-between gap-10">
       <BannerArea/>
       <SuggestionArea  />
       <TailanArea data={data}/>
-      <NewsVideoArea data={data}  data2={data2}/>
+      <NewsVideoArea data={data} data1={data1}  data2={data2}/>
 
     </div>
   );

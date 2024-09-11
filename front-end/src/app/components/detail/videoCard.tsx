@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-export const VideoCard = ({ videoArr, startIndex }: any) => {
+export const VideoCard = ({ videoArr,data1, startIndex }: any) => {
   return (
     <div className="w-full flex sm:mt-0 mt-[-100px]">
       <div className="flex lg:w-[1155px] overflow-scroll sm:overflow-hidden transition-transform duration-300 justify-start">
@@ -11,7 +11,7 @@ export const VideoCard = ({ videoArr, startIndex }: any) => {
             transform: `translateX(-${startIndex * 575}px)`,
           }}
         >
-          {videoArr.map((el: any, i: number) => {
+          {data1?.map((el: any, i: number) => {
             // Extract the video ID from the YouTube URL
             const videoId = el.url.match(
               /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/

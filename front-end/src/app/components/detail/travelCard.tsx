@@ -59,7 +59,7 @@ export const TravelCard = ({ bplace, data, startIndex }: any) => {
                   <div className="text-[#222222] sm:mt-5 mt-2 sm:text-sm text-[15px] font-bold">
                     {el.name}
                   </div>
-                  <div className="text-[#666666] sm:text-sm text-[13px] sm:mt-5 mt-2">
+                  <div className="text-[#666666] sm:text-sm text-[13px] sm:mt-5 mt-2 w-full overflow-hidden">
                     {el.description}
                   </div>
                 </div>

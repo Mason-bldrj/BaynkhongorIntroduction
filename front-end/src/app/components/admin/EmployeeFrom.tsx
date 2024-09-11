@@ -1,23 +1,40 @@
 import { postFunc } from "@/app/backdata";
+import { imageDb } from "@/firebase";
 import urls from "@/lib/urls";
+import { ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
+import { v4 } from "uuid";
 
 const EmployeeFrom = () => {
   const [employeeData, setEmployeeData] = useState({
     name: "",
     position: "",
     phoneNumber: 0,
+    img: "",
   });
+  const [image, setImage] = useState();
   const [links, setLinks] = useState({
     fbLink: "",
     IG_Link: "",
     twitterLink: "",
   });
+  const handleclick = async (image: any) => {
+    const a = v4();
+
+    const imgRef = ref(imageDb, `${a}`);
+    const res = await uploadBytes(imgRef, image);
+
+    setEmployeeData({
+      ...employeeData,
+      img: `https://firebasestorage.googleapis.com/v0/b/app-demo-554df.appspot.com/o/${a}?alt=media&token=4554e441-c30b-4a16-b81f-5b50727d691e`,
+    });
+  };
   const createEmployee = async () => {
     try {
       const res = await postFunc(urls.EMPLOYEE, {
         name: employeeData.name,
         position: employeeData.position,
+        img: employeeData.img,
         phoneNumber: employeeData.phoneNumber,
         links: {
           fbLink: links.fbLink,
@@ -65,6 +82,27 @@ const EmployeeFrom = () => {
             }, 1000);
           }}
         />
+      </div>
+      <div>
+        <div>Зураг</div>
+        <div>
+          <input
+            type="file"
+            placeholder=""
+            name="img"
+            className="px-[6px] py-[8px] rounded-[8px]"
+            onChange={(event: any) => {
+              setImage(event.target.files[0]);
+            }}
+          />
+          <button
+            onClick={() => {
+              handleclick(image);
+            }}
+          >
+            Upload
+          </button>
+        </div>
       </div>
       <div>
         <div>Утас</div>

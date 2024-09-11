@@ -119,7 +119,7 @@ const AboutUs = () => {
       </div>
       <div>
         <div>Зураг</div>
-        <div className="flex items-center ">
+        <div className="flex items-center gap-[40px] ">
           <input
             type="file"
             placeholder="Зураг"
@@ -137,6 +137,7 @@ const AboutUs = () => {
             onClick={() => {
               handleclick(image);
             }}
+            className="flex justify-center items-center bg-white px-[12px] py-[8px] rounded-[8px] "
           >
             upload
           </button>

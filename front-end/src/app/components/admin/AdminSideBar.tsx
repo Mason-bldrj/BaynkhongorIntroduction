@@ -1,6 +1,6 @@
 "use client";
 const AdminSideBar = (props: any) => {
-  const { setMenu } = props;
+  const { setMenu, changedRequest, setChangedRequest } = props;
   const sideBarItems = [
     { text: "Бидний тухай", icon: <div></div> },
     { text: "Мэдээ", icon: <div></div> },
@@ -15,6 +15,24 @@ const AdminSideBar = (props: any) => {
   return (
     <>
       <div className="flex flex-col items-start bg-[#f5f5f5] w-[20%]  pt-[50px] px-[20px] gap-[20px] h-[100vh] ">
+        <div className="flex gap-[4px] ">
+          <button
+            onClick={() => {
+              setChangedRequest("CREATE");
+            }}
+            className="flex bg-white p-[8px] text-[12px] rounded-[8px]"
+          >
+            Мэдээлэл нэмэх
+          </button>
+          <button
+            onClick={() => {
+              setChangedRequest("ITEMSSEE");
+            }}
+            className="flex bg-white p-[8px] text-[12px] rounded-[8px]"
+          >
+            Мэдээлэлүүдийг харах{" "}
+          </button>
+        </div>
         {sideBarItems.map((item) => {
           return (
             <button

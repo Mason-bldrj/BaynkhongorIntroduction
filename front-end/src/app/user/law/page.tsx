@@ -31,7 +31,7 @@ export default function Organization() {
     <Zovshoorol data ={data} key="area5" />,
   ];
   return (
-    <div className="w-full sm:w-[90%] xl:w-[1148px]  flex flex-col items-center justify-between gap-5 md:gap-10 sm:mt-0 mt-5">
+    <div className="max-w-[1147px] m-auto w-[95%]   flex flex-col items-center justify-between gap-5 md:gap-10 sm:mt-0 mt-5">
       <BannerArea />
       <div className="w-full overflow-x-scroll scrollbar-hide">
         <div className="flex md:w-[900px] sm:w-[800px] w-[600px] lg:w-[1147px] justify-around border-b border-b-[#ff7119] pb-5 items-center">

@@ -23,7 +23,7 @@ export default function News() {
   console.log(data2);
   
   return (
-    <div className="w-full flex flex-col items-center justify-between gap-10">
+    <div className="max-w-[1147px] m-auto w-[95%] flex flex-col items-center justify-between gap-10">
       <BannerArea/>
       <SuggestionArea  />
       <TailanArea data={data}/>

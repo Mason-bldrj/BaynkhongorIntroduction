@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { mainMenu } from "@/app/data";
 import { PictureArr } from "@/app/data";
 import { useRouter } from "next/navigation";
-
 export const MainMenu = () => {
   const router = useRouter();
   const [buttonColor, setButtonColor] = useState(0);
@@ -61,8 +60,8 @@ export const MainMenu = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center">
-      <div className="w-full sm:w-[90%] lg:max-w-[1143px] max-h-[300px] md:max-h-[400px] lg:max-h-[500px] flex flex-col sm:flex-row">
+    <div className="container flex flex-col items-center">
+      <div className=" max-h-[500px] flex flex-col sm:flex-row">
         {/* Сайд менү */}
         <div className="w-full sm:w-[20%] md:h-[400px] sm:h-[300px] lg:h-[500px] sm:flex sm:flex-col hidden">
           {mainMenu.map((el: any, index: number) => (

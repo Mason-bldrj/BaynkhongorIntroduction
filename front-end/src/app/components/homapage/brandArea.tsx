@@ -16,8 +16,8 @@ export const BrandArea = () => {
     fetchedData();
   }, []);
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-full xl:w-[1147px] flex flex-col items-start mt-10">
+    <div className="max-w-[1147px] m-auto w-[95%] flex justify-center">
+      <div className="w-full flex flex-col items-start mt-10">
         <div className="sm:mb-10 sm:ml-[80px]">
           {" "}
           <OrangeBourd data={"БРЭНД БҮТЭЭГДЭХҮҮН"} />

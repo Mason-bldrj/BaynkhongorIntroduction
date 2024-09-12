@@ -34,7 +34,6 @@ export default function Page({ params }: { params: { slug: any } }) {
   };
   const keyword: any = findKeyword(pathname);
   const url = pathname;
-  // Extract the portion of the URL after the keyword
   const startIndex = url.indexOf(keyword);
   const endIndex = startIndex + keyword.length;
   const afterKeyword = url.substring(endIndex);
@@ -59,8 +58,8 @@ export default function Page({ params }: { params: { slug: any } }) {
     fetchedData();
   }, [pathname]);
   return (
-    <div className="w-full mt-5 flex flex-col  items-center mb-10">
-      <div className="w-[90%] sm:w-[600px] md:w-[700px] lg:w-[1000px] xl:w-[1147px]">
+    <div className="max-w-[1147px] m-auto w-[95%]  mt-5 flex flex-col  items-center mb-10">
+      <div className="w-full ">
         {data ? (
           <div className="w-full flex flex-col gap-5 ">
             <div className=" text-black font-bold sm:text-[24px] lg:text-[30px] w-full">

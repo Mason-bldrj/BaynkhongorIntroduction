@@ -30,13 +30,13 @@ export const VideoArea = () => {
   }, []);
   return (
     <div className="w-full mb-[200px] sm:mb-[300px] lg:mb-[500px] flex items-center flex-col">
-      <div className="flex sm:w-[80%] xl:w-[1147px] sm:ml-[150px] sm:mt-20 w-full mt-10 ">
+      <div className="flex max-w-[1147px] m-auto w-[95%] sm:mt-20 mt-10 ">
         <OrangeBourd data={"ВИДЕО МЭДЭЭ"} />
       </div>
       <div className="w-full sm:h-[183px] h-[80px] bg-[#ff7119] mt-5 sm:mt-10 flex justify-center items-start">
         <div className="w-full xl:w-[1320px] flex justify-start ">
           <div className="flex items-center w-full h-[fit] gap-[55px]  mt-[130px] ">
-            <div className="xl:w-[1130px] sm:h-[300px] xl:h-[420px] w-[85%] ">
+            <div className="max-w-[1147px] m-auto w-[95%]  sm:h-[300px] xl:h-[420px]  ">
               {" "}
               <VideoCard videoArr={videoArr} data1={data1} startIndex={startIndex} />
             </div>{" "}

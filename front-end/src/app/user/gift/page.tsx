@@ -16,7 +16,7 @@ export default function Gift() {
     fetchedData();
   }, []);
   return (
-    <div className="w-full sm:w-[90%] xl:w-[1148px]  flex flex-col items-center justify-between gap-5 sm:mt-0 mt-5 md:gap-10 ">
+    <div className="max-w-[1147px] m-auto w-[95%]  flex flex-col items-center justify-between gap-5 sm:mt-0 mt-5 md:gap-10 ">
       <BannerArea />
       <div className="w-full flex justify-start">
           {" "}

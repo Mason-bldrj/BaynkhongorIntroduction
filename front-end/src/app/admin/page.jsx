@@ -10,7 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 import EditModal from "@/app/components/modals/EditModal";
 import AdminModal from "@/app/components/modals/AdminModal";
 import urls from "@/lib/urls";
-
 const Admin = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);

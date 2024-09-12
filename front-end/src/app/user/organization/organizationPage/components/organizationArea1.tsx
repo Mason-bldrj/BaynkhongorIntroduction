@@ -1,18 +1,17 @@
 "use client";
-import { OrangeBourd } from "@/app/components/detail/orengeBourd";
 import { OrganizationRestaurantCard } from "./organizationRestaorantCard";
 import { ArrowButtons } from "@/app/components/detail/arrowButtons";
 import { useState } from "react";
-import { bplace } from "@/app/data";
 import { OrganizationHotelCard } from "./organizationHotelCard";
-export const OrganizationArea1 = (): JSX.Element => {
+export const OrganizationArea1 = ({ data }: any): JSX.Element => {
   const [startIndex, setStartIndex] = useState(0);
-  const restaurant = bplace.filter((el: any) => {
-    return el.category === "restaurant";
-  });
-  const hotel = bplace.filter((el: any) => {
-    return el.category === "hotel";
-  });
+  const restaurant = Array.isArray(data)
+  ? data.filter((el: any) => el.institutionType === "SERVICE")
+  : [];
+
+const hotel = Array.isArray(data)
+  ? data.filter((el: any) => el.institutionType === "SERVICE")
+  : [];
   const visibleCount = 1;
   const handleNext = () => {
     if (startIndex + visibleCount < hotel.length) {

@@ -5,7 +5,7 @@ import { ArrowButtons } from "../detail/arrowButtons";
 import { useState } from "react";
 import { bplace } from "@/app/data";
 import { TailanCard } from "../detail/tailanCard";
-export const TailanArea = () => {
+export const TailanArea = ({data}:any) => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
   const handleNext = () => {
@@ -32,7 +32,7 @@ export const TailanArea = () => {
         </div>
       </div>
       <div className="mt-4 sm:mt-10 w-full">
-        <TailanCard bplace={bplace} startIndex={startIndex} />
+        <TailanCard data={data} startIndex={startIndex} />
       </div>
     </div>
   );

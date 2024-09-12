@@ -4,10 +4,17 @@ import urls from "@/lib/urls";
 import { BannerArea } from "@/app/components/homapage/bannerArea";
 import { BrandCard } from "@/app/components/detail/brandCard";
 import { OrangeBourd } from "@/app/components/detail/orengeBourd";
+import { useState , useEffect } from "react";
 export default function Gift() {
-  const data = fetchFunc(urls.KEEPSAKE);
-  console.log(data);
-
+  const [data, setdata] = useState();
+  const fetchedData = async () => {
+    const res = fetchFunc(urls.KEEPSAKE);
+    const data = await (await res).json();
+    setdata(data);
+  };
+  useEffect(() => {
+    fetchedData();
+  }, []);
   return (
     <div className="w-full sm:w-[90%] xl:w-[1148px]  flex flex-col items-center justify-between gap-5 sm:mt-0 mt-5 md:gap-10 ">
       <BannerArea />
@@ -15,8 +22,8 @@ export default function Gift() {
           {" "}
           <OrangeBourd data={"БРЭНД БҮТЭЭГДЭХҮҮН"} />
         </div>
-        <div></div>
-      <BrandCard />
+  
+      <BrandCard data={data}/>
     </div>
   );
 }

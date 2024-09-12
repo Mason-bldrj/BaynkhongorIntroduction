@@ -2,9 +2,17 @@
 import { OrangeBourd } from "../detail/orengeBourd";
 import { VideoCard } from "../detail/videoCard";
 import { ArrowButtons } from "../detail/arrowButtons";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import { videoArr } from "@/app/data";
+import urls from "@/lib/urls";
+import { fetchFunc } from "@/app/backdata";
 export const VideoArea = () => {
+  const [data1, setdata1] = useState();
+  const fetchedData = async () => {
+    const res = fetchFunc(urls.NEWS);
+    const data = await (await res).json();
+    setdata1(data.videoData);
+  };
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 1;
   const handleNext = () => {
@@ -12,14 +20,16 @@ export const VideoArea = () => {
       setStartIndex(startIndex + 1);
     }
   };
-
   const handlePrev = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);
     }
   };
+  useEffect(() => {
+    fetchedData();
+  }, []);
   return (
-    <div className="w-full h-[280px]  sm:h-[900px] xl:h-[1000px] flex items-center flex-col">
+    <div className="w-full mb-[200px] sm:mb-[300px] lg:mb-[500px] flex items-center flex-col">
       <div className="flex sm:w-[80%] xl:w-[1147px] sm:ml-[150px] sm:mt-20 w-full mt-10 ">
         <OrangeBourd data={"ВИДЕО МЭДЭЭ"} />
       </div>
@@ -28,7 +38,7 @@ export const VideoArea = () => {
           <div className="flex items-center w-full h-[fit] gap-[55px]  mt-[130px] ">
             <div className="xl:w-[1130px] sm:h-[300px] xl:h-[420px] w-[85%] ">
               {" "}
-              <VideoCard videoArr={videoArr} startIndex={startIndex} />
+              <VideoCard videoArr={videoArr} data1={data1} startIndex={startIndex} />
             </div>{" "}
             <div className="sm:block hidden">
               <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />

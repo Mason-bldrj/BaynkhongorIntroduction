@@ -6,6 +6,7 @@ import { OrganizationArea4 } from "./organizationPage/components/organizationAre
 import { OrganizationArea5 } from "./organizationPage/components/organizationArea5";
 import { OrganizationArea6 } from "./organizationPage/components/organizationArea6";
 import { OrganizationArea7 } from "./organizationPage/components/organizationArea7";
+import { OrganizationArea8 } from "./organizationPage/components/organizationArea8";
 import { BannerArea } from "@/app/components/homapage/bannerArea";
 import { organiztionCategory } from "@/app/data";
 import { useState, useEffect } from "react";
@@ -17,7 +18,7 @@ export default function Organization() {
   const fetchedData = async () => {
     const res = fetchFunc(urls.institution);
     const data = await (await res).json();
-    setdata(data)
+    setdata(data);
   };
   const handleComponents = (i: number) => {
     setCategoryIndex(i);
@@ -26,13 +27,14 @@ export default function Organization() {
     fetchedData();
   }, []);
   const components = [
-    <OrganizationArea1 key="area1" />,
-    <OrganizationArea2 key="area2" />,
-    <OrganizationArea3 key="area3" />,
+    <OrganizationArea1 data={data} key="area1" />,
+    <OrganizationArea2 data={data} key="area2" />,
+    <OrganizationArea3 data={data} key="area3" />,
     <OrganizationArea4 data={data} key="area4" />,
-    <OrganizationArea5 key="area5" />,
-    <OrganizationArea6 key="area6" />,
-    <OrganizationArea7 key="area7" />,
+    <OrganizationArea5 data={data} key="area5" />,
+    <OrganizationArea6 data={data} key="area6" />,
+    <OrganizationArea7 data={data} key="area7" />,
+    <OrganizationArea8 data={data} key="area8" />,
   ];
 
   return (
@@ -51,7 +53,9 @@ export default function Organization() {
           ))}
         </div>
       </div>
-      <div className="xl:w-full w-full sm:w-[90%] flex justify-center ">{components[categoryIndex]}</div>
+      <div className="xl:w-full w-full sm:w-[90%] flex justify-center ">
+        {components[categoryIndex]}
+      </div>
     </div>
   );
 }

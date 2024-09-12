@@ -3,8 +3,10 @@ import Image from "next/image";
 import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "../detail/arrowButtons";
+import { useRouter } from "next/navigation";
 
-export const BrandCard = () => {
+export const BrandCard = ({ data }: any) => {
+  const router = useRouter();
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
 
@@ -20,27 +22,32 @@ export const BrandCard = () => {
     }
   };
 
+  const handleNavigate = (id: string) => {
+    router.push(`/user/KEEPSAKE${id}`);
+  };
+
   return (
     <div className="w-full h-full flex items-center justify-start gap-[20px] sm:mt-0 mt-3">
       {/* Mobile View */}
       <div className="flex w-full xl:w-[1029px] h-full overflow-x-scroll sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
         <div className="sm:hidden flex gap-3 h-full">
-          {bplace.map((el: any, i: number): JSX.Element => {
+          {data?.map((el: any, i: number): JSX.Element => {
             return (
               <div
                 key={i}
-                className="min-w-[80vw] h-full relative rounded-sm"
+                className="min-w-[60vw] h-[200px] relative rounded-sm" // Зургуудыг багасгах
+                onClick={() => handleNavigate(el._id)}
               >
                 <Image
                   className="object-cover rounded-sm h-full w-full"
-                  src="https://images.unsplash.com/photo-1627454820516-dc767bcb4d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3"
-                  width={23453450}
-                  height={2500}
+                  src={el.img}
+                  width={800} // Зургийн хэмжээг тохируулсан
+                  height={500}
                   alt="Carousel image"
                 />
                 <div className="bg-black bg-opacity-50 absolute w-full h-full top-0 left-0 flex justify-center items-center">
                   <div className="text-white text-[12px] text-center px-2">
-                    "{el.title}"
+                    "{el.name}"
                   </div>
                 </div>
               </div>
@@ -55,19 +62,23 @@ export const BrandCard = () => {
             transform: `translateX(-${startIndex * 343}px)`,
           }}
         >
-          {bplace.map((el: any, i: number): JSX.Element => {
+          {data?.map((el: any, i: number): JSX.Element => {
             return (
-              <div key={i} className="min-w-[323px] min-h-[377px] relative">
+              <div
+                key={i}
+                className="min-w-[323px] h-[377px] relative"
+                onClick={() => handleNavigate(el._id)}
+              >
                 <Image
                   className="object-cover w-full h-full rounded-sm"
-                  src="https://images.unsplash.com/photo-1627454820516-dc767bcb4d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3"
+                  src={el.img}
                   width={365}
                   height={350}
                   alt="Carousel image"
                 />
                 <div className="flex justify-center items-center opacity-0 hover:bg-black hover:opacity-50 absolute w-full h-full top-0 left-0">
                   <div className="sm:text-2xl text-[10px] mt-[120px] text-white sm:w-[200px] w-full h-full text-center">
-                    "{el.title}"
+                    "{el.name}"
                   </div>
                 </div>
               </div>

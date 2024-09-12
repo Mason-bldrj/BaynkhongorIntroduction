@@ -7,7 +7,7 @@ export const MuseumCard = ({ data }: any) => {
   return (
     <div className="w-full justify-around flex flex-wrap gap-5">
       {" "}
-      {dataTime.map((el: any, i: number) => {
+      {dataTime?.map((el: any, i: number) => {
         return (
           <div
             key={i}
@@ -42,10 +42,10 @@ export const MuseumCard = ({ data }: any) => {
         );
       })}
       <div className="w-[290px] h-[205px] shadow-md flex flex-col items-center justify-center mb-2 gap-2 relative">
-        {dataPrice.map((el: any, i: number) => {
+        {dataPrice?.map((el: any, i: number) => {
           return (
             <div key={i} className="flex justify-between *:text-[13px] w-[80%]">
-              <div>{el.amount.amountType}</div>
+              <div>{el?.amount.amountType}</div>
               <div>{el.amount.amount + "₮"}</div>
             </div>
           );

@@ -1,9 +1,9 @@
 "use client";
 import { fetchFunc } from "@/app/backdata";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-type UrlsType = Record<string, string>; // Бүх түлхүүрүүдийг string төрөлтэй гэж тодорхойлно
+import Image from "next/image";
+type UrlsType = Record<string, string>;
 const urls: UrlsType = {
   ADMIN_VERIFY: "/admin/verifyAdmin",
   ABOUTUS: "/aboutus",
@@ -24,26 +24,28 @@ const urls: UrlsType = {
 export default function Page({ params }: { params: { slug: any } }) {
   const pathname = usePathname();
   const { slug } = params;
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<any>([]);
+  const [filteredData, setFilteredData] = useState<any>(null);
   const keywords = Object.keys(urls).filter((key) => key !== "MAIN_URL");
   const findKeyword = (url: string) => {
     const regex = new RegExp(`(${keywords.join("|")})`);
     const match = url.match(regex);
     return match ? match[1] : null;
   };
-  const keyword:any = findKeyword(pathname);
-  const url = pathname
-console.log(keyword);
-
-const startIndex = url.indexOf(keyword);
-const endIndex = startIndex + keyword.length;
-const afterKeyword = url.substring(endIndex);
+  const keyword: any = findKeyword(pathname);
+  const url = pathname;
+  // Extract the portion of the URL after the keyword
+  const startIndex = url.indexOf(keyword);
+  const endIndex = startIndex + keyword.length;
+  const afterKeyword = url.substring(endIndex);
   const fetchedData = async () => {
     if (keyword && urls[keyword]) {
       try {
-        const res = await fetchFunc(urls[keyword]);
-        const data = await res.json();
-        setData(data);
+        const res = await fetchFunc(
+          urls[keyword] + `/getbyId?id=` + afterKeyword
+        );
+        const resultData = await res.json();
+        setData(resultData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -56,21 +58,45 @@ const afterKeyword = url.substring(endIndex);
   useEffect(() => {
     fetchedData();
   }, [pathname]);
-
-// const filtredData = data?.filter((el:any)=>{return el._id === afterKeyword})
-//  setData(filtredData)
-  
   return (
-    <div>
-      <h1>My Post: {slug}</h1>
-      {data ? (
-        <div>
-          {/* Өгөгдлийг энд харуулах */}
-          {/* Жишээ: <pre>{JSON.stringify(data, null, 2)}</pre> */}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div className="w-full mt-5 flex flex-col  items-center mb-10">
+      <div className="w-[90%] sm:w-[600px] md:w-[700px] lg:w-[1000px] xl:w-[1147px]">
+        {data ? (
+          <div className="w-full flex flex-col gap-5 ">
+            <div className=" text-black font-bold sm:text-[24px] lg:text-[30px] w-full">
+              {data.title}
+            </div>
+            <div className="w-full text-center text-[#ff7119] text-[24px]">
+              {data.name}
+            </div>
+            <div className="w-full flex justify-between flex-wrap">
+              {" "}
+              <Image
+                className="rounded-md w-full sm:w-[50%]"
+                src={data.img}
+                width={500}
+                height={500}
+                alt="Picture of the author"
+              />
+              <div className="w-full sm:w-[45%] flex flex-col items-center relative max-h-fit min-h-[100px] mt-4 sm:mt-0">
+                <div className="w-[90%] overflow-hidden">
+                  {" "}
+                  <div className="md:text-[15px] lg:text-[17px]">
+                    {" "}
+                    {data.description}
+                  </div>
+                </div>
+
+                <div className=" absolute bottom-2 left-4">
+                  {data.date ? data.date.slice(0, 10) : "asdasdsad"}
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <p>Мэдээлэл байхгүй</p>
+        )}
+      </div>
     </div>
   );
 }

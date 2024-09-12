@@ -4,7 +4,9 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { ArrowButtons } from "@/app/components/detail/arrowButtons";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 export const OrganizationRestaurantCard = ({ restaurant }: any) => {
+  const router = useRouter();
   const [startIndex2, setStartIndex2] = useState(0);
   const handleNext2 = () => {
     if (startIndex2 + 1 < restaurant.length) {
@@ -15,6 +17,9 @@ export const OrganizationRestaurantCard = ({ restaurant }: any) => {
     if (startIndex2 > 0) {
       setStartIndex2(startIndex2 - 1);
     }
+  };
+  const handleNavigate = (id: string) => {
+    router.push(`/user/institution${id}`);
   };
   return (
     <div className="w-full flex flex-col gap-[20px]">
@@ -32,14 +37,14 @@ export const OrganizationRestaurantCard = ({ restaurant }: any) => {
             transform: `translateX(-${startIndex2 * 290}px)`,
           }}
         >
-          {restaurant.map((el: any, i: number) => {
+          {restaurant?.map((el: any, i: number) => {
             return (
-              <div key={i}>
+              <div key={i} onClick={() => handleNavigate(el._id)}>
                 <div className="border w-[250px] xl:w-[270px] h-[318px] rounded-md flex flex-col items-center">
                   <div className="w-full h-[50%] relative">
                     <Image
                       className="w-full h-full rounded-t-md"
-                      src={el.icon}
+                      src={el.img}
                       width={325}
                       height={296}
                       alt="Carousel image"
@@ -49,17 +54,16 @@ export const OrganizationRestaurantCard = ({ restaurant }: any) => {
                         <div className="border border-white bg-[#ff7119] h-fit rounded-[50%] p-2 text-white w-fit">
                           <FaPhoneAlt />
                         </div>
-                        <div>{el.phoneNumber}</div>
+                        <div>{el.phoneNumbers.phoneNumber1}</div>
                       </div>
                     </div>
                   </div>
                   <div className="w-[90%] h-[50%] flex flex-col  justify-around">
                     <div className="text-[#ff7119] text-[16px] text-center">
-                      {el.title}
-                      
+                      {el.name}
                     </div>
-                    <div className="text-black opacity-60 text-[13px] w-full text-start">
-                      {el.idk}
+                    <div className="text-black opacity-60 text-[13px] w-full text-start overflow-hidden">
+                      {el.description}
                     </div>
                     <button className="flex text-center justify-start gap-2 text-[#ff7119] items-center ">
                       <FaRegArrowAltCircleRight />

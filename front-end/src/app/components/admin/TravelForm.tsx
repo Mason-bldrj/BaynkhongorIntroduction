@@ -1,9 +1,10 @@
-import { imageDb } from "@/firebase";
-import { postFunc } from "@/lib/backdata";
 import urls from "@/lib/urls";
 import { ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
 import { v4 } from "uuid";
+
+import { postFunc } from "@/app/backdata";
+import { imageDb } from "@/firebase";
 
 const TravelForm = () => {
   const [travelData, setTravelData] = useState({

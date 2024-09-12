@@ -12,6 +12,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(urls.ABOUTUS);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data[0]);
       };
       fetchedData();
@@ -20,6 +22,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(urls.institution);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
       };
       fetchedData();
@@ -28,6 +32,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(urls.TRAVEL);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
       };
       fetchedData();
@@ -36,6 +42,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(urls.EVENT);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
       };
       fetchedData();
@@ -44,6 +52,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(urls.KEEPSAKE);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
       };
       fetchedData();
@@ -54,6 +64,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(urls.LEGALITY);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
       };
       fetchedData();
@@ -62,6 +74,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(urls.EMPLOYEE);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
       };
       fetchedData();
@@ -70,6 +84,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(`${urls.NEWS}/report`);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
       };
       fetchedData();
@@ -78,6 +94,8 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(`${urls.NEWS}/video`);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
       };
       fetchedData();
@@ -86,7 +104,10 @@ const DashboardSec = (props: any) => {
       const fetchedData = async () => {
         const res = fetchFunc(`${urls.NEWS}/resources`);
         const data = await (await res).json();
+        console.log(data);
+
         setData(data);
+        console.log(data);
       };
       fetchedData();
       console.log(data);
@@ -97,7 +118,7 @@ const DashboardSec = (props: any) => {
   }, [menus]);
 
   return (
-    <div>
+    <>
       <table className="w-full border-collapse  ">
         <thead className="borde-b border-black-100 ">
           <th className="border-solid border-[1px] p-[4px] border-[#dddddd]">
@@ -162,7 +183,7 @@ const DashboardSec = (props: any) => {
           <tr></tr>
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 export default DashboardSec;

@@ -14,6 +14,15 @@ export async function POST(req: NextRequest, res: NextResponse) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
+export async function GET(req: NextRequest, res: NextResponse) {
+  try {
+    const resourcesData = await resourcesModel.find();
+
+    return NextResponse.json(resourcesData);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.messege }, { status: 500 });
+  }
+}
 export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
 

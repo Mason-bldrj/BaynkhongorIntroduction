@@ -7,7 +7,7 @@ const newsSchema = new Schema({
       type: String,
       required: true,
     },
-    date: Date,
+    date: String,
     description: String,
   },
   video: {

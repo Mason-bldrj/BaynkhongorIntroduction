@@ -24,8 +24,6 @@ const urls: UrlsType = {
 export default function Page({ params }: { params: { slug: any } }) {
   const pathname = usePathname();
   const { slug } = params;
-  console.log(slug);
-
   const [data, setData] = useState<any>([]);
   const [filteredData, setFilteredData] = useState<any>(null);
   const keywords = Object.keys(urls).filter((key) => key !== "MAIN_URL");
@@ -60,29 +58,37 @@ export default function Page({ params }: { params: { slug: any } }) {
   useEffect(() => {
     fetchedData();
   }, [pathname]);
-  console.log(data);
-  
   return (
-    <div className="w-full mt-5 flex flex-col items-center">
-      <div className="w-[1147px] border">
-        {data? (
-          <div className="w-full flex flex-col gap-5">
-            <div className=" text-[#ff7119] text-[24px] w-full text-center">
+    <div className="w-full mt-5 flex flex-col  items-center mb-10">
+      <div className="w-[90%] sm:w-[600px] md:w-[700px] lg:w-[1000px] xl:w-[1147px]">
+        {data ? (
+          <div className="w-full flex flex-col gap-5 ">
+            <div className=" text-black font-bold sm:text-[24px] lg:text-[30px] w-full">
+              {data.title}
+            </div>
+            <div className="w-full text-center text-[#ff7119] text-[24px]">
               {data.name}
             </div>
-            <div className="w-full flex justify-between">
+            <div className="w-full flex justify-between flex-wrap">
               {" "}
               <Image
-                className="border rounded-md w-[50%]"
+                className="rounded-md w-full sm:w-[50%]"
                 src={data.img}
                 width={500}
                 height={500}
                 alt="Picture of the author"
               />
-              <div className="w-[45%]">
-                <div> {data.description}</div>
-                <div>
-                  {data.date ? data.date.slice(0, 10) : ""}
+              <div className="w-full sm:w-[45%] flex flex-col items-center relative max-h-fit min-h-[100px] mt-4 sm:mt-0">
+                <div className="w-[90%] overflow-hidden">
+                  {" "}
+                  <div className="md:text-[15px] lg:text-[17px]">
+                    {" "}
+                    {data.description}
+                  </div>
+                </div>
+
+                <div className=" absolute bottom-2 left-4">
+                  {data.date ? data.date.slice(0, 10) : "asdasdsad"}
                 </div>
               </div>
             </div>

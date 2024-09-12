@@ -4,23 +4,28 @@ import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "../detail/arrowButtons";
 import { useRouter } from "next/navigation";
-export const BrandCard = ({data}:any) => {
+
+export const BrandCard = ({ data }: any) => {
   const router = useRouter();
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
+
   const handleNext = () => {
     if (startIndex + visibleCount < bplace.length) {
       setStartIndex(startIndex + 1);
     }
   };
+
   const handlePrev = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);
     }
   };
+
   const handleNavigate = (id: string) => {
     router.push(`/user/KEEPSAKE${id}`);
   };
+
   return (
     <div className="w-full h-full flex items-center justify-start gap-[20px] sm:mt-0 mt-3">
       {/* Mobile View */}
@@ -28,12 +33,16 @@ export const BrandCard = ({data}:any) => {
         <div className="sm:hidden flex gap-3 h-full">
           {data?.map((el: any, i: number): JSX.Element => {
             return (
-              <div key={i} className="min-w-[80vw] h-full relative rounded-sm" onClick={() => handleNavigate(el._id)}>
+              <div
+                key={i}
+                className="min-w-[60vw] h-[200px] relative rounded-sm" // Зургуудыг багасгах
+                onClick={() => handleNavigate(el._id)}
+              >
                 <Image
                   className="object-cover rounded-sm h-full w-full"
-                  src="https://images.unsplash.com/photo-1627454820516-dc767bcb4d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3"
-                  width={23453450}
-                  height={2500}
+                  src={el.img}
+                  width={800} // Зургийн хэмжээг тохируулсан
+                  height={500}
                   alt="Carousel image"
                 />
                 <div className="bg-black bg-opacity-50 absolute w-full h-full top-0 left-0 flex justify-center items-center">
@@ -55,7 +64,11 @@ export const BrandCard = ({data}:any) => {
         >
           {data?.map((el: any, i: number): JSX.Element => {
             return (
-              <div key={i} className="w-[323px] h-[377px] relative" onClick={() => handleNavigate(el._id)}>
+              <div
+                key={i}
+                className="min-w-[323px] h-[377px] relative"
+                onClick={() => handleNavigate(el._id)}
+              >
                 <Image
                   className="object-cover w-full h-full rounded-sm"
                   src={el.img}

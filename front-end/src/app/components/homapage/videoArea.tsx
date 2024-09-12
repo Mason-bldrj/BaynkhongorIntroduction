@@ -29,7 +29,7 @@ export const VideoArea = () => {
     fetchedData();
   }, []);
   return (
-    <div className="w-full h-[280px]  sm:h-[900px] xl:h-[1000px] flex items-center flex-col">
+    <div className="w-full mb-[200px] sm:mb-[300px] lg:mb-[500px] flex items-center flex-col">
       <div className="flex sm:w-[80%] xl:w-[1147px] sm:ml-[150px] sm:mt-20 w-full mt-10 ">
         <OrangeBourd data={"ВИДЕО МЭДЭЭ"} />
       </div>

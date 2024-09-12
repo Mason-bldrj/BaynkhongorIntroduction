@@ -1,8 +1,8 @@
 "use client";
-import AdminMain from "@/app/components/admin/AdminMains";
-import AdminSideBar from "@/app/components/admin/AdminSideBar";
-import DashboardSec from "@/app/components/admin/Dashboard";
 
+import AdminMain from "@/components/admin/AdminMains";
+import AdminSideBar from "@/components/admin/AdminSideBar";
+import DashboardSec from "@/components/admin/Dashboard";
 import { useState } from "react";
 
 const AdminDashboard = () => {

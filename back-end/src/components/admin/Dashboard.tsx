@@ -1,4 +1,4 @@
-import { fetchFunc } from "@/app/backdata";
+import { fetchFunc } from "@/lib/backdata";
 import urls from "@/lib/urls";
 import { Router } from "next/router";
 import { useEffect, useState } from "react";

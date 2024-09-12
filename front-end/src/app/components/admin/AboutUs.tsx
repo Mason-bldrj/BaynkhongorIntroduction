@@ -3,8 +3,9 @@ import { useState } from "react";
 import DefaultInformationSec from "./defaultInformationForm";
 import { v4 } from "uuid";
 import { ref, uploadBytes, getStorage } from "firebase/storage";
+
+import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
-import { postFunc } from "@/lib/backdata";
 
 const AboutUs = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -53,7 +54,7 @@ const AboutUs = () => {
         email: aboutUsData.email,
         about: aboutUsData.about,
         aboutOffice: aboutUsData.aboutOffice,
-        porpose: "0",
+        porpose: aboutUsData.porpose,
         mainImg: aboutUsData.mainImg,
         objective: aboutUsData.objective,
         phoneNumbers: {
@@ -114,7 +115,7 @@ const AboutUs = () => {
         <div className="flex items-center gap-[40px] ">
           <input
             type="file"
-            placeholder="Зураг"
+            placeholder=""
             className="px-[6px] py-[8px] rounded-[8px]"
             name="mainImg"
             onChange={(event) => {
@@ -198,6 +199,22 @@ const AboutUs = () => {
               setAboutUsData({
                 ...aboutUsData,
                 objective: event.target.value,
+              });
+            }, 1000);
+          }}
+        />
+      </div>
+      <div className="w-full h-[100px]">
+        <div>Зорилт</div>
+        <textarea
+          placeholder="Зорилт"
+          name="objective"
+          className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
+          onChange={(event) => {
+            setTimeout(() => {
+              setAboutUsData({
+                ...aboutUsData,
+                porpose: event.target.value,
               });
             }, 1000);
           }}

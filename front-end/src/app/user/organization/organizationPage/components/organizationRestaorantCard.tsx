@@ -24,7 +24,7 @@ export const OrganizationRestaurantCard = ({ restaurant }: any) => {
   return (
     <div className="w-full flex flex-col gap-[20px]">
       <div className="flex w-full  xl:w-full justify-between">
-        <div className=" w-full text-[#ff7119]">РЕСТОРАН</div>
+        <div className=" w-full text-[#ff7119]">Үйлчилгээ</div>
         <div className="sm:block hidden">
           {" "}
           <ArrowButtons handleNext={handleNext2} handlePrev={handlePrev2} />

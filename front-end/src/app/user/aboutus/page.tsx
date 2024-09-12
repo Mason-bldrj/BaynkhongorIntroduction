@@ -19,7 +19,7 @@ export default function AboutUs() {
     fetchedData();
   }, []);
   return (
-    <div className="sm:h-[fit] md:h-[300px]  sm:w-[98%] lg:w-[950px] lg:h-[340px] xl:h-[373px] xl:w-[1137px] flex flex-col items-center mt-10 gap-4">
+    <div className="sm:h-[fit] md:h-[300px]   lg:h-[340px] xl:h-[373px] max-w-[1147px] m-auto w-[95%]  flex flex-col items-center mt-10 gap-4">
       <div className="lg:w-[870px] xl:w-[987px] flex flex-col items-start justify-between md:h-[200px]">
         <div className="w-full text-center text-[10px] sm:text-sm font-sans  tracking-wide leading-[20px] md:leading-[28px]">
           {data[0]?.about}

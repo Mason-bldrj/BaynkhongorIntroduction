@@ -9,7 +9,6 @@ export const SuggestionArea = () => {
   const [clientPercent, setClientPercent] = useState(0);
   const [dataHolder, setDataHolder] = useState(bplace2);
   const [isExpanded, setIsExpanded] = useState(false); // State to toggle content
-
   const progressCalculator = (index: number, Event: any) => {
     const updatedData = [...dataHolder];
     updatedData[index].count++;
@@ -25,12 +24,11 @@ export const SuggestionArea = () => {
   };
 
   useEffect(() => {
-    // Empty useEffect
   }, []);
 
   return (
-    <div className="w-[90%] lg:w-[1000px] flex flex-col items-center sm:block sm:w-[80%] xl:w-[1147px] mt-3 sm:mt-10">
-      <div className="xl:ml-10 sm:flex flex-col gap-5 w-full hidden">
+    <div className="w-[95%] max-w-[1147px] mx-auto flex flex-col items-center sm:block mt-3 sm:mt-10">
+      <div className=" sm:flex w-full justify-between">
         <div className="w-[173px]">
           <OrangeBourd data={"Санал"} />
         </div>
@@ -52,10 +50,10 @@ export const SuggestionArea = () => {
             {dataHolder.map((el, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center w-full sm:w-[45%] md:w-[30%] lg:w-[22%] xl:w-[18%] mb-5"
+                className="flex flex-col items-center w-full  lg:w-[22%] xl:w-[20%] mb-5"
               >
                 <Image
-                  className="object-cover w-full h-[150px] cursor-pointer"
+                  className="object-cover w-full max-h-[150px] cursor-pointer"
                   src={el.icon}
                   width={500}
                   height={500}

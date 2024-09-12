@@ -29,7 +29,7 @@ export const BeautifulAreaCard = ({ data }: any) => {
 
   return (
     <div className="w-full h-[200px] sm:h-[370px] flex items-center justify-between">
-      <div className="w-full sm:w-[99%] h-full xl:w-[1135px] flex sm:overflow-hidden">
+      <div className="w-full  h-full flex sm:overflow-hidden">
         {/* Mobile view */}
         <div className="sm:hidden flex overflow-x-scroll h-full w-full gap-5">
           {data?.map((el: any, i: number): JSX.Element => {

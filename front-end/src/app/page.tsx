@@ -23,7 +23,7 @@ export default function Home() {
     fetchedData();
   }, []);
   return (
-    <div className="w-full flex flex-col items-center justify-between ">
+    <div className=" flex flex-col items-center justify-between ">
       <DefaultArea />
       <BannerArea />
       <SuggestionArea />

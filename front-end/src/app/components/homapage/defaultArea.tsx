@@ -22,7 +22,7 @@ export const DefaultArea = () => {
       {" "}
       <Header switchHeader={switchState} />
       <Header2 switchHeader={switchState} />
-      <div className="w-full xl:w-[1441px] ">
+      <div className="container xl:w-[1441px] ">
         <MainMenu />
         <InfoAimag />
       </div>

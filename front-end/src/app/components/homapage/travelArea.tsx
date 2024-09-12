@@ -29,24 +29,24 @@ export const TravelArea = () => {
     fetchedData();
   }, []);
   return (
-    <div className="w-full sm:w-[90%] xl:w-[1147px] mt-10">
-      <div className="flex w-full sm:w-[90%] xl:w-full  justify-between">
-        <div className="sm:ml-[80px] ml-2">
+    <div className="max-w-[1147px] w-[95%] mt-5 sm:mt-10 flex flex-col gap-5">
+      <div className="flex w-full  justify-between">
+        <div className="w-full flex justify-between">
           {" "}
           <OrangeBourd data={"АЯЛАЛ "} />
         </div>
-        <div className=" sm:mr-0 mr-2">
+        <div className="">
           {" "}
           <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
         </div>
       </div>
-      <div className="mt-4 sm:mt-10 w-full">
+    
         <TravelCard
           bplace={bplace}
           data={data}
           startIndex={startIndex}
         />
-      </div>
+
     </div>
   );
 };

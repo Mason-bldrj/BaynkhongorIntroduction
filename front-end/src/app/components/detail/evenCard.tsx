@@ -25,13 +25,13 @@ export const  EventCard = ({data, startIndex }: any) => {
   };
   return (
     <div className="w-full sm:h-full h-[300px] flex ">
-      <div className="flex w-full sm:w-[1155px] h-[470px] overflow-scroll sm:overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">
-        <div className="sm:hidden flex gap-5 ">
+      <div className="flex w-full sm:w-[1155px] h-[470px]  sm:overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">
+        <div className="sm:hidden flex gap-5 overflow-x-scroll w-full">
           {data?.map((el: any , i:number) => {
             return (
-              <div key={i} className=" relative"  onClick={() => handleNavigate(el._id)}>
+              <div key={i} className=" relative w-[250px] overflow-hidden"  onClick={() => handleNavigate(el._id)}>
                 <Image
-                  className="min-w-[250px] max-h-[150px]  rounded-t-md"
+                  className="min-w-[250px] max-h-[150px]  rounded-t-md border"
                   src={el.img}
                   width={200}
                   height={100}
@@ -39,7 +39,7 @@ export const  EventCard = ({data, startIndex }: any) => {
                 />
                 <div className="w-full h-[100px] bg-slate-100 *:text-[12px] *:ml-2 rounded-b-md flex flex-col gap-1">
                   <div className="mt-1 font-bold">{el.name}</div>
-                  <div>{el.description}</div>
+                  <div className="">{el.description}</div>
                 </div>
               </div>
             );
@@ -55,7 +55,7 @@ export const  EventCard = ({data, startIndex }: any) => {
             return (
               <div key={i} className="sm:w-full xl:w-[1000px] h-[440px] relative "  onClick={() => handleNavigate(el._id)}>
                 <Image
-                  className="sm:w-full xl:w-[1000px] max-h-[440px] sm:shadow-[10px_10px] xl:shadow-[30px_30px] rounded-md shadow-gray-300 object-cover"
+                  className="sm:w-full xl:w-[1000px] max-h-[440px] shadow-[30px_30px] rounded-md shadow-gray-300 object-cover"
                   src={el.img}
                   width={500}
                   height={500}

@@ -45,14 +45,14 @@ export default function SideBar() {
       case 5:
         router.push("/user/eventt");
         break;
-      case 6:
+      
         router.push("/user/law");
         break;
       case 7:
         router.push("/user/gift");
         break;
       case 8: // Corrected index for 'projectt'
-        router.push("/user/projectt");
+        router.push("/user/project");
         break;
       case 9:
         router.push("/user/foreignrelations");
@@ -61,7 +61,6 @@ export default function SideBar() {
         break;
     }
   };
-
   const list = () => (
     <Box
       sx={{

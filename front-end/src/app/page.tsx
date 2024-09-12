@@ -22,7 +22,6 @@ export default function Home() {
   useEffect(() => {
     fetchedData();
   }, []);
-  console.log(data);
   return (
     <div className="w-full flex flex-col items-center justify-between ">
       <DefaultArea />

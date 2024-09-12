@@ -2,7 +2,20 @@ import { IoLocationOutline } from "react-icons/io5";
 import { GoMail } from "react-icons/go";
 import { FiPhone } from "react-icons/fi";
 import { LuSend } from "react-icons/lu";
+import { useState } from "react";
 export const Footer = () => {
+  const [message, setMessage] = useState("");
+  const handleSend = () => {
+    if (message) {
+      const recipient = "Bayankhongor.tourism@gmail.com";
+      const subject = "Inquiry";
+      const body = message;
+      const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink; // This will open the default email client
+    }
+  };
   return (
     <div className="w-full">
       <div className="sm:hidden flex h-full bg-[#ff7119] flex-col items-center gap-2">
@@ -90,19 +103,22 @@ export const Footer = () => {
                   </div>
                 </div>
               </div>
-
-              <div className=" lg:w-[380px] w-[130px] flex flex-col items-center text-center lg:items-start gap-[20px] mt-[20px]">
+              <div className="lg:w-[380px] w-[130px] flex flex-col items-center text-center lg:items-start gap-[20px] mt-[20px]">
                 <div className="text-white lg:text-[15px] text-[12px]">
-                  Баянхонгорт яаж очих вэ?{" "}
+                Санал хүсэлт
                 </div>
                 <div className="w-full flex flex-col items-end gap-2">
-                  {" "}
-                  <input
-                    className=" lg:pb-[93px] w-full lg:px-2 px-4 md:py-1 lg:py-2 rounded-md"
+                  <textarea
+                    className=" w-full lg:px-2 px-4 md:py-1 lg:py-2 rounded-md"
                     placeholder="Мэйл бичих..."
-                    type="text"
+                    rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
-                  <button className="flex hover:text-[#ff7117] items-center lg:text-[16px] text-[12px] gap-2 text-white">
+                  <button
+                    onClick={handleSend}
+                    className="flex hover:text-[#ff7117] items-center lg:text-[16px] text-[12px] gap-2 text-white"
+                  >
                     <LuSend />
                     <div className="lg:text-[16px] text-[12px]">Илгээх</div>
                   </button>

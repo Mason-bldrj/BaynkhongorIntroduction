@@ -1,14 +1,17 @@
 "use client";
 import Image from "next/image";
 
-export const VideoCard = ({ videoArr,data1, startIndex }: any) => {
+export const VideoCard = ({ videoArr, data1 = [], startIndex }: any) => {
+  const visibleCount = 3; 
+  const maxIndex = Math.max(0, data1.length - visibleCount);
+
   return (
     <div className="w-full flex sm:mt-0 mt-[-100px]">
-      <div className="flex lg:w-[1155px] overflow-scroll sm:overflow-hidden transition-transform duration-300 justify-start">
+      <div className="flex lg:w-[1155px] overflow-x-scroll sm:overflow-hidden transition-transform duration-300 justify-start">
         <div
           className="flex transition-transform duration-300 justify-start gap-[20px]"
           style={{
-            transform: `translateX(-${startIndex * 575}px)`,
+            transform: `translateX(-${Math.min(startIndex, maxIndex) * 575}px)`,
           }}
         >
           {data1?.map((el: any, i: number) => {
@@ -18,13 +21,14 @@ export const VideoCard = ({ videoArr,data1, startIndex }: any) => {
             )?.[1];
 
             return (
-              <div key={i} className="lg:w-[555px]  sm:h-[420px] h-[200px] w-full ">
+              <div
+                key={i}
+                className="lg:w-[555px] sm:w-[400px] w-[90%] h-auto" // Responsive width based on screen size
+              >
                 {videoId ? (
                   <iframe
-                  className="sm:w-[400px] sm:h-[300px] lg:w-[555px] lg:h-[420px] w-[150px] h-[100px]"
+                    className="w-full h-[200px] sm:h-[300px] lg:h-[420px] object-cover" // Responsive height
                     src={`https://www.youtube.com/embed/${videoId}`}
-                    width="555"
-                    height="420"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />

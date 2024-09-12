@@ -1,6 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import ReportModel from "../../../../../model/report.model";
 
+export async function GET(req: NextRequest, res: NextResponse) {
+  try {
+    const reportData = await ReportModel.find();
+
+    return NextResponse.json(reportData);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.messege }, { status: 500 });
+  }
+}
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const { name, date, description } = await req.json();

@@ -1,7 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import ReportModel from "../../../../../model/report.model";
+
 import VideoModel from "../../../../../model/video.model";
 
+export async function GET(req: NextRequest, res: NextResponse) {
+  try {
+    const videoData = await VideoModel.find();
+
+    return NextResponse.json(videoData);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.messege }, { status: 500 });
+  }
+}
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const { name, date, url } = await req.json();

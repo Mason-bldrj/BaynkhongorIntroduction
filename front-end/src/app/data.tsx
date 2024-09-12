@@ -4,13 +4,7 @@ export interface InfoItem {
   phone?: string;
   report?: string;
 }
-// export interface BPlaceItem {
-//   icon?: string;
-//   title?: string;
-//   count?: number;
-//   percent?: number;
-//   idk?: string;
-// }
+
 export const museum = [
   {
     title: "Түүх угсаатны зүй, Байгалийн  музей",

@@ -1,15 +1,10 @@
-import { postFunc } from "@/app/backdata";
 import urls from "@/lib/urls";
 import { useState } from "react";
 import DefaultInformationSec from "./defaultInformationForm";
 import { v4 } from "uuid";
-import {
-  ref,
-  uploadBytes,
-  UploadTaskSnapshot,
-  getStorage,
-} from "firebase/storage";
+import { ref, uploadBytes, getStorage } from "firebase/storage";
 import { imageDb } from "@/firebase";
+import { postFunc } from "@/lib/backdata";
 
 const AboutUs = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -45,8 +40,6 @@ const AboutUs = () => {
 
     const imgRef = ref(imageDb, `${a}`);
     const res = await uploadBytes(imgRef, image);
-    console.log(res);
-    console.log(a);
 
     setAboutUsData({
       ...aboutUsData,
@@ -76,7 +69,6 @@ const AboutUs = () => {
           wardNumber: defaultInformation.wardNumber,
         },
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }

@@ -27,7 +27,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/user/(auth)/login/login.jsx",
-    "../back-end/src/app/admin/page.jsx",
+    "src/app/admin/page.jsx",
     "src/app/user/admin/login/page.jsx",
     "src/app/components/modals/AdminModal.jsx",
     "src/app/components/newspage"

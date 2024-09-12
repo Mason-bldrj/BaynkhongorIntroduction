@@ -1,4 +1,4 @@
-import { postFunc } from "@/app/backdata";
+import { postFunc } from "@/lib/backdata";
 import urls from "@/lib/urls";
 import { useState } from "react";
 

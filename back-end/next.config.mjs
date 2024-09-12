@@ -2,9 +2,17 @@
 const nextConfig = {
   env: {
     MONGODB_URL: process.env.MONGODB_URL,
+    API_URL: process.env.API_URL,
   },
   experimental: {
     instrumentationHook: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "*",
+      },
+    ],
   },
   headers: async () => {
     return [

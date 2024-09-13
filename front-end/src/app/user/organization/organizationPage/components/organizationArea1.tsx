@@ -8,7 +8,7 @@ export const OrganizationArea1 = ({ data }: any): JSX.Element => {
   const restaurant = Array.isArray(data)
   ? data.filter((el: any) => el.institutionType === "SERVICE")
   : [];
-  const visibleCount = 1;
+  const visibleCount = 4;
   const handlePrev = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);

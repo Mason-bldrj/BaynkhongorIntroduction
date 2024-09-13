@@ -3,10 +3,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 export const TailanCard = ({ data, startIndex }: any) => {
   const router = useRouter();
-  console.log(data);
-  
   const handleNavigate = (id: string) => {
-    router.push(`/user/NEWS${id}`);
+    router.push(`/user/REPORT${id}`);
   };
   return (
     <div className="w-full flex ">

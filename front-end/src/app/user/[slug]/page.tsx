@@ -51,7 +51,6 @@ export default function Page({ params }: { params: { slug: any } }) {
   const startIndex = url.indexOf(keyword as string);
   const endIndex = startIndex + (keyword?.length || 0);
   const afterKeyword = url.substring(endIndex);
-
   const fetchedData = async () => {
     if (keyword && urls[keyword]) {
       setLoading(true); // Start loading
@@ -76,7 +75,6 @@ export default function Page({ params }: { params: { slug: any } }) {
   useEffect(() => {
     fetchedData();
   }, [pathname]);
-
   return (
     <div className="max-w-[1147px] m-auto w-[95%] mt-5 flex flex-col items-center mb-10">
       <div className="w-full">

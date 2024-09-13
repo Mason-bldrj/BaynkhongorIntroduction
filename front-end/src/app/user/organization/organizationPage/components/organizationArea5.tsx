@@ -6,7 +6,7 @@ export const OrganizationArea5 = ({ data }: any) => {
   ? data.filter((el: any) => el.institutionType === "CHURCH")
   : [];
   return (
-    <div className="w-full xl:w-[1147px] flex flex-col gap-10">
+    <div className="w-full flex flex-col gap-10">
       <Monestry data={church} />
     </div>
   );

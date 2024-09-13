@@ -9,7 +9,6 @@ export const BrandCard = ({ data }: any) => {
   const router = useRouter();
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
-
   const handleNext = () => {
     if (startIndex + visibleCount < bplace.length) {
       setStartIndex(startIndex + 1);

@@ -12,20 +12,40 @@ import { organiztionCategory } from "@/app/data";
 import { useState, useEffect } from "react";
 import { fetchFunc } from "@/app/backdata";
 import urls from "@/lib/urls";
+
+// Define the type for the data you are fetching
+type OrganizationData = any; // Replace with actual types if possible
+
 export default function Organization() {
-  const [categoryIndex, setCategoryIndex] = useState(0);
-  const [data, setdata] = useState();
+  const [categoryIndex, setCategoryIndex] = useState<number>(0);
+  const [data, setData] = useState<OrganizationData | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch data from the API
   const fetchedData = async () => {
-    const res = fetchFunc(urls.institution);
-    const data = await (await res).json();
-    setdata(data);
+    try {
+      setLoading(true);
+      const res = await fetchFunc(urls.institution);
+      const jsonData = await (await res).json();
+      setData(jsonData);
+    } catch (error) {
+      setError("Failed to fetch organization data");
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
   };
+
   const handleComponents = (i: number) => {
     setCategoryIndex(i);
   };
+
   useEffect(() => {
     fetchedData();
   }, []);
+
+  // Components to display based on category index
   const components = [
     <OrganizationArea1 data={data} key="area1" />,
     <OrganizationArea2 data={data} key="area2" />,
@@ -37,8 +57,20 @@ export default function Organization() {
     <OrganizationArea8 data={data} key="area8" />,
   ];
 
+  if (loading) {
+    return (
+      <div className="w-full flex justify-center items-center h-[200px]">
+        <div className="loader"></div>{" "}
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
-    <div className="max-w-[1147px] m-auto w-[95%]   flex flex-col items-center justify-between gap-5 md:gap-10 sm:mt-0 mt-5">
+    <div className="max-w-[1147px] m-auto w-[95%] flex flex-col items-center justify-between gap-5 md:gap-10 sm:mt-0 mt-5">
       <BannerArea />
       <div className="w-full overflow-x-scroll scrollbar-hide">
         <div className="flex w-[1147px] justify-around border-b border-b-[#ff7119] pb-5 items-center">

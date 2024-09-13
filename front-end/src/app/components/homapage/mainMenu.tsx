@@ -8,8 +8,6 @@ export const MainMenu = () => {
   const router = useRouter();
   const [buttonColor, setButtonColor] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto-slide interval
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % PictureArr.length);

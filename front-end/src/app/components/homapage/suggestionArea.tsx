@@ -8,7 +8,7 @@ export const SuggestionArea = () => {
   const router = useRouter();
   const [clientPercent, setClientPercent] = useState(0);
   const [dataHolder, setDataHolder] = useState(bplace2);
-  const [isExpanded, setIsExpanded] = useState(false); // State to toggle content
+  const [isExpanded, setIsExpanded] = useState(false); 
   const progressCalculator = (index: number, Event: any) => {
     const updatedData = [...dataHolder];
     updatedData[index].count++;
@@ -34,8 +34,6 @@ export const SuggestionArea = () => {
         </div>
         <div>Та Хонгор нутагт хаашаа аялахыг хүсэж байгаагаа сонгоно уу?</div>
       </div>
-
-      {/* Утасны хувилбарын хэсэг */}
       <div className="sm:hidden flex flex-col w-full mt-5">
         <button
           onClick={() => setIsExpanded(!isExpanded)}

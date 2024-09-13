@@ -54,10 +54,10 @@ export const Footer = () => {
           </div>
         </div>
         <div className="w-[90%] flex justify-between">
-          <div className="text-white text-opacity-50 text-[5px]">
+          <div className="text-white text-opacity-50 text-[7px]">
             © 2024 Зохиогчийн бүх эрх хуулиар хамгаалагдсан болно.
           </div>
-          <div className="text-white text-opacity-50 text-[5px]">
+          <div className="text-white text-opacity-50 text-[7px]">
             Вебсайтыг: Вирасофт солюшин ХХК
           </div>
         </div>

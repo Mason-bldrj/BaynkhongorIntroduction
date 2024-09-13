@@ -16,7 +16,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const { offerCount, offer } = await req.json();
 
     const createdRecord = await OffersModel.create({
-      offerCount,
+      offerCount: 0,
       offer,
     });
 

@@ -17,8 +17,7 @@ export const NewsCard = ({ data2, startIndex }: any) => {
         >
           {data2?.map((el: any, i: number) => {
             return (
-              <div key={i}
-              onClick={() => handleNavigate(el._id)}>
+              <div key={i} onClick={() => handleNavigate(el._id)}>
                 <div className=" border  w-[276px] h-[323px]  rounded-md relative">
                   <Image
                     className="w-full h-full object-cover rounded-md"

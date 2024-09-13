@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-export const  EventCard = ({data, startIndex }: any) => {
+export const EventCard = ({ data, startIndex }: any) => {
   const router = useRouter();
   const [backData, setBackData] = useState([]);
   useEffect(() => {
@@ -23,13 +23,21 @@ export const  EventCard = ({data, startIndex }: any) => {
   const handleNavigate = (id: string) => {
     router.push(`/user/EVENT${id}`);
   };
+  console.log(data);
+
   return (
     <div className="w-full sm:h-full h-[300px] flex ">
       <div className="flex w-full sm:w-[1155px] h-[470px]  sm:overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">
         <div className="sm:hidden flex gap-5 overflow-x-scroll w-full">
-          {data?.map((el: any , i:number) => {
+          {data?.map((el: any, i: number) => {
+            console.log(el.img);
+
             return (
-              <div key={i} className=" relative w-[250px] overflow-hidden"  onClick={() => handleNavigate(el._id)}>
+              <div
+                key={i}
+                className=" relative w-[250px] overflow-hidden"
+                onClick={() => handleNavigate(el._id)}
+              >
                 <Image
                   className="min-w-[250px] max-h-[150px]  rounded-t-md border"
                   src={el.img}
@@ -37,6 +45,7 @@ export const  EventCard = ({data, startIndex }: any) => {
                   height={100}
                   alt="Carousel image"
                 />
+                <div>{el?.Name}</div>
                 <div className="w-full h-[100px] bg-slate-100 *:text-[12px] *:ml-2 rounded-b-md flex flex-col gap-1">
                   <div className="mt-1 font-bold">{el.name}</div>
                   <div className="">{el.description}</div>
@@ -53,10 +62,14 @@ export const  EventCard = ({data, startIndex }: any) => {
         >
           {data?.map((el: any, i: number) => {
             return (
-              <div key={i} className="sm:w-full xl:w-[1000px] h-[440px] relative "  onClick={() => handleNavigate(el._id)}>
+              <div
+                key={i}
+                className="sm:w-full xl:w-[1000px] h-[440px] relative "
+                onClick={() => handleNavigate(el._id)}
+              >
                 <Image
                   className="sm:w-full xl:w-[1000px] max-h-[440px] shadow-[30px_30px] rounded-md shadow-gray-300 object-cover"
-                  src={el.img}
+                  src={`${el.img} `}
                   width={500}
                   height={500}
                   alt="Carousel image"

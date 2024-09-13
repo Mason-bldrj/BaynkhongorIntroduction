@@ -10,9 +10,8 @@ export const EventArea = () => {
   const [data, setData] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const [loading, setLoading] = useState(true); // Add loading state
-
   const fetchedData = async () => {
-    setLoading(true); // Start loading
+    setLoading(true);
     try {
       const res = await fetchFunc(urls.EVENT);
       const jsonData = await res.json();
@@ -20,28 +19,23 @@ export const EventArea = () => {
     } catch (error) {
       console.error("Failed to fetch event data:", error);
     } finally {
-      setLoading(false); // Stop loading once data is fetched or on error
+      setLoading(false); 
     }
   };
-
-  const visibleCount = 1; // Number of items to display
-
+  const visibleCount = 1; 
   const handleNext = () => {
     if (startIndex + visibleCount < data.length) {
       setStartIndex(startIndex + 1);
     }
   };
-
   const handlePrev = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);
     }
   };
-
   useEffect(() => {
     fetchedData();
   }, []);
-
   return (
     <div className="max-w-[1147px] w-[95%] mt-5 sm:mt-20 flex flex-col gap-2">
       <div className="flex w-full justify-between mb-3">

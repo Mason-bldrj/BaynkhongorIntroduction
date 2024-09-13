@@ -24,19 +24,6 @@ export const museum = [
     img6: "gandan.png",
   },
 ];
-export const aboutUsData = [
-  {
-    img: "/bureldhuun.png",
-    orshil:
-      "Юуны өмнө манай энэхүү сайтанд зочилсон эрхэм танд баярласан талархсанаа илэрхийлэхэд таатай байна. Баянхонгор аймаг нь хангай, говь, тал хээр хосолсон өргөн уудам газар нутагтаа аялал жуулчлалын олон төрлийн бүтээгдэхүүн нөөц газруудыг хадгалан оршиж байгаа хосгүй баялагтай нутаг билээ. Иймдээ ч бид аялал жуулчлалын салбарыг аймгийнхаа нийгэм, эдийг засгийг хөгжүүлэх тэргүүлэх салбар болгон зорилт тавьж ажиллаж байгаа төдийгүй,",
-    travel:
-      "“Аймгийн гадаад харилцаа, аялал жуулчлалын бодлогыг боловсруулан шийдвэрлүүлж, хэрэгжилтийг зохион байгуулах чиг үүрэг бүхий Гадаад харилцаа, аялал жуулчлалын албыг, аймгийн Засаг даргын дэргэдэх агентлагийн статустайгаар байгуулсугай” гэсэн аймгийн ИТХ-ын тэргүүлэгчдийн 2017 оны 01-р сарын 03-ны өдрийн 03 дугаар тогтоолыг тус тус үндэслэн аймгийн Засаг даргын 2017 оны 02 дугаар сарын 01-ны өдрийн А/104 тоот захирамжаар “Аймгийн Засаг даргын дэргэдэх гадаад харилцаа, аялал жуулчлалын албаны бүтэц, орон тоо, дүрэм”-ийг баталснаар Гадаад харилцаа, аялал жуулчлалын алба үйл ажиллагаагаа хэрэгжүүлж эхэлсэн.",
-    zorilogo:
-      "Говийн үзэсгэлэнт байгаль, түүх соёлын дурсгалт газар, байгалийн гурван бүс нутгийн онцлог, нүүдлийн уламжлалт соёлыг түшиглэсэн аялал жуулчлалыг хөгжүүлэх зорилготой.",
-    zorilt:
-      "“Аялал жуулчлалын алба”-ыг аймгийн Засаг даргын дэргэд байгуулж, аялал жуулчлалыг эдийн засгийн тэргүүлэх салбар болгон хөгжүүлэх”.цаашдаа ч энэ салбарын хөгжлийг эрчимжүүлэх, хөрөнгө оруулалтыг нэмэгдүүлж дотоод, гадаадын жуулчдыг татаж аймгийнхаа хөгжил дэвшил, ард иргэдийнхээ амьдралыг дээшлүүлэхээр.",
-  },
-];
 export const mainMenu: string[] = [
   "Нүүр",
   "Бидний тухай ",
@@ -91,108 +78,6 @@ export const BayanKhongorInfo = [
   { icon: "/sum4.png", number: "20", title: "СУМЫН ТОО" },
   { icon: "/bag5.png", number: "105", title: "БАГИЙН ТОО" },
   { icon: "/hun6.png", number: "87,993", title: "ХҮН АМЫН ТОО" },
-];
-export const bplace = [
-  {
-    id: 1,
-    icon: "/shargaljuut.png",
-    title: "Шаргалжуут",
-    count: 0,
-    percent: 0,
-    category: "hotel",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 2,
-    icon: "/ihbogduul.png",
-    title: "Их Богд уул",
-    count: 0,
-    percent: 0,
-    category: "hotel",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 3,
-    icon: "/agui.png",
-    title: "Цагаан агуй, Бичигт хад",
-    count: 0,
-    percent: 0,
-    category: "restaurant",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 4,
-    icon: "/ehiingol.png",
-    title: "Эхийн гол, Сэгс цагаан богд",
-    count: 0,
-    percent: 0,
-    category: "restaurant",
-    phoneNumber: "70007000 , 70007000 ",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 5,
-    icon: "/hohnuur.png",
-    title: "Хөх нуур",
-    count: 0,
-    percent: 0,
-    category: "restaurant",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 6,
-    icon: "/boonnuur.png",
-    title: "Бөөн цагаан нуур",
-    count: 0,
-    percent: 0,
-    category: "restaurant",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 7,
-    icon: "/boonnuur.png",
-    title: "Бөөн цагаан нуур",
-    count: 0,
-    percent: 0,
-    category: "relax",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 8,
-    icon: "/boonnuur.png",
-    title: "Бөөн цагаан нуур",
-    count: 0,
-    percent: 0,
-    category: "relax",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 9,
-    icon: "/boonnuur.png",
-    title: "Бөөн цагаан нуур",
-    count: 0,
-    percent: 0,
-    category: "relax",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
-  {
-    id: 10,
-    icon: "/boonnuur.png",
-    title: "Бөөн цагаан нуур",
-    count: 0,
-    percent: 0,
-    category: "relax",
-    phoneNumber: "70007000",
-    idk: "There isn’t a relationship around that can survive without trust. My relationship with my dog Peyton is deep...",
-  },
 ];
 export const bplace2 = [
   {

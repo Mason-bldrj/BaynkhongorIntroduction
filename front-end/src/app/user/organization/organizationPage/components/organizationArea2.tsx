@@ -20,7 +20,7 @@ export const OrganizationArea2 = ({ data }: any) => {
     }
   };
   return (
-    <div className="w-full sm:w-[90%] xl:w-[1147px] flex flex-col gap-10">
+    <div className="w-full  flex flex-col gap-10">
       <div className="w-full">
         <OrganizationRelaxCard data={relax} startIndex={startIndex} />
       </div>

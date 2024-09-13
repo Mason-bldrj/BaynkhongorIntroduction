@@ -7,13 +7,12 @@ import { bplace } from "@/app/data";
 import { TailanCard } from "../detail/tailanCard";
 export const TailanArea = ({data}:any) => {
   const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 3;
+  const visibleCount = 4;
   const handleNext = () => {
-    if (startIndex + visibleCount < bplace.length) {
+    if (startIndex + visibleCount < data?.length) {
       setStartIndex(startIndex + 1);
     }
   };
-
   const handlePrev = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);

@@ -8,7 +8,7 @@ export const HolbooCard = ({ data }: any) => {
     router.push(`/user/institution${id}`);
   };
   return (
-    <div className="w-full flex justify-center flex-wrap gap-5 mb-2">
+    <div className="w-full justify-center xl:justify-start flex flex-wrap gap-5 mb-2">
       {data?.map((el: any, i: number) => {
         return (
           <div

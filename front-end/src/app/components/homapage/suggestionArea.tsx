@@ -22,7 +22,6 @@ export const SuggestionArea = () => {
     setDataHolder(updatedData);
     setClientPercent(updatedData[index].percent);
   };
-
   useEffect(() => {
   }, []);
 

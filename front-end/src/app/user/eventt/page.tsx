@@ -4,13 +4,9 @@ import urls from "@/lib/urls";
 import { BannerArea } from "@/app/components/homapage/bannerArea";
 import { EventCard } from "@/app/components/detail/evenCard";
 import { OrangeBourd } from "@/app/components/detail/orengeBourd";
-import { bplace } from "@/app/data"; // Assuming this contains some data related to the place
 import { ArrowButtons2 } from "@/app/components/detail/arrowButtons";
 import { useState, useEffect } from "react";
-
-// Define the type for your event data
-type EventData = any; // Replace with your actual data structure
-
+type EventData = any;
 export default function Event() {
   const [data, setData] = useState<EventData | null>(null);
   const [startIndex, setStartIndex] = useState<number>(0);
@@ -28,7 +24,7 @@ export default function Event() {
     fetchedData();
   }, []);
   const handleNext = () => {
-    if (startIndex + visibleCount < bplace.length) {
+    if (startIndex + visibleCount < data?.length) {
       setStartIndex(startIndex + 1);
     }
   };
@@ -59,7 +55,7 @@ export default function Event() {
           <ArrowButtons2
             handleNext={handleNext}
             handlePrev={handlePrev}
-            isNextDisabled={startIndex + visibleCount >= bplace.length}
+            isNextDisabled={startIndex + visibleCount >= data?.length}
             isPrevDisabled={startIndex === 0}
           />
         </div>

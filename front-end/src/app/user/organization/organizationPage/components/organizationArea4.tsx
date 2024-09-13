@@ -4,7 +4,7 @@ import Image from "next/image";
 import { MuseumCard } from "../museamCard";
 export const OrganizationArea4 = ({ data }: any) => {
   return (
-    <div className="w-[90%] lg:w-[1000px] xl:w-[1147px] flex flex-col gap-5 justify-between items-center">
+    <div className="w-full flex flex-col gap-5 justify-between items-center">
       <div className="w-full flex justify-end">
         <div className="text-[#ff7119] text-[15px]  lg:text-[20px] xl:text-[25px] w-[50%] text-start">
           Түүх угсаатны зүй, Байгалийн музей

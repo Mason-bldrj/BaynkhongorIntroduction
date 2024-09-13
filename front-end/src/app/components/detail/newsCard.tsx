@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 export const NewsCard = ({ data2, startIndex }: any) => {
   const router = useRouter();
   const handleNavigate = (id: string) => {
-    router.push(`/user/NEWS${id}`);
+    router.push(`/user/RESOURCES${id}`);
   };
   return (
     <div className=" flex mb-10 sm:ml-0 ml-2">

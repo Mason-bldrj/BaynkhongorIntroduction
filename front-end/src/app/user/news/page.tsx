@@ -8,15 +8,14 @@ import { useEffect, useState } from "react";
 import urls from "@/lib/urls";
 
 type NewsData = {
-  reportData: any; 
-  videoData: any; 
-  resourcesData: any; 
+  reportData: any;
+  videoData: any;
+  resourcesData: any;
 };
 export default function News() {
   const [data, setData] = useState<NewsData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
   const fetchedData = async () => {
     try {
       setLoading(true);
@@ -46,7 +45,6 @@ export default function News() {
   if (error) {
     return <p>{error}</p>;
   }
-
   return (
     <div className="max-w-[1147px] m-auto w-[95%] flex flex-col items-center justify-between gap-10">
       <BannerArea />

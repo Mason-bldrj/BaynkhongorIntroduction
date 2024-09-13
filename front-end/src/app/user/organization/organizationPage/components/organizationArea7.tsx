@@ -7,7 +7,7 @@ export const OrganizationArea7 = ({data}:any)  => {
   ? data.filter((el: any) => el.institutionType === "CLUB")
   : [];
   return (
-    <div className="w-full sm:w-[90%] xl:w-[1147px] flex flex-col gap-10">
+    <div className="w-full flex flex-col gap-10">
       <HolbooCard data={club}/>
     </div>
   );

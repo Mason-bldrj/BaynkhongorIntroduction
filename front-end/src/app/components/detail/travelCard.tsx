@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-export const TravelCard = ({ bplace, data, startIndex }: any) => {
+export const TravelCard = ({ data, startIndex }: any) => {
   const router = useRouter();
   const today: any = new Date();
   const startOfyear: any = new Date(2024, 0, 1);

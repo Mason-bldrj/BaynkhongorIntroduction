@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "./arrowButtons";
 import { useRouter } from "next/navigation";
@@ -16,7 +15,7 @@ export const BeautifulAreaCard = ({ data }: any) => {
   const visibleCount = 3; // You can adjust this based on the screen size for better responsiveness
 
   const handleNext = () => {
-    if (startIndex + visibleCount < bplace.length) {
+    if (startIndex + visibleCount < data?.length) {
       setStartIndex(startIndex + 1);
     }
   };

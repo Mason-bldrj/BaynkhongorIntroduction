@@ -1,5 +1,4 @@
 "use client";
-import { bplace } from "@/app/data";
 import { Monestry } from "./monestry";
 export const OrganizationArea5 = ({ data }: any) => {
   const church = Array.isArray(data)

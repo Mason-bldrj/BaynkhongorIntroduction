@@ -1,6 +1,5 @@
 "use client";
 import { HolbooCard } from "./holboo";
-import { bplace } from "@/app/data";
 
 export const OrganizationArea8 = ({ data }: any) => {
   const theater =Array.isArray(data)

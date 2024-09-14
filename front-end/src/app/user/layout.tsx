@@ -1,6 +1,7 @@
+"use client"
 import { dividerClasses } from "@mui/material";
 import { DefaultArea } from "../components/homapage/defaultArea";
-
+import { Footer } from "../components/homapage/footer";
 const UserLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>

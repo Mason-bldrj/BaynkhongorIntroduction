@@ -5,8 +5,6 @@ import Image from "next/image";
 import urls from "@/lib/urls";
 import { useEffect, useState } from "react";
 import { fetchFunc } from "@/app/backdata";
-
-// Define the types for your data to make the code more robust.
 type AboutUsData = {
   about: string;
   aboutOffice: string;

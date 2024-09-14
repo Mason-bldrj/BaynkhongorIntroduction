@@ -1,11 +1,9 @@
 "use client";
 import { OrangeBourd } from "../detail/orengeBourd";
-import { TravelCard } from "../detail/travelCard";
 import { ArrowButtons } from "../detail/arrowButtons";
 import { useState } from "react";
-import { bplace } from "@/app/data";
 import { TailanCard } from "../detail/tailanCard";
-export const TailanArea = ({data}:any) => {
+export const TailanArea = ({ data }: any) => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 4;
   const handleNext = () => {

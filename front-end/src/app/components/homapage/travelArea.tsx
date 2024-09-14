@@ -5,14 +5,11 @@ import { ArrowButtons } from "../detail/arrowButtons";
 import { useState, useEffect } from "react";
 import urls from "@/lib/urls";
 import { fetchFunc } from "@/app/backdata";
-import { bplace } from "@/app/data";
-
 export const TravelArea = () => {
-  const [data, setData] = useState(null); // Initial data state
-  const [loading, setLoading] = useState(true); // Loading state
+  const [data, setData] = useState<any[]>([]); 
+  const [loading, setLoading] = useState(true);
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
-
   const fetchedData = async () => {
     setLoading(true);
     try {
@@ -26,15 +23,17 @@ export const TravelArea = () => {
     }
   };
   const handleNext = () => {
-    if (startIndex + visibleCount < bplace.length) {
-      setStartIndex(startIndex + 1);
+    if (data.length > 0 && startIndex + visibleCount < data.length) {
+      setStartIndex(startIndex + visibleCount);
     }
   };
+  
   const handlePrev = () => {
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
+    if (data.length > 0 && startIndex > 0) {
+      setStartIndex(startIndex - visibleCount);
     }
   };
+  
   useEffect(() => {
     fetchedData();
   }, []);
@@ -54,7 +53,7 @@ export const TravelArea = () => {
           <div className="loader"></div>{" "}
         </div>
       ) : (
-        <TravelCard bplace={bplace} data={data} startIndex={startIndex} />
+        <TravelCard  data={data} startIndex={startIndex} />
       )}
     </div>
   );

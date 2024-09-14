@@ -4,7 +4,6 @@ import { NewsVideoCard } from "../detail/newsVideoCard";
 import { videoArr } from "@/app/data";
 import { ArrowButtons } from "../detail/arrowButtons";
 import { useState } from "react";
-import { bplace } from "@/app/data";
 import { NewsCard } from "../detail/newsCard";
 export const NewsVideoArea = ({data2 ,data1, data}:any) => {
   const [startIndex, setStartIndex] = useState(0);

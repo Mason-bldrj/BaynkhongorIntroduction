@@ -58,7 +58,7 @@ export const MainMenu = () => {
   };
 
   return (
-    <div className="max-w-[1147px] w-[95%] m-auto flex flex-col items-center">
+    <div className="max-w-[1147px] w-full m-auto flex flex-col items-center">
       <div className=" max-h-[500px] flex flex-col sm:flex-row">
         {/* Сайд менү */}
         <div className="w-full sm:w-[20%] md:h-[400px] sm:h-[300px] lg:h-[500px] sm:flex sm:flex-col hidden">

@@ -26,7 +26,7 @@ export const NewsCard = ({ data2, startIndex }: any) => {
                     height={296}
                     alt="Carousel image"
                   />
-                  <div className="w-full py-2 overflow-x-scroll text-center bg-[#d9d9d9] opacity-65 absolute left-0 bottom-2 hover:bg-[#ff7117] hover:text-white">
+                  <div className="w-[80%] py-2 overflow-x-scroll text-center bg-[#d9d9d9] opacity-65 absolute left-0 bottom-2 hover:bg-[#ff7117] hover:text-white">
                     {el.name}
                   </div>
                 </div>

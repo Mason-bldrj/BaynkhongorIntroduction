@@ -21,8 +21,6 @@ export default function Organization() {
   const [data, setData] = useState<OrganizationData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
-  // Fetch data from the API
   const fetchedData = async () => {
     try {
       setLoading(true);
@@ -56,7 +54,6 @@ export default function Organization() {
     <OrganizationArea7 data={data} key="area7" />,
     <OrganizationArea8 data={data} key="area8" />,
   ];
-
   if (loading) {
     return (
       <div className="w-full flex justify-center items-center h-[200px]">
@@ -64,7 +61,6 @@ export default function Organization() {
       </div>
     );
   }
-
   if (error) {
     return <p>{error}</p>;
   }

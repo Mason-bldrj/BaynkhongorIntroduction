@@ -5,6 +5,7 @@ import InstitutionForm from "./InstitutionForm";
 import KeepSakeForm from "./Keepsake.Form";
 import LegalityForm from "./Legality.Form";
 import NewsFrom from "./NewsFrom";
+import ScenicSpotFrom from "./ScenicSpotForm";
 import TravelForm from "./TravelForm";
 
 const AdminMain = (props: any) => {
@@ -80,6 +81,14 @@ const AdminMain = (props: any) => {
       >
         <h1 className="text-[28px]">Байгуулгийн талаар мэдээлэл оруулах</h1>
         <InstitutionForm />
+      </div>
+      <div
+        className={`${
+          menus === "Үзэсгэлэнт Газрууд" ? "flex" : "hidden"
+        } flex-col gap-[40px]`}
+      >
+        <h1 className="text-[28px]">Газаруудын талаар мэдээлэл оруулах</h1>
+        <ScenicSpotFrom></ScenicSpotFrom>{" "}
       </div>
     </div>
   );

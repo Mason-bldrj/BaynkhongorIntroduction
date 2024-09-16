@@ -7,6 +7,8 @@ const legalitySchema = new Schema({
   link: String,
   legalityType: {
     enum: ["LAW", "RULES", "RESOLUTION", "COMMAND", "CONSENT"],
+    type: String,
+    required: true,
   },
 });
 

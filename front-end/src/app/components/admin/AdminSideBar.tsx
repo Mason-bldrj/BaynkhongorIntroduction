@@ -11,6 +11,7 @@ const AdminSideBar = (props: any) => {
     { text: "Төслүүд", icon: <div></div> },
     { text: "Хууль , Эрх зүй", icon: <div></div> },
     { text: "Ажилчид", icon: <div></div> },
+    { text: "Үзэсгэлэнт Газрууд", icon: <div></div> },
   ];
 
   return (

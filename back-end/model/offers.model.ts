@@ -10,6 +10,7 @@ const offersSchema = new Schema({
       count: Number,
     },
   ],
+  visitedNumber: Number,
 });
 
 const OffersModel = models.offer || model(COLLECTIONS.OFFERS, offersSchema);

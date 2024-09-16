@@ -132,7 +132,6 @@ const DashboardSec = (props: any) => {
         header: "Үйлдэлүүд  ",
         size: 150,
         Cell: (d: any) => {
-          console.log(d?.row?.original?._id);
           return (
             <div
               style={{
@@ -146,7 +145,12 @@ const DashboardSec = (props: any) => {
               <button className="border-blue-600 w-[80px] border-[2px] rounded-[8px] px-[4px] py-[2px] hover:bg-blue-600 hover:text-white border-solid ">
                 Edit
               </button>
-              <button className="border-red-400 border-[2px] w-[80px] rounded-[8px] px-[4px] py-[2px] hover:bg-red-400 hover:text-white border-solid ">
+              <button
+                onClick={() => {
+                  deleteData(d?.row?.original?._id);
+                }}
+                className="border-red-400 border-[2px] w-[80px] rounded-[8px] px-[4px] py-[2px] hover:bg-red-400 hover:text-white border-solid "
+              >
                 Delete
               </button>
             </div>

@@ -33,7 +33,6 @@ const EventForm = () => {
         img: eventData.img,
         description: eventData.description,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -83,7 +82,9 @@ const EventForm = () => {
             className="px-[6px] py-[8px] rounded-[8px]"
             onChange={(event: any) => {
               const file = event.target.files[0];
-              setImage(file[0]);
+              console.log(file);
+
+              setImage(file);
             }}
           />
           <button

@@ -3,13 +3,14 @@
 import AdminMain from "@/app/components/admin/AdminMains";
 import AdminSideBar from "@/app/components/admin/AdminSideBar";
 import DashboardSec from "@/app/components/admin/Dashboard";
+
 import { useState } from "react";
 
 const AdminDashboard = () => {
   const [changedRequest, setChangedRequest] = useState();
   const [menus, setMenu] = useState("Бидний тухай");
   return (
-    <div className="flex">
+    <div className="flex ">
       <AdminSideBar
         setMenu={setMenu}
         changedRequest={changedRequest}
@@ -23,7 +24,7 @@ const AdminDashboard = () => {
         <AdminMain menus={menus}></AdminMain>
       </div>
       <div
-        className={` p-[50px] w-[70%]  justify-center ${
+        className={` p-[50px] w-full    ${
           changedRequest === "CREATE" ? "hidden" : "flex"
         } `}
       >

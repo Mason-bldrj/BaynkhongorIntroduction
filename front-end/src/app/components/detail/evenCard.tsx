@@ -23,6 +23,8 @@ export const EventCard = ({ data, startIndex }: any) => {
   const handleNavigate = (id: string) => {
     router.push(`/user/EVENT${id}`);
   };
+  console.log(data);
+
   return (
     <div className="w-full sm:h-full h-[300px] flex ">
       <div className="flex w-full h-[470px] overflow-x-scroll  sm:overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">
@@ -46,11 +48,10 @@ export const EventCard = ({ data, startIndex }: any) => {
                   height={10033}
                   alt="Carousel image"
                 />
-                <div className="w-full pb-5 bg-slate-100 *:text-[12px] rounded-b-md flex flex-col items-center gap-1">
-                  <div className="mt-1 font-bold">{el.name} dfg</div>
-                  <div className="w-[80%] overflow-hidden">
-                    {el.description}
-                  </div>
+                <div>{el?.Name}</div>
+                <div className="w-full h-[100px] bg-slate-100 *:text-[12px] *:ml-2 rounded-b-md flex flex-col gap-1">
+                  <div className="mt-1 font-bold">{el.name}</div>
+                  <div className="">{el.description}</div>
                 </div>
               </div>
             );
@@ -71,7 +72,7 @@ export const EventCard = ({ data, startIndex }: any) => {
               >
                 <Image
                   className="sm:w-full xl:w-[1000px] max-h-[440px] shadow-[30px_30px] rounded-md shadow-gray-300 object-cover"
-                  src={el.img}
+                  src={`${el.img} `}
                   width={500}
                   height={500}
                   alt="Carousel image"

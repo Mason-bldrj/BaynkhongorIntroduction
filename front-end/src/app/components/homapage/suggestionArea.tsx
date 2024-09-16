@@ -12,7 +12,7 @@ export const SuggestionArea = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/places/counts"); // Backend API рүү дуудлага хийх
+        const response = await axios.get("/api/places/counts"); 
         const updatedData = dataHolder.map((place, i) => {
           const backendData = response.data.find(
             (backendPlace: any) => backendPlace.id === place.id
@@ -20,7 +20,7 @@ export const SuggestionArea = () => {
           if (backendData) {
             return {
               ...place,
-              count: backendData.count, // Серверээс ирсэн count-г шинэчлэх
+              count: backendData.count, 
             };
           }
           return place;

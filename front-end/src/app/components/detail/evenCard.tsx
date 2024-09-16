@@ -27,7 +27,7 @@ export const EventCard = ({ data, startIndex }: any) => {
 
   return (
     <div className="w-full sm:h-full h-[300px] flex ">
-      <div className="flex w-full h-[470px] overflow-x-scroll  sm:overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">
+      <div className="flex w-full h-[470px] overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">
         <div
           className="sm:hidden flex w-fit ease-linear transition-transform duration-300 justify-start gap-[20px] "
           style={{
@@ -49,7 +49,7 @@ export const EventCard = ({ data, startIndex }: any) => {
                   alt="Carousel image"
                 />
                 <div>{el?.Name}</div>
-                <div className="w-full h-[100px] bg-slate-100 *:text-[12px] *:ml-2 rounded-b-md flex flex-col gap-1">
+                <div className="w-full h-[100px] overflow-y-scroll bg-slate-100 *:text-[12px] *:ml-2 rounded-b-md flex flex-col gap-1">
                   <div className="mt-1 font-bold">{el.name}</div>
                   <div className="">{el.description}</div>
                 </div>

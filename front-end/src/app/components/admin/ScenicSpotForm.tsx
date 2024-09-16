@@ -8,7 +8,7 @@ import { imageDb } from "@/firebase";
 
 const ScenicSpotFrom = () => {
   const [image, setImage] = useState<any>();
-  const [eventData, setEventData] = useState({
+  const [scenicData, setScenicData] = useState({
     name: "",
     description: "",
     img: "",
@@ -21,18 +21,19 @@ const ScenicSpotFrom = () => {
     console.log(res);
     console.log(a);
 
-    setEventData({
-      ...eventData,
+    setScenicData({
+      ...scenicData,
       img: `https://firebasestorage.googleapis.com/v0/b/app-demo-554df.appspot.com/o/${a}?alt=media&token=4554e441-c30b-4a16-b81f-5b50727d691e`,
     });
   };
   const createEvent = async () => {
     try {
       const res = await postFunc(urls.SCENICSPORT, {
-        name: eventData.name,
-        img: eventData.img,
-        description: eventData.description,
+        name: scenicData.name,
+        img: scenicData.img,
+        description: scenicData.description,
       });
+      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -48,8 +49,8 @@ const ScenicSpotFrom = () => {
           className="px-[6px] py-[8px] rounded-[8px]"
           onChange={(event) => {
             setTimeout(() => {
-              setEventData({
-                ...eventData,
+              setScenicData({
+                ...scenicData,
                 name: event.target.value,
               });
             }, 1000);
@@ -64,8 +65,8 @@ const ScenicSpotFrom = () => {
           name="description"
           onChange={(event) => {
             setTimeout(() => {
-              setEventData({
-                ...eventData,
+              setScenicData({
+                ...scenicData,
                 description: event.target.value,
               });
             }, 1000);
@@ -100,7 +101,7 @@ const ScenicSpotFrom = () => {
       <div className="flex items-center   justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {
-            console.log(eventData);
+            console.log(scenicData);
             createEvent();
           }}
         >

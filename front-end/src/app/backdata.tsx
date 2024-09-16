@@ -17,7 +17,6 @@ export const fetchFunc = async (sub_url: String) => {
 // ${urls.MAIN_URL}${sub_url}
 export const postFunc = async (sub_url: string, body: any) => {
   try {
-    console.log(JSON.stringify(body));
     const res = await fetch(`${urls.MAIN_URL}${sub_url}`, {
       method: "POST",
       headers: {

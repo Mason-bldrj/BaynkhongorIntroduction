@@ -9,7 +9,7 @@ export const TravelArea = () => {
   const [data, setData] = useState<any[]>([]); 
   const [loading, setLoading] = useState(true);
   const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 3;
+  const visibleCount = 1;
   const fetchedData = async () => {
     setLoading(true);
     try {

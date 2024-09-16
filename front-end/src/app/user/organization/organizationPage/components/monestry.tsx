@@ -5,7 +5,7 @@ export const Monestry = ({ data }: any) => {
   const router = useRouter();
   const handleNavigate = (id: string) => {
     router.push(`/user/institution${id}`);
-  };
+  };  
   return (
     <div className="w-full flex justify-center sm:justify-between flex-wrap *:mb-5">
       {data?.map((el: any, i: number) => {

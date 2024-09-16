@@ -34,8 +34,6 @@ export const BannerArea = () => {
     incrementVisitorCount();
     fetchVisitorData();
   }, []);
-console.log(value);
-
   return (
     <div className="lg:w-[1057px] md:w-full sm:flex lg:justify-between sm:justify-center mt-10 hidden lg:px-0 md:px-2 flex-wrap">
       <div className=" w-[641px] h-[147px]  relative">

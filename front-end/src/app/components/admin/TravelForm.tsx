@@ -99,7 +99,7 @@ const TravelForm = () => {
       </div>
       <div>
         <div>Зураг</div>
-        <div>
+        <div className="flex">
           <input
             type="file"
             placeholder=""
@@ -113,6 +113,7 @@ const TravelForm = () => {
             onClick={() => {
               handleclick(image);
             }}
+            className="flex justify-center items-center rounded-[8px]  bg-white py-[4px] px-[8px]"
           >
             Upload
           </button>

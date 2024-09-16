@@ -11,6 +11,7 @@ const OfferSec = (offerArray: any, setOfferArray: any) => {
   const pushoffer = (offer: any) => {
     ArrayOfOffer.push(offer);
     setOfferArray(ArrayOfOffer);
+    console.log(ArrayOfOffer);
   };
   const handleclick = async (image: any) => {
     const a = v4();
@@ -65,7 +66,7 @@ const OfferSec = (offerArray: any, setOfferArray: any) => {
                 onClick={() => {
                   handleclick(image);
                 }}
-                className="flex justify-center items-center bg-white px-[12px] py-[8px] rounded-[8px] "
+                className="flex justify-center items-center rounded-[8px]  bg-white py-[4px] px-[8px]"
               >
                 upload
               </button>

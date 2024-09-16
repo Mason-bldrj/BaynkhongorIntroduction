@@ -18,6 +18,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const createdRecord = await OffersModel.create({
       offerCount: 0,
       offer,
+      visitedNumber: 0,
     });
 
     return NextResponse.json(createdRecord);
@@ -32,12 +33,13 @@ export async function PUT(req: NextRequest, res: NextResponse) {
   console.log(data);
 
   try {
-    const { offerCount, offer, _id } = data;
+    const { offerCount, offer, _id, visitedNumber } = data;
     const res = await OffersModel.findByIdAndUpdate(
       _id,
       {
         offerCount,
         offer,
+        visitedNumber,
       },
       { new: true }
     );

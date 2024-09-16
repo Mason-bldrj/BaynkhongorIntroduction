@@ -153,7 +153,7 @@ const InstitutionForm = () => {
         </div>
         <div>
           <div>Зураг</div>
-          <div>
+          <div className="flex items-center">
             <input
               type="file"
               placeholder=""

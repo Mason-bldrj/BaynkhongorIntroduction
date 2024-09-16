@@ -6,7 +6,7 @@ import { v4 } from "uuid";
 import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
 
-const EventForm = () => {
+const ScenicSpotFrom = () => {
   const [image, setImage] = useState<any>();
   const [eventData, setEventData] = useState({
     name: "",
@@ -40,7 +40,7 @@ const EventForm = () => {
   return (
     <div className="flex items-center flex-wrap rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
       <div>
-        <div className="text-[16px]">Эвент нэр </div>
+        <div className="text-[16px]">Тухайн газарын нэр </div>
         <input
           type="text"
           placeholder="Нэр"
@@ -74,7 +74,7 @@ const EventForm = () => {
       </div>
       <div>
         <div>Зураг</div>
-        <div className="flex items-center">
+        <div className="flex">
           <input
             type="file"
             placeholder=""
@@ -110,4 +110,4 @@ const EventForm = () => {
     </div>
   );
 };
-export default EventForm;
+export default ScenicSpotFrom;

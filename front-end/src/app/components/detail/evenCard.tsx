@@ -23,8 +23,6 @@ export const EventCard = ({ data, startIndex }: any) => {
   const handleNavigate = (id: string) => {
     router.push(`/user/EVENT${id}`);
   };
-  console.log(data);
-
   return (
     <div className="w-full sm:h-full h-[300px] flex ">
       <div className="flex w-full h-[470px] overflow-hidden flex-col transition-transform duration-300 ease-linear justify-start">

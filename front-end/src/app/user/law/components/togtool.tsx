@@ -2,9 +2,11 @@ export const Togtool = ({ data }: any) => {
   const filtredData = data?.filter((el: any) => {
     return el.legalityType === "RESOLUTION";
   });
+  console.log(data);
+  
   return (
     <div className="">
-      <div className=" w-full flex flex-col gap-5">
+      <div className="w-full flex flex-col gap-5">
         {filtredData?.map((el: any, i: number) => {
           return (
             <div key={i}>

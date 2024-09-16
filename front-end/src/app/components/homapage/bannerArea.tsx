@@ -7,24 +7,19 @@ import { useState, useEffect } from "react";
 import urls from "@/lib/urls";
 import { fetchFunc } from "@/app/backdata";
 export const BannerArea = () => {
-  const [visitorsToday, setVisitorsToday] = useState(0);
-  const [totalVisitors, setTotalVisitors] = useState(0);
+  const [data, setData] = useState();
   const [value , setValue] = useState("today");
   const router = useRouter();
-  const fetchVisitorData = async () => {
-    try {
-      const res = await fetch(urls.ABOUTUS);
-      const data = await res.json();
-      setVisitorsToday(data.todayCount);
-      setTotalVisitors(data.totalCount);
-    } catch (error) {
-      console.error("Failed to fetch visitor data:", error);
-    }
+  const fetchedData = async () => {
+    const res = fetchFunc(urls.OFFERS);
+    const data = await (await res).json();
+    setData(data);
   };
   const incrementVisitorCount = async () => {
     try {
-      await fetch(urls.ABOUTUS, {
+      await fetch(urls.OFFERS, {
         method: "POST",
+        body: JSON.stringify(7),
       });
     } catch (error) {
       console.error("Failed to increment visitor count:", error);
@@ -32,7 +27,7 @@ export const BannerArea = () => {
   };
   useEffect(() => {
     incrementVisitorCount();
-    fetchVisitorData();
+    fetchedData();
   }, []);
   return (
     <div className="lg:w-[1057px] md:w-full sm:flex lg:justify-between sm:justify-center mt-10 hidden lg:px-0 md:px-2 flex-wrap">
@@ -65,10 +60,10 @@ export const BannerArea = () => {
         <div className="w-full flex flex-col items-center">
           <div className="w-[278px] h-[40px] flex justify-between bg-white rounded-sm items-center">
             <FaRegUser className="ml-4" />
-            <div className="mr-4">{value === "today" ? visitorsToday : totalVisitors}</div>
+            <div className="mr-4">{value === "today" ? "" : ""}</div>
           </div>
           <div className="w-[278px] text-sm mt-1 text-white text-end">
-            Нийт: {totalVisitors}
+            Нийт: {}
           </div>
         </div>
       </div>

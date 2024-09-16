@@ -28,7 +28,7 @@ const ScenicSpotFrom = () => {
   };
   const createEvent = async () => {
     try {
-      const res = await postFunc(urls.EVENT, {
+      const res = await postFunc(urls.SCENICSPORT, {
         name: eventData.name,
         img: eventData.img,
         description: eventData.description,

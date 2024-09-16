@@ -8,16 +8,7 @@ export const OrganizationArea1 = ({ data }: any): JSX.Element => {
   const restaurant = Array.isArray(data)
   ? data.filter((el: any) => el.institutionType === "SERVICE")
   : [];
-
-const hotel = Array.isArray(data)
-  ? data.filter((el: any) => el.institutionType === "SERVICE")
-  : [];
-  const visibleCount = 1;
-  const handleNext = () => {
-    if (startIndex + visibleCount < hotel.length) {
-      setStartIndex(startIndex + 1);
-    }
-  };
+  const visibleCount = 4;
   const handlePrev = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);
@@ -31,16 +22,6 @@ const hotel = Array.isArray(data)
           restaurant={restaurant}
           startIndex={startIndex}
         />
-      </div>
-      <div className="flex w-full justify-between">
-        <div className=" w-full text-[#ff7119]">ЗОЧИД БУУДАЛ</div>
-        <div className="sm:block hidden">
-          {" "}
-          <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
-        </div>
-      </div>
-      <div className=" w-full ">
-        <OrganizationHotelCard hotel={hotel} startIndex={startIndex} />
       </div>
     </div>
   );

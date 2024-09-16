@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "../detail/arrowButtons";
 import { useRouter } from "next/navigation";
@@ -9,9 +8,8 @@ export const BrandCard = ({ data }: any) => {
   const router = useRouter();
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
-
   const handleNext = () => {
-    if (startIndex + visibleCount < bplace.length) {
+    if (startIndex + visibleCount < data?.length) {
       setStartIndex(startIndex + 1);
     }
   };

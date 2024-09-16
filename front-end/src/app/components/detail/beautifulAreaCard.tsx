@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { bplace } from "@/app/data";
 import { useState } from "react";
 import { ArrowButtons } from "./arrowButtons";
 import { useRouter } from "next/navigation";
@@ -16,7 +15,7 @@ export const BeautifulAreaCard = ({ data }: any) => {
   const visibleCount = 3; // You can adjust this based on the screen size for better responsiveness
 
   const handleNext = () => {
-    if (startIndex + visibleCount < bplace.length) {
+    if (startIndex + visibleCount < data?.length) {
       setStartIndex(startIndex + 1);
     }
   };
@@ -29,7 +28,7 @@ export const BeautifulAreaCard = ({ data }: any) => {
 
   return (
     <div className="w-full h-[200px] sm:h-[370px] flex items-center justify-between">
-      <div className="w-full sm:w-[99%] h-full xl:w-[1135px] flex sm:overflow-hidden">
+      <div className="w-full  h-full flex sm:overflow-hidden">
         {/* Mobile view */}
         <div className="sm:hidden flex overflow-x-scroll h-full w-full gap-5">
           {data?.map((el: any, i: number): JSX.Element => {

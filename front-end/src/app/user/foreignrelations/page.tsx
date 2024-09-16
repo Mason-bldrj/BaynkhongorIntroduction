@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 export default function foreignRelations() {
   const { push } = useRouter();
   return (
-    <div className="flex flex-col gap-4 w-[90%] sm:w-[1147px] items-center sm:items-start mt-4 sm:mt-10 mb-5">
+    <div className="flex flex-col gap-4 max-w-[1147px] m-auto w-[95%]  items-center sm:items-start mt-4 sm:mt-10 mb-5">
       <div
         onClick={() =>
           push("https://legalinfo.mn/mn/detail?lawId=16230721365191")

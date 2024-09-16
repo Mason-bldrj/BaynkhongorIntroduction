@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-
 export const NewsVideoCard = ({ videoArr, data1, startIndex }: any) => {
   // Эхлээд data1 нь массив эсэхийг шалгана
   if (!Array.isArray(data1) || data1.length === 0) {
@@ -29,7 +28,9 @@ export const NewsVideoCard = ({ videoArr, data1, startIndex }: any) => {
         )}
         <div className="flex justify-around mt-2 text-sm">
           <div className="sm:text-[15px] text-[10px]">{data1[0]?.date}</div>
-          <div className="font-bold sm:text-[15px] text-[10px]">{data1[0]?.name}</div>
+          <div className="font-bold sm:text-[15px] text-[10px]">
+            {data1[0]?.name}
+          </div>
         </div>
       </div>
       <div className="xl:w-[573px] w-[573px] lg:w-[49%] h-[696px] overflow-y-scroll flex flex-col items-center gap-5 lg:mt-0 mt-10 border py-2">

@@ -4,13 +4,12 @@ import { NewsVideoCard } from "../detail/newsVideoCard";
 import { videoArr } from "@/app/data";
 import { ArrowButtons } from "../detail/arrowButtons";
 import { useState } from "react";
-import { bplace } from "@/app/data";
 import { NewsCard } from "../detail/newsCard";
 export const NewsVideoArea = ({data2 ,data1, data}:any) => {
   const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 3;
+  const visibleCount = 4;
   const handleNext = () => {
-    if (startIndex + visibleCount < bplace.length) {
+    if (startIndex + visibleCount < data2?.length) {
       setStartIndex(startIndex + 1);
     }
   };

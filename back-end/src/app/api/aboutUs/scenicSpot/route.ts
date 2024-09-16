@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import ScenicSpotModel from "../../../../../model/scenicSpot.model";
-
+export async function GET(req: NextRequest, res: NextResponse) {
+  try {
+    const res = await ScenicSpotModel.find();
+    return NextResponse.json(res);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}
 export async function POST(req: NextRequest, res: NextResponse) {
   console.log(req);
 

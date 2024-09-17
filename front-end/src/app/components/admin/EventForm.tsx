@@ -89,7 +89,7 @@ const EventForm = (props?: any) => {
       </div>
       <div>
         <div>Зураг</div>
-        <div>
+        <div className="flex items-center">
           <input
             type="file"
             placeholder=""
@@ -106,6 +106,7 @@ const EventForm = (props?: any) => {
             onClick={() => {
               handleclick(image);
             }}
+            className="flex justify-center items-center rounded-[8px]  bg-white py-[4px] px-[8px]"
           >
             Upload
           </button>

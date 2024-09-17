@@ -45,7 +45,7 @@ export default function SideBar() {
       case 5:
         router.push("/user/eventt");
         break;
-      
+
         router.push("/user/law");
         break;
       case 7:
@@ -95,6 +95,7 @@ export default function SideBar() {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItemButton>Админ</ListItemButton>
       </List>
       <Divider />
     </Box>

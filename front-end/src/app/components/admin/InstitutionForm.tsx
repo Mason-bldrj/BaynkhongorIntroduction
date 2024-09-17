@@ -175,7 +175,7 @@ const InstitutionForm = (props?: any) => {
         </div>
         <div>
           <div>Зураг</div>
-          <div>
+          <div className="flex items-center">
             <input
               type="file"
               placeholder=""

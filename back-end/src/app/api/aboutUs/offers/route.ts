@@ -17,7 +17,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     const createdRecord = await OffersModel.create({
       offerCount: 0,
+<<<<<<< HEAD
       offers,
+=======
+      offer,
+>>>>>>> main
       visitedNumber: 0,
     });
 
@@ -33,12 +37,13 @@ export async function PUT(req: NextRequest, res: NextResponse) {
   console.log(data);
 
   try {
-    const { offerCount, offer, _id } = data;
+    const { offerCount, offer, id, visitedNumber } = data;
     const res = await OffersModel.findByIdAndUpdate(
-      _id,
+      id,
       {
         offerCount,
         offer,
+        visitedNumber,
       },
       { new: true }
     );
@@ -52,8 +57,8 @@ export async function DELETE(req: NextRequest, res: NextResponse) {
   const data = await req.json();
 
   try {
-    const { _id } = data;
-    const res = await OffersModel.findByIdAndDelete(_id);
+    const { id } = data;
+    const res = await OffersModel.findByIdAndDelete(id);
     return NextResponse.json(res);
   } catch (error: any) {
     console.error("Error creating AboutUs record:", error);

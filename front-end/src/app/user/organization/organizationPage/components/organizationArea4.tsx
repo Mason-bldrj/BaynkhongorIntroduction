@@ -2,7 +2,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { MuseumCard } from "../museamCard";
+import { museumIMG } from "@/app/data";
 export const OrganizationArea4 = ({ data }: any) => {
+  const museum =Array.isArray(data)
+  ? data.filter((el: any) => el.institutionType === "MUSEUM")
+  : [];
+  
   return (
     <div className="w-full flex flex-col gap-5 justify-between items-center">
       <div className="w-full flex justify-end">
@@ -28,14 +33,14 @@ export const OrganizationArea4 = ({ data }: any) => {
         <div className="flex w-full md:justify-between flex-wrap justify-center">
           <Image
             className="object-cover w-[90%] md:w-[49%] h-[312px] rounded-md md:mb-0 mb-5"
-            src="/gandan.png"
+            src="/museumicon.png"
             width={9704}
             height={5004}
             alt="Carousel image"
           />{" "}
           <Image
             className="object-cover w-[90%] md:w-[49%] h-[312px] rounded-md md:mb-0 mb-5"
-            src="/gandan.png"
+            src="/museumicon2.png"
             width={9704}
             height={5004}
             alt="Carousel image"
@@ -56,8 +61,27 @@ export const OrganizationArea4 = ({ data }: any) => {
           Чулуулгын, Мазаалайн, Хангайн амьтны, Говийн амьтны шувуудын
           танхимтай.
         </div>
+        <div>
+          <div className="mt-5 mb-5">Түүх угсаатны зүй, Байгалийн түүхийн музей</div>
+          <div className=" w-full overflow-x-scroll">
+            <div className="w-[1147px] flex justify-between ">
+              {" "}
+              {museumIMG.map((el) => {
+                return (
+                  <Image
+                    className="w-[173px] h-[143px] rounded-md"
+                    src={el}
+                    width={500}
+                    height={500}
+                    alt="Carousel image"
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
-      <MuseumCard data={data} />
+      <MuseumCard data={museum} />
     </div>
   );
 };

@@ -243,10 +243,13 @@ const DashboardSec = ({ menus }: any) => {
         console.log(menus, id);
         const res = await deleteFunc(`${urls.NEWS}/resources`, { id });
         console.log("Байгуулга", "ajillaa");
+<<<<<<< HEAD
       } else if (menus === "Үзэсгэлэнт Газрууд") {
         console.log(menus, id);
         const res = await deleteFunc(`${urls.SCENICSPORT}/resources`, { id });
         console.log("Байгуулга", "ajillaa");
+=======
+>>>>>>> main
       }
     } catch (error) {
       console.error("Error fetching data: ", error);
@@ -261,17 +264,29 @@ const DashboardSec = ({ menus }: any) => {
     {
       accessorKey: "description",
       header: "Тайлбар",
+<<<<<<< HEAD
       size: 550,
+=======
+      size: 150,
+>>>>>>> main
       Cell: ({ renderedCellValue, row }: any) => (
         <div
           style={{
             display: "flex",
             alignItems: "center",
+<<<<<<< HEAD
             width: "100%",
+=======
+            maxWidth: "400px",
+>>>>>>> main
             overflow: "hidden",
           }}
         >
           <p>{renderedCellValue}</p>
+<<<<<<< HEAD
+=======
+          <p>{menus}</p>
+>>>>>>> main
         </div>
       ),
     },
@@ -302,8 +317,12 @@ const DashboardSec = ({ menus }: any) => {
           >
             <button
               onClick={() => {
+<<<<<<< HEAD
                 const id = d?.row?.original?._id + "*" + menus;
                 router.push(`/admin/${id}}`);
+=======
+                console.log(d?.row?.original?._id);
+>>>>>>> main
               }}
               className="border-blue-600 w-[80px] border-[2px] rounded-[8px] px-[4px] py-[2px] hover:bg-blue-600 hover:text-white border-solid "
             >
@@ -407,6 +426,7 @@ const DashboardSec = ({ menus }: any) => {
 
   useEffect(() => {
     fetchData();
+    console.log(menus);
   }, [menus]);
 
   return <MaterialReactTable table={table} />;

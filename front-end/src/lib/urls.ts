@@ -11,10 +11,11 @@ const urls = {
   TRAVEL: "/travel",
   EMPLOYEE: "/aboutus/employee",
   OFFERS: "/aboutus/offers",
-  MAIN_URL:  API_URL,
+  MAIN_URL: API_URL,
   REPORT: "/news/report",
   RESOURCES: "/news/resources",
   VIDEO: "/news/video",
+  SCENICSPORT: "/aboutus/scenicSpot",
 };
 
 export default urls;

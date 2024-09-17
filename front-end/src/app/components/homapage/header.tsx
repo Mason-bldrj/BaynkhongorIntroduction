@@ -1,11 +1,14 @@
 "use client";
+import { RiAdminLine } from "react-icons/ri";
 import { InfoArr, InfoItem } from "@/app/data";
 import Image from "next/image";
 import SideBar from "../detail/sidebar";
+import { useRouter } from "next/navigation";
 export const Header = ({ switchHeader }: any) => {
+  const router = useRouter();
   return (
     <div
-      className={` w-full  h-[50px] sm:h-[180px] md:h-[229px] justify-between flex-col items-center bg-cover sm:bg-center bg-[url('/header.png')] bg-[#FF6C10]
+      className={` relative w-full  h-[50px] sm:h-[180px] md:h-[229px] justify-between flex-col items-center bg-cover sm:bg-center bg-[url('/header.png')] bg-[#FF6C10]
  ${switchHeader ? "flex" : "hidden"}
     `}
     >
@@ -37,6 +40,11 @@ export const Header = ({ switchHeader }: any) => {
       <div className="text-white sm:text-md md:text-2xl  w-fit text-center mb-2 sm:flex hidden">
         Баянхонгор аймаг аялал жуулчлал зочлох үйлчилгээний байгууллага
       </div>
+
+      <RiAdminLine
+        onClick={() => router.push("/admin/login")}
+        className="hidden sm:block cursor-pointer text-black  p-1 w-[30px] h-[30px] absolute top-2 right-5"
+      />
     </div>
   );
 };

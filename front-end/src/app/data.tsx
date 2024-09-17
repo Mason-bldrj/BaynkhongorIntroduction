@@ -4,7 +4,14 @@ export interface InfoItem {
   phone?: string;
   report?: string;
 }
-
+export const museumIMG = [
+  "/museum1.png",
+  "/museum2.png",
+  "/museum3.png",
+  "/museum4.png",
+  "/museum5.png",
+  "/museum6.png",
+];
 export const museum = [
   {
     title: "Түүх угсаатны зүй, Байгалийн  музей",

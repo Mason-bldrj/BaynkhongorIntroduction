@@ -14,6 +14,8 @@ export const BeautifulArea = () => {
   useEffect(() => {
     fetchedData();
   }, []);
+  console.log(data);
+  
   return (
     <div className="w-full flex flex-col items-center sm:mt-20">
       <div className="w-full flex flex-col items-center">

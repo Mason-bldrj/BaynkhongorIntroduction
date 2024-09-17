@@ -73,11 +73,14 @@ export async function PUT(req: NextRequest, res: NextResponse) {
 }
 export async function DELETE(req: NextRequest, res: NextResponse) {
   const data = await req.json();
+  console.log(data);
 
   try {
-    const { _id } = data;
-    const res = await InstitutionModel.findByIdAndDelete(_id);
-    return NextResponse.json(res);
+    const { id } = data;
+    const res = await InstitutionModel.findByIdAndDelete(id);
+    console.log(res);
+
+    return NextResponse.json(id);
   } catch (error: any) {
     console.error("Error creating AboutUs record:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });

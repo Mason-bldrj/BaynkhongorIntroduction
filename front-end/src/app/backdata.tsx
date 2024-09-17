@@ -17,7 +17,6 @@ export const fetchFunc = async (sub_url: String) => {
 // ${urls.MAIN_URL}${sub_url}
 export const postFunc = async (sub_url: string, body: any) => {
   try {
-    console.log(JSON.stringify(body));
     const res = await fetch(`${urls.MAIN_URL}${sub_url}`, {
       method: "POST",
       headers: {
@@ -45,16 +44,20 @@ export const putFunc = async (sub_url: string, body: any) => {
     console.log(err);
   }
 };
-export const deleteFunc = async (sub_url: string, id: string) => {
+export const deleteFunc = async (sub_url: string, id: any) => {
+  console.log(id);
+
   try {
     const res = await fetch(`${urls.MAIN_URL}${sub_url}`, {
-      method: "POST",
+      method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-      mode: "no-cors",
       body: JSON.stringify(id),
     });
+    console.log(res);
+
+    return "success";
   } catch (err: any) {
     console.log(err);
   }

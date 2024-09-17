@@ -22,7 +22,7 @@ export const TailanCard = ({ data, startIndex }: any) => {
                 key={i}
                 className="w-[270px] px-4  h-[86px] rounded-sm  cursor-pointer bg-[#F7F8FC] flex justify-center items-center hover:bg-gray-200 hover:scale-[110%]"
               >
-                <div className="w-[238px] h-[60px] flex gap-2 overflow-hidden items-center">
+                <div className="w-[238px] h-[60px] flex gap-2 overflow-x-hidden items-center">
                   <div className="bg-[#ff7119] w-[5px] h-[90%]"></div>
                   {el.description}
                 </div>

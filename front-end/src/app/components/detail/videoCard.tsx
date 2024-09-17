@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-
 export const VideoCard = ({  data1, startIndex }: any) => {
   const visibleCount = 1; 
   const maxIndex = Math.max(0, data1?.length - visibleCount);

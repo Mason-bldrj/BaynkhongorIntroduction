@@ -8,11 +8,12 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const AdminDashboard = () => {
-  if (!admin) {
-    const router = useRouter();
-
-    return router.push("/");
-  }
+  const router = useRouter();
+  // const admin = localStorage.getItem("admin");
+  // if (!admin) {
+  //   router.push("/");
+  //   return;
+  // }
   const [changedRequest, setChangedRequest] = useState("CREATE");
   const [menus, setMenu] = useState("Бидний тухай");
   return (

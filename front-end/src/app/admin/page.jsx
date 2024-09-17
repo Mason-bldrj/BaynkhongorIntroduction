@@ -25,7 +25,7 @@ const Admin = () => {
         "Уучлаарай энэ хуудсанд зөвхөн админ эрхтэй хүмүүс л хандах эрхтэй!",
         {
           transition: Flip,
-          onClose: () => router.push("/aboutus"),
+          onClose: () => router.push("/"),
         }
       );
       return;

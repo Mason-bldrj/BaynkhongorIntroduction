@@ -32,7 +32,7 @@ const AboutUs = (props?: any) => {
     phoneNumber1: 0,
     phoneNumber2: 0,
   });
-  const [offerArray, setOfferArray] = useState([]);
+
   const storage = getStorage();
   const uploadImage = () => {
     const storageref = ref(storage);
@@ -71,14 +71,10 @@ const AboutUs = (props?: any) => {
           wardNumber: defaultInformation.wardNumber,
         },
       });
-      const res1 = await postFunc(`${urls.ABOUTUS}/offers`, {
-        offerArray,
-      });
     } catch (err: any) {
       return err;
     }
   };
-  console.log(aboutData);
 
   return (
     <div className="flex items-center flex-wrap rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
@@ -264,16 +260,12 @@ const AboutUs = (props?: any) => {
             defaultInformation={defaultInformation}
           ></DefaultInformationSec>
         </div>
-        <OfferSec
-          offerArray={offerArray}
-          setOfferArray={setOfferArray}
-        ></OfferSec>
+        <OfferSec></OfferSec>
       </div>
       <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           className="flex p-[8px]"
           onClick={() => {
-            console.log(aboutUsData);
             createEmployee();
           }}
         >

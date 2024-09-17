@@ -1,26 +1,38 @@
+import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
+import urls from "@/lib/urls";
 import { ref, uploadBytes } from "firebase/storage";
 import Image from "next/image";
 import { useState } from "react";
 import { v4 } from "uuid";
 
-const OfferSec = (offerArray: any, setOfferArray: any) => {
+const OfferSec = () => {
   const [image, setImage] = useState();
   const [offer, setOffer] = useState({ name: "", img: "", count: 0 });
-  const ArrayOfOffer: any = [];
-  const pushoffer = (offer: any) => {
-    ArrayOfOffer.push(offer);
-    setOfferArray(ArrayOfOffer);
-    console.log(ArrayOfOffer);
+  const [offerArray, setOfferArray] = useState({
+    name: "",
+    img: "",
+    count: 0,
+  });
+
+  const pushoffer = async (offer: any) => {
+    try {
+      const res1 = await postFunc(`${urls.ABOUTUS}/offers`, {
+        offerArray,
+      });
+    } catch (err: any) {
+      return err;
+    }
   };
+
   const handleclick = async (image: any) => {
     const a = v4();
 
     const imgRef = ref(imageDb, `${a}`);
     const res = await uploadBytes(imgRef, image);
 
-    setOffer({
-      ...offer,
+    setOfferArray({
+      ...offerArray,
       img: `https://firebasestorage.googleapis.com/v0/b/app-demo-554df.appspot.com/o/${a}?alt=media&token=4554e441-c30b-4a16-b81f-5b50727d691e`,
     });
   };
@@ -39,8 +51,8 @@ const OfferSec = (offerArray: any, setOfferArray: any) => {
                 className="px-[6px] py-[8px] rounded-[8px]"
                 onChange={(event) => {
                   setTimeout(() => {
-                    setOffer({
-                      ...offer,
+                    setOfferArray({
+                      ...offerArray,
                       name: event.target.value,
                     });
                   }, 500);
@@ -77,11 +89,12 @@ const OfferSec = (offerArray: any, setOfferArray: any) => {
 
       <div>
         <button
+          className="flex justify-center items-center rounded-[8px]  bg-white py-[4px] px-[8px]"
           onClick={() => {
             pushoffer(offer);
           }}
         >
-          Нэмэх
+          Санал авах газар нэмэх
         </button>
       </div>
     </>

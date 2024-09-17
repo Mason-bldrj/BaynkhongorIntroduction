@@ -20,6 +20,7 @@ const DashboardSec = ({ menus }: any) => {
         const res = await fetchFunc(urls.ABOUTUS);
         const data = await res.json();
         const set: any = [data[0]];
+
         setAboutUsData(set);
       } else if (menus === "Байгуулга") {
         const res = await fetchFunc(urls.institution);
@@ -67,11 +68,8 @@ const DashboardSec = ({ menus }: any) => {
       console.error("Error fetching data: ", error);
     }
   };
-  console.log({ aaa: menus });
 
   const deleteData = async ({ id, menus }: any) => {
-    console.log({ id, menus });
-
     try {
       if (menus === "Бидний тухай") {
         console.log(menus, id);
@@ -193,6 +191,7 @@ const DashboardSec = ({ menus }: any) => {
       },
     },
   ];
+
   const aboutUscolumns = [
     {
       accessorKey: "name", //access nested data with dot notation
@@ -270,7 +269,7 @@ const DashboardSec = ({ menus }: any) => {
   ];
   const table = useMaterialReactTable({
     columns: menus === "Бидний тухай" ? aboutUscolumns : columns,
-    data: menus !== "Бидний тухай" ? aboutUs : data || [], // data must be memoized or stable (useState, useMemo, etc.)
+    data: menus === "Бидний тухай" ? aboutUs : data || [], // data must be memoized or stable (useState, useMemo, etc.)
   });
   console.log(rowSelection);
 

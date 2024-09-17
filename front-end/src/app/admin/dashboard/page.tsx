@@ -3,11 +3,17 @@
 import AdminMain from "@/app/components/admin/AdminMains";
 import AdminSideBar from "@/app/components/admin/AdminSideBar";
 import DashboardSec from "@/app/components/admin/Dashboard";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
 const AdminDashboard = () => {
-  const [changedRequest, setChangedRequest] = useState();
+  if (!admin) {
+    const router = useRouter();
+
+    return router.push("/");
+  }
+  const [changedRequest, setChangedRequest] = useState("CREATE");
   const [menus, setMenu] = useState("Бидний тухай");
   return (
     <div className="flex ">

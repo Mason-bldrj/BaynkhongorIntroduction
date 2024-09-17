@@ -7,5 +7,5 @@ const offersSchema = new Schema({
   count: Number,
 });
 
-const OffersModel = models.offer || model(COLLECTIONS.OFFERS, offersSchema);
+const OffersModel = models.offers || model(COLLECTIONS.OFFERS, offersSchema);
 export default OffersModel;

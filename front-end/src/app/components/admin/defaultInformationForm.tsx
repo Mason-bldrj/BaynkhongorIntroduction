@@ -1,5 +1,6 @@
 const DefaultInformationSec = (props: any) => {
-  const { setDefaultInformation, defaultInformation } = props;
+  const { numericalIndicators, setDefaultInformation, defaultInformation } =
+    props;
 
   return (
     <div className="flex flex-wrap gap-[24px]">
@@ -8,6 +9,7 @@ const DefaultInformationSec = (props: any) => {
         <div>
           <div className="text-[14px]">Байгалийн дурсгалт газар тоо </div>
           <input
+            defaultValue={numericalIndicators?.natureMonument}
             type="number"
             placeholder="Та мэдээлэлээ оруулна уу!"
             name="natureMonument"
@@ -26,6 +28,7 @@ const DefaultInformationSec = (props: any) => {
         <div>
           <div className="text-[14px]">Түүхэн дурсгалт газар</div>
           <input
+            defaultValue={numericalIndicators?.memorialPlaceNumber}
             type="number"
             placeholder="Та мэдээлэлээ оруулна уу!"
             name="memorialPlaceNumber"
@@ -44,6 +47,7 @@ const DefaultInformationSec = (props: any) => {
         <div>
           <div className="text-[14px]">Газар нутгийн хэмжээ тоо(км) </div>
           <input
+            defaultValue={numericalIndicators?.groundKM_Number}
             type="number"
             placeholder="Та мэдээлэлээ оруулна уу!"
             name="groundKM_Number"
@@ -62,6 +66,7 @@ const DefaultInformationSec = (props: any) => {
         <div>
           <div className="text-[14px]">Хүн амын тоо </div>
           <input
+            defaultValue={numericalIndicators?.population}
             type="number"
             placeholder="Та мэдээлэлээ оруулна уу!"
             name="population"
@@ -80,6 +85,7 @@ const DefaultInformationSec = (props: any) => {
         <div className="">
           <div className="text-[14px]">Нийт багийн тоо </div>
           <input
+            defaultValue={numericalIndicators?.teamsNumber}
             type="number"
             placeholder="Та мэдээлэлээ оруулна уу!"
             name="teamsNumber"
@@ -98,6 +104,7 @@ const DefaultInformationSec = (props: any) => {
         <div>
           <div className="text-[14px]">Нийт сумын тоо </div>
           <input
+            defaultValue={numericalIndicators?.wardNumber}
             type="number"
             placeholder="Та мэдээлэлээ оруулна уу!"
             name="wardNumber"

@@ -6,7 +6,8 @@ import { v4 } from "uuid";
 import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
 
-const EventForm = () => {
+const EventForm = (props?: any) => {
+  const { edit, data } = props;
   const [image, setImage] = useState<any>();
   const [eventData, setEventData] = useState({
     name: "",
@@ -37,11 +38,24 @@ const EventForm = () => {
       return err;
     }
   };
+  const editEvent = async () => {
+    try {
+      const res = await postFunc(urls.EVENT, {
+        id: data._id,
+        name: eventData.name,
+        img: eventData.img,
+        description: eventData.description,
+      });
+    } catch (err: any) {
+      return err;
+    }
+  };
   return (
     <div className="flex items-center flex-wrap rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
       <div>
         <div className="text-[16px]">Эвент нэр </div>
         <input
+          defaultValue={data?.naem}
           type="text"
           placeholder="Нэр"
           name="name"
@@ -59,6 +73,7 @@ const EventForm = () => {
       <div className="flex flex-col w-full h-[150px]   ">
         <div className="text-[16px]"> Тайлбар </div>
         <textarea
+          defaultValue={data?.description}
           className="px-[6px] py-[8px] rounded-[8px] h-full"
           placeholder="Тайлбар"
           name="description"
@@ -100,8 +115,11 @@ const EventForm = () => {
       <div className="flex items-center   justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {
-            console.log(eventData);
-            createEvent();
+            if (edit === true) {
+              editEvent();
+            } else {
+              createEvent();
+            }
           }}
         >
           Нэмэх

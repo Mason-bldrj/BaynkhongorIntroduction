@@ -13,11 +13,15 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const { offerCount, offer } = await req.json();
+    const { offers } = await req.json();
 
     const createdRecord = await OffersModel.create({
       offerCount: 0,
+<<<<<<< HEAD
+      offers,
+=======
       offer,
+>>>>>>> main
       visitedNumber: 0,
     });
 

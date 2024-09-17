@@ -6,7 +6,8 @@ import { v4 } from "uuid";
 import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
 
-const TravelForm = () => {
+const TravelForm = (props?: any) => {
+  const { edit, data } = props;
   const [travelData, setTravelData] = useState({
     name: "",
     img: "",
@@ -26,9 +27,24 @@ const TravelForm = () => {
       img: `https://firebasestorage.googleapis.com/v0/b/app-demo-554df.appspot.com/o/${a}?alt=media&token=4554e441-c30b-4a16-b81f-5b50727d691e`,
     });
   };
-  const createEmployee = async () => {
+  const createTravel = async () => {
     try {
       const res = await postFunc(urls.TRAVEL, {
+        name: travelData.name,
+        img: travelData.img,
+        date: travelData.date,
+        travelType: travelData.travelType,
+        description: travelData.description,
+      });
+      console.log(res);
+    } catch (err: any) {
+      return err;
+    }
+  };
+  const editTravel = async () => {
+    try {
+      const res = await postFunc(urls.TRAVEL, {
+        id: data._id,
         name: travelData.name,
         img: travelData.img,
         date: travelData.date,
@@ -45,6 +61,7 @@ const TravelForm = () => {
       <div>
         <div className="text-[16px]">Аялалын нэр </div>
         <input
+          defaultValue={data?.name}
           type="text"
           placeholder="Нэр"
           name="name"
@@ -81,8 +98,9 @@ const TravelForm = () => {
       <div>
         <div>Аялалын төрөл</div>
         <select
+          defaultValue={data?.travelType}
           className="px-[6px] py-[8px] rounded-[8px]"
-          name="phoneNumber"
+          name="travelType"
           onChange={(event) => {
             setTimeout(() => {
               setTravelData({
@@ -122,6 +140,7 @@ const TravelForm = () => {
       <div className="w-full h-[100px]">
         <div>Тайлбар</div>
         <textarea
+          defaultValue={data?.description}
           placeholder="Тайлбар"
           name="descrition"
           className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
@@ -138,8 +157,11 @@ const TravelForm = () => {
       <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {
-            console.log(travelData);
-            createEmployee();
+            if (edit === true) {
+              editTravel();
+            } else {
+              createTravel();
+            }
           }}
         >
           Нэмэх

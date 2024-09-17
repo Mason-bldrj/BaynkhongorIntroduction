@@ -17,7 +17,7 @@ type EmployeeData = {
   // Define the structure of the employee data if available.
 };
 
-export default function AboutUs() {
+export default function AboutUs(props?: any) {
   const [data, setData] = useState<AboutUsData | null>(null);
   const [data2, setData2] = useState<EmployeeData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);

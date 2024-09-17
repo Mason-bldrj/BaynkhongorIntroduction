@@ -13,4 +13,5 @@ export const COLLECTIONS = {
   VIDEO: "video",
   RESOURCES: "resources",
   SCENIC: "snenicspot",
+  COUNT: "count",
 };

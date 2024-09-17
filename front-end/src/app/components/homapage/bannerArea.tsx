@@ -8,44 +8,59 @@ import urls from "@/lib/urls";
 import { fetchFunc, putFunc } from "@/app/backdata";
 
 export const BannerArea = () => {
-  const [data, setData] = useState<any[]>([]); // To store both total and today's visitor data
-  const [value, setValue] = useState("today"); // To toggle between "today" and "total"
-  const [count, setCount] = useState(false); // Flag to check if data is fetched
-  const [loading, setLoading] = useState(true); // Loading state to track fetch status
+  const [data, setData] = useState<any[]>([]);
+  const [value, setValue] = useState("today");
+  const [count, setCount] = useState(false);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  // Fetch data function
+  // Function to check if a new day has started
+  const isNewDay = () => {
+    const lastVisit = localStorage.getItem("lastVisit");
+    const today = new Date().toDateString();
+
+    if (lastVisit !== today) {
+      localStorage.setItem("lastVisit", today);
+      return true; // It's a new day
+    }
+    return false; // Still the same day
+  };
+
   const fetchedData = async () => {
     try {
       const res = await fetchFunc(urls.COUNT);
       const fetchedData = await res.json();
-      setData(fetchedData); // Set the entire data array [total, today]
-      setCount(true); // Mark that data is loaded
-      setLoading(false); // Set loading to false after fetching
+      setData(fetchedData);
+      setCount(true);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
-      setLoading(false); // Even in case of error, stop loading
+      setLoading(false);
     }
   };
 
-  // Function to update both total and today's visitor count
   const updateCount = async () => {
     if (data.length >= 2) {
-      const totalId = data[0]._id; // ID for total visitors
-      const todayId = data[1]._id; // ID for today's visitors
-      const totalNumber = data[0].number; // Total visitors number
-      const todayNumber = data[1].number; // Today's visitors number
+      const totalId = data[0]._id;
+      const todayId = data[1]._id;
+      const totalNumber = data[0].number;
+      const todayNumber = data[1].number;
 
-      // Increment both total and today's visitors by 1
+      let updatedToday = todayNumber;
+
+      // Check if it's a new day, and reset the count if true
+      if (isNewDay()) {
+        updatedToday = 1; // Start from 1 since it's the first visit today
+      } else {
+        updatedToday += 1;
+      }
+
       const updatedTotal = totalNumber + 1;
-      const updatedToday = todayNumber + 1;
 
-      // Prepare bodies for PUT requests
       const totalBody = { id: totalId, number: updatedTotal };
       const todayBody = { id: todayId, number: updatedToday };
 
       try {
-        // Update both total and today's visitors in parallel
         await Promise.all([
           putFunc(urls.COUNT, totalBody),
           putFunc(urls.COUNT, todayBody),
@@ -57,17 +72,16 @@ export const BannerArea = () => {
   };
 
   useEffect(() => {
-    fetchedData(); // Fetch data on component mount
+    fetchedData();
     if (count) {
-      updateCount(); // Update counts if data is loaded
+      updateCount();
     }
   }, [count]);
 
-  // Render loading state if data is still being fetched
   if (loading) {
     return (
       <div className="w-full flex justify-center items-center h-[200px]">
-        <div className="loader"></div>{" "}
+        <div className="loader"></div>
       </div>
     );
   }

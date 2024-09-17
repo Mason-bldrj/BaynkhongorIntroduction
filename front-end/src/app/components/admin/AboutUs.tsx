@@ -8,7 +8,8 @@ import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
 import OfferSec from "./OfferSec";
 
-const AboutUs = () => {
+const AboutUs = (props?: any) => {
+  const { edit, aboutData } = props;
   const [image, setImage] = useState<string>();
   const [aboutUsData, setAboutUsData] = useState({
     name: "",
@@ -77,12 +78,19 @@ const AboutUs = () => {
       return err;
     }
   };
+  console.log(aboutData);
+
   return (
     <div className="flex items-center flex-wrap rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
-      <div className="flex flex-col gap-[24px]">
+      <div
+        className={`flex flex-col gap-[24px]  ${
+          edit === true ? "px-[40px]" : ""
+        }`}
+      >
         <div>
           <div className="text-[16px]">Газрын нэр </div>
           <input
+            defaultValue={aboutData?.name}
             type="text"
             placeholder="Нэр"
             name="name"
@@ -100,6 +108,7 @@ const AboutUs = () => {
         <div className="flex flex-col   ">
           <div className="text-[16px]"> Имэйл</div>
           <input
+            defaultValue={aboutData?.email}
             className="px-[6px] py-[8px] rounded-[8px]"
             type="email"
             placeholder="Имэйл"
@@ -140,45 +149,50 @@ const AboutUs = () => {
             </button>
           </div>
         </div>
-        <div>
-          <div>Утас 1</div>
-          <input
-            type="tel"
-            placeholder="Утасний дугаар"
-            className="px-[6px] py-[8px] rounded-[8px]"
-            name="phoneNumber1"
-            onChange={(event) => {
-              setTimeout(() => {
-                const number = Number(event.target.value);
-                setPhoneNumbers({
-                  ...phoneNumbers,
-                  phoneNumber1: number,
-                });
-              }, 1000);
-            }}
-          />
-        </div>
-        <div>
-          <div>Утас 2</div>
-          <input
-            type="tel"
-            placeholder="Утасний дугаар"
-            className="px-[6px] py-[8px] rounded-[8px]"
-            name="phoneNumber2"
-            onChange={(event) => {
-              setTimeout(() => {
-                const number = Number(event.target.value);
-                setPhoneNumbers({
-                  ...phoneNumbers,
-                  phoneNumber2: number,
-                });
-              }, 1000);
-            }}
-          />
+        <div className="flex gap-[24px]">
+          <div>
+            <div>Утас 1</div>
+            <input
+              defaultValue={aboutData?.phoneNumbers?.phoneNumber1}
+              type="tel"
+              placeholder="Утасний дугаар"
+              className="px-[6px] py-[8px] rounded-[8px]"
+              name="phoneNumber1"
+              onChange={(event) => {
+                setTimeout(() => {
+                  const number = Number(event.target.value);
+                  setPhoneNumbers({
+                    ...phoneNumbers,
+                    phoneNumber1: number,
+                  });
+                }, 1000);
+              }}
+            />
+          </div>
+          <div>
+            <div>Утас 2</div>
+            <input
+              defaultValue={aboutData?.phoneNumbers?.phoneNumber2}
+              type="tel"
+              placeholder="Утасний дугаар"
+              className="px-[6px] py-[8px] rounded-[8px]"
+              name="phoneNumber2"
+              onChange={(event) => {
+                setTimeout(() => {
+                  const number = Number(event.target.value);
+                  setPhoneNumbers({
+                    ...phoneNumbers,
+                    phoneNumber2: number,
+                  });
+                }, 1000);
+              }}
+            />
+          </div>
         </div>
         <div className="w-full h-[100px]">
           <div>Бидны тухай</div>
           <textarea
+            defaultValue={aboutData?.about}
             placeholder="Бидны тухай"
             name="about"
             className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
@@ -195,6 +209,7 @@ const AboutUs = () => {
         <div className="w-full h-[100px]">
           <div>Зорилго</div>
           <textarea
+            defaultValue={aboutData?.objective}
             placeholder="Зорилго"
             name="objective"
             className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
@@ -211,6 +226,7 @@ const AboutUs = () => {
         <div className="w-full h-[100px]">
           <div>Зорилт</div>
           <textarea
+            defaultValue={aboutData?.porpose}
             placeholder="Зорилт"
             name="objective"
             className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
@@ -227,6 +243,7 @@ const AboutUs = () => {
         <div className="w-full h-[100px]">
           <div>Албаны тухай </div>
           <textarea
+            defaultValue={aboutData?.aboutOffice}
             placeholder="Албаны тухай"
             name="aboutOffice"
             className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
@@ -242,6 +259,7 @@ const AboutUs = () => {
         </div>
         <div className="flex border-t-[2px] border-solid mt-[10px]">
           <DefaultInformationSec
+            numericalIndicators={aboutData?.numericalIndicators}
             setDefaultInformation={setDefaultInformation}
             defaultInformation={defaultInformation}
           ></DefaultInformationSec>

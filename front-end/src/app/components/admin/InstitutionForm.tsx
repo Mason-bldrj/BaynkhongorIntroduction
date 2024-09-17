@@ -5,7 +5,8 @@ import { ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
 import { v4 } from "uuid";
 
-const InstitutionForm = () => {
+const InstitutionForm = (props?: any) => {
+  const { edit, data } = props;
   const [institutionData, setInstitutionData] = useState({
     name: "",
     institutionType: "",
@@ -66,6 +67,23 @@ const InstitutionForm = () => {
       return err;
     }
   };
+  const editEmployee = async () => {
+    try {
+      const res = await postFunc(urls.institution, {
+        id: data._id,
+        name: institutionData.name,
+        institutionType: institutionData.institutionType,
+        description: institutionData.description,
+        phoneNumbers: phoneNumbers,
+        img: institutionData.img,
+        time: times,
+        price: prices,
+      });
+      console.log(res);
+    } catch (err: any) {
+      return err;
+    }
+  };
   return (
     <div className="flex  flex-col items-center flex-wrap rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
       <div className="flex flex-col">
@@ -74,6 +92,7 @@ const InstitutionForm = () => {
           <div>
             <div className="text-[16px]">Байгуулга нэр </div>
             <input
+              defaultValue={data?.name}
               type="text"
               placeholder="Нэр"
               name="name"
@@ -91,6 +110,7 @@ const InstitutionForm = () => {
           <div>
             <div>Байгуулга төрөл</div>
             <select
+              defaultValue={data?.institutionType}
               className="px-[6px] py-[8px] rounded-[8px]"
               name="institutionType"
               onChange={(event) => {
@@ -117,6 +137,7 @@ const InstitutionForm = () => {
           <div>
             <div>Утас 1</div>
             <input
+              defaultValue={data?.phoneNumbers?.phoneNumber1}
               type="tel"
               placeholder="Утасний дугаар"
               className="px-[6px] py-[8px] rounded-[8px]"
@@ -135,6 +156,7 @@ const InstitutionForm = () => {
           <div>
             <div>Утас 2</div>
             <input
+              defaultValue={data?.phoneNumbers?.phoneNumber2}
               type="tel"
               placeholder="Утасний дугаар"
               className="px-[6px] py-[8px] rounded-[8px]"
@@ -175,6 +197,7 @@ const InstitutionForm = () => {
         <div className="w-full h-[100px]">
           <div>Тайлбар</div>
           <textarea
+            defaultValue={data?.description}
             placeholder="Тайлбар"
             name="descrition"
             className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
@@ -317,7 +340,11 @@ const InstitutionForm = () => {
       <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {
-            createEmployee();
+            if (edit === true) {
+              editEmployee;
+            } else {
+              createEmployee();
+            }
           }}
         >
           Нэмэх

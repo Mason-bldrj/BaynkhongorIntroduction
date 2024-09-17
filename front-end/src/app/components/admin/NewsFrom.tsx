@@ -6,7 +6,10 @@ import { v4 } from "uuid";
 import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
 
-const NewsFrom = () => {
+const NewsFrom = (props?: any) => {
+  const { edit, data } = props;
+  console.log(data);
+
   const [reportData, setReportData] = useState({
     name: "",
     date: "",
@@ -44,6 +47,18 @@ const NewsFrom = () => {
       return err;
     }
   };
+  const editReport = async () => {
+    try {
+      const res = await postFunc(urls.REPORT, {
+        id: data._id,
+        name: reportData.name,
+        date: reportData.date,
+        description: reportData.description,
+      });
+    } catch (err: any) {
+      return err;
+    }
+  };
   const createResources = async () => {
     try {
       const res = await postFunc(urls.RESOURCES, {
@@ -55,9 +70,34 @@ const NewsFrom = () => {
       return err;
     }
   };
+  const editResources = async () => {
+    try {
+      const res = await postFunc(urls.RESOURCES, {
+        id: data?._id,
+        name: resourcesData.name,
+        img: resourcesData.img,
+      });
+      console.log(res);
+    } catch (err: any) {
+      return err;
+    }
+  };
   const createVideo = async () => {
     try {
       const res = await postFunc(urls.VIDEO, {
+        name: videoNewsData.name,
+        date: videoNewsData.date,
+        url: videoNewsData.url,
+      });
+      console.log(res);
+    } catch (err: any) {
+      return err;
+    }
+  };
+  const editVideo = async () => {
+    try {
+      const res = await postFunc(urls.VIDEO, {
+        id: data._id,
         name: videoNewsData.name,
         date: videoNewsData.date,
         url: videoNewsData.url,
@@ -127,7 +167,11 @@ const NewsFrom = () => {
         <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
           <button
             onClick={() => {
-              createReport();
+              if (edit === true) {
+                editReport();
+              } else {
+                createReport;
+              }
             }}
           >
             Нэмэх
@@ -194,7 +238,11 @@ const NewsFrom = () => {
         <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
           <button
             onClick={() => {
-              createVideo();
+              if (edit === true) {
+                editVideo();
+              } else {
+                createVideo();
+              }
             }}
           >
             Нэмэх
@@ -247,7 +295,11 @@ const NewsFrom = () => {
         <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
           <button
             onClick={() => {
-              createResources();
+              if (edit === true) {
+                editResources;
+              } else {
+                createResources();
+              }
             }}
           >
             Нэмэх

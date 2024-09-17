@@ -2,7 +2,8 @@ import { postFunc } from "@/app/backdata";
 import urls from "@/lib/urls";
 import { useState } from "react";
 
-const LegalityForm = () => {
+const LegalityForm = (props?: any) => {
+  const { edit, data } = props;
   const [legalityData, setLegalityData] = useState({
     name: "",
     title: "",
@@ -15,7 +16,21 @@ const LegalityForm = () => {
       const res = await postFunc(urls.LEGALITY, {
         name: legalityData.name,
         title: legalityData.title,
-        link: legalityData.title,
+        link: legalityData.link,
+        legalityType: legalityData.legalityType,
+      });
+      console.log(res);
+    } catch (err: any) {
+      return err;
+    }
+  };
+  const editLegality = async () => {
+    try {
+      const res = await postFunc(urls.LEGALITY, {
+        id: data._id,
+        name: legalityData.name,
+        title: legalityData.title,
+        link: legalityData.link,
         legalityType: legalityData.legalityType,
       });
       console.log(res);
@@ -28,6 +43,7 @@ const LegalityForm = () => {
       <div>
         <div className="text-[16px]">Нэр </div>
         <input
+          defaultValue={data?.name}
           type="text"
           placeholder="Нэр"
           name="name"
@@ -45,6 +61,7 @@ const LegalityForm = () => {
       <div className="flex flex-col   ">
         <div className="text-[16px]"> Гарчиг </div>
         <input
+          defaultValue={data?.title}
           className="px-[6px] py-[8px] rounded-[8px]"
           type="text"
           placeholder="Гарчиг"
@@ -62,6 +79,7 @@ const LegalityForm = () => {
       <div>
         <div>Төрөл</div>
         <select
+          defaultValue={data?.legalityType}
           className="px-[6px] py-[8px] rounded-[8px]"
           name="phoneNumber"
           onChange={(event) => {
@@ -83,13 +101,12 @@ const LegalityForm = () => {
       <div>
         <div>Холбоос</div>
         <input
+          defaultValue={data?.link}
           type="text"
           placeholder=""
           name="link"
           className="px-[6px] py-[8px] rounded-[8px]"
           onChange={(event) => {
-            console.log(event.target.value);
-
             setTimeout(() => {
               setLegalityData({
                 ...legalityData,
@@ -102,8 +119,11 @@ const LegalityForm = () => {
       <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {
-            console.log(legalityData);
-            createLegality();
+            if (edit === true) {
+              editLegality();
+            } else {
+              createLegality();
+            }
           }}
         >
           Нэмэх

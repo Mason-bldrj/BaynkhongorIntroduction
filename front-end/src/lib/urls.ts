@@ -16,6 +16,7 @@ const urls = {
   RESOURCES: "/news/resources",
   VIDEO: "/news/video",
   SCENICSPORT: "/aboutus/scenicSpot",
+  COUNT: "/count"
 };
 
 export default urls;

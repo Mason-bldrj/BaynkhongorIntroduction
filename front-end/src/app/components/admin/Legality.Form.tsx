@@ -10,7 +10,6 @@ const LegalityForm = (props?: any) => {
     link: "",
     legalityType: "",
   });
-
   const createLegality = async () => {
     try {
       const res = await postFunc(urls.LEGALITY, {
@@ -91,15 +90,13 @@ const LegalityForm = (props?: any) => {
             }, 1000);
           }}
         >
-          <option value="LAW">Хууль</option>
-          <option value="RULES">Дүрэм, Журам</option>
           <option value="RESOLUTION">Тогтоол</option>
           <option value="COMMAND">Захирамж</option>
           <option value="CONSENT">Зөвшөөрөл</option>
         </select>
       </div>
       <div>
-        <div>Холбоос</div>
+        <div>Тайлбар</div>
         <input
           defaultValue={data?.link}
           type="text"

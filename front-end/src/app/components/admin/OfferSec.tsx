@@ -4,21 +4,23 @@ import Image from "next/image";
 import { useState } from "react";
 import { v4 } from "uuid";
 
-const OfferSec = (offerArray: any, setOfferArray: any) => {
+const OfferSec = ({
+  setOfferArray,
+  offerArray
+}: { offerArray:any[]
+  setOfferArray: React.Dispatch<React.SetStateAction<any[]>>;
+}) => {
   const [image, setImage] = useState();
   const [offer, setOffer] = useState({ name: "", img: "", count: 0 });
-  const ArrayOfOffer: any = [];
+  let ArrayOfOffer: any = [];  
   const pushoffer = (offer: any) => {
-    ArrayOfOffer.push(offer);
-    setOfferArray(ArrayOfOffer);
-    console.log(ArrayOfOffer);
+    const updatedArray = [...offerArray, offer];
+    setOfferArray(updatedArray); 
   };
   const handleclick = async (image: any) => {
     const a = v4();
-
     const imgRef = ref(imageDb, `${a}`);
     const res = await uploadBytes(imgRef, image);
-
     setOffer({
       ...offer,
       img: `https://firebasestorage.googleapis.com/v0/b/app-demo-554df.appspot.com/o/${a}?alt=media&token=4554e441-c30b-4a16-b81f-5b50727d691e`,

@@ -29,6 +29,7 @@ const urls: UrlsType = {
   REPORT: "/news/report",
   RESOURCES: "/news/resources",
   VIDEO: "/news/video",
+  SCENICSPORT: "/aboutus/scenicSpot",
 };
 
 export default function Page({ params }: { params: { slug: any } }) {
@@ -71,7 +72,6 @@ export default function Page({ params }: { params: { slug: any } }) {
       setError("No valid keyword found in the URL.");
     }
   };
-
   useEffect(() => {
     fetchedData();
   }, [pathname]);
@@ -92,9 +92,9 @@ export default function Page({ params }: { params: { slug: any } }) {
             <div className="w-full text-center text-[#ff7119] text-[24px]">
               {data.name}
             </div>
-            <div className="w-full flex justify-between flex-wrap">
+            <div className="w-full flex h-[500px] flex-wrap">
               <Image
-                className="rounded-md w-full sm:w-[50%]"
+                className="rounded-md w-full h-[200px] sm:h-[500px] sm:w-[50%]"
                 src={data.img}
                 width={500}
                 height={500}
@@ -102,12 +102,12 @@ export default function Page({ params }: { params: { slug: any } }) {
               />
               <div className="w-full sm:w-[45%] flex flex-col items-center relative max-h-fit min-h-[100px] mt-4 sm:mt-0">
                 <div className="w-[90%] overflow-hidden">
-                  <div className="md:text-[15px] lg:text-[17px]">
+                  <div className="md:text-[15px] lg:text-[17px] h-[460px] overflow-y-scroll">
                     {data.description}
                   </div>
                 </div>
-                <div className="absolute bottom-2 left-4">
-                  {data.date ? data.date.slice(0, 10) : "Date not available"}
+                <div className="absolute bottom-[-30px] sm:bottom-2 left-6 font-bold  ">
+                  {data.date ? data.date.slice(0, 10) : ""}
                 </div>
               </div>
             </div>

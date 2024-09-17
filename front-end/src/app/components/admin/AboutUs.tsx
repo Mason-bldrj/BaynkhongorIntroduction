@@ -32,7 +32,7 @@ const AboutUs = (props?: any) => {
     phoneNumber1: 0,
     phoneNumber2: 0,
   });
-  const [offerArray, setOfferArray] = useState([]);
+  const [offerArray, setOfferArray] = useState<any[]>([]);
   const storage = getStorage();
   const uploadImage = () => {
     const storageref = ref(storage);
@@ -77,9 +77,7 @@ const AboutUs = (props?: any) => {
     } catch (err: any) {
       return err;
     }
-  };
-  console.log(aboutData);
-
+  };  
   return (
     <div className="flex items-center flex-wrap rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
       <div
@@ -207,7 +205,7 @@ const AboutUs = (props?: any) => {
           />
         </div>
         <div className="w-full h-[100px]">
-          <div>Зорилго</div>
+          <div>Зорилт</div>
           <textarea
             defaultValue={aboutData?.objective}
             placeholder="Зорилго"
@@ -224,7 +222,7 @@ const AboutUs = (props?: any) => {
           />
         </div>
         <div className="w-full h-[100px]">
-          <div>Зорилт</div>
+          <div>Зорилого</div>
           <textarea
             defaultValue={aboutData?.porpose}
             placeholder="Зорилт"

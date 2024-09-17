@@ -27,7 +27,6 @@ const OfferSec = () => {
 
   const handleclick = async (image: any) => {
     const a = v4();
-
     const imgRef = ref(imageDb, `${a}`);
     const res = await uploadBytes(imgRef, image);
 

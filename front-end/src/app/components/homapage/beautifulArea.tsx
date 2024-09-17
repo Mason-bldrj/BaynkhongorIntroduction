@@ -7,15 +7,13 @@ import { fetchFunc } from "@/app/backdata";
 export const BeautifulArea = () => {
   const [data, setdata] = useState();
   const fetchedData = async () => {
-    const res = fetchFunc(urls.ABOUTUS);
+    const res = fetchFunc(urls.SCENICSPORT);
     const data = await (await res).json();
-    setdata(data[1]);
+    setdata(data);
   };
   useEffect(() => {
     fetchedData();
   }, []);
-  console.log(data);
-  
   return (
     <div className="w-full flex flex-col items-center sm:mt-20">
       <div className="w-full flex flex-col items-center">
@@ -26,7 +24,7 @@ export const BeautifulArea = () => {
 
         <div className="bg-[url('/bigmountain.png')] w-full h-[300px] sm:h-[583px] flex justify-center overflow-hidden sm:justify-start bg-cover relative">
           <div className="w-full h-full bg-black opacity-50 absolute top-0 left-0"></div>
-          <div className="max:w-[1147px] w-[95%] h-full flex items-center">
+          <div className="max:w-[1147px] w-[95%] m-auto h-full flex items-center">
             <BeautifulAreaCard data={data} />
           </div>
         </div>

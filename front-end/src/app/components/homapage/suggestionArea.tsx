@@ -17,8 +17,6 @@ export const SuggestionArea = () => {
     const data = await (await res).json();
     setData(data);
   };
-  console.log(data);
-  
   const progressCalculator = (index: number, Event: any) => {
     const updatedData = [...dataHolder];
     updatedData[index].count++;
@@ -102,7 +100,7 @@ export const SuggestionArea = () => {
             />
             <button
               onClick={(Event) => progressCalculator(i, Event)}
-              className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white sm:h-[27px] w-[125px] h-[40px] sm:w-[80%] xl:h-[40px] xl:w-[125px] flex justify-center items-center text-center absolute bottom-10 sm:text-[6px] md:text-[7px] lg:text-[10px] xl:text-sm right-0 opacity-70 rounded-l-sm z-10"
+              className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white sm:h-[27px] w-[125px] h-[40px] sm:w-[80%] xl:h-[40px] xl:w-[125px] flex justify-center items-center text-center absolute bottom-10 sm:text-[6px] md:text-[7px] lg:text-[10px] xl:text-sm right-0 hover:opacity-100 opacity-70 rounded-l-sm z-10"
             >
               {el.title}
             </button>

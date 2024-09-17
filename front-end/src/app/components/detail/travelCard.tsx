@@ -48,7 +48,7 @@ export const TravelCard = ({ data, startIndex }: any) => {
                   </div>
                 </div>
                 <Image
-                  className="w-full sm:w-[90%] h-full object-cover rounded-l-md"
+                  className="w-full sm:w-[90%]  sm:h-[85%] object-cover  sm:rounded-l-md"
                   src={el.img}
                   width={325}
                   height={296}
@@ -59,7 +59,7 @@ export const TravelCard = ({ data, startIndex }: any) => {
                 <div className="text-[#222222] sm:mt-5 mt-2 sm:text-sm text-[15px] font-bold">
                   {el.name}
                 </div>
-                <div className="text-[#666666] sm:text-sm text-[13px] sm:mt-5 mt-2 w-full overflow-hidden">
+                <div className="text-[#666666] h-[20px] sm:text-sm text-[13px] sm:mt-5 mt-2 w-full overflow-hidden">
                   {el.description}
                 </div>
               </div>

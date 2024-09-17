@@ -32,7 +32,6 @@ const AboutUs = (props?: any) => {
     phoneNumber1: 0,
     phoneNumber2: 0,
   });
-
   const storage = getStorage();
   const uploadImage = () => {
     const storageref = ref(storage);
@@ -203,7 +202,7 @@ const AboutUs = (props?: any) => {
           />
         </div>
         <div className="w-full h-[100px]">
-          <div>Зорилго</div>
+          <div>Зорилт</div>
           <textarea
             defaultValue={aboutData?.objective}
             placeholder="Зорилго"
@@ -220,7 +219,7 @@ const AboutUs = (props?: any) => {
           />
         </div>
         <div className="w-full h-[100px]">
-          <div>Зорилт</div>
+          <div>Зорилого</div>
           <textarea
             defaultValue={aboutData?.porpose}
             placeholder="Зорилт"

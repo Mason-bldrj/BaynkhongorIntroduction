@@ -12,136 +12,6 @@ const DashboardSec = ({ menus }: any) => {
   const [data, setData] = useState([]);
   const [aboutUs, setAboutUsData] = useState([]);
   const [rowSelection, setRowSelection] = useState({});
-  const columns = [
-    {
-      accessorKey: "name", //access nested data with dot notation
-      header: "  Name",
-      size: 10,
-    },
-    {
-      accessorKey: "description",
-      header: "Тайлбар",
-      size: 150,
-      Cell: ({ renderedCellValue, row }: any) => (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            maxWidth: "400px",
-            overflow: "hidden",
-          }}
-        >
-          <p>{renderedCellValue}</p>
-        </div>
-      ),
-    },
-
-    {
-      accessorKey: "phoneNumbers.phoneNumber1",
-      header: "Утасны дугаар1",
-      size: 150,
-    },
-    {
-      accessorKey: "phoneNumbers.phoneNumber2",
-      header: "Утасны дугаар2",
-      size: 150,
-    },
-    {
-      header: "Үйлдэлүүд  ",
-      size: 150,
-      Cell: ({ renderedCellValue, row }: any) => (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            maxWidth: "200px",
-            overflow: "hidden",
-            gap: "4px",
-          }}
-        >
-          <button className="border-blue-600 w-[80px] border-[2px] rounded-[8px] px-[4px] py-[2px] hover:bg-blue-600 hover:text-white border-solid ">
-            Edit
-          </button>
-          <button className="border-red-400 border-[2px] w-[80px] rounded-[8px] px-[4px] py-[2px] hover:bg-red-400 hover:text-white border-solid ">
-            Delete
-          </button>
-        </div>
-      ),
-    },
-  ];
-  const aboutUscolumns = useMemo(
-    () => [
-      {
-        accessorKey: "name", //access nested data with dot notation
-        header: "  Name",
-        size: 10,
-      },
-      {
-        accessorKey: "email", //access nested data with dot notation
-        header: "Имэйл",
-        size: 10,
-      },
-      {
-        accessorKey: "description",
-        header: "Тайлбар",
-        size: 150,
-        Cell: ({ renderedCellValue }: any) => (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              maxWidth: "400px",
-              overflow: "hidden",
-            }}
-          >
-            <p>{renderedCellValue}</p>
-          </div>
-        ),
-      },
-
-      {
-        accessorKey: "phoneNumbers.phoneNumber1",
-        header: "Утасны дугаар1",
-        size: 150,
-      },
-      {
-        accessorKey: "phoneNumbers.phoneNumber2",
-        header: "Утасны дугаар2",
-        size: 150,
-      },
-      {
-        header: "Үйлдэлүүд",
-        size: 150,
-        Cell: ({ renderedCellValue, row }: any) => (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              maxWidth: "200px",
-              overflow: "hidden",
-              gap: "4px",
-            }}
-          >
-            <button className="border-blue-600 w-[80px] border-[2px] rounded-[8px] px-[4px] py-[2px] hover:bg-blue-600 hover:text-white border-solid ">
-              Edit
-            </button>
-            <button className="border-red-400 border-[2px] w-[80px] rounded-[8px] px-[4px] py-[2px] hover:bg-red-400 hover:text-white border-solid ">
-              Delete
-            </button>
-          </div>
-        ),
-      },
-    ],
-    []
-  );
-
-  const table = useMaterialReactTable({
-    getRowId: (row) => row._id,
-    onRowSelectionChange: setRowSelection,
-    state: { rowSelection },
-    columns: menus === "Бидний тухай" ? aboutUscolumns : columns,
-    data: menus === "Бидний тухай" ? aboutUs : data || [], // data must be memoized or stable (useState, useMemo, etc.)
-  });
 
   const fetchData = async () => {
     try {
@@ -243,13 +113,10 @@ const DashboardSec = ({ menus }: any) => {
         console.log(menus, id);
         const res = await deleteFunc(`${urls.NEWS}/resources`, { id });
         console.log("Байгуулга", "ajillaa");
-<<<<<<< HEAD
       } else if (menus === "Үзэсгэлэнт Газрууд") {
         console.log(menus, id);
         const res = await deleteFunc(`${urls.SCENICSPORT}/resources`, { id });
         console.log("Байгуулга", "ajillaa");
-=======
->>>>>>> main
       }
     } catch (error) {
       console.error("Error fetching data: ", error);
@@ -264,29 +131,17 @@ const DashboardSec = ({ menus }: any) => {
     {
       accessorKey: "description",
       header: "Тайлбар",
-<<<<<<< HEAD
       size: 550,
-=======
-      size: 150,
->>>>>>> main
       Cell: ({ renderedCellValue, row }: any) => (
         <div
           style={{
             display: "flex",
             alignItems: "center",
-<<<<<<< HEAD
             width: "100%",
-=======
-            maxWidth: "400px",
->>>>>>> main
             overflow: "hidden",
           }}
         >
           <p>{renderedCellValue}</p>
-<<<<<<< HEAD
-=======
-          <p>{menus}</p>
->>>>>>> main
         </div>
       ),
     },
@@ -317,12 +172,8 @@ const DashboardSec = ({ menus }: any) => {
           >
             <button
               onClick={() => {
-<<<<<<< HEAD
                 const id = d?.row?.original?._id + "*" + menus;
                 router.push(`/admin/${id}}`);
-=======
-                console.log(d?.row?.original?._id);
->>>>>>> main
               }}
               className="border-blue-600 w-[80px] border-[2px] rounded-[8px] px-[4px] py-[2px] hover:bg-blue-600 hover:text-white border-solid "
             >
@@ -417,10 +268,9 @@ const DashboardSec = ({ menus }: any) => {
       },
     },
   ];
-
   const table = useMaterialReactTable({
     columns: menus === "Бидний тухай" ? aboutUscolumns : columns,
-    data: menus === "Бидний тухай" ? aboutUs : data || [], // data must be memoized or stable (useState, useMemo, etc.)
+    data: menus !== "Бидний тухай" ? aboutUs : data || [], // data must be memoized or stable (useState, useMemo, etc.)
   });
   console.log(rowSelection);
 

@@ -3,10 +3,11 @@ import { ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
 import { v4 } from "uuid";
 
-import { postFunc } from "@/app/backdata";
+import { postFunc, putFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
 
-const EmployeeFrom = () => {
+const EmployeeFrom = (props?: any) => {
+  const { edit, data } = props;
   const [employeeData, setEmployeeData] = useState({
     name: "",
     position: "",
@@ -48,11 +49,31 @@ const EmployeeFrom = () => {
       return err;
     }
   };
+  const editEmployee = async () => {
+    try {
+      const res = await putFunc(urls.EMPLOYEE, {
+        id: data._id,
+        name: employeeData.name,
+        position: employeeData.position,
+        img: employeeData.img,
+        phoneNumber: employeeData.phoneNumber,
+        links: {
+          fbLink: links.fbLink,
+          IG_Link: links.IG_Link,
+          twitterLink: links.twitterLink,
+        },
+      });
+      console.log(res);
+    } catch (err: any) {
+      return err;
+    }
+  };
   return (
     <div className="flex items-center flex-wrap rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
       <div>
         <div className="text-[16px]">Ажилтаны нэр </div>
         <input
+          defaultValue={data?.name}
           type="text"
           placeholder="Нэр"
           name="name"
@@ -70,6 +91,7 @@ const EmployeeFrom = () => {
       <div className="flex flex-col   ">
         <div className="text-[16px]"> Албан тушаал</div>
         <input
+          defaultValue={data?.position}
           className="px-[6px] py-[8px] rounded-[8px]"
           type="text"
           placeholder="Албан тушаал"
@@ -109,6 +131,7 @@ const EmployeeFrom = () => {
       <div>
         <div>Утас</div>
         <input
+          defaultValue={data?.phoneNumber}
           type="tel"
           placeholder="Утас"
           className="px-[6px] py-[8px] rounded-[8px]"
@@ -129,6 +152,7 @@ const EmployeeFrom = () => {
       <div>
         <div>Facebook profile</div>
         <input
+          defaultValue={data?.links?.fbLink}
           type="text"
           placeholder="Link"
           name="fbLink"
@@ -146,6 +170,7 @@ const EmployeeFrom = () => {
       <div>
         <div>Instagram Profile</div>
         <input
+          defaultValue={data?.links?.IG_Link}
           type="text"
           placeholder="Link"
           name="IG_Link"
@@ -163,6 +188,7 @@ const EmployeeFrom = () => {
       <div>
         <div>Twitter profile</div>
         <input
+          defaultValue={data?.links?.twitterLink}
           type="text"
           placeholder="Link"
           name="twitterLink"
@@ -180,8 +206,11 @@ const EmployeeFrom = () => {
       <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {
-            console.log(employeeData, links);
-            createEmployee();
+            if (edit === true) {
+              editEmployee();
+            } else {
+              createEmployee();
+            }
           }}
         >
           Нэмэх

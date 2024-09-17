@@ -6,7 +6,10 @@ import { v4 } from "uuid";
 import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
 
-const ScenicSpotFrom = () => {
+const ScenicSpotFrom = (props?: any) => {
+  const { edit, data } = props;
+  console.log(data);
+
   const [image, setImage] = useState<any>();
   const [scenicData, setScenicData] = useState({
     name: "",
@@ -26,9 +29,25 @@ const ScenicSpotFrom = () => {
       img: `https://firebasestorage.googleapis.com/v0/b/app-demo-554df.appspot.com/o/${a}?alt=media&token=4554e441-c30b-4a16-b81f-5b50727d691e`,
     });
   };
-  const createEvent = async () => {
+  const createScenic = async () => {
     try {
       const res = await postFunc(urls.SCENICSPORT, {
+        name: scenicData.name,
+        img: scenicData.img,
+        description: scenicData.description,
+      });
+      console.log(res);
+    } catch (err: any) {
+      return err;
+    }
+  };
+  console.log(scenicData);
+
+  const editScenic = async () => {
+    try {
+      const res = await postFunc(urls.SCENICSPORT, {
+        id: data._id,
+
         name: scenicData.name,
         img: scenicData.img,
         description: scenicData.description,
@@ -43,6 +62,7 @@ const ScenicSpotFrom = () => {
       <div>
         <div className="text-[16px]">Тухайн газарын нэр </div>
         <input
+          defaultValue={data?.name}
           type="text"
           placeholder="Нэр"
           name="name"
@@ -60,6 +80,7 @@ const ScenicSpotFrom = () => {
       <div className="flex flex-col w-full h-[150px]   ">
         <div className="text-[16px]"> Тайлбар </div>
         <textarea
+          defaultValue={data?.description}
           className="px-[6px] py-[8px] rounded-[8px] h-full"
           placeholder="Тайлбар"
           name="description"
@@ -101,8 +122,11 @@ const ScenicSpotFrom = () => {
       <div className="flex items-center   justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {
-            console.log(scenicData);
-            createEvent();
+            if (edit === true) {
+              editScenic();
+            } else {
+              createScenic();
+            }
           }}
         >
           Нэмэх

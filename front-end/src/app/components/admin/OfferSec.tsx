@@ -18,8 +18,9 @@ const OfferSec = () => {
   const pushoffer = async (offer: any) => {
     try {
       const res1 = await postFunc(`${urls.ABOUTUS}/offers`, {
-        offerArray,
+        offers: offer,
       });
+      console.log(res1);
     } catch (err: any) {
       return err;
     }
@@ -90,7 +91,7 @@ const OfferSec = () => {
         <button
           className="flex justify-center items-center rounded-[8px]  bg-white py-[4px] px-[8px]"
           onClick={() => {
-            pushoffer(offer);
+            pushoffer(offerArray);
           }}
         >
           Санал авах газар нэмэх

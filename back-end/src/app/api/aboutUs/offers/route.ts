@@ -13,12 +13,12 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const { offers } = await req.json();
+    const { name, img } = await req.json();
 
     const createdRecord = await OffersModel.create({
-      offerCount: 0,
-      offers,
-      visitedNumber: 0,
+      name,
+      img,
+      count: 0,
     });
 
     return NextResponse.json(createdRecord);
@@ -37,9 +37,7 @@ export async function PUT(req: NextRequest, res: NextResponse) {
     const res = await OffersModel.findByIdAndUpdate(
       id,
       {
-        offerCount,
         offer,
-        visitedNumber,
       },
       { new: true }
     );

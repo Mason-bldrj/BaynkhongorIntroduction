@@ -15,7 +15,7 @@ export const fetchFunc = async (sub_url: String) => {
   }
 };
 // ${urls.MAIN_URL}${sub_url}
-export const postFunc = async (sub_url: string, body: any) => {
+export const postFunc = async (sub_url: string, data: any) => {
   try {
     const res = await fetch(`${urls.MAIN_URL}${sub_url}`, {
       method: "POST",
@@ -23,13 +23,13 @@ export const postFunc = async (sub_url: string, body: any) => {
         "Content-Type": "application/json",
       },
       mode: "no-cors",
-      body: JSON.stringify(body),
+      body: JSON.stringify(data),
     });
   } catch (err: any) {
     console.log(err);
   }
 };
-export const putFunc = async (sub_url: string, body:any) => {
+export const putFunc = async (sub_url: string, body: any) => {
   try {
     const res = await fetch(`${urls.MAIN_URL}${sub_url}`, {
       method: "PUT",

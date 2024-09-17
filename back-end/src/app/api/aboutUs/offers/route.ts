@@ -17,11 +17,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     const createdRecord = await OffersModel.create({
       offerCount: 0,
-<<<<<<< HEAD
       offers,
-=======
-      offer,
->>>>>>> main
       visitedNumber: 0,
     });
 

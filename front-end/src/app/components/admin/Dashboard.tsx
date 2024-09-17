@@ -8,8 +8,7 @@ import {
 } from "material-react-table";
 import { Box, dividerClasses, Typography } from "@mui/material";
 
-const DashboardSec = (props: any) => {
-  const { menus } = props;
+const DashboardSec = ({ menus }: any) => {
   const [url, setUrl] = useState("");
   const [data, setData] = useState([]);
   const [aboutUs, setAboutUsData] = useState([]);
@@ -65,101 +64,128 @@ const DashboardSec = (props: any) => {
       console.error("Error fetching data: ", error);
     }
   };
-  const deleteData = async (_id: any) => {
+  console.log({ aaa: menus });
+
+  const deleteData = async ({ id, menus }: any) => {
+    console.log({ id, menus });
+
     try {
-      let fetchedData = [];
       if (menus === "Бидний тухай") {
-        const res = await deleteFunc(urls.ABOUTUS, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(urls.ABOUTUS, { id });
+        console.log("Бидний тухай", "ajillaa");
       } else if (menus === "Байгуулга") {
-        const res = await deleteFunc(urls.institution, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(urls.institution, { id });
+        console.log("Байгуулга", "ajillaa");
       } else if (menus === "Аялал") {
-        const res = await deleteFunc(urls.TRAVEL, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(urls.TRAVEL, { id });
+        console.log("Аялал", "ajillaa");
       } else if (menus === "Event") {
-        const res = await deleteFunc(urls.EVENT, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(urls.EVENT, { id });
+        console.log("Event", "ajillaa");
       } else if (menus === "Бэлэг дурсгал") {
-        const res = await deleteFunc(urls.KEEPSAKE, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(urls.KEEPSAKE, { id });
+        console.log("Бэлэг дурсгал", "ajillaa");
       } else if (menus === "Хууль , Эрх зүй") {
-        const res = await deleteFunc(urls.LEGALITY, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(urls.LEGALITY, { id });
+        console.log("Хууль , Эрх зүй", "ajillaa");
       } else if (menus === "Ажилчид") {
-        const res = await deleteFunc(urls.EMPLOYEE, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(urls.EMPLOYEE, { id });
+        console.log("Ажилчид", "ajillaa");
       } else if (menus === "report") {
-        const res = await deleteFunc(`${urls.NEWS}/report`, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(`${urls.NEWS}/report`, { id });
+        console.log("report", "ajillaa");
       } else if (menus === "video") {
-        const res = await deleteFunc(`${urls.NEWS}/video`, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(`${urls.NEWS}/video`, { id });
+        console.log(menus, "ajillaa");
       } else if (menus === "resources") {
-        const res = await deleteFunc(`${urls.NEWS}/resources`, { _id });
+        console.log(menus, id);
+        const res = await deleteFunc(`${urls.NEWS}/resources`, { id });
+        console.log("Байгуулга", "ajillaa");
       }
     } catch (error) {
       console.error("Error fetching data: ", error);
     }
   };
-  const columns = useMemo(
-    () => [
-      {
-        accessorKey: "name", //access nested data with dot notation
-        header: "  Name",
-        size: 10,
-      },
-      {
-        accessorKey: "description",
-        header: "Тайлбар",
-        size: 150,
-        Cell: ({ renderedCellValue, row }: any) => (
+  const columns = [
+    {
+      accessorKey: "name", //access nested data with dot notation
+      header: "  Name",
+      size: 10,
+    },
+    {
+      accessorKey: "description",
+      header: "Тайлбар",
+      size: 150,
+      Cell: ({ renderedCellValue, row }: any) => (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            maxWidth: "400px",
+            overflow: "hidden",
+          }}
+        >
+          <p>{renderedCellValue}</p>
+          <p>{menus}</p>
+        </div>
+      ),
+    },
+
+    {
+      accessorKey: "phoneNumbers.phoneNumber1",
+      header: "Утасны дугаар1",
+      size: 150,
+    },
+    {
+      accessorKey: "phoneNumbers.phoneNumber2",
+      header: "Утасны дугаар2",
+      size: 150,
+    },
+    {
+      header: "Үйлдэлүүд  ",
+      size: 150,
+      Cell: (d: any) => {
+        return (
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              maxWidth: "400px",
+              maxWidth: "200px",
               overflow: "hidden",
+              gap: "4px",
             }}
           >
-            <p>{renderedCellValue}</p>
-          </div>
-        ),
-      },
-
-      {
-        accessorKey: "phoneNumbers.phoneNumber1",
-        header: "Утасны дугаар1",
-        size: 150,
-      },
-      {
-        accessorKey: "phoneNumbers.phoneNumber2",
-        header: "Утасны дугаар2",
-        size: 150,
-      },
-      {
-        header: "Үйлдэлүүд  ",
-        size: 150,
-        Cell: (d: any) => {
-          return (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                maxWidth: "200px",
-                overflow: "hidden",
-                gap: "4px",
+            <button
+              onClick={() => {
+                console.log(d?.row?.original?._id);
               }}
+              className="border-blue-600 w-[80px] border-[2px] rounded-[8px] px-[4px] py-[2px] hover:bg-blue-600 hover:text-white border-solid "
             >
-              <button className="border-blue-600 w-[80px] border-[2px] rounded-[8px] px-[4px] py-[2px] hover:bg-blue-600 hover:text-white border-solid ">
-                Edit
-              </button>
-              <button
-                onClick={() => {
-                  deleteData(d?.row?.original?._id);
-                }}
-                className="border-red-400 border-[2px] w-[80px] rounded-[8px] px-[4px] py-[2px] hover:bg-red-400 hover:text-white border-solid "
-              >
-                Delete
-              </button>
-            </div>
-          );
-        },
+              Edit
+            </button>
+            <button
+              onClick={() => {
+                console.log("ajilla", d?.row?.original?._id);
+                deleteData({ id: d?.row?.original?._id, menus });
+              }}
+              className="border-red-400 border-[2px] w-[80px] rounded-[8px] px-[4px] py-[2px] hover:bg-red-400 hover:text-white border-solid "
+            >
+              Delete
+            </button>
+          </div>
+        );
       },
-    ],
-    []
-  );
+    },
+  ];
   const aboutUscolumns = useMemo(
     () => [
       {
@@ -243,6 +269,7 @@ const DashboardSec = (props: any) => {
 
   useEffect(() => {
     fetchData();
+    console.log(menus);
   }, [menus]);
 
   return <MaterialReactTable table={table} />;

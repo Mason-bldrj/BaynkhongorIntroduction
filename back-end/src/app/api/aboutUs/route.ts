@@ -59,7 +59,7 @@ export async function PUT(req: NextRequest, res: NextResponse) {
 
   try {
     const {
-      _id,
+      id,
       name,
       email,
       phoneNumbers,
@@ -70,7 +70,7 @@ export async function PUT(req: NextRequest, res: NextResponse) {
       objective,
     } = data;
     const res = await AboutUsModel.findByIdAndUpdate(
-      _id,
+      id,
       {
         name,
         email,
@@ -93,8 +93,8 @@ export async function DELETE(req: NextRequest, res: NextResponse) {
   const data = await req.json();
 
   try {
-    const { _id } = data;
-    const res = await AboutUsModel.findByIdAndDelete(_id);
+    const { id } = data;
+    const res = await AboutUsModel.findByIdAndDelete(id);
     return NextResponse.json(res);
   } catch (error: any) {
     console.error("Error creating AboutUs record:", error);

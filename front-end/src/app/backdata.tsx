@@ -45,15 +45,18 @@ export const putFunc = async (sub_url: string, body: any) => {
   }
 };
 export const deleteFunc = async (sub_url: string, id: any) => {
+  console.log(id);
+
   try {
     const res = await fetch(`${urls.MAIN_URL}${sub_url}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-      mode: "no-cors",
       body: JSON.stringify(id),
     });
+    console.log(res);
+
     return "success";
   } catch (err: any) {
     console.log(err);

@@ -12,13 +12,13 @@ const OfferSec = () => {
   const [offerArray, setOfferArray] = useState({
     name: "",
     img: "",
-    count: 0,
   });
 
   const pushoffer = async (offer: any) => {
     try {
       const res1 = await postFunc(`${urls.ABOUTUS}/offers`, {
-        offers: offer,
+        name: offer.name,
+        img: offer.img,
       });
       console.log(res1);
     } catch (err: any) {

@@ -29,7 +29,6 @@ export default function News() {
       setLoading(false);
     }
   };
-
   useEffect(() => {
     fetchedData();
   }, []);

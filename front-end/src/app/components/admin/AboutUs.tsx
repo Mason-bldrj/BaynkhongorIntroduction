@@ -31,7 +31,7 @@ const AboutUs = () => {
     phoneNumber1: 0,
     phoneNumber2: 0,
   });
-  const [offerArray, setOfferArray] = useState([]);
+  const [offerArray, setOfferArray] = useState<any[]>([]);
   const storage = getStorage();
   const uploadImage = () => {
     const storageref = ref(storage);
@@ -76,7 +76,7 @@ const AboutUs = () => {
     } catch (err: any) {
       return err;
     }
-  };
+  };  
   return (
     <div className="flex items-center flex-wrap rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
       <div className="flex flex-col gap-[24px]">
@@ -193,7 +193,7 @@ const AboutUs = () => {
           />
         </div>
         <div className="w-full h-[100px]">
-          <div>Зорилго</div>
+          <div>Зорилт</div>
           <textarea
             placeholder="Зорилго"
             name="objective"
@@ -209,7 +209,7 @@ const AboutUs = () => {
           />
         </div>
         <div className="w-full h-[100px]">
-          <div>Зорилт</div>
+          <div>Зорилого</div>
           <textarea
             placeholder="Зорилт"
             name="objective"

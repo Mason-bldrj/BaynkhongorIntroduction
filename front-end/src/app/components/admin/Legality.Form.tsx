@@ -9,13 +9,12 @@ const LegalityForm = () => {
     link: "",
     legalityType: "",
   });
-
   const createLegality = async () => {
     try {
       const res = await postFunc(urls.LEGALITY, {
         name: legalityData.name,
         title: legalityData.title,
-        link: legalityData.title,
+        link: legalityData.link,
         legalityType: legalityData.legalityType,
       });
       console.log(res);
@@ -73,23 +72,19 @@ const LegalityForm = () => {
             }, 1000);
           }}
         >
-          <option value="LAW">Хууль</option>
-          <option value="RULES">Дүрэм, Журам</option>
           <option value="RESOLUTION">Тогтоол</option>
           <option value="COMMAND">Захирамж</option>
           <option value="CONSENT">Зөвшөөрөл</option>
         </select>
       </div>
       <div>
-        <div>Холбоос</div>
+        <div>Тайлбар</div>
         <input
           type="text"
           placeholder=""
           name="link"
           className="px-[6px] py-[8px] rounded-[8px]"
           onChange={(event) => {
-            console.log(event.target.value);
-
             setTimeout(() => {
               setLegalityData({
                 ...legalityData,

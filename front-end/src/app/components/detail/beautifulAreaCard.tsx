@@ -8,7 +8,7 @@ export const BeautifulAreaCard = ({ data }: any) => {
   const router = useRouter();
 
   const handleNavigate = (id: string) => {
-    router.push(`/user/REPORT${id}`);
+    router.push(`/user/SCENICSPORT${id}`);
   };
 
   const [startIndex, setStartIndex] = useState(0);

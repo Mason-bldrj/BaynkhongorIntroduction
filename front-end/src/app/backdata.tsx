@@ -29,15 +29,13 @@ export const postFunc = async (sub_url: string, body: any) => {
     console.log(err);
   }
 };
-export const putFunc = async (sub_url: string, body: any) => {
+export const putFunc = async (sub_url: string, body:any) => {
   try {
-    console.log(JSON.stringify(body));
     const res = await fetch(`${urls.MAIN_URL}${sub_url}`, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      mode: "no-cors",
       body: JSON.stringify(body),
     });
   } catch (err: any) {

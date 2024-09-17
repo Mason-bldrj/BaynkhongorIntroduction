@@ -263,7 +263,7 @@ const DashboardSec = ({ menus }: any) => {
 
   const table = useMaterialReactTable({
     columns: menus === "Бидний тухай" ? aboutUscolumns : columns,
-    data: menus === "Бидний тухай" ? aboutUs : data || [], // data must be memoized or stable (useState, useMemo, etc.)
+    data: menus !== "Бидний тухай" ? aboutUs : data || [], // data must be memoized or stable (useState, useMemo, etc.)
   });
   console.log(rowSelection);
 

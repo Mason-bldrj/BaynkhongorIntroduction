@@ -5,7 +5,7 @@ export const NewsCard = ({ data2, startIndex }: any) => {
   const router = useRouter();
   const handleNavigate = (id: string) => {
     router.push(`/user/RESOURCES${id}`);
-  };
+  };  
   return (
     <div className=" flex mb-10 sm:ml-0 ml-2 ">
       <div className="flex w-full overflow-x-auto scrollbar scrollbar-hidden  sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
@@ -27,7 +27,7 @@ export const NewsCard = ({ data2, startIndex }: any) => {
                     alt="Carousel image"
                   />
       
-                  <div className="w-[80%] py-2 overflow-x-auto scrollbar scrollbar-hidden text-center bg-[#d9d9d9] opacity-65 absolute left-0 bottom-2 hover:bg-[#ff7117] hover:text-white">
+                  <div className="w-[80%] py-2 overflow-x-auto scrollbar scrollbar-hidden text-center bg-[#d9d9d9] hover:opacity-100 opacity-65 absolute left-0 bottom-5 hover:bg-[#ff7117] hover:text-white">
                     {el.name}
                   </div>
                 </div>

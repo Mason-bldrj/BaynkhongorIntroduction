@@ -75,6 +75,8 @@ export default function Page({ params }: { params: { slug: any } }) {
   useEffect(() => {
     fetchedData();
   }, [pathname]);
+  console.log(data);
+  
   return (
     <div className="max-w-[1147px] m-auto w-[95%] mt-5 flex flex-col items-center mb-10">
       <div className="w-full">
@@ -103,7 +105,9 @@ export default function Page({ params }: { params: { slug: any } }) {
               <div className="w-full sm:w-[45%] flex flex-col items-center relative max-h-fit min-h-[100px] mt-4 sm:mt-0">
                 <div className="w-[90%] overflow-hidden">
                   <div className="leading-[40px] md:text-[15px] lg:text-[17px] h-[460px] overflow-y-auto">
-                    {data.description}
+                    {data.description === "" ? "Тайлбар байхгүй байна." : data.description
+                    
+                    }
                   </div>
                 </div>
                 <div className="absolute bottom-[-30px] sm:bottom-2 left-6 font-bold  ">

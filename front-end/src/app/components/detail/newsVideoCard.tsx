@@ -33,7 +33,7 @@ export const NewsVideoCard = ({ videoArr, data1, startIndex }: any) => {
           </div>
         </div>
       </div>
-      <div className="xl:w-[573px] w-[573px] lg:w-[49%] h-[696px] overflow-y-scroll flex flex-col items-center gap-5 lg:mt-0 mt-10 border py-2">
+      <div className="xl:w-[573px] w-[573px] lg:w-[49%] h-[696px] overflow-y-scroll flex flex-col items-center gap-5 lg:mt-0 mt-10 py-2">
         {data1?.map((el: any, i: number) => {
           // Extract the video ID from the YouTube URL
           const videoID = el.url.match(

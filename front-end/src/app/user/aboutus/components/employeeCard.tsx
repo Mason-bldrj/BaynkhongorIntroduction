@@ -32,7 +32,7 @@ export const EmployeeCard = ({ data2 }: any) => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center mb-10">
       <div className="w-full flex gap-4 justify-center">
         {data2
           ?.slice(

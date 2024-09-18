@@ -34,7 +34,7 @@ export const NewsVideoArea = ({data2 ,data1, data}:any) => {
           <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
         </div>
       </div>
-      <div className="sm:mt-10 w-full sm:w-[90%] xl:w-[1147px]">
+      <div className="sm:mt-10 w-full sm:w-[90%] xl:w-[1147px] ">
         <NewsCard data2={data2} startIndex={startIndex} />
       </div>
     </div>

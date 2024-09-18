@@ -14,7 +14,6 @@ const AdminDashboard = () => {
   const [menus, setMenu] = useState("Бидний тухай");
   const e = async () => {
     const inadmin = await localStorage.getItem("admin");
-    console.log(inadmin);
 
     setTimeout(() => {
       if (inadmin !== "isAdmin") {

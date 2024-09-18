@@ -63,7 +63,6 @@ const DashboardSec = ({ menus }: any) => {
         fetchedData = await res.json();
         setData(fetchedData);
       }
-      console.log(fetchedData);
     } catch (error) {
       console.error("Error fetching data: ", error);
     }
@@ -72,49 +71,27 @@ const DashboardSec = ({ menus }: any) => {
   const deleteData = async ({ id, menus }: any) => {
     try {
       if (menus === "Бидний тухай") {
-        console.log(menus, id);
         const res = await deleteFunc(urls.ABOUTUS, { id });
-        console.log("Бидний тухай", "ajillaa");
       } else if (menus === "Байгуулга") {
-        console.log(menus, id);
         const res = await deleteFunc(urls.institution, { id });
-        console.log("Байгуулга", "ajillaa");
       } else if (menus === "Аялал") {
-        console.log(menus, id);
         const res = await deleteFunc(urls.TRAVEL, { id });
-        console.log("Аялал", "ajillaa");
       } else if (menus === "Event") {
-        console.log(menus, id);
         const res = await deleteFunc(urls.EVENT, { id });
-        console.log("Event", "ajillaa");
       } else if (menus === "Бэлэг дурсгал") {
-        console.log(menus, id);
         const res = await deleteFunc(urls.KEEPSAKE, { id });
-        console.log("Бэлэг дурсгал", "ajillaa");
       } else if (menus === "Хууль , Эрх зүй") {
-        console.log(menus, id);
         const res = await deleteFunc(urls.LEGALITY, { id });
-        console.log("Хууль , Эрх зүй", "ajillaa");
       } else if (menus === "Ажилчид") {
-        console.log(menus, id);
         const res = await deleteFunc(urls.EMPLOYEE, { id });
-        console.log("Ажилчид", "ajillaa");
       } else if (menus === "report") {
-        console.log(menus, id);
         const res = await deleteFunc(`${urls.NEWS}/report`, { id });
-        console.log("report", "ajillaa");
       } else if (menus === "video") {
-        console.log(menus, id);
         const res = await deleteFunc(`${urls.NEWS}/video`, { id });
-        console.log(menus, "ajillaa");
       } else if (menus === "resources") {
-        console.log(menus, id);
         const res = await deleteFunc(`${urls.NEWS}/resources`, { id });
-        console.log("Байгуулга", "ajillaa");
       } else if (menus === "Үзэсгэлэнт Газрууд") {
-        console.log(menus, id);
         const res = await deleteFunc(`${urls.SCENICSPORT}/resources`, { id });
-        console.log("Байгуулга", "ajillaa");
       }
     } catch (error) {
       console.error("Error fetching data: ", error);
@@ -179,7 +156,6 @@ const DashboardSec = ({ menus }: any) => {
             </button>
             <button
               onClick={() => {
-                console.log("ajilla", d?.row?.original?._id);
                 deleteData({ id: d?.row?.original?._id, menus });
               }}
               className="border-red-400 border-[2px] w-[80px] rounded-[8px] px-[4px] py-[2px] hover:bg-red-400 hover:text-white border-solid "
@@ -271,11 +247,9 @@ const DashboardSec = ({ menus }: any) => {
     columns: menus === "Бидний тухай" ? aboutUscolumns : columns,
     data: menus === "Бидний тухай" ? aboutUs : data || [], // data must be memoized or stable (useState, useMemo, etc.)
   });
-  console.log(rowSelection);
 
   useEffect(() => {
     fetchData();
-    console.log(menus);
   }, [menus]);
 
   return <MaterialReactTable table={table} />;

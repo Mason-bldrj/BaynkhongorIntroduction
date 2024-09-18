@@ -35,7 +35,6 @@ const KeepSakeForm = (props?: any) => {
         title: keepSakeData.title,
         description: keepSakeData.description,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -49,7 +48,6 @@ const KeepSakeForm = (props?: any) => {
         title: keepSakeData.title,
         description: keepSakeData.description,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }

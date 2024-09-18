@@ -2,13 +2,11 @@ import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
 import urls from "@/lib/urls";
 import { ref, uploadBytes } from "firebase/storage";
-import Image from "next/image";
 import { useState } from "react";
 import { v4 } from "uuid";
 
 const OfferSec = () => {
   const [image, setImage] = useState();
-  const [offer, setOffer] = useState({ name: "", img: "", count: 0 });
   const [offerArray, setOfferArray] = useState({
     name: "",
     img: "",
@@ -20,7 +18,6 @@ const OfferSec = () => {
         name: offer.name,
         img: offer.img,
       });
-      console.log(res1);
     } catch (err: any) {
       return err;
     }

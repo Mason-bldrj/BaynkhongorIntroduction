@@ -12,7 +12,6 @@ export async function GET(req: NextRequest) {
         { status: 400 }
       );
     }
-    console.log(typeof id);
 
     const employee = await EmployeeModel.findById(id); // Provide the 'id' parameter
 

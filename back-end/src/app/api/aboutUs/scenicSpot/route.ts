@@ -9,8 +9,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
   }
 }
 export async function POST(req: NextRequest, res: NextResponse) {
-  console.log(req);
-
   try {
     const { name, img, description } = await req.json();
 
@@ -28,8 +26,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
 }
 export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
-
-  console.log(data);
 
   try {
     const { id, name, img, description } = data;

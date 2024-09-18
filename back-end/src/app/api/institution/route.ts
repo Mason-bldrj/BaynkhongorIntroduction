@@ -5,7 +5,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const res = await InstitutionModel.find();
     const { time }: any = res[0];
-    console.log(time);
 
     return NextResponse.json(res);
   } catch (err: any) {
@@ -73,12 +72,10 @@ export async function PUT(req: NextRequest, res: NextResponse) {
 }
 export async function DELETE(req: NextRequest, res: NextResponse) {
   const data = await req.json();
-  console.log(data);
 
   try {
     const { id } = data;
     const res = await InstitutionModel.findByIdAndDelete(id);
-    console.log(res);
 
     return NextResponse.json(id);
   } catch (error: any) {

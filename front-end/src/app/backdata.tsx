@@ -26,7 +26,7 @@ export const postFunc = async (sub_url: string, data: any) => {
       body: JSON.stringify(data),
     });
   } catch (err: any) {
-    console.log(err);
+    throw new Error(err);
   }
 };
 export const putFunc = async (sub_url: string, body: any) => {
@@ -39,12 +39,10 @@ export const putFunc = async (sub_url: string, body: any) => {
       body: JSON.stringify(body),
     });
   } catch (err: any) {
-    console.log(err);
+    throw new Error(err);
   }
 };
 export const deleteFunc = async (sub_url: string, id: any) => {
-  console.log(id);
-
   try {
     const res = await fetch(`${urls.MAIN_URL}${sub_url}`, {
       method: "DELETE",
@@ -53,10 +51,9 @@ export const deleteFunc = async (sub_url: string, id: any) => {
       },
       body: JSON.stringify(id),
     });
-    console.log(res);
 
     return "success";
   } catch (err: any) {
-    console.log(err);
+    throw new Error(err);
   }
 };

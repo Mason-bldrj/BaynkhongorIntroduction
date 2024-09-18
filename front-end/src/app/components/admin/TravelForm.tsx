@@ -36,7 +36,6 @@ const TravelForm = (props?: any) => {
         travelType: travelData.travelType,
         description: travelData.description,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -51,7 +50,6 @@ const TravelForm = (props?: any) => {
         travelType: travelData.travelType,
         description: travelData.description,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -84,8 +82,6 @@ const TravelForm = (props?: any) => {
           placeholder="Албан тушаал"
           name="date"
           onChange={(event) => {
-            console.log(typeof event.target.value);
-
             setTimeout(() => {
               setTravelData({
                 ...travelData,

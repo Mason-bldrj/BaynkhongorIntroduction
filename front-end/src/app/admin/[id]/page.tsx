@@ -19,7 +19,7 @@ const EditPage = ({ params }: any) => {
   const incomeId = a[0];
   const menuName = decodeURIComponent(a[1]);
   const menus = menuName.split("}")[0];
-  console.log(menus, incomeId);
+
   const [edit, setEdit] = useState(false);
   const [aboutData, setAboutUsData] = useState();
   const [data, setData] = useState();
@@ -82,7 +82,6 @@ const EditPage = ({ params }: any) => {
         fetchedData = await res.json();
         setData(fetchedData);
       }
-      console.log(fetchedData);
     } catch (error) {
       console.error("Error fetching data: ", error);
     }

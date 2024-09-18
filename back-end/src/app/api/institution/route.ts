@@ -4,7 +4,6 @@ import InstitutionModel from "../../../../model/Institution.model";
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const res = await InstitutionModel.find();
-    const { time }: any = res[0];
 
     return NextResponse.json(res);
   } catch (err: any) {
@@ -14,15 +13,8 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const {
-      institutionType,
-      name,
-      description,
-      img,
-      phoneNumbers,
-      time,
-      price,
-    } = await req.json();
+    const { institutionType, name, description, img, phoneNumbers } =
+      await req.json();
 
     const createdRecord = await InstitutionModel.create({
       institutionType,
@@ -33,8 +25,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
         phoneNumber1: phoneNumbers.phoneNumber1,
         phoneNumber2: phoneNumbers.phoneNumber2,
       },
-      time: time,
-      price: price,
     });
     return NextResponse.json(createdRecord);
   } catch (error: any) {
@@ -45,16 +35,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
 export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
-  const {
-    _id,
-    institutionType,
-    name,
-    description,
-    img,
-    phoneNumbers,
-    time,
-    price,
-  } = data;
+  const { _id, institutionType, name, description, img, phoneNumbers } = data;
   try {
     const res = await InstitutionModel.findByIdAndUpdate(_id, {
       institutionType,
@@ -62,8 +43,6 @@ export async function PUT(req: NextRequest, res: NextResponse) {
       description,
       img,
       phoneNumbers,
-      time,
-      price,
     });
   } catch (error: any) {
     console.error("Error creating AboutUs record:", error);

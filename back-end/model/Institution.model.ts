@@ -24,30 +24,6 @@ const institutionSchema = new Schema({
     phoneNumber1: { type: Number, required: true },
     phoneNumber2: Number,
   },
-  time: [
-    {
-      timeType: { enum: ["SUMMER", "WINTER"], type: String, required: true },
-      opentime: String,
-      closedTime: String,
-    },
-  ],
-  price: [
-    {
-      amountType: {
-        type: String,
-        enum: [
-          "ADULT",
-          "CHILD",
-          "STUDENT",
-          "TOURIST",
-          "TAKE_PHOTO",
-          "RECORDING",
-        ],
-        required: true,
-      },
-      amount: Number,
-    },
-  ],
 });
 
 const InstitutionModel =

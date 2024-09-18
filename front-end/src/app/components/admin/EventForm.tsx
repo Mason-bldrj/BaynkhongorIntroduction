@@ -19,8 +19,6 @@ const EventForm = (props?: any) => {
 
     const imgRef = ref(imageDb, `${a}`);
     const res = await uploadBytes(imgRef, image);
-    console.log(res);
-    console.log(a);
 
     setEventData({
       ...eventData,
@@ -97,7 +95,6 @@ const EventForm = (props?: any) => {
             className="px-[6px] py-[8px] rounded-[8px]"
             onChange={(event: any) => {
               const file = event.target.files[0];
-              console.log(file);
 
               setImage(file);
             }}

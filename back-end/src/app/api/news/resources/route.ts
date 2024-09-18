@@ -26,8 +26,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
 export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
 
-  console.log(data);
-
   try {
     const { id, name, img } = data;
     const res = await resourcesModel.findByIdAndUpdate(

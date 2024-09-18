@@ -8,7 +8,6 @@ import { imageDb } from "@/firebase";
 
 const ScenicSpotFrom = (props?: any) => {
   const { edit, data } = props;
-  console.log(data);
 
   const [image, setImage] = useState<any>();
   const [scenicData, setScenicData] = useState({
@@ -21,8 +20,6 @@ const ScenicSpotFrom = (props?: any) => {
 
     const imgRef = ref(imageDb, `${a}`);
     const res = await uploadBytes(imgRef, image);
-    console.log(res);
-    console.log(a);
 
     setScenicData({
       ...scenicData,
@@ -36,12 +33,10 @@ const ScenicSpotFrom = (props?: any) => {
         img: scenicData.img,
         description: scenicData.description,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
   };
-  console.log(scenicData);
 
   const editScenic = async () => {
     try {
@@ -52,7 +47,6 @@ const ScenicSpotFrom = (props?: any) => {
         img: scenicData.img,
         description: scenicData.description,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -104,7 +98,6 @@ const ScenicSpotFrom = (props?: any) => {
             className="px-[6px] py-[8px] rounded-[8px]"
             onChange={(event: any) => {
               const file = event.target.files[0];
-              console.log(file);
 
               setImage(file);
             }}

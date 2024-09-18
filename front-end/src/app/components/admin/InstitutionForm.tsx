@@ -62,7 +62,6 @@ const InstitutionForm = (props?: any) => {
         time: times,
         price: prices,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -79,7 +78,6 @@ const InstitutionForm = (props?: any) => {
         time: times,
         price: prices,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -272,8 +270,6 @@ const InstitutionForm = (props?: any) => {
         <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
           <button
             onClick={() => {
-              console.log(timeData);
-
               addTimeorPrice("time");
             }}
           >

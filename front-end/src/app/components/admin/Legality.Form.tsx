@@ -18,7 +18,6 @@ const LegalityForm = (props?: any) => {
         link: legalityData.link,
         legalityType: legalityData.legalityType,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -32,7 +31,6 @@ const LegalityForm = (props?: any) => {
         link: legalityData.link,
         legalityType: legalityData.legalityType,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }

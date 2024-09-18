@@ -29,8 +29,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
 export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
 
-  console.log(data);
-
   try {
     const { id, name, description, img } = data;
     const res = await eventModel.findByIdAndUpdate(

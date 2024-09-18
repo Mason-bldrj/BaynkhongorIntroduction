@@ -44,7 +44,6 @@ const EmployeeFrom = (props?: any) => {
           twitterLink: links.twitterLink,
         },
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -63,7 +62,6 @@ const EmployeeFrom = (props?: any) => {
           twitterLink: links.twitterLink,
         },
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }

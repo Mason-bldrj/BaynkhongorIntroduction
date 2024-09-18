@@ -8,7 +8,6 @@ import { imageDb } from "@/firebase";
 
 const NewsFrom = (props?: any) => {
   const { edit, data } = props;
-  console.log(data);
 
   const [reportData, setReportData] = useState({
     name: "",
@@ -65,7 +64,6 @@ const NewsFrom = (props?: any) => {
         name: resourcesData.name,
         img: resourcesData.img,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -77,7 +75,6 @@ const NewsFrom = (props?: any) => {
         name: resourcesData.name,
         img: resourcesData.img,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -89,7 +86,6 @@ const NewsFrom = (props?: any) => {
         date: videoNewsData.date,
         url: videoNewsData.url,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -102,7 +98,6 @@ const NewsFrom = (props?: any) => {
         date: videoNewsData.date,
         url: videoNewsData.url,
       });
-      console.log(res);
     } catch (err: any) {
       return err;
     }
@@ -190,7 +185,6 @@ const NewsFrom = (props?: any) => {
               name="name"
               className="px-[6px] py-[8px] rounded-[8px]"
               onChange={(event) => {
-                console.log(event.target.value);
                 setTimeout(() => {
                   setVideoNewsData({
                     ...videoNewsData,
@@ -260,7 +254,6 @@ const NewsFrom = (props?: any) => {
               name="name"
               className="px-[6px] py-[8px] rounded-[8px]"
               onChange={(event) => {
-                console.log(event.target.value);
                 setTimeout(() => {
                   setResourcesData({
                     ...resourcesData,

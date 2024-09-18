@@ -17,28 +17,7 @@ const InstitutionForm = (props?: any) => {
     phoneNumber1: 0,
     phoneNumber2: 0,
   });
-  const [timeData, setTimeData] = useState({
-    timeType: "",
-
-    opentime: "",
-    closedTime: "",
-  });
-  const [priceData, setPriceData] = useState({
-    amountType: "",
-    amount: 0,
-  });
   const [image, setImage] = useState<any>();
-  const times: any[] = [];
-  const prices: any[] = [];
-  const addTimeorPrice = (command: string) => {
-    if (command === "time") {
-      times.push(timeData);
-    } else if (command === "price") {
-      prices.push(priceData);
-    } else {
-      return;
-    }
-  };
   const handleclick = async (image: any) => {
     const a = v4();
 
@@ -59,8 +38,6 @@ const InstitutionForm = (props?: any) => {
         description: institutionData.description,
         phoneNumbers: phoneNumbers,
         img: institutionData.img,
-        time: times,
-        price: prices,
       });
     } catch (err: any) {
       return err;
@@ -75,8 +52,6 @@ const InstitutionForm = (props?: any) => {
         description: institutionData.description,
         phoneNumbers: phoneNumbers,
         img: institutionData.img,
-        time: times,
-        price: prices,
       });
     } catch (err: any) {
       return err;
@@ -123,7 +98,6 @@ const InstitutionForm = (props?: any) => {
               <option value="SERVICE">Үйлчилгээ</option>
               <option value="VACATION">Амралт, Сувилал</option>
               <option value="TOUR">Тур</option>
-              <option value="MUSEUM">Музей</option>
               <option value="CHURCH">Сүм хийд</option>
               <option value="UNION">Холбоод</option>
               <option value="CLUB">Клуб</option>
@@ -211,128 +185,6 @@ const InstitutionForm = (props?: any) => {
         </div>
       </div>
       <br />
-      <div className="flex flex-col border-t-[2px] border-[#c9c9c9] border-solid pt-[50px] ">
-        <div>Цагийн мэдээлэл</div>
-        <div className="flex  gap-[20px]   ">
-          <div>
-            <div className="text-[16px]"> Нээх цаг </div>
-            <input
-              className="px-[6px] py-[8px] rounded-[8px]"
-              type="time"
-              placeholder="Албан тушаал"
-              name="opentime"
-              onChange={(event) => {
-                setTimeout(() => {
-                  setTimeData({
-                    ...timeData,
-                    opentime: event.target.value,
-                  });
-                }, 1000);
-              }}
-            />
-          </div>
-          <div>
-            <div className="text-[16px]"> Хаах цаг </div>
-            <input
-              className="px-[6px] py-[8px] rounded-[8px]"
-              type="time"
-              placeholder="Албан тушаал"
-              name="closedTime"
-              onChange={(event) => {
-                setTimeout(() => {
-                  setTimeData({
-                    ...timeData,
-                    closedTime: event.target.value,
-                  });
-                }, 1000);
-              }}
-            />
-          </div>
-          <div>
-            <div>Улирал сонгох</div>
-            <select
-              className="px-[6px] py-[8px] rounded-[8px]"
-              name="timeType"
-              onChange={(event) => {
-                setTimeout(() => {
-                  setTimeData({
-                    ...timeData,
-                    timeType: event.target.value,
-                  });
-                }, 1000);
-              }}
-            >
-              <option value="SUMMER">Зун</option>
-              <option value="WINTER">Өвөл</option>
-            </select>
-          </div>
-        </div>
-        <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
-          <button
-            onClick={() => {
-              addTimeorPrice("time");
-            }}
-          >
-            Нэмэх
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col gap-[20px] border-t-[2px] border-solid border-[c6c6c6] pt-[20px]">
-        <div>Үнийн мэдээлэл</div>
-        <div className="flex gap-[20px]">
-          <div>
-            <div>Насны ангилал сонгох</div>
-            <select
-              className="px-[6px] py-[8px] rounded-[8px]"
-              name="timeType"
-              onChange={(event) => {
-                setTimeout(() => {
-                  setPriceData({
-                    ...priceData,
-                    amountType: event.target.value,
-                  });
-                }, 1000);
-              }}
-            >
-              <option value="ADULT">Насанд хүрсэн хүн</option>
-              <option value="CHILD">Хүүхэд</option>
-              <option value="STUDENT">Сурагч</option>
-              <option value="TOURIST">Жуучин</option>
-              <option value="TAKE_PHOTO">Зураг авах </option>
-              <option value="RECORDING">Бичлэг хийх </option>
-            </select>
-          </div>
-          <div>
-            <div>
-              <div>Зураг</div>
-              <input
-                type="number"
-                placeholder="Дүн"
-                name="amount"
-                className="px-[6px] py-[8px] rounded-[8px]"
-                onChange={(event) => {
-                  setTimeout(() => {
-                    const number = Number(event.target.value);
-                    setPriceData({
-                      ...priceData,
-                      amount: number,
-                    });
-                  }, 1000);
-                }}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
-          <button
-            onClick={() => {
-              addTimeorPrice("price");
-            }}
-          >
-            Нэмэх
-          </button>
-        </div>
-      </div>
       <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button
           onClick={() => {

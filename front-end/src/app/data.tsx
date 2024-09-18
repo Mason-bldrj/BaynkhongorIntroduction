@@ -1,4 +1,5 @@
 export interface InfoItem {
+  id:number
   icon: string;
   m?: string;
   phone?: string;
@@ -68,9 +69,9 @@ export const travelCategory: string[] = [
   "Гадаад  аялал ",
 ];
 export const InfoArr: InfoItem[] = [
-  { icon: "/mail.png", m: "Bayankhongor.tourism@gmail.com" },
-  { icon: "/phone.png", m: "70444436, 86224024" },
-  { icon: "/report.png", m: "Санал , хүсэлт" },
+  {id:1, icon: "/mail.png", m: "Bayankhongor.tourism@gmail.com" },
+  {id:2, icon: "/phone.png", m: "70444436, 86224024" },
+  {id:3, icon: "/report.png", m: "Санал , хүсэлт" },
 ];
 export const PictureArr: string[] = [
   "/gandan.png",

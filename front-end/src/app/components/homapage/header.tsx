@@ -4,7 +4,20 @@ import { InfoArr, InfoItem } from "@/app/data";
 import Image from "next/image";
 import SideBar from "../detail/sidebar";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 export const Header = ({ switchHeader }: any) => {
+  const [message, setMessage] = useState("");
+  const handleSend = (m: number) => {
+    if (m === 3) {
+      const recipient = "Bayankhongor.tourism@gmail.com";
+      const subject = "Inquiry";
+      const body = message;
+      const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    }
+  };
   const router = useRouter();
   return (
     <div
@@ -22,6 +35,7 @@ export const Header = ({ switchHeader }: any) => {
             <div
               key={index}
               className="gap-[10px] flex justify-center items-center cursor-pointer"
+              onClick={() => handleSend(el.id)}
             >
               <div className="bg-white border-black border rounded-[50%] w-fit h-fit">
                 <Image

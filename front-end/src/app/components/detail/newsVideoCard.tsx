@@ -27,13 +27,13 @@ export const NewsVideoCard = ({ videoArr, data1, startIndex }: any) => {
           <p>Invalid video URL</p>
         )}
         <div className="flex justify-around mt-2 text-sm">
-          <div className="sm:text-[15px] text-[10px]">{data1[0]?.date}</div>
+          <div className="sm:text-[15px] text-[10px]">{data1[0]?.date.slice(0, 10)}</div>
           <div className="font-bold sm:text-[15px] text-[10px]">
             {data1[0]?.name}
           </div>
         </div>
       </div>
-      <div className="xl:w-[573px] w-[573px] lg:w-[49%] h-[696px]  overflow-y-scroll flex flex-col items-center gap-5 lg:mt-0 mt-10 scrollbar scrollbar-hidden py-2">
+      <div className="xl:w-[573px] w-[573px] lg:w-[49%] h-[696px] overflow-y-scroll flex flex-col items-center gap-5 lg:mt-0 mt-10 border py-2">
         {data1?.map((el: any, i: number) => {
           // Extract the video ID from the YouTube URL
           const videoID = el.url.match(
@@ -55,7 +55,7 @@ export const NewsVideoCard = ({ videoArr, data1, startIndex }: any) => {
                 <p>Invalid video URL</p>
               )}
               <div>
-                <div className="sm:text-[15px] text-[10px]">{el.date}</div>
+                <div className="sm:text-[15px] text-[10px]">{el.date.slice(0, 10)}</div>
                 <div className="sm:text-[15px] text-[10px]">{el.name}</div>
               </div>
             </div>

@@ -48,7 +48,6 @@ export default function News() {
     <div className="max-w-[1147px] m-auto w-[95%] mb-10 flex flex-col items-center justify-between gap-10">
       <BannerArea />
       <SuggestionArea />
-      <TailanArea data={data?.reportData} />
       <NewsVideoArea
         data={data?.reportData}
         data1={data?.videoData}

@@ -8,7 +8,7 @@ export const NewsCard = ({ data2, startIndex }: any) => {
   };
   return (
     <div className=" flex mb-10 sm:ml-0 ml-2 ">
-      <div className="flex w-full overflow-x-scroll scrollbar scrollbar-hidden  sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
+      <div className="flex w-full overflow-x-auto scrollbar scrollbar-hidden  sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
         <div
           className="flex ease-linear transition-transform duration-300 justify-start gap-[20px]"
           style={{
@@ -26,7 +26,8 @@ export const NewsCard = ({ data2, startIndex }: any) => {
                     height={296}
                     alt="Carousel image"
                   />
-                  <div className="w-[80%] py-2 overflow-x-scroll text-center bg-[#d9d9d9] opacity-65 absolute left-0 bottom-2 hover:bg-[#ff7117] hover:text-white">
+      
+                  <div className="w-[80%] py-2 overflow-x-auto scrollbar scrollbar-hidden text-center bg-[#d9d9d9] opacity-65 absolute left-0 bottom-2 hover:bg-[#ff7117] hover:text-white">
                     {el.name}
                   </div>
                 </div>

@@ -11,12 +11,10 @@ import urls from "@/lib/urls";
 const Login = () => {
   const API_URL = process.env.API_URL;
   const router = useRouter();
-  const [status, setStatus] = useState("");
-  const [color, setColor] = useState("");
   const [email, setEmail] = useState(
     typeof window !== "undefined"
       ? window.localStorage.getItem("remember")
-        ? JSON.parse(window.localStorage.getItem("remember")).email
+        ? JSON.parse(localStorage.getItem("remember")).email
         : ""
       : ""
   );
@@ -42,12 +40,12 @@ const Login = () => {
       adminPassword: password,
     });
 
-    if (email == "" || password == "") {
+    if (email === "" || password === "") {
       toast.info("Бүх талбарыг бөглөнө үү!", {
         transition: Flip,
       });
     } else {
-      if (result?.data == "User not found") {
+      if (result?.data == "Хэрэглэгч олдоогүй") {
         toast.info("Хэрэглэгч олдсонгүй.", {
           transition: Flip,
         });
@@ -56,7 +54,7 @@ const Login = () => {
           transition: Flip,
         });
       } else {
-        window.localStorage.setItem("admin", JSON.stringify(result));
+        window.localStorage.setItem("admin", "isAdmin");
         toast.success("Амжилттай.", {
           transition: Flip,
         });

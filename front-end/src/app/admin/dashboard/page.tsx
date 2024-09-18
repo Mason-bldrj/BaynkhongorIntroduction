@@ -5,17 +5,23 @@ import AdminSideBar from "@/app/components/admin/AdminSideBar";
 import DashboardSec from "@/app/components/admin/Dashboard";
 import { useRouter } from "next/navigation";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AdminDashboard = () => {
   const router = useRouter();
-  // const admin = localStorage.getItem("admin");
-  // if (!admin) {
-  //   router.push("/");
-  //   return;
-  // }
+  const [admin, setAdmin] = useState("");
   const [changedRequest, setChangedRequest] = useState("CREATE");
   const [menus, setMenu] = useState("Бидний тухай");
+  const inadmin: any =
+    typeof window !== "undefined" ? localStorage.getItem("admin") : null;
+
+  useEffect(() => {
+    setAdmin(inadmin);
+    if (admin == "isAdmin") {
+      router.push("/");
+      return;
+    }
+  }, []);
   return (
     <div className="flex ">
       <AdminSideBar

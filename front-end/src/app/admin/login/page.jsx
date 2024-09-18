@@ -37,8 +37,8 @@ const Login = () => {
     const inadmin = await localStorage.getItem("admin");
 
     setTimeout(() => {
-      if (inadmin !== "isAdmin") {
-        return router.push("/");
+      if (inadmin === "isAdmin") {
+        return router.push("/admin/dashboard");
       }
     }, 1000);
   };

@@ -28,6 +28,8 @@ const KeepSakeForm = (props?: any) => {
   };
 
   const createKeepSake = async () => {
+    console.log(keepSakeData);
+
     try {
       const res = await postFunc(urls.KEEPSAKE, {
         name: keepSakeData.name,

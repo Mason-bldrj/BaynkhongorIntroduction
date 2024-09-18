@@ -31,11 +31,13 @@ export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
 
   try {
-    const { offerCount, offer, id, visitedNumber } = data;
+    const { name, img, id, count } = data;
     const res = await OffersModel.findByIdAndUpdate(
       id,
       {
-        offer,
+        name,
+        img,
+        count,
       },
       { new: true }
     );

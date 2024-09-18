@@ -11,6 +11,7 @@ import urls from "@/lib/urls";
 const Login = () => {
   const API_URL = process.env.API_URL;
   const router = useRouter();
+  const [admin, setAdmin] = useState("");
   const [email, setEmail] = useState(
     typeof window !== "undefined"
       ? window.localStorage.getItem("remember")
@@ -33,6 +34,8 @@ const Login = () => {
       : ""
   );
   const [hide, sethide] = useState(true);
+  const inadmin =
+    typeof window !== "undefined" ? localStorage.getItem("admin") : null;
 
   const adminLogin = async () => {
     const result = await axios.post(`${API_URL}${urls.ADMIN_VERIFY}`, {
@@ -64,6 +67,11 @@ const Login = () => {
   };
 
   useEffect(() => {
+    setAdmin(inadmin);
+    if (admin !== "isAdmin") {
+      router.push("/");
+      return;
+    }
     if (remember == true) {
       window.localStorage.setItem(
         "remember",

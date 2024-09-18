@@ -14,12 +14,15 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const data = await req.json();
   const { adminEmail, adminPassword } = data;
   try {
-    const res = await AdminModel.find({
+    const admin: any = await AdminModel.find({
       adminEmail,
-      adminPassword,
     });
-    if (res.length == 1) {
-      return NextResponse.json(res);
+    console.log(adminPassword);
+
+    if (admin.length == 1 && adminPassword === admin[0]?.adminPassword) {
+      return NextResponse.json(admin);
+    } else if (admin.length == 1 && adminPassword !== admin[0]?.adminPassword) {
+      return NextResponse.json("Incorrect Password");
     } else {
       return NextResponse.json("Хэрэглэгч олдоогүй");
     }

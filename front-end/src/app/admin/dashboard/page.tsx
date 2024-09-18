@@ -17,7 +17,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     setAdmin(inadmin);
-    if (admin == "isAdmin") {
+    if (admin !== "isAdmin") {
       router.push("/");
       return;
     }

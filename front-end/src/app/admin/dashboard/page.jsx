@@ -12,16 +12,20 @@ const AdminDashboard = () => {
   const [admin, setAdmin] = useState("");
   const [changedRequest, setChangedRequest] = useState("CREATE");
   const [menus, setMenu] = useState("Бидний тухай");
-  const inadmin: any =
-    typeof window !== "undefined" ? localStorage.getItem("admin") : null;
+  const e = async () => {
+    const inadmin = await localStorage.getItem("admin");
+    console.log(inadmin);
 
+    setTimeout(() => {
+      if (inadmin !== "isAdmin") {
+        return router.push("/");
+      }
+    }, 2000);
+  };
   useEffect(() => {
-    setAdmin(inadmin);
-    if (admin !== "isAdmin") {
-      router.push("/");
-      return;
-    }
-  }, []);
+    console.log(admin);
+    e();
+  }, [admin]);
   return (
     <div className="flex ">
       <AdminSideBar

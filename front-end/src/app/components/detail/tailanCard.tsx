@@ -24,7 +24,7 @@ export const TailanCard = ({ data, startIndex }: any) => {
               >
                 <div className="w-[238px] h-[60px] flex gap-2 overflow-x-hidden items-center">
                   <div className="bg-[#ff7119] w-[5px] h-[90%]"></div>
-                  {el.description}
+                  {el.name}
                 </div>
               </div>
             );

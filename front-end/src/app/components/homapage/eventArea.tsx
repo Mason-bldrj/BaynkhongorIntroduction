@@ -56,7 +56,7 @@ export const EventArea = () => {
           <EventCard data={data} startIndex={startIndex} />
         )}
         <div className="sm:block hidden">
-          <ArrowButtons2 handleNext={handleNext} handlePrev={handlePrev} />
+          <ArrowButtons2 handleNext={handlePrev} handlePrev={handleNext} />
         </div>
       </div>
     </div>

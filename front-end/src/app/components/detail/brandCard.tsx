@@ -27,7 +27,7 @@ export const BrandCard = ({ data }: any) => {
   return (
     <div className="w-full h-full flex items-center justify-start gap-[20px] sm:mt-0 mt-3">
       {/* Mobile View */}
-      <div className="flex w-full xl:w-[1029px] h-full overflow-x-scroll sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
+      <div className="flex w-full xl:w-[1029px] h-full overflow-x-scroll scrollbar scrollbar-hidden  sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
         <div className="sm:hidden flex gap-3 h-full">
           {data?.map((el: any, i: number): JSX.Element => {
             return (

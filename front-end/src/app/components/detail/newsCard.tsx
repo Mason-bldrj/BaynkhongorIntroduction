@@ -8,7 +8,7 @@ export const NewsCard = ({ data2, startIndex }: any) => {
   };
   return (
     <div className=" flex mb-10 sm:ml-0 ml-2 ">
-      <div className="flex w-full overflow-x-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
+      <div className="flex w-full overflow-x-scroll scrollbar scrollbar-hidden  sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
         <div
           className="flex ease-linear transition-transform duration-300 justify-start gap-[20px]"
           style={{

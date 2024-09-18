@@ -22,7 +22,7 @@ export const HolbooCard = ({ data }: any) => {
               height={296}
               alt="Carousel image"
             />
-            <div className=" absolute w-[80%] justify-center bottom-[120px] border flex bg-[#ff7119] text-white rounded-md text-[15px] flex-wrap overflow-hidden">
+            <div className=" absolute w-[80%] justify-center line-clamp-1 bottom-[120px] border flex bg-[#ff7119] text-white rounded-md text-[15px] flex-wrap overflow-hidden">
               {el.name}
             </div>
             <div className=" border-b w-[80%] py-2 flex justify-center">

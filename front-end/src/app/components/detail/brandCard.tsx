@@ -64,7 +64,7 @@ export const BrandCard = ({ data }: any) => {
             return (
               <div
                 key={i}
-                className="min-w-[323px] h-[377px] relative"
+                className="min-w-[323px] h-[377px] relative cursor-pointer"
                 onClick={() => handleNavigate(el._id)}
               >
                 <Image

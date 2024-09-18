@@ -68,7 +68,7 @@ export default function Organization() {
   return (
     <div className="max-w-[1147px] mb-10 m-auto w-[95%] flex flex-col items-center justify-between gap-5 md:gap-10 sm:mt-0 mt-5">
       <BannerArea />
-      <div className="w-full overflow-x-scroll scrollbar-hide">
+      <div className="w-full overflow-x-scroll scrollbar scrollbar-hidden">
         <div className="flex w-[1147px] justify-around border-b border-b-[#ff7119] pb-5 items-center">
           {organiztionCategory.map((el, i) => (
             <button

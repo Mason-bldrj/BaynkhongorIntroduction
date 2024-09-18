@@ -55,8 +55,8 @@ export default function AboutUs(props?: any) {
   }
 
   return (
-    <div className="sm:h-[fit] md:h-[300px] lg:h-[340px] xl:h-[373px] max-w-[1147px] m-auto w-[95%] flex flex-col items-center mt-10 gap-4">
-      <div className="lg:w-[870px] xl:w-[987px] flex flex-col items-start justify-between md:h-[200px]">
+    <div className=" max-w-[1147px] m-auto w-[95%] flex flex-col items-center mt-10 gap-4">
+      <div className="lg:w-[870px] xl:w-[987px] flex flex-col items-start justify-between mb-10">
         <div className="w-full text-center text-[10px] sm:text-sm font-sans tracking-wide leading-[20px] md:leading-[28px]">
           {data?.about}
         </div>
@@ -65,7 +65,7 @@ export default function AboutUs(props?: any) {
         <div className="w-[98%] flex justify-start">
           <Title title={"Баянхонгор аймгийн аялал"} />
         </div>
-        <div className="mt-7 leading-[28px] font-sans w-[98%] lg:text-[15px] xl:text-[16px] md:text-[14px] sm:text-[13px] text-[11px]">
+        <div className="mt-5 leading-[28px] font-sans w-[98%] lg:text-[15px] xl:text-[16px] md:text-[14px] sm:text-[13px] text-[11px]">
           {data?.aboutOffice}
         </div>
         <div className="md:w-full flex md:h-[373px] mt-10 justify-between flex-wrap md:flex-none">

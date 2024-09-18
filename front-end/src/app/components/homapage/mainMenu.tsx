@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import { mainMenu } from "@/app/data";
 import { PictureArr } from "@/app/data";
 import { useRouter } from "next/navigation";
+
 export const MainMenu = () => {
   const router = useRouter();
   const [buttonColor, setButtonColor] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % PictureArr.length);
@@ -59,7 +61,7 @@ export const MainMenu = () => {
 
   return (
     <div className="max-w-[1147px] w-full m-auto flex flex-col items-center">
-      <div className=" max-h-[500px] flex flex-col sm:flex-row">
+      <div className="max-h-[500px] flex flex-col sm:flex-row">
         {/* Сайд менү */}
         <div className="w-full sm:w-[20%] md:h-[400px] sm:h-[300px] lg:h-[500px] sm:flex sm:flex-col hidden">
           {mainMenu.map((el: any, index: number) => (
@@ -71,7 +73,7 @@ export const MainMenu = () => {
               }}
             >
               <button
-                className={`lg:text-[16px] md:text-[14px] sm:text-[10px] h-full  border-b-[1px] border-l-[1px] border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
+                className={`lg:text-[16px] md:text-[14px] sm:text-[10px] h-full border-b border-l border-opacity-20 border-[#000000] w-full hover:bg-[#FF6C10] hover:text-white transition-colors`}
               >
                 {el}
               </button>
@@ -81,13 +83,26 @@ export const MainMenu = () => {
 
         {/* Слайдер */}
         <div className="relative flex-grow overflow-hidden w-full sm:w-[80%] lg:w-[970px]">
-          <Image
-            className="object-cover w-full h-full"
-            src={PictureArr[currentIndex]}
-            width={9704}
-            height={5004}
-            alt="Carousel image"
-          />
+          <div
+            className="whitespace-nowrap transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {PictureArr.map((src, i) => (
+              <div
+                key={i}
+                className="inline-block w-full h-[500px]" // Ensures all images are on the same line for the sliding effect
+              >
+                <Image
+                  className="object-cover w-full h-full"
+                  src={src}
+                  width={9704}
+                  height={5004}
+                  alt={`Carousel image ${i}`}
+                />
+              </div>
+            ))}
+          </div>
+
           <div className="absolute bottom-2 left-[45%] gap-2 flex">
             {PictureArr.map((_, i) => (
               <div
@@ -101,7 +116,6 @@ export const MainMenu = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

@@ -19,10 +19,9 @@ const AdminDashboard = () => {
       if (inadmin !== "isAdmin") {
         return router.push("/");
       }
-    }, 2000);
+    }, 1000);
   };
   useEffect(() => {
-    console.log(admin);
     e();
   }, [admin]);
   return (

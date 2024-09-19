@@ -95,7 +95,7 @@ export default function SideBar() {
             </ListItemButton>
           </ListItem>
         ))}
-        <ListItemButton>Админ</ListItemButton>
+        <ListItemButton onClick={()=>{router.push("/admin/login")}}>Админ</ListItemButton>
       </List>
       <Divider />
     </Box>

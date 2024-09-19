@@ -1,13 +1,14 @@
 "use client";
 import { OrangeBourd } from "@/app/components/detail/orengeBourd";
 import { ArrowButtons } from "@/app/components/detail/arrowButtons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { OrganizationRelaxCard } from "./organizationRelaxCard";
 export const OrganizationArea2 = ({ data }: any) => {
   const [startIndex, setStartIndex] = useState(0);
+  const [news, setNews] = useState(Boolean);
   const relax = Array.isArray(data)
-  ? data.filter((el: any) => el.institutionType === "VACATION")
-  : [];
+    ? data.filter((el: any) => el.institutionType === "VACATION")
+    : [];
   const visibleCount = 1;
   const handleNext = () => {
     if (startIndex + visibleCount < relax.length) {
@@ -19,10 +20,21 @@ export const OrganizationArea2 = ({ data }: any) => {
       setStartIndex(startIndex - 1);
     }
   };
+  useEffect(() => {
+    if (relax.length === 0) {
+      setNews(false);
+    } else {
+      setNews(true);
+    }
+  }, []);
   return (
     <div className="w-full  flex flex-col gap-10">
       <div className="w-full">
-        <OrganizationRelaxCard data={relax} startIndex={startIndex} />
+        {news ? (
+          <OrganizationRelaxCard data={relax} startIndex={startIndex} />
+        ) : (
+          <div>Байгууллага байхгүй байна.</div>
+        )}
       </div>
     </div>
   );

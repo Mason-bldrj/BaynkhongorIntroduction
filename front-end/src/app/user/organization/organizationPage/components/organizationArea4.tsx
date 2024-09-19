@@ -63,7 +63,7 @@ export const OrganizationArea4 = ({ data }: any) => {
         </div>
         <div>
           <div className="mt-5 mb-5">Түүх угсаатны зүй, Байгалийн түүхийн музей</div>
-          <div className=" w-full overflow-x-scroll">
+          <div className=" w-full overflow-x-auto">
             <div className="w-[1147px] flex justify-between ">
               {" "}
               {museumIMG.map((el) => {

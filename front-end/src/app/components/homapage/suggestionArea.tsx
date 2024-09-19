@@ -111,7 +111,7 @@ export const SuggestionArea = () => {
           </div>
 
           {/* Desktop view */}
-          <div className="sm:flex hidden w-full h-[300px]  justify-between mt-5 sm:gap-2 md:gap-5 gap-[20px] overflow-hidden overflow-x-scroll">
+          <div className="sm:flex hidden w-full h-[250px]  justify-between mt-5 sm:gap-2 md:gap-5 gap-[20px] overflow-hidden overflow-x-scroll scrollbar scrollbar-hidden ">
             {dataHolder.map((el) => (
               <div key={el._id} className="min-w-[173px] h-[200px] relative ">
                 <Image

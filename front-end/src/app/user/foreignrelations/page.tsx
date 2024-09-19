@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 export default function foreignRelations() {
   const { push } = useRouter();
   return (
-    <div className="flex flex-col gap-4 max-w-[1147px] m-auto w-[95%]  items-center sm:items-start mt-4 sm:mt-10 mb-5">
+    <div className=" flex flex-col gap-4 max-w-[1147px] m-auto w-[95%]  items-center sm:items-start mt-4 sm:mt-10 mb-5">
       <div
         onClick={() =>
           push("https://legalinfo.mn/mn/detail?lawId=16230721365191")
@@ -27,7 +27,7 @@ export default function foreignRelations() {
         className="w-full flex items-center font-bold cursor-pointer gap-2 hover:text-[#ff7119] text-[15px]  sm:text-[20px]"
       >
         <LiaPaperclipSolid className="text-[15px] sm:text-[20px]" />
-        Монгол Улсын дипломат, албан паспорт олгох, эзэмших, хадгалах журам
+        Монгол Улсын дипломат, албан пасcпорт олгох, эзэмших, хадгалах журам
       </div>{" "}
       <div
         onClick={() => push("https://sanfrancisco.consul.mn/page/134")}

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 export function LawArea() {
   const { push } = useRouter();
   return (
-    <div className="flex flex-col gap-4 w-[90%] sm:w-[1147px] items-center sm:items-start mt-4 sm:mt-10 mb-5">
+    <div className="mb-10 flex flex-col gap-4 w-[90%] sm:w-[1147px] items-center sm:items-start mt-4 sm:mt-10">
       <div
         onClick={() =>
           push("https://legalinfo.mn/mn/detail?lawId=16759637037101")

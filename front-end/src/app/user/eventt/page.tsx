@@ -43,7 +43,7 @@ export default function Event() {
   }
 
   return (
-    <div className="max-w-[1147px] m-auto w-[95%] flex flex-col items-center justify-between gap-5 sm:mt-0 mt-5 md:gap-10">
+    <div className="mb-10 max-w-[1147px] m-auto w-[95%] flex flex-col items-center justify-between gap-5 sm:mt-0 mt-5 md:gap-10">
       <BannerArea />
       <div className="w-full flex justify-start">
         <OrangeBourd data={"ЭВЕНТ , АРГА ХЭМЖЭЭ"} />
@@ -53,8 +53,8 @@ export default function Event() {
         <EventCard data={data} startIndex={startIndex} />
         <div className="sm:block hidden">
           <ArrowButtons2
-            handleNext={handleNext}
-            handlePrev={handlePrev}
+            handleNext={handlePrev}
+            handlePrev={handleNext}
             isNextDisabled={startIndex + visibleCount >= data?.length}
             isPrevDisabled={startIndex === 0}
           />

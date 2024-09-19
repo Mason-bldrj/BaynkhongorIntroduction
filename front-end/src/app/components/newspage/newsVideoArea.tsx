@@ -7,7 +7,7 @@ import { useState } from "react";
 import { NewsCard } from "../detail/newsCard";
 export const NewsVideoArea = ({data2 ,data1, data}:any) => {
   const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 4;
+  const visibleCount = 1;
   const handleNext = () => {
     if (startIndex + visibleCount < data2?.length) {
       setStartIndex(startIndex + 1);

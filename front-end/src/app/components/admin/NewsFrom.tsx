@@ -22,6 +22,7 @@ const NewsFrom = (props?: any) => {
   const [resourcesData, setResourcesData] = useState({
     name: "",
     img: "",
+    description: "",
   });
   const [image, setImage] = useState<any>();
   const handleclick = async (image: any) => {
@@ -63,6 +64,7 @@ const NewsFrom = (props?: any) => {
       const res = await postFunc(urls.RESOURCES, {
         name: resourcesData.name,
         img: resourcesData.img,
+        description: resourcesData.description,
       });
     } catch (err: any) {
       return err;
@@ -74,6 +76,7 @@ const NewsFrom = (props?: any) => {
         id: data?._id,
         name: resourcesData.name,
         img: resourcesData.img,
+        description: resourcesData.description,
       });
     } catch (err: any) {
       return err;
@@ -104,76 +107,6 @@ const NewsFrom = (props?: any) => {
   };
   return (
     <div className="flex flex-col gap-[24px]">
-      <div className="flex   items-start flex-col rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
-        <h1 className="text-start">Тайлан оруулах хэсэг</h1>
-        <div>
-          <div className="flex gap-[24px] ">
-            <div>
-              <div className="text-[16px]">Тайлан нэр </div>
-              <input
-                type="text"
-                placeholder="Нэр"
-                name="name"
-                className="px-[6px] py-[8px] rounded-[8px]"
-                onChange={(event) => {
-                  setTimeout(() => {
-                    setReportData({
-                      ...reportData,
-                      name: event.target.value,
-                    });
-                  }, 1000);
-                }}
-              />
-            </div>
-            <div className="flex flex-col   ">
-              <div className="text-[16px]"> Эхлэх өдөр </div>
-              <input
-                className="px-[6px] py-[8px] rounded-[8px]"
-                type="date"
-                placeholder="Албан тушаал"
-                name="date"
-                onChange={(event) => {
-                  setTimeout(() => {
-                    setReportData({
-                      ...reportData,
-                      date: event.target.value,
-                    });
-                  }, 1000);
-                }}
-              />
-            </div>
-          </div>
-          <div>
-            <div>Тайлбар</div>
-            <textarea
-              className="px-[6px] py-[8px] rounded-[8px] w-full h-[100px]"
-              name="phoneNumber"
-              onChange={(event) => {
-                setTimeout(() => {
-                  setReportData({
-                    ...reportData,
-                    description: event.target.value,
-                  });
-                }, 1000);
-              }}
-            ></textarea>
-          </div>
-        </div>
-        <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
-          <button
-            onClick={() => {
-              if (edit === true) {
-                editReport();
-              } else {
-                createReport;
-              }
-            }}
-          >
-            Нэмэх
-          </button>
-        </div>
-      </div>
-
       <div className="flex   items-start flex-col rounded-[8px] shadow-sm bg-[#f6f6f6] gap-[24px] border-[1px] border-solid border-[#f7f7f7] p-[20px]">
         <div>Бичлэг оруулах хэсэг</div>
         <div>
@@ -247,7 +180,7 @@ const NewsFrom = (props?: any) => {
         <h1>АЖ-ын нөөц газар</h1>
         <div>
           <div>
-            <div>Нэр (тайлбар)</div>
+            <div>Нэр</div>
             <input
               type="text"
               placeholder="Нэр"
@@ -258,6 +191,23 @@ const NewsFrom = (props?: any) => {
                   setResourcesData({
                     ...resourcesData,
                     name: event.target.value,
+                  });
+                }, 1000);
+              }}
+            />
+          </div>
+          <div>
+            <div>Тайлбар</div>
+            <input
+              type="text"
+              placeholder="Тайлбар"
+              name="name"
+              className="px-[6px] py-[8px] rounded-[8px]"
+              onChange={(event) => {
+                setTimeout(() => {
+                  setResourcesData({
+                    ...resourcesData,
+                    description: event.target.value,
                   });
                 }, 1000);
               }}

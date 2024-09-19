@@ -61,6 +61,13 @@ export default function SideBar() {
         break;
     }
   };
+  const adminControl = () => {
+    if (localStorage.admin) {
+      router.push("/admin/dashboard");
+    } else {
+      router.push("/admin/login");
+    }
+  };
   const list = () => (
     <Box
       sx={{
@@ -95,7 +102,7 @@ export default function SideBar() {
             </ListItemButton>
           </ListItem>
         ))}
-        <ListItemButton onClick={()=>{router.push("/admin/login")}}>Админ</ListItemButton>
+        <ListItemButton onClick={adminControl}>Админ</ListItemButton>
       </List>
       <Divider />
     </Box>

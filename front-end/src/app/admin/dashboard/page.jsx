@@ -23,7 +23,8 @@ const AdminDashboard = () => {
     }, 1000);
   };
   const logOut = () => {
-    localStorage.clear();
+    localStorage.clear(admin);
+    router.push("/admin/login");
   };
   useEffect(() => {
     e();

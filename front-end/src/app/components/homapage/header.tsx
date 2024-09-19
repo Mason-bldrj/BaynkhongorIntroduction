@@ -18,7 +18,15 @@ export const Header = ({ switchHeader }: any) => {
       window.location.href = mailtoLink;
     }
   };
+
   const router = useRouter();
+  const adminControl = () => {
+    if (localStorage.admin) {
+      router.push("/admin/dashboard");
+    } else {
+      router.push("/admin/login");
+    }
+  };
   return (
     <div
       className={` relative w-full  h-[50px] sm:h-[180px] md:h-[229px] justify-between flex-col items-center bg-cover sm:bg-center bg-[url('/header.png')] bg-[#FF6C10]
@@ -56,7 +64,7 @@ export const Header = ({ switchHeader }: any) => {
       </div>
 
       <RiAdminLine
-        onClick={() => router.push("/admin/login")}
+        onClick={adminControl}
         className="hidden sm:block cursor-pointer text-black  p-1 w-[30px] h-[30px] absolute top-2 right-5"
       />
     </div>

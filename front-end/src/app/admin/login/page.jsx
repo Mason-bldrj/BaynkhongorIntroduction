@@ -37,7 +37,7 @@ const Login = () => {
     const inadmin = await localStorage.getItem("admin");
 
     setTimeout(() => {
-      if (inadmin === "isAdmin") {
+      if (inadmin) {
         return router.push("/admin/dashboard");
       }
     }, 1000);
@@ -66,7 +66,12 @@ const Login = () => {
           transition: Flip,
         });
       } else {
-        window.localStorage.setItem("admin", "isAdmin");
+        const { token } = result?.data;
+        const admin = result?.data?.admin[0];
+        console.log("isToken", token);
+        console.log("isAdmin", admin);
+
+        window.localStorage.setItem("admin", token);
         toast.success("Амжилттай.", {
           transition: Flip,
         });

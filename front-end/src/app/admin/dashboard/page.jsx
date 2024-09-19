@@ -16,7 +16,7 @@ const AdminDashboard = () => {
     const inadmin = await localStorage.getItem("admin");
 
     setTimeout(() => {
-      if (inadmin !== "isAdmin") {
+      if (!inadmin) {
         return router.push("/");
       }
     }, 1000);

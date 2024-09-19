@@ -5,7 +5,13 @@ export const NewsCard = ({ data2, startIndex }: any) => {
   const router = useRouter();
   const handleNavigate = (id: string) => {
     router.push(`/user/RESOURCES${id}`);
+<<<<<<< HEAD
+  };
+  console.log(data2);
+
+=======
   };  
+>>>>>>> main
   return (
     <div className=" flex mb-10 sm:ml-0 ml-2 ">
       <div className="flex w-full overflow-x-auto scrollbar scrollbar-hidden  sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">

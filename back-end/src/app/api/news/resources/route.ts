@@ -3,10 +3,11 @@ import resourcesModel from "../../../../../model/resources.model";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const { name, img } = await req.json();
+    const { name, img, description } = await req.json();
     const res = await resourcesModel.create({
       name,
       img,
+      description,
     });
     return NextResponse.json(res);
   } catch (err: any) {
@@ -27,12 +28,12 @@ export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
 
   try {
-    const { id, name, img } = data;
+    const { id, name, description, img } = data;
     const res = await resourcesModel.findByIdAndUpdate(
       id,
       {
         name,
-
+        description,
         img,
       },
       { new: true }

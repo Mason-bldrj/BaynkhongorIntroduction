@@ -6,6 +6,8 @@ export const NewsCard = ({ data2, startIndex }: any) => {
   const handleNavigate = (id: string) => {
     router.push(`/user/RESOURCES${id}`);
   };
+  console.log(data2);
+
   return (
     <div className=" flex mb-10 sm:ml-0 ml-2">
       <div className="flex w-full overflow-x-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">

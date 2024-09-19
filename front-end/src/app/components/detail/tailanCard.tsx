@@ -8,7 +8,7 @@ export const TailanCard = ({ data, startIndex }: any) => {
   };
   return (
     <div className="w-full flex ">
-      <div className="flex w-full overflow-x-scroll sm:w-[1155px] sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
+      <div className="flex w-full overflow-x-scroll sm:w-[1155px] scrollbar scrollbar-hidden  sm:overflow-hidden ease-linear transition-transform duration-300 justify-start">
         <div
           className="flex ease-linear transition-transform duration-300 justify-start gap-[20px]"
           style={{
@@ -24,7 +24,7 @@ export const TailanCard = ({ data, startIndex }: any) => {
               >
                 <div className="w-[238px] h-[60px] flex gap-2 overflow-x-hidden items-center">
                   <div className="bg-[#ff7119] w-[5px] h-[90%]"></div>
-                  {el.description}
+                  {el.name}
                 </div>
               </div>
             );

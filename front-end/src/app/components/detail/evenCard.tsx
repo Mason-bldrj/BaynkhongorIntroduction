@@ -65,7 +65,7 @@ export const EventCard = ({ data, startIndex }: any) => {
             return (
               <div
                 key={i}
-                className="sm:w-full xl:w-[1000px] h-[440px] relative "
+                className="sm:w-full xl:w-[1000px] h-[440px] relative cursor-pointer"
                 onClick={() => handleNavigate(el._id)}
               >
                 <Image
@@ -75,9 +75,9 @@ export const EventCard = ({ data, startIndex }: any) => {
                   height={500}
                   alt="Carousel image"
                 />
-                <div className="sm:w-full xl:w-[910px] h-[112px] flex flex-col justify-around *:px-5 rounded-md  items-center bg-black opacity-75 text-white absolute xl:left-[50px] bottom-[20px] ">
-                  <div>{el.name}</div>
-                  <div className="w-[80%] overflow-hidden">
+                <div className="sm:w-full xl:w-[910px] flex flex-col gap-5 justify-around *:px-5 rounded-md  items-center bg-black opacity-75 text-white absolute xl:left-[50px] bottom-[20px] ">
+                  <div className="text-[#ff7119] mt-4">{el.name}</div>
+                  <div className="line-clamp-3 mb-5">
                     {el.description}
                   </div>
                 </div>

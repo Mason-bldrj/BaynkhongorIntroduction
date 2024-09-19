@@ -3,6 +3,7 @@ import { GoMail } from "react-icons/go";
 import { FiPhone } from "react-icons/fi";
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
+
 export const Footer = () => {
   const router = useRouter()
   const [message, setMessage] = useState("");
@@ -30,7 +31,7 @@ export const Footer = () => {
               <IoLocationOutline />
             </div>
             <div className="text-white text-[10px]">
-              Баянхонгор аймаг ,Баянхонгор сум Номгон нэгдүгээр баг
+              Баянхонгор аймаг , Баянхонгор сум Номгон нэгдүгээр баг
             </div>
           </div>
           <div className="flex items-center gap-[5px] w-[90%]">
@@ -142,7 +143,7 @@ export const Footer = () => {
                     target="blank"
                     className="text-white text-[10px] hover:text-[#ff7119] lg:text-sm hover:text-opacity-100  text-opacity-50 w-full lg:w-[300px]"
                   >
-                    Жуулчны мэдээлэлийн төв
+                    Жуулчны мэдээллийн төв
                   </a>
                   <a
                     href="https://bayanhongor.gov.mn/"

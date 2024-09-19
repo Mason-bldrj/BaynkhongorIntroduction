@@ -34,7 +34,7 @@ export const TravelCard = ({ data, startIndex }: any) => {
             <div
               key={i}
               onClick={() => handleNavigate(el._id)}
-              className="w-fit flex flex-col "
+              className="w-fit flex flex-col cursor-pointer"
             >
               <div
                 className={`bg-[#ff7119] w-[367px]  max-w-[640px] sm:max-w-[400px]  sm:h-[362px]  h-[210px] flex flex-col  justify-end items-start  sm:items-end rounded-md`}

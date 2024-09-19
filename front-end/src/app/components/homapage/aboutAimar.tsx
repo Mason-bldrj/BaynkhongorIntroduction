@@ -19,7 +19,7 @@ export const AboutAimag = () => {
           />
           <div className="w-full h-full absolute top-0 left-0 bg-black opacity-70 flex justify-center items-center "></div>
           <div className="w-[95%] max-w-[1147px] flex gap-5 items-center h-full absolute right-0 left-0 mx-auto">
-            <div className="text-white font-serif w-full md:w-[50%] sm:px-0 px-3 sm:text-[14px] md:text-[15px] lg:text-[18px] xl:text-xl text-[10px] lg:w-[564px] h-[150px] sm:h-[275px] sm:mb-[100px]">
+            <div className="text-white font-light w-full md:w-[50%] sm:px-0 px-3 sm:text-[14px] md:text-[15px] lg:text-[18px]  text-[10px] lg:w-[564px] h-[150px] sm:h-[275px] sm:mb-[100px]">
               БНМАУ-ын Бага Хурлын Тэргүүлэгчдийн 115 дугаар тоот тогтоолоор,
               АДХ-ын гүйцэтгэх захиргааны 91 дүгээр тоот тогтоолоор анх 3
               хоринтой нэгж захиргааг байгуулсанаар Баянхонгор хот бие даасан

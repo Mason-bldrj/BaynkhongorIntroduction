@@ -60,7 +60,7 @@ export const SuggestionArea = () => {
   }, []);
 
   return (
-    <div className="w-[95%] max-w-[1147px] mx-auto flex flex-col items-center sm:block mt-3 sm:mt-10">
+    <div className="w-[95%] max-w-[1147px] h-[fit] mx-auto flex flex-col items-center sm:block mt-3 sm:mt-10">
       <div className="sm:flex w-full justify-between">
         <div className="w-[173px]">
           <OrangeBourd data={"Санал"} />
@@ -111,11 +111,11 @@ export const SuggestionArea = () => {
           </div>
 
           {/* Desktop view */}
-          <div className="sm:flex hidden w-full justify-between mt-5 rounded-sm sm:gap-2 md:gap-5 gap-[20px] overflow-hidden overflow-x-scroll">
+          <div className="sm:flex hidden w-full h-[250px]  justify-between mt-5 sm:gap-2 md:gap-5 gap-[20px] overflow-hidden overflow-x-scroll scrollbar scrollbar-hidden ">
             {dataHolder.map((el) => (
-              <div key={el._id} className="min-w-[173px] h-full relative">
+              <div key={el._id} className="min-w-[173px] h-[200px] relative ">
                 <Image
-                  className="object-cover sm:w-full sm:h-full cursor-pointer"
+                  className="object-cover sm:w-full sm:h-full cursor-pointer rounded-t-[5px]"
                   src={el.img}
                   width={173}
                   height={200}
@@ -123,7 +123,7 @@ export const SuggestionArea = () => {
                 />
                 <button
                   onClick={() => progressCalculator(el._id)}
-                  className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white  h-[40px] flex justify-center items-center text-center absolute bottom-10 w-[80%] overflow-auto text-sm right-0 hover:opacity-100 opacity-70 rounded-l-sm z-10"
+                  className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white  h-[40px] flex justify-center items-center text-center absolute bottom-5 w-[80%] overflow-auto text-sm right-0 hover:opacity-100 opacity-70 rounded-l-sm z-10"
                 >
                   {el.name}
                 </button>

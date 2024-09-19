@@ -70,7 +70,7 @@ const KeepSakeForm = (props?: any) => {
                 ...keepSakeData,
                 name: event.target.value,
               });
-            }, 1000);
+            }, 500);
           }}
         />
       </div>
@@ -88,7 +88,7 @@ const KeepSakeForm = (props?: any) => {
                 ...keepSakeData,
                 title: event.target.value,
               });
-            }, 1000);
+            }, 500);
           }}
         />
       </div>
@@ -127,7 +127,7 @@ const KeepSakeForm = (props?: any) => {
                 ...keepSakeData,
                 description: event.target.value,
               });
-            }, 1000);
+            }, 500);
           }}
         />
       </div>

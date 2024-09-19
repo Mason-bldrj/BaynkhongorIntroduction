@@ -11,7 +11,7 @@ import urls from "@/lib/urls";
 const Login = () => {
   const API_URL = process.env.API_URL;
   const router = useRouter();
-  const [admin, setAdmin] = useState("");
+
   const [email, setEmail] = useState(
     typeof window !== "undefined"
       ? window.localStorage.getItem("remember")
@@ -33,6 +33,15 @@ const Login = () => {
         : false
       : ""
   );
+  const e = async () => {
+    const inadmin = await localStorage.getItem("admin");
+
+    setTimeout(() => {
+      if (inadmin === "isAdmin") {
+        return router.push("/admin/dashboard");
+      }
+    }, 1000);
+  };
   const [hide, sethide] = useState(true);
   const inadmin =
     typeof window !== "undefined" ? localStorage.getItem("admin") : null;
@@ -67,11 +76,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    setAdmin(inadmin);
-    if (admin !== "isAdmin") {
-      router.push("/");
-      return;
-    }
+    e();
     if (remember == true) {
       window.localStorage.setItem(
         "remember",

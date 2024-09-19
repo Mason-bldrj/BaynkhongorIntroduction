@@ -90,7 +90,7 @@ export const MainMenu = () => {
             {PictureArr.map((src, i) => (
               <div
                 key={i}
-                className="inline-block w-full h-[500px]" // Ensures all images are on the same line for the sliding effect
+                className="inline-block w-full md:h-[400px] sm:h-[300px] lg:h-[500px]" // Ensures all images are on the same line for the sliding effect
               >
                 <Image
                   className="object-cover w-full h-full"

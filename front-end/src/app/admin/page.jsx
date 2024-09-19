@@ -18,6 +18,7 @@ const Admin = () => {
   const [clicked, setClicked] = useState(false);
   const [id, setId] = useState("");
 
+
   useEffect(() => {
     const admin = JSON.parse(localStorage.getItem("admin"));
     if (!admin) {

@@ -5,6 +5,7 @@ import { v4 } from "uuid";
 
 import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
+import RichTextExample from "@/app/draft";
 
 const NewsFrom = (props?: any) => {
   const { edit, data } = props;
@@ -198,20 +199,8 @@ const NewsFrom = (props?: any) => {
           </div>
           <div>
             <div>Тайлбар</div>
-            <input
-              type="text"
-              placeholder="Тайлбар"
-              name="name"
-              className="px-[6px] py-[8px] rounded-[8px]"
-              onChange={(event) => {
-                setTimeout(() => {
-                  setResourcesData({
-                    ...resourcesData,
-                    description: event.target.value,
-                  });
-                }, 1000);
-              }}
-            />
+
+            <RichTextExample description={setResourcesData} />
           </div>
           <div className="">
             <div>Зураг</div>

@@ -35,7 +35,7 @@ export const VideoArea = () => {
       <div className="flex max-w-[1147px] m-auto w-[95%] sm:mt-20 mt-10 ">
         <OrangeBourd data={"ВИДЕО МЭДЭЭ"} />
       </div>
-      <div className="w-full sm:h-[183px] h-[80px] bg-[#ff7119] mt-5 sm:mt-10 flex justify-center items-start">
+      <div className="w-full sm:h-[183px] h-[80px] bg-[#213A57] mt-5 sm:mt-10 flex justify-center items-start">
         <div className="max-w-[1147px] m-auto w-[95%] flex justify-start ">
           <div className="flex items-center w-full h-[fit] gap-[55px]  mt-[130px] ">
             <div className="w-[80%]  sm:h-[300px] xl:h-[420px]  ">

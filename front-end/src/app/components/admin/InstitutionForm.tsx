@@ -1,4 +1,5 @@
 import { postFunc } from "@/app/backdata";
+import RichTextExample from "@/app/draft";
 import { imageDb } from "@/firebase";
 import urls from "@/lib/urls";
 import { ref, uploadBytes } from "firebase/storage";
@@ -166,22 +167,9 @@ const InstitutionForm = (props?: any) => {
             </button>
           </div>
         </div>
-        <div className="w-full h-[100px]">
+        <div className="w-full ">
           <div>Тайлбар</div>
-          <textarea
-            defaultValue={data?.description}
-            placeholder="Тайлбар"
-            name="descrition"
-            className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
-            onChange={(event) => {
-              setTimeout(() => {
-                setInstitutionData({
-                  ...institutionData,
-                  description: event.target.value,
-                });
-              }, 1000);
-            }}
-          />
+               <RichTextExample description={ setInstitutionData} />
         </div>
       </div>
       <br />

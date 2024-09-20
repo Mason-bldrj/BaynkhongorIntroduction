@@ -4,69 +4,67 @@ import { InfoArr, InfoItem } from "@/app/data";
 import Image from "next/image";
 import SideBar from "../detail/sidebar";
 import { useRouter } from "next/navigation";
+import { mainMenu } from "@/app/data";
 import { useState } from "react";
 export const Header = ({ switchHeader }: any) => {
-  const [message, setMessage] = useState("");
-  const handleSend = (m: number) => {
-    if (m === 3) {
-      const recipient = "Bayankhongor.tourism@gmail.com";
-      const subject = "Inquiry";
-      const body = message;
-      const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoLink;
-    }
-  };
-
   const router = useRouter();
-  const adminControl = () => {
-    if (localStorage.admin) {
-      router.push("/admin/dashboard");
-    } else {
-      router.push("/admin/login");
+  const [buttonColor, setButtonColor] = useState(0);
+  const handleRouter = (index: number) => {
+    setButtonColor(index);
+    switch (index) {
+      case 0:
+        router.push("/");
+        break;
+      case 1:
+        router.push("/user/aboutus");
+        break;
+      case 2:
+        router.push("/user/news");
+        break;
+      case 3:
+        router.push("/user/organization");
+        break;
+      case 4:
+        router.push("/user/travel");
+        break;
+      case 5:
+        router.push("/user/eventt");
+        break;
+      case 6:
+        router.push("/user/law");
+        break;
+      case 7:
+        router.push("/user/gift");
+        break;
+      case 8:
+        router.push("/user/foreignrelations");
+        break;
+      default:
+        break;
     }
   };
   return (
-    <div
-      className={` relative w-full  h-[50px] sm:h-[180px] md:h-[229px] justify-between flex-col items-center bg-cover sm:bg-center bg-[url('/header.png')] bg-[#FF6C10]
- ${switchHeader ? "flex" : "hidden"}
-    `}
-    >
-      <div className="w-full flex justify-end sm:hidden">
-        {" "}
-        <SideBar />
-      </div>
-      <div className="container sm:flex justify-around xl:text-xl md:text-[16px] sm:text-[12px] items-center sm:w-[600px] md:w-[800px]  xl:w-[1147px] p-7 hidden">
-        {InfoArr.map((el: InfoItem, index: number): JSX.Element => {
+    <div className="w-full h-[60px] border-b  bg-white flex justify-end md:justify-center fixed top-0 z-20  ">
+      <div className="h-full max-w-[1200px] w-[95%] m-auto flex justify-between">
+        <div className="w-full h-full flex justify-end md:hidden  items-center">
+          {" "}
+          <SideBar />
+        </div>
+
+        {mainMenu.map((el: any, i: number) => {
           return (
-            <div
-              key={index}
-              className="gap-[10px] flex justify-center items-center cursor-pointer"
-              onClick={() => handleSend(el.id)}
+            <button
+              key={i}
+              onClick={() => {
+                handleRouter(i);
+              }}
+              className="text-black hover:scale-105 hover:text-[#ff7119] font-serif hidden md:block  md:text-[12px] lg:text-[14px] xl:text-[16px]"
             >
-              <div className="bg-white border-black border rounded-[50%] w-fit h-fit">
-                <Image
-                  className="p-[5px]"
-                  src={el.icon}
-                  width={25}
-                  height={25}
-                  alt="Picture of the author"
-                />
-              </div>
-              <div className="text-black">{el.m}</div>
-            </div>
+              {el}
+            </button>
           );
         })}
       </div>
-      <div className="text-white sm:text-md md:text-2xl  w-fit text-center mb-2 sm:flex hidden">
-        Баянхонгор аймаг аялал жуулчлал зочлох үйлчилгээний байгууллага
-      </div>
-
-      <RiAdminLine
-        onClick={adminControl}
-        className="hidden sm:block cursor-pointer text-black  p-1 w-[30px] h-[30px] absolute top-2 right-5"
-      />
     </div>
   );
 };

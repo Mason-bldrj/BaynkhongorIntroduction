@@ -18,7 +18,7 @@ export const Footer = () => {
   };
   return (
     <div className="w-full">
-      <div className="sm:hidden flex h-full bg-[#ff7119] flex-col items-center gap-2">
+      <div className="sm:hidden flex h-full bg-[#213A57] flex-col items-center gap-2">
         <div className="text-[10px] w-[90%] mt-2 text-white">
           БАЯНХОНГОР АЙМГИЙН АЯЛАЛ ЖУУЛЧЛАЛЫН ПОРТАЛ САЙТ GO NOMADIC, EXPERIENCE
           MONGOLIA
@@ -63,8 +63,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full lg:h-[462px] h-[300px] items-center justify-end sm:flex flex-col bg-[url('/footer.png')]  bg-cover hidden relative">
-        <div className=" absolute bg-black opacity-[60%] w-full h-full top-0 left-0 z-10"></div>
+      <div className="w-full lg:h-[462px] h-[300px] items-center justify-end sm:flex flex-col bg-[#213A57] bg-cover hidden relative">
         <div className="z-20 ">
           <div className="sm:w-[630px] md:w-[760px] lg:w-[1000px] xl:w-[1147px] h-[200px] lg:h-[420px] flex flex-col justify-around">
             <div className=" text-white w-[300px] lg:w-[549px] h-[44px] text-[12px] lg:text-[15px] ">

@@ -51,29 +51,19 @@ export default function SideBar() {
       case 7:
         router.push("/user/gift");
         break;
-      case 8: // Corrected index for 'projectt'
-        router.push("/user/project");
-        break;
-      case 9:
+      case 8:
         router.push("/user/foreignrelations");
         break;
       default:
         break;
     }
   };
-  const adminControl = () => {
-    if (localStorage.admin) {
-      router.push("/admin/dashboard");
-    } else {
-      router.push("/admin/login");
-    }
-  };
   const list = () => (
     <Box
       sx={{
         width: "100%",
-        backgroundColor: "#ff7119",
-        color: "white",
+        backgroundColor: "white",
+        color: "black",
         height: "100vh",
         position: "relative", // Added for overlay effect
         display: "flex",
@@ -94,7 +84,7 @@ export default function SideBar() {
               sx={{
                 ml: "10px",
                 "&:hover": {
-                  border: "1px solid white",
+                  color:"#ff7119"
                 },
               }}
             >
@@ -102,7 +92,7 @@ export default function SideBar() {
             </ListItemButton>
           </ListItem>
         ))}
-        <ListItemButton onClick={adminControl}>Админ</ListItemButton>
+        <ListItemButton>Админ</ListItemButton>
       </List>
       <Divider />
     </Box>
@@ -111,7 +101,7 @@ export default function SideBar() {
   return (
     <div>
       <Button onClick={toggleDrawer(true)}>
-        <ReorderRoundedIcon sx={{ color: "white" }} />
+        <ReorderRoundedIcon sx={{ color: "black" }} />
       </Button>
 
       <Drawer

@@ -5,6 +5,7 @@ import { v4 } from "uuid";
 
 import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
+import RichTextExample from "@/app/draft";
 
 const ScenicSpotFrom = (props?: any) => {
   const { edit, data } = props;
@@ -71,22 +72,10 @@ const ScenicSpotFrom = (props?: any) => {
           }}
         />
       </div>
-      <div className="flex flex-col w-full h-[150px]   ">
+      <div className="flex flex-col w-full   ">
         <div className="text-[16px]"> Тайлбар </div>
-        <textarea
-          defaultValue={data?.description}
-          className="px-[6px] py-[8px] rounded-[8px] h-full"
-          placeholder="Тайлбар"
-          name="description"
-          onChange={(event) => {
-            setTimeout(() => {
-              setScenicData({
-                ...scenicData,
-                description: event.target.value,
-              });
-            }, 1000);
-          }}
-        />
+      
+         <RichTextExample description={setScenicData}/>
       </div>
       <div>
         <div>Зураг</div>

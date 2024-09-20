@@ -105,12 +105,16 @@ export default function Page({ params }: { params: { slug: any } }) {
               <div className="w-full sm:w-[45%] flex flex-col items-center relative max-h-fit min-h-[100px] mt-4 sm:mt-0">
                 <div className="w-[90%] overflow-hidden">
                   <div className="leading-[40px] md:text-[15px] lg:text-[17px] h-[460px] overflow-y-auto">
-                    {data.description === "" ? "Тайлбар байхгүй байна." : data.description
-                    
-                    }
+                  {data.description === "" ? (
+                    "Тайлбар байхгүй байна."
+                  ) : (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: data.description }}
+                    />
+                  )}
                   </div>
                 </div>
-                <div className="absolute bottom-[-30px] sm:bottom-2 left-6 font-bold  ">
+                <div className="absolute bottom-[-30px] sm:bottom-[10px] left-6 font-bold  ">
                   {data.date ? data.date.slice(0, 10) : ""}
                 </div>
               </div>

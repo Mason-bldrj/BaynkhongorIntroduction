@@ -1,34 +1,60 @@
 "use client";
 import { OrangeBourd } from "../detail/orengeBourd";
-import { BeautifulAreaCard } from "../detail/beautifulAreaCard";
+import { TravelCard } from "../detail/travelCard";
+import { ArrowButtons } from "../detail/arrowButtons";
 import { useState, useEffect } from "react";
 import urls from "@/lib/urls";
 import { fetchFunc } from "@/app/backdata";
 export const BeautifulArea = () => {
-  const [data, setdata] = useState();
+  const [data, setData] = useState<any[]>([]); 
+  const [loading, setLoading] = useState(true);
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 1;
   const fetchedData = async () => {
-    const res = fetchFunc(urls.SCENICSPORT);
-    const data = await (await res).json();
-    setdata(data);
+    setLoading(true);
+    try {
+      const res = await fetchFunc(urls.SCENICSPORT);
+      const data = await res.json();
+      setData(data);
+    } catch (error) {
+      console.error("Failed to fetch data", error);
+    } finally {
+      setLoading(false);
+    }
   };
+  const handleNext = () => {
+    if (data.length > 0 && startIndex + visibleCount < data.length) {
+      setStartIndex(startIndex + visibleCount);
+    }
+  };
+  
+  const handlePrev = () => {
+    if (data.length > 0 && startIndex > 0) {
+      setStartIndex(startIndex - visibleCount);
+    }
+  };
+  
   useEffect(() => {
     fetchedData();
   }, []);
   return (
-    <div className="w-full flex flex-col items-center sm:mt-20">
-      <div className="w-full flex flex-col items-center">
-        <div className="max:w-[1147px] w-[95%]  mb-3 sm:mb-10">
-          {" "}
+    <div className="max-w-[1200px] w-[95%] flex flex-col gap-5">
+      <div className="flex w-full justify-between">
+        <div className="w-full flex justify-between">
           <OrangeBourd data={"ҮЗЭСГЭЛЭНТ ГАЗРУУД"} />
         </div>
-
-        <div className="bg-[url('/bigmountain.png')] w-full h-[300px] sm:h-[583px] flex justify-center overflow-hidden sm:justify-start bg-cover relative">
-          <div className="w-full h-full bg-black opacity-50 absolute top-0 left-0"></div>
-          <div className="max:w-[1147px] w-[95%] m-auto h-full flex items-center">
-            <BeautifulAreaCard data={data} />
-          </div>
+        <div className="">
+          <ArrowButtons handleNext={handleNext} handlePrev={handlePrev} />
         </div>
       </div>
+
+      {loading ? (
+        <div className="w-full flex justify-center items-center h-[200px]">
+          <div className="loader"></div>{" "}
+        </div>
+      ) : (
+        <TravelCard  data={data} startIndex={startIndex} />
+      )}
     </div>
   );
 };

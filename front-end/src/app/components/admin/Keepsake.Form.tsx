@@ -5,6 +5,7 @@ import { v4 } from "uuid";
 
 import { postFunc } from "@/app/backdata";
 import { imageDb } from "@/firebase";
+import RichTextExample from "@/app/draft";
 
 const KeepSakeForm = (props?: any) => {
   const { edit, data } = props;
@@ -114,22 +115,9 @@ const KeepSakeForm = (props?: any) => {
           </button>
         </div>
       </div>
-      <div className="w-full h-[100px]">
+      <div className="w-full">
         <div>Тайлбар</div>
-        <textarea
-          defaultValue={data?.description}
-          placeholder="Тайлбар"
-          name="descrition"
-          className="px-[6px] py-[8px] h-full rounded-[8px] w-full"
-          onChange={(event) => {
-            setTimeout(() => {
-              setKeepSakeData({
-                ...keepSakeData,
-                description: event.target.value,
-              });
-            }, 500);
-          }}
-        />
+              <RichTextExample description={ setKeepSakeData} />
       </div>
       <div className="flex items-center justify-center bg-white w-[150px] rounded-[8px] h-[40px] mt-[20px] ">
         <button

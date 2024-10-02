@@ -8,24 +8,13 @@ import { useState, useEffect } from "react";
 export const DefaultArea = () => {
   const [switchState, setSwitchState] = useState(true);
   const pathname = usePathname();
-  useEffect(() => {
-    pathname;
-    if (pathname === "/") {
-      setSwitchState(true);
-    } else {
-      setSwitchState(false);
-    }
-  }, [pathname]);
 
   return (
     <div className="w-full flex flex-col items-center">
       {" "}
       <Header switchHeader={switchState} />
-      <Header2 switchHeader={switchState} />
-      <div className="container xl:w-[1441px] ">
-        <MainMenu />
-        <InfoAimag />
-      </div>
+      <MainMenu />
+
     </div>
   );
 };

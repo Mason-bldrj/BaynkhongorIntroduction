@@ -17,7 +17,7 @@ export const SuggestionArea = () => {
       setDataHolder(
         data.map((item: any) => ({
           ...item,
-          count: item.count || 0, // Ensure 'count' is present
+          count: item.count || 0, 
           percent: totalClicks > 0 ? Math.floor(((item.count || 0) * 100) / totalClicks) : 0, // Calculate percent
         }))
       );
@@ -123,12 +123,12 @@ export const SuggestionArea = () => {
                 />
                 <button
                   onClick={() => progressCalculator(el._id)}
-                  className="bg-[#D9D9D9] hover:bg-[#ff7119] hover:text-white  h-[40px] flex justify-center items-center text-center absolute bottom-5 w-[80%] overflow-auto text-sm right-0 hover:opacity-100 opacity-70 rounded-l-sm z-10"
+                  className="absolute hover:bg-black opacity-0 hover:opacity-60 hover:text-white w-full h-full top-0 left-0"
                 >
                   {el.name}
                 </button>
                 <div className="w-full bg-gray-200 rounded-md h-[8px] dark:bg-gray-700 mt-1 flex justify-between items-center">
-                  <div className="bg-[#ff7119] h-[8px] rounded-md w-full" style={{ width: `${el.percent}%` }}></div>
+                  <div className="bg-[#213A57] h-[8px] rounded-md w-full" style={{ width: `${el.percent}%` }}></div>
                   <div className="w-[5px] flex items-center mr-7 text-[10px]">{el.percent + "%"}</div>
                 </div>
               </div>

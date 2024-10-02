@@ -10,7 +10,7 @@ export const VideoCard = ({  data1, startIndex }: any) => {
         <div
           className="flex transition-transform duration-300 justify-start gap-[20px]"
           style={{
-            transform: `translateX(-${Math.min(startIndex, maxIndex) * 575}px)`,
+            transform: `translateX(-${Math.min(startIndex, maxIndex) * 387}px)`,
           }}
         >
           {data1?.map((el: any, i: number) => {
@@ -20,11 +20,11 @@ export const VideoCard = ({  data1, startIndex }: any) => {
             return (
               <div
                 key={i}
-                className="lg:w-[555px] sm:w-[400px] w-[367px]  max-w-[640px] h-auto" 
+                className="w-[367px] h-auto" 
               >
                 {videoId ? (
                   <iframe
-                    className="w-full h-[200px] sm:h-[300px] lg:h-[420px] object-cover" 
+                    className="w-full h-[200px] sm:h-[300px]  object-cover" 
                     src={`https://www.youtube.com/embed/${videoId}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

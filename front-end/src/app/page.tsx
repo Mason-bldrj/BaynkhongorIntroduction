@@ -23,9 +23,8 @@ export default function Home() {
     fetchedData();
   }, []);
   return (
-    <div className=" flex flex-col items-center justify-between ">
+    <div className=" flex flex-col items-center gap-[60px] ">
       <DefaultArea />
-      <BannerArea />
       <SuggestionArea />
       <AboutAimag />
       <TravelArea />

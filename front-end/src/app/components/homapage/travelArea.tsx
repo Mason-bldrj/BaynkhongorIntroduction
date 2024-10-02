@@ -38,7 +38,7 @@ export const TravelArea = () => {
     fetchedData();
   }, []);
   return (
-    <div className="max-w-[1147px] w-[95%] mt-5 sm:mt-10 flex flex-col gap-5">
+    <div className="max-w-[1200px] w-[95%] flex flex-col gap-5">
       <div className="flex w-full justify-between">
         <div className="w-full flex justify-between">
           <OrangeBourd data={"АЯЛАЛ"} />

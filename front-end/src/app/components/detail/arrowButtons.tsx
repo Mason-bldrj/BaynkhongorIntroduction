@@ -9,13 +9,13 @@ export const ArrowButtons = ({ handleNext, handlePrev }: any) => {
     <div className="*:border *:rounded-md flex gap-1 *:h-[30px] *:w-[30px] *:flex *:justify-center *:items-center text-2xl">
       <button
         onClick={handlePrev}
-        className="hover:bg-[#ff7119] hover:text-white "
+        className="hover:bg-[#213A57] hover:text-whitetext-[#213A57] border border-[#213A57] hover:text-white "
       >
         <IoIosArrowRoundBack />
       </button>
       <button
         onClick={handleNext}
-        className="hover:bg-[#ff7119] hover:text-white "
+        className="hover:bg-[#213A57] text-[#213A57] border border-[#213A57] hover:text-white "
       >
         <IoIosArrowRoundForward />
       </button>

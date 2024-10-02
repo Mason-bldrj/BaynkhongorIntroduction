@@ -13,11 +13,11 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const { name, img, date, travelType, description } = await req.json();
+    const { name, imgs, date, travelType, description } = await req.json();
 
     const createdRecord = await TravelModel.create({
       name,
-      img,
+      imgs,
       date,
       travelType,
       description,
@@ -34,13 +34,13 @@ export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
 
   try {
-    const { _id, name, date, img, description, travelType } = data;
+    const { _id, name, date, imgs, description, travelType } = data;
     const res = await TravelModel.findByIdAndUpdate(
       _id,
       {
         name,
         date,
-        img,
+        imgs,
         description,
         travelType,
       },

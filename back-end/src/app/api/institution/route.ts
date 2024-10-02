@@ -13,14 +13,14 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const { institutionType, name, description, img, phoneNumbers } =
+    const { institutionType, name, description, imgs, phoneNumbers } =
       await req.json();
 
     const createdRecord = await InstitutionModel.create({
       institutionType,
       name,
       description,
-      img,
+      imgs,
       phoneNumbers: {
         phoneNumber1: phoneNumbers.phoneNumber1,
         phoneNumber2: phoneNumbers.phoneNumber2,
@@ -35,13 +35,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
 export async function PUT(req: NextRequest, res: NextResponse) {
   const data = await req.json();
-  const { _id, institutionType, name, description, img, phoneNumbers } = data;
+  const { _id, institutionType, name, description, imgs, phoneNumbers } = data;
   try {
     const res = await InstitutionModel.findByIdAndUpdate(_id, {
       institutionType,
       name,
       description,
-      img,
+      imgs,
       phoneNumbers,
     });
   } catch (error: any) {

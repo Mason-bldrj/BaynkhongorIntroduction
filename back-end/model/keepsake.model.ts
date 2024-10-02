@@ -6,7 +6,7 @@ const keepsakeSchema = new Schema({
   name: { type: String, required: true },
   title: String,
   description: String,
-  img: { type: String, required: true },
+  img: [String],
 });
 
 const KeepsakeModel =

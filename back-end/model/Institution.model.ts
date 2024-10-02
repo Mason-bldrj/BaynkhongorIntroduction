@@ -19,7 +19,7 @@ const institutionSchema = new Schema({
   },
   name: { type: String, required: true },
   description: { type: String },
-  img: String,
+  imgs: [String],
   phoneNumbers: {
     phoneNumber1: { type: Number, required: true },
     phoneNumber2: Number,

@@ -7,7 +7,7 @@ const eventSchema = new Schema({
     required: true,
   },
   description: String,
-  img: { type: String, required: true },
+  imgs: [String],
 });
 
 const eventModel = models.event || model(COLLECTIONS.EVENT, eventSchema);
